@@ -1,11 +1,16 @@
-# ViMultiAgent — backend
-# Cài: python -m pip install -r requirements.txt
-# Ngoài ra cần Ollama chạy sẵn và đã `ollama pull qwen3:8b`.
+# ViMultiAgent — thư viện lõi, BẮT BUỘC
+#
+# Cài:  python -m pip install -r requirements.txt
+#
+# Ngoài ra cần Ollama chạy sẵn và đã tải model:  ollama pull qwen3:4b
+#
+# Phần học sâu (PhoBERT phân loại môn học) nằm ở requirements-ml.txt và là TUỲ
+# CHỌN — thiếu nó hệ thống vẫn chạy đủ, Router tự lùi về luật từ khoá.
 
 # --- Multi-Agent ---
 autogen-agentchat>=0.7     # khung Multi-Agent, kiến trúc role specialization
 autogen-ext[ollama]>=0.7   # nối AutoGen với Ollama cục bộ
-ollama>=0.4
+ollama>=0.4                # gọi trực tiếp ở bước giảng bài (cần mồi câu mở đầu)
 
 # --- Backend ---
 fastapi>=0.115
@@ -14,8 +19,8 @@ pydantic>=2.9
 sse-starlette>=2.1         # streaming lời giảng về frontend
 httpx>=0.27
 
-# --- Công cụ tính toán ---
-sympy>=1.13                # giải/rút gọn/đạo hàm/tích phân + kiểm chứng thế ngược
+# --- Công cụ tính toán tất định ---
+sympy>=1.13                # giải/rút gọn/đạo hàm/tích phân + trọng tài số học
 pint>=0.24                 # kiểm thứ nguyên cho Vật lý
 
 # --- Lưu trữ ---

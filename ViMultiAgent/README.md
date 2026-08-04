@@ -17,53 +17,28 @@ Nếu thiếu Ollama: tải tại <https://ollama.com/download>.
 
 ---
 
-## 2. Cài lần đầu (chỉ làm một lần)
+## 2. Cài lần đầu
 
-### 2.1. Tải mô hình ngôn ngữ
+Xem hướng dẫn đầy đủ ở **[INSTALL.md](INSTALL.md)** — có cả yêu cầu phần cứng,
+cách cài phần học sâu, bảng tra lỗi và danh sách kiểm tra trước khi demo.
+
+Tóm tắt cho ai đã quen:
 
 ```powershell
 ollama pull qwen3:4b
-```
 
-Khoảng 2,5 GB. Đây là mô hình sinh lời giải.
-
-### 2.2. Cài thư viện backend
-
-```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
+cd backend
 python -m pip install -r requirements.txt
-```
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements-ml.txt
+python ml/train_phobert.py          # ~12 phút, sinh ra mô hình PhoBERT
 
-### 2.3. Cài thư viện frontend
-
-```powershell
-cd E:\DeepLearning\ViMultiAgent\frontend
+cd ../frontend
 npm install
-```
 
-### 2.4. Tạo file cấu hình
-
-```powershell
-cd E:\DeepLearning\ViMultiAgent
+cd ..
 copy .env.example .env
 ```
-
-Không cần sửa gì — mọi giá trị mặc định đều chạy được.
-
-### 2.5. Bộ phân loại PhoBERT
-
-Thư mục `backend/ml/phobert_router/` đã có sẵn mô hình đã huấn luyện.
-Nếu thiếu, huấn luyện lại (khoảng 12 phút trên CPU):
-
-```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
-python ml/build_dataset.py
-python ml/train_phobert.py
-```
-
-Không có PhoBERT thì hệ thống **vẫn chạy** — Router tự lùi về luật từ khoá.
-
----
 
 ## 3. Khởi động hằng ngày
 
@@ -124,7 +99,7 @@ Gõ `Ctrl + Enter` trong ô nhập để gửi nhanh.
 |---|---|---|
 | `Backend trả lỗi 500` | Ollama chưa chạy | Mở Ollama, chạy `ollama ps` để xác nhận |
 | Cổng 8000 báo bận | Còn server cũ đang chạy | `Get-NetTCPConnection -LocalPort 8000` rồi `Stop-Process -Id <PID>` |
-| Trang trắng ở 5173 | Chưa `npm install` | Chạy lại bước 2.3 |
+| Trang trắng ở 5173 | Chưa `npm install` | Chạy lại `npm install` |
 | Trả lời rất chậm | Model tràn khỏi GPU | `ollama ps` xem cột PROCESSOR; dưới 100% GPU là đang chạy một phần trên CPU |
 | Lần hỏi đầu lâu bất thường | Ollama đang nạp model | Bình thường, mất 8–15 giây; các lượt sau nhanh hơn nhiều |
 
@@ -174,8 +149,8 @@ Sửa trong file `.env` ở thư mục gốc:
 |---|---|---|
 | `VMA_MODEL_HEAVY` | `qwen3:4b` | Mô hình cho Subject Agent và Verify |
 | `VMA_MODEL_LIGHT` | `qwen3:4b` | Mô hình cho Planner, Router, Explain |
-| `VMA_SLA_SECONDS` | `90` | Mốc thời gian mục tiêu cho một lượt hỏi |
+| `VMA_SLA_SECONDS` | `150` | Mốc thời gian mục tiêu cho một lượt hỏi |
 | `VMA_MAX_RETRY_ROUNDS` | `1` | Số lần Verify được bắt giải lại |
-| `VMA_AGENTS_SUY_NGHI` | 3 subject + recompute | Agent nào được bật chế độ suy nghĩ của Qwen3 |
+| `VMA_AGENTS_SUY_NGHI` | `recompute` | Agent nào được bật chế độ suy nghĩ của Qwen3 |
 
 Đổi `.env` xong phải **khởi động lại backend** thì mới có hiệu lực.

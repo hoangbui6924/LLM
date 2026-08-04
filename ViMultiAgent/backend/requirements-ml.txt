@@ -1,0 +1,29 @@
+# ViMultiAgent — phần học sâu, TUỲ CHỌN
+#
+# Dùng cho bộ phân loại môn học PhoBERT ở Router Agent. Không cài cũng không sao:
+# `ml/classifier.py` phát hiện thiếu thư viện và trả về False, Router tự lùi về
+# luật từ khoá. Hệ thống chạy đủ, chỉ mất phần học sâu.
+#
+# ---------------------------------------------------------------------------
+# CÀI ĐẶT — hai bước, ĐỪNG gộp làm một
+# ---------------------------------------------------------------------------
+#
+#   1) torch bản CPU (khoảng 250 MB):
+#
+#      python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+#   2) phần còn lại:
+#
+#      python -m pip install -r requirements-ml.txt
+#
+# Vì sao phải cài torch riêng và phải là bản CPU:
+#
+#   * `pip install torch` mặc định kéo về bản CUDA nặng ~2,5 GB, và trên máy
+#     6 GB VRAM thì nó sẽ tranh bộ nhớ với Ollama đang giữ model qwen3.
+#   * PhoBERT chỉ 135 triệu tham số. Suy luận trên CPU mất ~40 ms mỗi câu, thừa
+#     nhanh so với ngân sách 150 giây. Huấn luyện lại mất ~12 phút trên CPU.
+#   * Chạy CPU nên KHÔNG cần tắt Ollama lúc huấn luyện.
+
+transformers>=4.44         # nạp và fine-tune PhoBERT
+underthesea>=6.8           # TÁCH TỪ tiếng Việt — bắt buộc, xem ml/segment.py
+scikit-learn>=1.5          # mốc so sánh TF-IDF + Logistic Regression
