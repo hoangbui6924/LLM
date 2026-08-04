@@ -61,3 +61,36 @@ class TestSoSanhSo:
     def test_uu_tien_so_khi_co_ca_hai(self):
         kq = KetQua(gia_tri=5.0, bieu_thuc="x + 1")
         assert kq.mo_ta() == "5"
+
+
+class TestPlannerGiuSoLieu:
+    """Chống lỗi model chép sai số liệu của đề.
+
+    Ca thật đo được: qwen3:4b chép `x = 5cos(10πt)` thành `x = 5cos(1:0πt)` và
+    `R = 110 Ω` thành `R = 1:110 Ω`. Đáp án lệch 10 lần mà không tầng kiểm chứng
+    nào phát hiện, vì tất cả đều đối chiếu với đề ĐÃ HỎNG.
+    """
+
+    def test_bat_duoc_so_bi_chen_dau_hai_cham(self):
+        from agents.planner import _giu_nguyen_so_lieu
+
+        assert not _giu_nguyen_so_lieu("x = 5cos(10πt) cm", "x = 5cos(1:0πt) cm")
+        assert not _giu_nguyen_so_lieu("R = 110 Ω", "R = 1:110 Ω")
+
+    def test_chap_nhan_chuan_hoa_khong_doi_so(self):
+        from agents.planner import _giu_nguyen_so_lieu
+
+        assert _giu_nguyen_so_lieu(
+            "Một vật dao động với biên độ 5 cm, tần số 2 Hz.",
+            "Vật dao động điều hoà, biên độ 5 cm, tần số 2 Hz. Tính vận tốc cực đại.",
+        )
+
+    def test_bat_duoc_so_bi_mat(self):
+        from agents.planner import _giu_nguyen_so_lieu
+
+        assert not _giu_nguyen_so_lieu("Cho 5,6 gam Fe và 3 mol O2", "Cho 5,6 gam Fe")
+
+    def test_bat_duoc_so_bi_doi_gia_tri(self):
+        from agents.planner import _giu_nguyen_so_lieu
+
+        assert not _giu_nguyen_so_lieu("R = 110 Ω", "R = 100 Ω")

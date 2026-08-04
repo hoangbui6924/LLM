@@ -45,15 +45,15 @@ MODEL_HEAVY = os.getenv("VMA_MODEL_HEAVY", "qwen3:4b")
 MODEL_LIGHT = os.getenv("VMA_MODEL_LIGHT", "qwen3:4b")
 
 # ---- Ngân sách thời gian --------------------------------------------------
-SLA_SECONDS = _float("VMA_SLA_SECONDS", 90.0)
+SLA_SECONDS = _float("VMA_SLA_SECONDS", 150.0)
 # Một lượt gọi CÓ suy nghĩ tốn 24-40 giây, gấp 5 lần lượt không suy nghĩ.
-AGENT_TIMEOUT = _float("VMA_AGENT_TIMEOUT", 50.0)
+AGENT_TIMEOUT = _float("VMA_AGENT_TIMEOUT", 60.0)
 # Bộ tính lại bật suy nghĩ nên là lượt gọi đắt nhất. ĐO ĐƯỢC trên bài Hoá: nó
 # suy luận ĐÚNG tỉ lệ hợp thức nhưng mất ~31 giây, nên hạn 32 giây cắt hụt 2/3
 # số lượt. Nới lên 42 giây: mất khả năng giải lại (ngưỡng 38 giây) nhưng đổi lại
 # có đáp án đúng — đánh đổi đáng giá, vì vòng giải lại vốn không sửa nổi lỗi
 # khái niệm.
-TIMEOUT_RECOMPUTE = _float("VMA_TIMEOUT_RECOMPUTE", 42.0)
+TIMEOUT_RECOMPUTE = _float("VMA_TIMEOUT_RECOMPUTE", 55.0)
 
 # Ngân sách 90 giây cho phép BẬT LẠI chế độ suy nghĩ của Qwen3 — thứ đã phải tắt
 # khi mốc còn 45 giây. Khối <think> chính là nơi model kiểm lại phép tính, nên
@@ -79,6 +79,10 @@ AGENTS_SUY_NGHI = {
 }
 # Số vòng Subject -> Verify -> giải lại. 1 nghĩa là được sửa đúng một lần.
 MAX_RETRY_ROUNDS = _int("VMA_MAX_RETRY_ROUNDS", 1)
+
+# Còn ít hơn ngần này giây thì không khởi động vòng giải lại nữa: một vòng tốn
+# ~20 giây (Subject + Verify) và Explain phía sau cần thêm ~15 giây.
+NGUONG_GIAI_LAI = _float("VMA_NGUONG_GIAI_LAI", 40.0)
 
 TEMPERATURE = _float("VMA_TEMPERATURE", 0.2)
 NUM_CTX = _int("VMA_NUM_CTX", 8192)

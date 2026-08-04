@@ -1,54 +1,76 @@
 import { useEffect, useRef, useState } from "react";
 import AgentTimeline from "./components/AgentTimeline";
-import Markdown from "./components/Markdown";
+import FinalAnswer from "./components/FinalAnswer";
+import Performance from "./components/Performance";
+import SolutionSteps from "./components/SolutionSteps";
 import { fetchHealth, solveStream, type Health } from "./api";
-import type { AgentState, AgentName, StreamEvent } from "./types";
+import type { AgentName, AgentState, SolveResult, StreamEvent, Verdict } from "./types";
 import "./App.css";
 
-// Thứ tự cố định để thanh tiến trình không nhảy loạn khi sự kiện về.
-const ORDER: { name: AgentName; label: string }[] = [
-  { name: "planner", label: "Planner" },
-  { name: "router", label: "Router" },
-  { name: "math_agent", label: "Subject Agent" },
-  { name: "verify_agent", label: "Verify" },
-  { name: "explain_agent", label: "Explain" },
+// Thứ tự cố định để thanh tiến trình không nhảy loạn khi sự kiện về. Ba Subject
+// Agent dùng chung một ô vì mỗi lượt chỉ chạy đúng một trong ba.
+const QUY_TRINH: { name: AgentName; label: string; mo_ta: string }[] = [
+  { name: "planner", label: "Planner Agent", mo_ta: "Phân tích và lập kế hoạch giải bài toán" },
+  { name: "router", label: "Router Agent", mo_ta: "Chọn tác tử chuyên môn phù hợp" },
+  { name: "math_agent", label: "Subject Agent", mo_ta: "Giải bài toán theo chuyên môn" },
+  { name: "verify_agent", label: "Verification Agent", mo_ta: "Kiểm tra và xác minh kết quả" },
+  { name: "explain_agent", label: "Explanation Agent", mo_ta: "Tạo lời giải chi tiết" },
 ];
 
 const VI_DU = [
-  "Tính đạo hàm của hàm số y = x^3 - 3x^2 + 2x tại điểm x = 1",
-  "Một vật dao động điều hoà với biên độ 5 cm, tần số 2 Hz. Tính vận tốc cực đại.",
-  "Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2. Tính khối lượng Fe3O4 thu được.",
+  {
+    mon: "Toán",
+    de: "Cho hàm số y = (x^2 + 1)/(x - 1). Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 2.",
+  },
+  {
+    mon: "Lý",
+    de: "Chiếu ánh sáng có bước sóng 0,40 μm vào một kim loại có công thoát 2,2 eV. Biết năng lượng photon là 3,1 eV. Động năng ban đầu cực đại của electron quang điện là",
+  },
+  {
+    mon: "Hoá",
+    de: "Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2 dư thu được Fe3O4. Tính khối lượng Fe3O4 thu được.",
+  },
 ];
+
+/** Bóc mục "Dễ sai ở đâu" khỏi lời giảng để dựng thành thẻ riêng. */
+function bocLuuY(md: string): string[] {
+  const m = md.match(/\*\*Dễ sai ở đâu\*\*([\s\S]*)$/i);
+  if (!m) return [];
+  return m[1]
+    .split("\n")
+    .map((l) => l.replace(/^\s*[-*•]\s*/, "").trim())
+    .filter((l) => l.length > 2 && !l.startsWith("**"));
+}
 
 export default function App() {
   const [question, setQuestion] = useState("");
   const [running, setRunning] = useState(false);
   const [agents, setAgents] = useState<AgentState[]>([]);
   const [answer, setAnswer] = useState("");
-  const [totalMs, setTotalMs] = useState<number | null>(null);
+  const [ketQua, setKetQua] = useState<SolveResult | null>(null);
+  const [totalMs, setTotalMs] = useState(0);
   const [withinSla, setWithinSla] = useState<boolean | null>(null);
   const [warning, setWarning] = useState("");
   const [sympyFixes, setSympyFixes] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [health, setHealth] = useState<Health | null>(null);
+  const [toi, setToi] = useState(() => localStorage.getItem("vma-theme") === "dark");
   const abortRef = useRef<AbortController | null>(null);
-  const answerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetchHealth().then(setHealth);
   }, []);
 
-  // Cuộn theo chữ đang chảy về.
   useEffect(() => {
-    answerRef.current?.scrollTo({ top: answerRef.current.scrollHeight });
-  }, [answer]);
+    document.documentElement.dataset.theme = toi ? "dark" : "light";
+    localStorage.setItem("vma-theme", toi ? "dark" : "light");
+  }, [toi]);
 
   function reset() {
-    setAgents(
-      ORDER.map((a) => ({ name: a.name, label: a.label, status: "waiting" as const })),
-    );
+    setAgents(QUY_TRINH.map((a) => ({ ...a, status: "waiting" as const })));
     setAnswer("");
-    setTotalMs(null);
+    setKetQua(null);
+    setTotalMs(0);
     setWithinSla(null);
     setWarning("");
     setSympyFixes([]);
@@ -60,17 +82,20 @@ export default function App() {
       case "agent": {
         setAgents((prev) => {
           const next = [...prev];
-          // Ba Subject Agent dùng chung một ô trên thanh tiến trình.
-          const isSubject =
+          const laSubject =
             ev.name !== "verify_agent" &&
             ev.name !== "explain_agent" &&
             ev.name.endsWith("_agent");
-          const slot = isSubject ? "math_agent" : ev.name;
-          const i = next.findIndex((a) => a.name === slot);
+          const o = laSubject ? "math_agent" : ev.name;
+          const i = next.findIndex((a) => a.name === o);
           if (i === -1) return prev;
           next[i] = {
             ...next[i],
-            label: ev.label,
+            label: laSubject ? ev.label : next[i].label,
+            mo_ta:
+              ev.name === "router" && ev.detail
+                ? ev.detail.split("—")[0].trim()
+                : next[i].mo_ta,
             status:
               ev.status === "start" ? "running" : ev.ok === false ? "failed" : "done",
             ms: ev.ms ?? next[i].ms,
@@ -93,13 +118,14 @@ export default function App() {
         break;
       case "cuu_dap_an":
         setWarning(
-          `Không dựng được lời giải từng bước. Đáp án ${ev.gia_tri} do công cụ ` +
-            `tính trực tiếp từ đề (${ev.cach_lam}). Hãy tự đối chiếu cách làm.`,
+          `Đáp án ${ev.gia_tri} do công cụ tính trực tiếp từ đề (${ev.cach_lam}), ` +
+            "vì lời giải từng bước không qua được kiểm chứng.",
         );
         break;
       case "done":
         setTotalMs(ev.total_ms);
         setWithinSla(ev.within_sla);
+        setKetQua(ev.result);
         if (ev.warning) setWarning(ev.warning);
         break;
       case "error":
@@ -112,105 +138,177 @@ export default function App() {
     e.preventDefault();
     const q = question.trim();
     if (!q || running) return;
-
     reset();
     setRunning(true);
     abortRef.current = new AbortController();
     try {
-      for await (const ev of solveStream(q, abortRef.current.signal)) {
-        applyEvent(ev);
-      }
+      for await (const ev of solveStream(q, abortRef.current.signal)) applyEvent(ev);
     } catch (err) {
-      if ((err as Error).name !== "AbortError") {
-        setError((err as Error).message);
-      }
+      if ((err as Error).name !== "AbortError") setError((err as Error).message);
     } finally {
       setRunning(false);
     }
   }
 
-  function onStop() {
-    abortRef.current?.abort();
-    setRunning(false);
-  }
+  const sol = ketQua?.solution ?? null;
+  const verdict: Verdict | null = ketQua?.verify?.verdict ?? null;
+  const doTinCay = ketQua?.verify?.confidence ?? sol?.confidence ?? null;
+  const moTaDapAn =
+    ketQua?.plan?.unknowns?.[0]?.description_vi ||
+    ketQua?.plan?.unknowns?.[0]?.symbol ||
+    "";
+  const luuY = bocLuuY(answer);
+  const daChay = agents.some((a) => a.status !== "waiting");
+
+  const chips = [
+    { ten: health?.model_heavy ?? "Qwen3", bat: !!health, mau: "c1" },
+    { ten: "PhoBERT", bat: ketQua?.route?.decided_by === "phobert" || !daChay, mau: "c2" },
+    { ten: "SymPy", bat: health?.tools?.sympy ?? false, mau: "c3" },
+    { ten: "Verification Engine", bat: true, mau: "c4" },
+  ];
 
   return (
     <div className="app">
-      <header>
-        <h1>ViMultiAgent</h1>
-        <p className="sub">Hệ thống đa tác tử giải bài tập STEM bằng tiếng Việt</p>
-        {health && (
-          <div className="health">
-            <span>{health.model_heavy}</span>
-            <span>SymPy {health.tools.sympy ? "✓" : "✕"}</span>
-            <span>Đơn vị {health.tools.units ? "✓" : "✕"}</span>
-          </div>
-        )}
+      <header className="topbar">
+        <div>
+          <h1>ViMultiAgent</h1>
+          <p className="sub">Hệ thống đa tác tử giải bài tập STEM bằng tiếng Việt</p>
+        </div>
+        <div className="topbar-right">
+          <span className={`he-thong ${health ? "ok" : "bad"}`}>
+            <i /> {health ? "Hệ thống sẵn sàng" : "Không kết nối được backend"}
+          </span>
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={() => setToi((v) => !v)}
+            title={toi ? "Chuyển nền sáng" : "Chuyển nền tối"}
+          >
+            {toi ? "☀" : "☾"}
+          </button>
+        </div>
       </header>
 
-      <form onSubmit={onSubmit}>
-        <textarea
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Nhập câu hỏi Toán, Lý hoặc Hoá…"
-          rows={4}
-          disabled={running}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) onSubmit(e);
-          }}
-        />
-        <div className="actions">
-          <button type="submit" disabled={running || !question.trim()}>
-            {running ? "Đang giải…" : "Giải bài"}
-          </button>
-          {running && (
-            <button type="button" className="ghost" onClick={onStop}>
-              Dừng
-            </button>
+      <div className="chips">
+        {chips.map((c) => (
+          <span key={c.ten} className={`chip ${c.mau} ${c.bat ? "" : "tat"}`}>
+            <i /> {c.ten}
+          </span>
+        ))}
+      </div>
+
+      <div className="grid">
+        <div className="cot">
+          <div className="card">
+            <div className="card-head">
+              <span className="card-icon">💬</span>
+              <h2>Nhập câu hỏi của bạn</h2>
+            </div>
+            <form onSubmit={onSubmit}>
+              <textarea
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Nhập câu hỏi Toán, Vật lý hoặc Hoá học…"
+                rows={4}
+                disabled={running}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) onSubmit(e);
+                }}
+              />
+              <div className="actions">
+                <div className="vi-du">
+                  {VI_DU.map((v) => (
+                    <button
+                      key={v.mon}
+                      type="button"
+                      className="chip-btn"
+                      disabled={running}
+                      onClick={() => setQuestion(v.de)}
+                    >
+                      {v.mon}
+                    </button>
+                  ))}
+                </div>
+                <div className="actions-right">
+                  <span className="hint">Ctrl + Enter</span>
+                  {running && (
+                    <button
+                      type="button"
+                      className="ghost"
+                      onClick={() => abortRef.current?.abort()}
+                    >
+                      Dừng
+                    </button>
+                  )}
+                  <button
+                    type="submit"
+                    className="primary"
+                    disabled={running || !question.trim()}
+                  >
+                    {running ? "Đang giải…" : "✦ Giải bài"}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <AgentTimeline agents={agents} />
+
+          {totalMs > 0 && (
+            <Performance
+              agents={agents}
+              totalMs={totalMs}
+              doTinCay={doTinCay}
+              daKiemChung={verdict === "PASS"}
+            />
           )}
-          <span className="hint">Ctrl + Enter để gửi</span>
+
+          {totalMs > 0 && withinSla !== null && (
+            <div className={`sla ${withinSla ? "ok" : "over"}`}>
+              Tổng thời gian {(totalMs / 1000).toFixed(1)}s — {withinSla ? "đạt" : "vượt"}{" "}
+              mốc {health?.sla_seconds ?? 150} giây
+            </div>
+          )}
         </div>
-      </form>
 
-      {!running && !answer && (
-        <div className="examples">
-          <span>Thử nhanh:</span>
-          {VI_DU.map((v, i) => (
-            <button key={i} type="button" onClick={() => setQuestion(v)}>
-              {["Toán", "Lý", "Hoá"][i]}
-            </button>
-          ))}
+        <div className="cot">
+          <FinalAnswer
+            dapAn={sol?.final_answer ?? ""}
+            moTa={moTaDapAn}
+            verdict={verdict}
+            doTinCay={doTinCay}
+          />
+
+          {error && <div className="bang err">Lỗi: {error}</div>}
+          {warning && <div className="bang warn">{warning}</div>}
+          {sympyFixes.length > 0 && (
+            <div className="bang fixed">
+              <strong>SymPy đã sửa {sympyFixes.length} bước tính sai</strong>
+              <ul>
+                {sympyFixes.map((s, i) => (
+                  <li key={i}>{s}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <SolutionSteps steps={sol?.steps ?? []} markdown={answer} dangChay={running} />
+
+          {luuY.length > 0 && !running && (
+            <div className="card luu-y">
+              <div className="card-head">
+                <span className="card-icon">⚠</span>
+                <h2>Lưu ý thường gặp</h2>
+              </div>
+              <ul>
+                {luuY.map((l, i) => (
+                  <li key={i}>{l}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-      )}
-
-      <AgentTimeline agents={agents} />
-
-      {sympyFixes.length > 0 && (
-        <div className="fixed">
-          <strong>SymPy đã sửa {sympyFixes.length} bước tính sai:</strong>
-          <ul>
-            {sympyFixes.map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {warning && <div className="warn">{warning}</div>}
-      {error && <div className="err">Lỗi: {error}</div>}
-
-      {answer && (
-        <div className="answer" ref={answerRef}>
-          <Markdown text={answer} />
-        </div>
-      )}
-
-      {totalMs !== null && (
-        <div className={`sla ${withinSla ? "ok" : "over"}`}>
-          Tổng thời gian {(totalMs / 1000).toFixed(1)}s —{" "}
-          {withinSla ? "đạt" : "vượt"} mốc {health?.sla_seconds ?? 90} giây
-        </div>
-      )}
+      </div>
     </div>
   );
 }

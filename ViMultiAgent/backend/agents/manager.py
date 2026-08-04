@@ -184,7 +184,7 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
         # Còn đủ giờ mới cho giải lại. Đo thực tế: một vòng tốn ~20 giây (Subject
         # 10-15 + Verify 5-8), và Explain phía sau cần thêm ~15 giây. Ngưỡng 20
         # giây cũ quá lỏng nên có lượt chạm 94,3 giây, vượt trần 90.
-        if remaining() < 38.0:
+        if remaining() < config.NGUONG_GIAI_LAI:
             result.warning_vi = "Hết ngân sách thời gian nên không giải lại lần nữa."
             break
         trace.retry_rounds += 1

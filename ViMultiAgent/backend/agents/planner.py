@@ -39,6 +39,24 @@ Quy tắc:
 # Bắt nhanh dạng trắc nghiệm để không phụ thuộc hoàn toàn vào LLM.
 _MCQ = re.compile(r"(^|\s)[ABCD][\.\)]\s", re.MULTILINE)
 
+# Mọi cụm chữ số trong câu. Dùng để soi xem model có chép sai số liệu không.
+_CAC_SO = re.compile(r"\d+")
+
+
+def _giu_nguyen_so_lieu(goc: str, chuan_hoa: str) -> bool:
+    """Bản chuẩn hoá có giữ đúng dãy số của đề gốc không.
+
+    ĐO ĐƯỢC trên máy: qwen3:4b chép `x = 5cos(10πt)` thành `x = 5cos(1:0πt)` và
+    `R = 110 Ω` thành `R = 1:110 Ω`. JSON hoàn chỉnh, done_reason là "stop" —
+    model thật sự viết sai chứ không phải bị cắt. Hậu quả nặng: mọi agent phía
+    sau giải rất đúng trên một đề đã sai, và đáp án lệch 10 lần mà không tầng
+    kiểm chứng nào phát hiện, vì chúng đối chiếu với đề ĐÃ HỎNG.
+
+    Mô hình nhỏ không chép lại nổi công thức có ký tự Unicode. Nên đừng tin, hãy
+    kiểm: dãy chữ số phải khớp tuyệt đối, lệch một cụm là bỏ cả bản chuẩn hoá.
+    """
+    return _CAC_SO.findall(goc) == _CAC_SO.findall(chuan_hoa)
+
 
 async def run(question: str) -> tuple[Plan, AgentSpan]:
     plan, span = await run_structured(
@@ -53,7 +71,11 @@ async def run(question: str) -> tuple[Plan, AgentSpan]:
         # Không có Planner thì vẫn phải đi tiếp: coi như bài toán chưa phân tích.
         plan = Plan(normalized_question=question, confidence=0.0)
     plan.raw_question = question
-    if not plan.normalized_question:
+    # Chuẩn hoá chỉ được giữ khi nó KHÔNG làm sai lệch số liệu. Bằng không thì
+    # đề gốc luôn là bản đáng tin hơn — mất chút gọn gàng, đổi lấy đúng số.
+    if not plan.normalized_question or not _giu_nguyen_so_lieu(
+        question, plan.normalized_question
+    ):
         plan.normalized_question = question
     # Luật cứng đè lên phán đoán của LLM khi dấu hiệu quá rõ.
     if len(_MCQ.findall(question)) >= 3:

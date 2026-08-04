@@ -25,5 +25,6 @@ dist/
 *.db
 *.sqlite3
 
-# Đầu ra đo đạc
-ViMultiAgent/backend/ml/data/
+# Dataset phân loại môn học VẪN ĐƯA VÀO git (84 KB): đây là dữ liệu do nhóm tự
+# xây dựng, là bằng chứng cho phần học sâu của đề tài. Chỉ trọng số mô hình mới
+# phải loại, vì 515 MB vượt giới hạn 100 MB mỗi file của GitHub.

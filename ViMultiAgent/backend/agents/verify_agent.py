@@ -37,7 +37,15 @@ Cách soi:
 - Kiểm tra đáp số có trả lời đúng câu hỏi của đề không (hỏi vận tốc mà đáp ra quãng đường là FAIL).
 - Kiểm tra đơn vị và điều kiện xác định.
 - Nếu các phép kiểm tự động đã báo sai, bạn PHẢI kết luận FAIL.
-- Sai sót về cách trình bày KHÔNG phải là FAIL. Chỉ FAIL khi kết quả sai.
+
+KHI NÀO KHÔNG ĐƯỢC BÁO FAIL — đọc kỹ, đây là lỗi hay mắc nhất:
+- Hai con số BẰNG NHAU nhưng viết khác cách: 2 và 2,000 và 2.0 là MỘT. PASS.
+- Làm tròn hợp lệ: 0,6283 viết thành 0,63 là ĐÚNG. 7,7333 thành 7,73 là ĐÚNG.
+- Dùng dấu phẩy hay dấu chấm thập phân đều được.
+- Thiếu đơn vị ở bước trung gian, miễn đáp số cuối có đơn vị đúng.
+- Trình bày vắn tắt, gộp bước, thứ tự khác cách bạn quen.
+Chỉ FAIL khi KẾT QUẢ SAI VỀ GIÁ TRỊ hoặc lập luận dẫn tới kết quả sai.
+Nếu bạn định viết "sai số 0" hay "lệch 0%" thì đó chính là PASS, không phải FAIL.
 """
 
 # Bắt phương trình phản ứng dạng "Fe + O2 -> Fe3O4" trong lời giải Hoá.

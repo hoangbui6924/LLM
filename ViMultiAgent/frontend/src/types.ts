@@ -1,5 +1,5 @@
 // Hợp đồng sự kiện giữa backend (SSE) và giao diện.
-// Giữ khớp với `manager.solve_stream` bên Python.
+// Giữ khớp với `manager.solve_stream` và `core/schemas.py` bên Python.
 
 export type AgentName =
   | "planner"
@@ -22,6 +22,7 @@ export interface AgentEvent {
   detail?: string;
   verdict?: Verdict;
   retry?: boolean;
+  sympy_fixed?: number;
 }
 
 export interface TokenEvent {
@@ -42,11 +43,68 @@ export interface ArbiterEvent {
   items: string[];
 }
 
-/** Subject Agent hỏng, đáp án lấy từ bộ tính lại độc lập. */
+/** Đáp án lấy từ bộ tính lại độc lập vì lời giải không qua kiểm chứng. */
 export interface CuuDapAnEvent {
   type: "cuu_dap_an";
   gia_tri: string;
   cach_lam: string;
+}
+
+// ---------------------------------------------------------------------------
+// Kết quả đầy đủ, gửi kèm sự kiện `done`
+// ---------------------------------------------------------------------------
+
+export interface Quantity {
+  symbol: string;
+  value: number | null;
+  unit: string | null;
+  description_vi: string;
+}
+
+export interface SolutionStep {
+  id: number;
+  goal_vi: string;
+  expression: string;
+  result: string;
+  reason_vi: string;
+}
+
+export interface SolveResult {
+  question: string;
+  plan: {
+    subject: string;
+    topic: string;
+    question_type: string;
+    givens: Quantity[];
+    unknowns: Quantity[];
+    normalized_question: string;
+    confidence: number;
+  } | null;
+  route: {
+    subject: string;
+    agent_name: string;
+    reason_vi: string;
+    confidence: number;
+    decided_by: "phobert" | "rule" | "llm";
+    phobert_confidence: number | null;
+  } | null;
+  solution: {
+    steps: SolutionStep[];
+    final_answer: string;
+    final_answer_latex: string;
+    unit: string | null;
+    confidence: number;
+  } | null;
+  verify: {
+    verdict: Verdict;
+    checks: { kind: string; passed: boolean; detail_vi: string }[];
+    confidence: number;
+  } | null;
+  trace: {
+    spans: { agent: string; duration_ms: number; ok: boolean }[];
+    retry_rounds: number;
+  };
+  warning_vi: string;
 }
 
 export interface DoneEvent {
@@ -54,7 +112,7 @@ export interface DoneEvent {
   total_ms: number;
   within_sla: boolean;
   warning?: string;
-  result: unknown;
+  result: SolveResult;
 }
 
 export interface ErrorEvent {
@@ -75,6 +133,7 @@ export type StreamEvent =
 export interface AgentState {
   name: AgentName;
   label: string;
+  mo_ta: string;
   status: "waiting" | "running" | "done" | "failed";
   ms?: number;
   detail?: string;

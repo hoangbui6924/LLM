@@ -1,0 +1,536 @@
+question,label,source
+"Cho 0,1 mol axit HCl phản ứng với 0,15 mol NaOH. Chất nào còn dư",chemistry,seed
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 5)/(x - 1),math,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 1),math,template
+Hai điện trở 3 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
+Xác định số oxi hoá của nitơ trong K2Cr2O7,chemistry,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
+"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Tính số cách chọn 4 học sinh từ 12 học sinh,math,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 1)/(x - 3),math,template
+"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Hai điện trở 4 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 1),math,template
+Khảo sát sự biến thiên và vẽ đồ thị hàm số y = x^3 - 3x,math,seed
+Một vật dao động điều hoà với biên độ 5 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 6,math,template
+Tính số cách chọn 2 bông hoa từ 12 bông hoa,math,template
+Tính số mol của 4 gam H2SO4,chemistry,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
+Tính tích phân của x từ 0 đến 2,math,template
+Hai điện trở 3 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Giải phương trình lượng giác sin(x) = 1/2 trên khoảng từ 0 đến 2pi,math,seed
+Con lắc lò xo có độ cứng 400 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
+Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
+Tính tích phân của x từ 1 đến 3,math,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 4],math,template
+"Đốt cháy hoàn toàn 2,4 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
+Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
+Hai điện trở 4 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
+"Một vật dao động điều hoà với biên độ 8 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
+Hoà tan 4 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,seed
+Tính số cách chọn 4 học sinh từ 7 học sinh,math,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
+Hoà tan 10 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Vật khối lượng 5 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
+Hai điện trở 3 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 10,math,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 8,math,template
+Viết phương trình nhiệt phân KClO3 có xúc tác MnO2,chemistry,seed
+"Tính số mol của 9,8 gam H2SO4",chemistry,seed
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],math,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 8,math,template
+"Cho 5,4 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,seed
+Tính xác suất được số nguyên tố khi gieo một con xúc xắc,math,template
+Con lắc lò xo có độ cứng 50 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
+"Tính khối lượng NaOH cần để pha 250 ml dung dịch 0,4 M",chemistry,template
+Cho cấp số nhân có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 6,math,template
+Hoà tan 10 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(x - 1),math,template
+Tính tích phân của x^2 từ 0 đến pi,math,template
+Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
+"Tính trọng lượng của vật 60 kg trên mặt đất, lấy g = 9,8 m/s2",physics,seed
+Hai điện trở 3 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
+Hoà tan 4 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
+Cho 100 ml dung dịch BaCl2 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 8,math,template
+"Đốt cháy hoàn toàn 8,1 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Tính số cách chọn 3 bông hoa từ 12 bông hoa,math,template
+Một vật dao động điều hoà với biên độ 5 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
+Hai điện trở 3 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Một vật dao động điều hoà với biên độ 5 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
+Cho cấp số cộng có u1 = 3 và công sai d = 4. Tính u10,math,seed
+Tính số mol của 23 gam H2SO4,chemistry,template
+Cho cấp số nhân có số hạng đầu 3 và công bội bằng 4. Tính số hạng thứ 10,math,template
+Tính khối lượng KNO3 cần để pha 500 ml dung dịch 1 M,chemistry,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
+Tính tích phân của x từ 1 đến 2,math,template
+Hoà tan 10 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+"Tính số mol của 9,8 gam CaCO3",chemistry,template
+Hoà tan 10 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 6,math,template
+Hai điện trở 6 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
+Tính khối lượng NaOH cần để pha 100 ml dung dịch 1 M,chemistry,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 4],math,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
+Cho hỗn hợp Mg và MgO tác dụng với HCl dư. Tính phần trăm khối lượng mỗi chất,chemistry,seed
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 4],math,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
+Cho cấp số cộng có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 8,math,template
+Hoà tan 8 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính số mol của 16 gam CaCO3,chemistry,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 8,math,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
+Tính số mol của 16 gam NaOH,chemistry,template
+Tính số hoán vị của 5 phần tử phân biệt,math,seed
+Vật khối lượng 3 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 2],math,template
+"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 4],math,template
+Con lắc lò xo có độ cứng 50 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
+"Đốt cháy hoàn toàn 2,4 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
+"Đốt cháy hoàn toàn 8,1 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Cho 200 ml dung dịch AgNO3 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+"Một vật dao động điều hoà với biên độ 5 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
+"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
+Tính xác suất được số nguyên tố khi rút ngẫu nhiên một lá bài,math,template
+"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Tính khối lượng NaCl cần để pha 100 ml dung dịch 0,4 M",chemistry,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 10,math,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],math,template
+Tính số cách chọn 4 bông hoa từ 12 bông hoa,math,template
+"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Một dây dẫn dài 0,5 m mang dòng 4 A đặt trong từ trường 0,2 T. Tính lực từ",physics,seed
+"Tính khối lượng KNO3 cần để pha 100 ml dung dịch 0,4 M",chemistry,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
+Hai điện trở 4 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
+Tính số cách chọn 2 bông hoa từ 7 bông hoa,math,template
+Tính số cách chọn 4 bông hoa từ 10 bông hoa,math,template
+"Cho 200 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Cho 200 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 3),math,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 4],math,template
+Vật khối lượng 2 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 8,math,template
+"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+Cho cấp số nhân có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 8,math,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 6,math,template
+"Tính khối lượng NaCl cần để pha 500 ml dung dịch 0,4 M",chemistry,template
+Cho 200 ml dung dịch Na2SO4 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+Tính số mol của 4 gam NaOH,chemistry,template
+"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
+Một vật dao động điều hoà với biên độ 5 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
+Tính tích phân của e^x từ 1 đến pi,math,template
+"Cho 250 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 1)/(x - 1),math,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 2],math,template
+Vật khối lượng 5 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
+"Cho 100 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+"Tính số mol của 9,8 gam KMnO4",chemistry,template
+"Một vật dao động điều hoà với biên độ 8 cm và tần số 2,5 Hz. Tính gia tốc cực đại",physics,template
+Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 10,math,template
+Hoà tan 10 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính số cách chọn 2 quyển sách từ 10 quyển sách,math,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 6,math,template
+Tính số cách chọn 3 học sinh từ 10 học sinh,math,template
+Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 8,math,template
+"Một vật dao động điều hoà với biên độ 4 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
+Sóng có tần số 50 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,seed
+Cho cấp số nhân có số hạng đầu 5 và công sai bằng 2. Tính số hạng thứ 6,math,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 2],math,template
+Hoà tan 8 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
+Hai điện trở 4 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,seed
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
+Vật khối lượng 2 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
+"Tính khối lượng KNO3 cần để pha 500 ml dung dịch 0,2 M",chemistry,template
+Tính tích phân của sin(x) từ 1 đến 2,math,template
+Hoà tan 4 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính tích phân của 2x + 1 từ 0 đến 2,math,template
+"Tính số mol của 9,8 gam NaOH",chemistry,template
+Cho 250 ml dung dịch Na2SO4 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+Con lắc lò xo có độ cứng 400 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
+Tính tích phân của 2x + 1 từ 1 đến pi,math,template
+Tính số mol của 16 gam KMnO4,chemistry,template
+Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 8,math,template
+Viết phương trình phản ứng giữa Na và H2O,chemistry,seed
+Tính tích phân của e^x từ 1 đến 2,math,template
+Tính tích phân của x^2 từ 1 đến 3,math,template
+Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 8,math,template
+Tính khối lượng NaOH cần để pha 500 ml dung dịch 1 M,chemistry,template
+"Tính số mol của 9,8 gam H2SO4",chemistry,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 2],math,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 10,math,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
+Tính tích phân của x^2 từ 1 đến 2,math,template
+"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+"Tính khối lượng NaCl cần để pha 250 ml dung dịch 0,2 M",chemistry,template
+"Cho 200 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 4],math,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 3],math,template
+Tính số cách chọn 2 học sinh từ 7 học sinh,math,template
+Tính số cách chọn 4 bông hoa từ 7 bông hoa,math,template
+Tính số cách chọn 3 bông hoa từ 10 bông hoa,math,template
+Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
+Hoà tan 8 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
+Một vật dao động điều hoà với biên độ 5 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
+Tính số cách chọn 3 bông hoa từ 7 bông hoa,math,template
+Hoà tan 8 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Hoà tan 10 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
+"Cho 250 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
+Tính số cách chọn 3 quyển sách từ 10 quyển sách,math,template
+Xác định số oxi hoá của lưu huỳnh trong KMnO4,chemistry,template
+"Cho 250 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 1)/(x - 1),math,template
+Xác định vị trí ảnh qua gương phẳng khi vật cách gương 15 cm,physics,seed
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 4],math,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 3],math,template
+"Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+Con lắc lò xo có độ cứng 100 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
+Cho 200 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+"Tính khối lượng KNO3 cần để pha 500 ml dung dịch 0,4 M",chemistry,template
+"Đốt cháy hoàn toàn 8,1 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 2],math,template
+"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+Cho cấp số nhân có số hạng đầu 5 và công sai bằng 4. Tính số hạng thứ 6,math,template
+Hai điện trở 4 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
+Tính số cách chọn 2 học sinh từ 10 học sinh,math,template
+"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
+"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+"Đốt cháy hoàn toàn 11,2 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Rút gọn biểu thức logarit cơ số 3 của 27 cộng logarit cơ số 3 của 9,math,seed
+Tính tích phân của x^2 từ 0 đến 3,math,template
+Tìm hệ số của x^3 trong khai triển nhị thức (1 + 2x)^5,math,seed
+Tính khối lượng KNO3 cần để pha 100 ml dung dịch 1 M,chemistry,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 5)/(x - 3),math,template
+Vật khối lượng 2 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
+Xác định số oxi hoá của nitơ trong KMnO4,chemistry,template
+Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
+Tính số cách chọn 4 quyển sách từ 12 quyển sách,math,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
+Con lắc lò xo có độ cứng 400 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
+"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 5)/(x - 1),math,template
+Vật khối lượng 2 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 8,math,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
+Tính tích phân của x từ 0 đến 3,math,template
+Hoà tan 10 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 10,math,template
+Hoà tan 4 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính xác suất được số nguyên tố khi bốc ngẫu nhiên một viên bi,math,template
+"Đốt cháy hoàn toàn 2,4 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+"Tính khối lượng NaCl cần để pha 500 ml dung dịch 0,2 M",chemistry,template
+Tính tích phân của x từ 0 đến pi,math,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
+Cho cấp số nhân có số hạng đầu 5 và công sai bằng 4. Tính số hạng thứ 10,math,template
+Hoà tan 8 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Xác định số oxi hoá của mangan trong K2Cr2O7,chemistry,template
+Cho 100 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 10,math,template
+Vật khối lượng 3 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
+Hai điện trở 6 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 2. Tính số hạng thứ 10,math,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
+Vật khối lượng 3 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(x - 3),math,template
+Tính số cách chọn 4 học sinh từ 10 học sinh,math,template
+Hoà tan 8 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
+Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+Vật khối lượng 5 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
+"Một vật dao động điều hoà với biên độ 10 cm và tần số 2,5 Hz. Tính vận tốc cực đại",physics,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 2],math,template
+Tìm m để phương trình x^2 - 2mx + m + 2 = 0 có hai nghiệm phân biệt,math,seed
+Hai điện trở 6 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
+"Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2 thu được Fe3O4. Tính khối lượng sản phẩm",chemistry,seed
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 3],math,template
+Con lắc lò xo có độ cứng 200 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
+"Cho 100 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Cho 100 ml dung dịch AgNO3 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+Tính khối lượng KNO3 cần để pha 250 ml dung dịch 1 M,chemistry,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 6,math,template
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
+Hai điện trở 6 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 4],math,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 3),math,template
+Cho 200 ml dung dịch AgNO3 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
+"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,seed
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 4. Tính số hạng thứ 6,math,template
+Cho cấp số cộng có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 6,math,template
+Tính độ tan của muối khi 36 gam tan tối đa trong 100 gam nước ở 20 độ C,chemistry,seed
+"Cho 250 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Tính khối lượng NaOH cần để pha 250 ml dung dịch 0,2 M",chemistry,template
+Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
+Tính tích phân của e^x từ 0 đến 3,math,template
+Tính tích phân của 2x + 1 từ 0 đến pi,math,template
+Tính khối lượng NaCl cần để pha 250 ml dung dịch 1 M,chemistry,template
+Phân biệt hai dung dịch NaCl và Na2CO3 bằng phương pháp hoá học,chemistry,seed
+Tính tích phân của sin(x) từ 0 đến 3,math,template
+"Cho 200 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Tính khối lượng NaOH cần để pha 500 ml dung dịch 0,2 M",chemistry,template
+Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
+"Một vật dao động điều hoà với biên độ 10 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
+Tính tích phân của 2x + 1 từ 1 đến 2,math,template
+Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 10,math,template
+Vật khối lượng 3 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 3],math,template
+Xác định số oxi hoá của mangan trong HNO3,chemistry,template
+Tính số cách chọn 4 quyển sách từ 7 quyển sách,math,template
+"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính vận tốc cực đại",physics,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 10,math,template
+"Tính lực đẩy Ác-si-mét tác dụng lên vật có thể tích 0,002 m3 chìm trong nước",physics,seed
+Vật khối lượng 5 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
+Xác định số oxi hoá của lưu huỳnh trong H2SO4,chemistry,template
+"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 3],math,template
+"Đốt cháy hoàn toàn 5,6 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 10,math,template
+"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+"Tính khối lượng NaOH cần để pha 100 ml dung dịch 0,2 M",chemistry,template
+Tính độ hụt khối của hạt nhân khi biết khối lượng các nuclôn,physics,seed
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 4],math,template
+Cho 100 ml dung dịch Na2SO4 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
+Hoà tan 10 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Con lắc lò xo có độ cứng 200 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
+Hai điện trở 3 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
+Tính tích phân của 2x + 1 từ 0 đến 3,math,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
+Tính tích phân của x^2 từ 1 đến pi,math,template
+"Tính khối lượng NaCl cần để pha 100 ml dung dịch 0,2 M",chemistry,template
+Tính khối lượng NaCl cần để pha 100 ml dung dịch 1 M,chemistry,template
+"Cho 11,2 gam Fe vào dung dịch CuSO4 dư. Tính khối lượng Cu sinh ra",chemistry,seed
+Hai điện trở 6 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 2],math,template
+Tính số mol của 23 gam CaCO3,chemistry,template
+Tính tích phân của e^x từ 0 đến pi,math,template
+Tính số mol của 23 gam KMnO4,chemistry,template
+Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 2],math,template
+Cho cấp số cộng có số hạng đầu 2 và công bội bằng 3. Tính số hạng thứ 8,math,template
+"Cho 100 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Đốt cháy hoàn toàn 11,2 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Cường độ điện trường tại điểm cách điện tích điểm 2 cm là bao nhiêu,physics,seed
+"Đốt cháy hoàn toàn 5,6 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Cho 200 ml dung dịch AgNO3 1 M tác dụng với NaCl dư. Tính khối lượng kết tủa,chemistry,seed
+Xác định số oxi hoá của nitơ trong H2SO4,chemistry,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
+Vật khối lượng 3 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
+"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính gia tốc cực đại",physics,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
+Cho 200 ml dung dịch Na2SO4 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 3],math,template
+Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 6,math,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 3],math,template
+"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+Vật khối lượng 5 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
+Vật khối lượng 2 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
+Tính tích phân của x từ 1 đến pi,math,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 5)/(x - 3),math,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 1)/(x - 3),math,template
+Tính xác suất được bi đỏ khi rút ngẫu nhiên một lá bài,math,template
+Xác định số oxi hoá của lưu huỳnh trong K2Cr2O7,chemistry,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 2],math,template
+"Tính khối lượng NaOH cần để pha 500 ml dung dịch 0,4 M",chemistry,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
+"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
+Tính công của lực 20 N khi vật dịch chuyển 5 m theo phương của lực,physics,seed
+Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],math,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 2],math,template
+"Cho m gam Zn tác dụng hết với dung dịch H2SO4 loãng thu 2,24 lít H2. Tính m",chemistry,seed
+"Cho 100 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Tính tích phân của e^x từ 0 đến 2,math,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 2],math,template
+Giải phương trình bậc hai x^2 - 5x + 6 = 0,math,seed
+Hai điện trở 6 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
+Đoạn mạch có điện trở 10 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
+Con lắc lò xo có độ cứng 100 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],math,template
+Tính số mol của 16 gam H2SO4,chemistry,template
+Xác định số oxi hoá của mangan trong H2SO4,chemistry,template
+Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
+"Đốt cháy hoàn toàn 2,4 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
+Xác định số oxi hoá của lưu huỳnh trong HNO3,chemistry,template
+Xác định số oxi hoá của mangan trong KMnO4,chemistry,template
+Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
+"Đốt cháy hoàn toàn 11,2 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Hoà tan 4 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Hoà tan 10 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính động lượng của vật 3 kg chuyển động với tốc độ 6 m/s,physics,seed
+Đoạn mạch có điện trở 20 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
+"Đốt cháy hoàn toàn 8,1 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Cân bằng phương trình phản ứng Al + HCl tạo AlCl3 và H2,chemistry,seed
+"Tính khối lượng KNO3 cần để pha 100 ml dung dịch 0,2 M",chemistry,template
+Tính xác suất được mặt chẵn khi rút ngẫu nhiên một lá bài,math,template
+Con lắc lò xo có độ cứng 50 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
+Con lắc lò xo có độ cứng 200 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 6,math,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
+"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+Tính số cách chọn 3 học sinh từ 12 học sinh,math,template
+Tính số mol của 4 gam CaCO3,chemistry,template
+Tính tích phân của 2x + 1 từ 1 đến 3,math,template
+Hai điện trở 4 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Con lắc lò xo có độ cứng 50 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
+"Tính khối lượng NaCl cần để pha 250 ml dung dịch 0,4 M",chemistry,template
+Tính tích phân của x^2 từ 0 đến 2,math,template
+Tính số cách chọn 2 học sinh từ 12 học sinh,math,template
+Cho cấp số nhân có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 6,math,template
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 3. Tính số hạng thứ 10,math,template
+"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
+Cho cấp số cộng có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 6,math,template
+Đốt cháy hoàn toàn ancol etylic. Viết phương trình phản ứng,chemistry,seed
+Con lắc lò xo có độ cứng 100 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
+Tính số mol của 23 gam NaOH,chemistry,template
+"Tính khối lượng KNO3 cần để pha 250 ml dung dịch 0,2 M",chemistry,template
+Tính số cách chọn 3 quyển sách từ 12 quyển sách,math,template
+Hoà tan 8 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Vật khối lượng 3 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
+"Cho 200 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+"Đốt cháy hoàn toàn 11,2 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+Tính số cách chọn 4 quyển sách từ 10 quyển sách,math,template
+Cho số phức z = 3 + 4i. Tính môđun của z,math,seed
+Tính xác suất được bi đỏ khi bốc ngẫu nhiên một viên bi,math,template
+Tính khối lượng NaCl cần để pha 500 ml dung dịch 1 M,chemistry,template
+Tính tích phân của sin(x) từ 1 đến 3,math,template
+"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+Tính số cách chọn 3 học sinh từ 7 học sinh,math,template
+"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
+"Tính tần số góc của vật dao động điều hoà có chu kỳ 0,5 s",physics,seed
+Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
+Hai điện trở 4 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
+Cho biết loại liên kết hoá học trong phân tử NaCl,chemistry,seed
+Hoà tan 4 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+Đoạn mạch có điện trở 25 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
+"Đốt cháy hoàn toàn 5,6 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
+"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Một vật dao động điều hoà với biên độ 8 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
+Vật khối lượng 5 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
+Tính xác suất được mặt chẵn khi bốc ngẫu nhiên một viên bi,math,template
+Cho hình lập phương cạnh 4. Tính thể tích khối lập phương đó,math,seed
+"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
+Hoà tan 4 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
+Cho cấp số cộng có số hạng đầu 2 và công bội bằng 2. Tính số hạng thứ 8,math,template
+"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
+"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+"Cho 100 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(x - 1),math,template
+Tính số cách chọn 2 bông hoa từ 10 bông hoa,math,template
+Hoà tan 4 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Hoà tan 4 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+"Cho 250 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
+Tính xác suất được mặt chẵn khi gieo một con xúc xắc,math,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 3],math,template
+Tính số mol của 4 gam KMnO4,chemistry,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
+"Tính khối lượng NaOH cần để pha 100 ml dung dịch 0,4 M",chemistry,template
+Tính tích phân của sin(x) từ 0 đến pi,math,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 3],math,template
+Tính tích phân của sin(x) từ 0 đến pi,math,seed
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 3),math,seed
+Một vật dao động điều hoà với biên độ 5 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 4],math,template
+Tính số cách chọn 2 quyển sách từ 7 quyển sách,math,template
+"Cho 100 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
+Tính tích phân của sin(x) từ 0 đến 2,math,template
+Cho 100 ml dung dịch Na2SO4 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
+Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 6,math,template
+Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
+Một vật dao động điều hoà với biên độ 10 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
+"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 8,math,template
+Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 2],math,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
+Cho cấp số nhân có số hạng đầu 3 và công bội bằng 3. Tính số hạng thứ 10,math,template
+Hoà tan 8 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Tính tích phân của sin(x) từ 1 đến pi,math,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 8,math,template
+Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 3],math,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
+Tính tích phân của e^x từ 1 đến 3,math,template
+Hoà tan 8 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
+"Tính khối lượng KNO3 cần để pha 250 ml dung dịch 0,4 M",chemistry,template
+Tính diện tích mặt cầu bán kính 3,math,seed
+Hoà tan 4 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
+Cho dãy số un = 3n + 1. Tính u5,math,seed
+Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
+Tính số cách chọn 2 quyển sách từ 12 quyển sách,math,template
+Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
+Vật khối lượng 2 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
+Tính số cách chọn 3 quyển sách từ 7 quyển sách,math,template
+Tính xác suất được bi đỏ khi gieo một con xúc xắc,math,template
+Cho hỗn hợp Fe và Cu vào dung dịch HCl dư. Kim loại nào tan,chemistry,seed
+Con lắc lò xo có độ cứng 100 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 4. Tính số hạng thứ 8,math,template
+Con lắc lò xo có độ cứng 200 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
+Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
+Con lắc lò xo có độ cứng 400 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
+Đoạn mạch có điện trở 50 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(x - 3),math,template
+Tính khối lượng NaOH cần để pha 250 ml dung dịch 1 M,chemistry,template
+Xác định số oxi hoá của nitơ trong HNO3,chemistry,template

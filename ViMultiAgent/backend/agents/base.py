@@ -221,32 +221,59 @@ async def stream_text(
     model: str | None = None,
     timeout: float | None = None,
     max_tokens: int | None = None,
+    moi: str = "",
 ) -> AsyncIterator[str]:
     """Sinh văn bản theo dòng — dùng cho Explain Agent để frontend chạy chữ dần.
 
-    Đây là điểm khác biệt so với `run_structured`: người dùng thấy lời giải hiện
-    ra ngay thay vì chờ trọn gói.
+    Gọi thẳng thư viện `ollama` thay vì qua AutoGen, vì cần một thứ AutoGen không
+    cho: **mồi sẵn câu mở đầu** (điền trước một phần lượt trả lời của trợ lý).
+
+    Vì sao phải mồi
+    ---------------
+    Đo được ba cách ép qwen3:4b viết tiếng Việt, cùng một đề:
+
+        A. system prompt tiếng Việt, cấm đích danh từ tiếng Anh -> vẫn tiếng Anh
+        B. thêm "BẮT BUỘC trả lời bằng TIẾNG VIỆT" ở cuối user  -> vẫn tiếng Anh
+        C. mồi sẵn "**Tóm tắt đề**\\n" vào lượt trợ lý          -> TIẾNG VIỆT
+
+    Mô hình 4B phớt lờ chỉ dẫn nhưng không thể phớt lờ văn bản nó đang phải viết
+    tiếp. Template Qwen3 hỗ trợ sẵn: khi tin nhắn cuối đã là vai trợ lý, nó không
+    chèn thẻ mở lượt mới mà để model viết nối vào.
+
+    Các agent có đầu ra JSON vẫn dùng AutoGen như cũ; chỉ riêng bước giảng bài
+    này đi đường trực tiếp.
     """
     model = model or config.MODEL_LIGHT
-    client = make_client(model, max_tokens=max_tokens)
+    han = timeout or config.AGENT_TIMEOUT
+    client = ollama.AsyncClient(host=config.OLLAMA_HOST)
+
+    tin_nhan: list[dict[str, str]] = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": task},
+    ]
+    if moi:
+        tin_nhan.append({"role": "assistant", "content": moi})
+
     try:
-        agent = AssistantAgent(
-            name=name,
-            model_client=client,
-            system_message=system,
-            model_client_stream=True,
+        # Phần mồi là nội dung thật của lời giảng, phải phát ra cho người dùng thấy.
+        if moi:
+            yield moi
+        luong = await client.chat(
+            model=model,
+            messages=tin_nhan,
+            stream=True,
+            think=False,
+            options=_options(max_tokens),
         )
-        stream = agent.run_stream(task=task)
-        deadline = time.perf_counter() + (timeout or config.AGENT_TIMEOUT)
-        async for ev in stream:
-            if isinstance(ev, ModelClientStreamingChunkEvent) and ev.content:
-                yield ev.content
+        deadline = time.perf_counter() + han
+        async for phan in luong:
+            noi_dung = phan.get("message", {}).get("content", "")
+            if noi_dung:
+                yield noi_dung
             if time.perf_counter() > deadline:
                 break
     except Exception as e:  # noqa: BLE001
-        yield f"\n\n_(Explain Agent gặp sự cố: {type(e).__name__})_"
-    finally:
-        await client.close()
+        yield f"\n\n_(Bước giảng bài gặp sự cố: {type(e).__name__})_"
 
 
 def _record_usage(span: AgentSpan, result: Any) -> None:

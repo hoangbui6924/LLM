@@ -91,10 +91,25 @@ async def run(plan: Plan) -> tuple[Route, AgentSpan | None]:
     # Ưu tiên 1: bộ phân loại PhoBERT do nhóm fine-tune. ~30 ms trên CPU, rẻ hơn
     # hỏi LLM khoảng trăm lần. Chỉ tin khi mô hình đủ chắc; dưới ngưỡng thì câu
     # hỏi đang nằm ở vùng ranh giới, lúc đó mới đáng tiêu token cho LLM.
+    subj, conf, why = _by_rule(text)
+
     kq = classifier.du_doan(plan.normalized_question or plan.raw_question)
     if kq is not None:
         mon, do_tin = kq
-        if do_tin >= NGUONG_PHOBERT:
+        # PhoBERT chỉ được CHỐT khi luật từ khoá không phản đối.
+        #
+        # Đo được trên đề thật: câu xác suất bi ("rút 4 viên, xác suất có đúng 2
+        # viên đỏ") bị PhoBERT xếp vào physics với độ tin cậy 0,90; câu dao động
+        # điều hoà bị xếp vào math với 0,86. Độ tin cậy cao mà vẫn sai, nên chỉ
+        # nâng ngưỡng là vô ích.
+        #
+        # Nguyên nhân: dữ liệu huấn luyện gồm câu NGẮN, còn đề vận dụng thì dài
+        # và nhiều mệnh đề — lệch phân bố. Luật từ khoá thì ngược lại, càng dài
+        # càng nhiều từ khoá nên càng chắc. Hai nguồn bù khuyết cho nhau.
+        #
+        # Bất đồng thì không bên nào được tự quyết, đẩy xuống cho LLM.
+        luat_khong_phan_doi = conf == 0.0 or subj == mon
+        if do_tin >= NGUONG_PHOBERT and luat_khong_phan_doi:
             return (
                 Route(
                     subject=mon,  # type: ignore[arg-type]
@@ -106,8 +121,6 @@ async def run(plan: Plan) -> tuple[Route, AgentSpan | None]:
                 ),
                 None,
             )
-
-    subj, conf, why = _by_rule(text)
 
     # Ưu tiên 2: luật từ khoá. Planner đã tự tin và luật đồng ý => khỏi gọi LLM.
     if conf >= 0.6 and (plan.confidence < 0.4 or plan.subject == subj):
