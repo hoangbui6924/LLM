@@ -11,3 +11,19 @@ __pycache__/
 
 # Bí mật
 .env
+
+# ---- ViMultiAgent ----------------------------------------------------------
+# Mô hình PhoBERT đã fine-tune: 517 MB, vượt giới hạn GitHub.
+# Dựng lại bằng: python ml/build_dataset.py && python ml/train_phobert.py (~12 phút)
+ViMultiAgent/backend/ml/phobert_router/
+
+# Node
+node_modules/
+dist/
+
+# SQLite lịch sử hỏi đáp — dữ liệu chạy, không phải mã nguồn
+*.db
+*.sqlite3
+
+# Đầu ra đo đạc
+ViMultiAgent/backend/ml/data/

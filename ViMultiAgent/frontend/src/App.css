@@ -1,0 +1,319 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --line: #262b36;
+  --text: #e6e8ee;
+  --muted: #8b93a7;
+  --accent: #4f8cff;
+  --ok: #3ecf8e;
+  --warn: #f0b429;
+  --err: #f26d6d;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --line: #e2e5ea;
+    --text: #1b1f27;
+    --muted: #6b7280;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+header .sub {
+  margin: 4px 0 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.health {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.health span {
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  font: inherit;
+  font-size: 15px;
+  resize: vertical;
+}
+
+form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  font-weight: 400;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.examples {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.examples button {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---- thanh tiến trình agent ---- */
+
+.timeline {
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.node {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.node:last-child {
+  border-bottom: 0;
+}
+
+.node .icon {
+  text-align: center;
+  color: var(--muted);
+}
+
+.node.running .icon {
+  color: var(--accent);
+  animation: spin 1.2s linear infinite;
+}
+
+.node.done .icon {
+  color: var(--ok);
+}
+
+.node.failed .icon {
+  color: var(--err);
+}
+
+.node.waiting {
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.node .label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node .ms {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.node .detail {
+  grid-column: 2 / -1;
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.badge,
+.verdict {
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.badge {
+  background: rgba(240, 180, 41, 0.15);
+  color: var(--warn);
+}
+
+.verdict.pass {
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--ok);
+}
+
+.verdict.fail {
+  background: rgba(242, 109, 109, 0.15);
+  color: var(--err);
+}
+
+.verdict.uncertain {
+  background: rgba(139, 147, 167, 0.15);
+  color: var(--muted);
+}
+
+/* ---- lời giải ---- */
+
+.answer {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 4px 20px 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-size: 17px;
+  margin: 20px 0 6px;
+}
+
+.markdown p {
+  margin: 8px 0;
+}
+
+.markdown ul {
+  margin: 8px 0;
+  padding-left: 22px;
+}
+
+.markdown .katex-display {
+  margin: 12px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0;
+}
+
+.warn,
+.err,
+.sla {
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 14px 0;
+  font-size: 14px;
+}
+
+.warn {
+  background: rgba(240, 180, 41, 0.1);
+  border: 1px solid rgba(240, 180, 41, 0.3);
+  color: var(--warn);
+}
+
+.err {
+  background: rgba(242, 109, 109, 0.1);
+  border: 1px solid rgba(242, 109, 109, 0.3);
+  color: var(--err);
+}
+
+.sla {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.sla.ok {
+  background: rgba(62, 207, 142, 0.1);
+  color: var(--ok);
+}
+
+.sla.over {
+  background: rgba(242, 109, 109, 0.1);
+  color: var(--err);
+}
+
+.fixed {
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 14px 0;
+  font-size: 13.5px;
+  background: rgba(79, 140, 255, 0.08);
+  border: 1px solid rgba(79, 140, 255, 0.3);
+  color: var(--accent);
+}
+
+.fixed ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}

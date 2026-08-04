@@ -1,0 +1,29 @@
+# ViMultiAgent — backend
+# Cài: python -m pip install -r requirements.txt
+# Ngoài ra cần Ollama chạy sẵn và đã `ollama pull qwen3:8b`.
+
+# --- Multi-Agent ---
+autogen-agentchat>=0.7     # khung Multi-Agent, kiến trúc role specialization
+autogen-ext[ollama]>=0.7   # nối AutoGen với Ollama cục bộ
+ollama>=0.4
+
+# --- Backend ---
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+sse-starlette>=2.1         # streaming lời giảng về frontend
+httpx>=0.27
+
+# --- Công cụ tính toán ---
+sympy>=1.13                # giải/rút gọn/đạo hàm/tích phân + kiểm chứng thế ngược
+pint>=0.24                 # kiểm thứ nguyên cho Vật lý
+
+# --- Lưu trữ ---
+# SQLite dùng module `sqlite3` có sẵn của Python, không cần cài gì thêm.
+
+# --- Tiện ích ---
+python-dotenv>=1.0
+
+# --- Kiểm thử ---
+pytest>=8.3
+pytest-asyncio>=0.24
