@@ -1,0 +1,88 @@
+# Cấu hình vận hành. Ba chế độ đánh đổi độ chính xác <-> độ trễ.
+
+strategies:
+
+  fast:                       # demo trực tiếp / máy yếu / mất mạng
+    use_retrieval: true
+    n_solver_samples: 1
+    verify_tiers: [T1]        # chỉ kiểm tất định — không tốn token nào
+    max_repair: 0
+    use_prm: true
+
+  balanced:                   # MẶC ĐỊNH — chế độ đo KPI 45 giây
+    use_retrieval: true
+    n_solver_samples: 1
+    verify_tiers: [T0, T1, T2, T3]
+    max_repair: 1
+    use_prm: true
+
+  local:                      # CHẠY CỤC BỘ bằng Ollama trên GPU 6 GB
+    # BỎ HẲN lượt gọi LLM của Analyzer, dùng heuristic từ khoá + regex.
+    # Đo được: mỗi lượt gọi model 3B mất 20-40 s, mà việc của Analyzer (nhận miền
+    # + bóc phương án A/B/C/D) thì heuristic làm được gần như chính xác và mất 0 ms.
+    llm_analyzer: false
+    top_k_knowledge: 2        # prompt ngắn hơn -> model 3B xử lý nhanh hơn rõ rệt
+    # Chỉ MỘT lượt kiểm bằng LLM (T2 — giải lại độc lập), bỏ T3 soát bước.
+    # Lý do: Ollama phải tráo model giữa Solver (Qwen) và Verifier (Llama); mỗi
+    # lượt gọi 3B mất ~40 s, nên hai lượt là quá ngân sách. Vẫn giữ được điều
+    # quan trọng nhất: một model KHÁC HỌ giải lại và đối chiếu đáp án.
+    use_retrieval: true
+    n_solver_samples: 1
+    verify_tiers: [T0, T1, T2]
+    max_repair: 0
+    use_prm: true
+
+  rigorous:                   # chạy benchmark / bài khó
+    use_retrieval: true
+    n_solver_samples: 3       # self-consistency
+    verify_tiers: [T0, T1, T2, T3]
+    max_repair: 2
+    use_prm: true
+
+retrieval:
+  top_k_knowledge: 4
+  # TẮT few-shot từ memory pool (đặt 0).
+  # Lý do đo được: pool chứa bài "400 g -> 0,4 s"; khi gặp bài 630 g, model 3B CHÉP
+  # thẳng đáp án cũ thay vì tính lại. Prompt có ghi "KHÔNG chép đáp án" nhưng model
+  # nhỏ không tuân. Chỉ bật lại khi dùng model đủ mạnh VÀ pool đã được kiểm chứng.
+  top_k_examples: 0
+  bm25_weight: 0.4            # phần còn lại 0.6 cho dense
+  embedding_model: "bkai-foundation-models/vietnamese-bi-encoder"
+  # Thiếu sentence-transformers hoặc tải model lỗi -> tự lùi về BM25-only, không crash.
+  allow_bm25_fallback: true
+
+semantic_cache:
+  enabled: true
+  similarity_threshold: 0.94  # đặt cao có chủ ý: thà miss còn hơn trả nhầm bài khác
+  max_entries: 5000
+
+prm:                          # ViSTEM-PRM — tầng T0 của Verifier
+  enabled: true
+  # advisory = vẫn chấm và vẫn hiện trên timeline nhưng KHÔNG tự bác bỏ.
+  # Giữ advisory cho tới khi huấn luyện lại có trộn lời giải thật (xem docs/04-ket-qua.md).
+  mode: advisory
+  checkpoint: "checkpoints/prm"
+  base_model: "vinai/phobert-base-v2"
+  max_length: 256
+  # Chọn bằng số, không đoán: xem eval/reports/prm_threshold_sweep.json
+  # (python -m vimultiagent.models.prm.tune_threshold).
+  # Ngưỡng 0,55 -> precision 0,993 / recall 0,916 trên tập validation.
+  # Ưu tiên precision vì mỗi lần báo oan tốn một vòng repair (~60 s đo được).
+  reject_threshold: 0.55
+  device: "cuda"
+
+router:                       # bộ phân loại đề bài (thay phần định tuyến của Analyzer)
+  enabled: false              # bật sau khi huấn luyện xong
+  checkpoint: "checkpoints/router"
+  base_model: "vinai/phobert-base-v2"
+  max_length: 192
+  min_confidence: 0.80        # dưới ngưỡng -> nhường lại cho Analyzer LLM
+
+limits:
+  llm_timeout_s: 180
+  tool_timeout_s: 5
+  # Trần AN TOÀN chống treo, không phải mục tiêu hiệu năng. Để rộng có chủ ý:
+  # chạy Ollama cục bộ phải tráo model giữa Solver và Verifier (khác họ), mỗi lần
+  # tráo tốn hàng chục giây. Đặt chặt thì cắt oan lời giải đang chạy bình thường.
+  total_timeout_s: 300
+  max_concurrency: 4

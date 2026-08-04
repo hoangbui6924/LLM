@@ -1,0 +1,13 @@
+# Trọng số model — 640 MB, không đưa vào git. Muốn giữ thì sao lưu riêng.
+checkpoints/
+*.safetensors
+*.npz
+
+# Cache và file tạm
+.cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Bí mật
+.env

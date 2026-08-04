@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViMultiAgent — Trợ giảng STEM đa tác tử</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root{
+    --bg:#0f1117; --panel:#171a23; --panel2:#1e2230; --border:#2a2f3e;
+    --text:#e8eaf0; --muted:#8b93a7; --accent:#6ea8fe; --accent2:#8b7cf6;
+    --ok:#3fb950; --warn:#d29922; --err:#f85149; --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+       background:var(--bg);color:var(--text);line-height:1.6}
+  header{padding:18px 24px;border-bottom:1px solid var(--border);
+         display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+         background:linear-gradient(135deg,#171a23,#1a1f2e)}
+  header h1{margin:0;font-size:19px;font-weight:650;letter-spacing:-.2px}
+  .tag{font-size:11px;padding:3px 9px;border-radius:99px;background:var(--panel2);
+       color:var(--muted);border:1px solid var(--border)}
+  .tag.live{color:var(--ok);border-color:#2ea04340}
+  .wrap{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);
+        gap:20px;padding:20px 24px;max-width:1500px;margin:0 auto;align-items:start}
+  @media(max-width:1000px){.wrap{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--border);
+        border-radius:var(--radius);padding:16px;margin-bottom:16px}
+  .card h2{margin:0 0 12px;font-size:13px;text-transform:uppercase;
+           letter-spacing:.9px;color:var(--muted);font-weight:650}
+  textarea{width:100%;min-height:140px;background:var(--bg);color:var(--text);
+           border:1px solid var(--border);border-radius:8px;padding:12px;
+           font-family:inherit;font-size:14px;resize:vertical;line-height:1.5}
+  textarea:focus{outline:none;border-color:var(--accent)}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  button{background:var(--accent);color:#0b1020;border:0;border-radius:8px;
+         padding:10px 18px;font-weight:650;font-size:14px;cursor:pointer;
+         font-family:inherit;transition:opacity .15s}
+  button:hover{opacity:.88}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  button.ghost{background:var(--panel2);color:var(--text);border:1px solid var(--border);
+               font-weight:500;font-size:12px;padding:7px 12px}
+  select{background:var(--panel2);color:var(--text);border:1px solid var(--border);
+         border-radius:8px;padding:9px 10px;font-family:inherit;font-size:13px}
+  label.sel{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+
+  /* ---- timeline tác tử: thứ làm cho "đa tác tử" nhìn thấy được ---- */
+  .agent{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid #ffffff08}
+  .agent:last-child{border-bottom:0}
+  .dot{width:24px;height:24px;border-radius:50%;flex:0 0 24px;display:grid;
+       place-items:center;font-size:12px;background:var(--panel2);
+       border:1px solid var(--border);margin-top:2px}
+  .dot.run{border-color:var(--accent);animation:pulse 1.1s infinite}
+  .dot.ok{background:#2ea04322;border-color:var(--ok);color:var(--ok)}
+  .dot.fail{background:#f8514922;border-color:var(--err);color:var(--err)}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 #6ea8fe66}50%{box-shadow:0 0 0 7px #6ea8fe00}}
+  .agent-body{flex:1;min-width:0}
+  .agent-name{font-weight:600;font-size:14px;display:flex;justify-content:space-between;gap:8px}
+  .agent-ms{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .agent-detail{font-size:12px;color:var(--muted);margin-top:3px;word-break:break-word}
+  .chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:5px;
+        background:var(--panel2);border:1px solid var(--border);margin:3px 4px 0 0}
+  .chip.ok{color:var(--ok);border-color:#2ea04340}
+  .chip.bad{color:var(--err);border-color:#f8514940}
+
+  .verdict{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;
+           margin-bottom:14px;font-weight:600;font-size:14px}
+  .verdict.PASS{background:#2ea04315;border:1px solid #2ea04355;color:var(--ok)}
+  .verdict.FAIL{background:#f8514915;border:1px solid #f8514955;color:var(--err)}
+  .verdict.UNCERTAIN{background:#d2992215;border:1px solid #d2992255;color:var(--warn)}
+
+  .step{background:var(--panel2);border:1px solid var(--border);border-radius:10px;
+        padding:13px 15px;margin-bottom:10px}
+  .step-title{font-weight:650;color:var(--accent);margin-bottom:6px;font-size:14px}
+  .why{font-size:13px;color:var(--muted);margin-top:7px;
+       border-left:2px solid var(--accent2);padding-left:10px}
+  .math{margin:9px 0;overflow-x:auto;padding:6px 0}
+  ul{margin:6px 0;padding-left:20px}
+  li{margin:4px 0;font-size:14px}
+  .answer{background:linear-gradient(135deg,#6ea8fe1a,#8b7cf61a);
+          border:1px solid #6ea8fe55;border-radius:10px;padding:14px 16px;
+          font-size:16px;font-weight:650;margin:14px 0}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px}
+  .metric{background:var(--panel2);border:1px solid var(--border);
+          border-radius:8px;padding:9px 11px}
+  .metric .v{font-size:17px;font-weight:680;font-variant-numeric:tabular-nums}
+  .metric .k{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .warn-box{background:#d2992218;border:1px solid #d2992255;color:#f0c674;
+            padding:11px 14px;border-radius:9px;margin-bottom:14px;font-size:13px}
+  .muted{color:var(--muted);font-size:13px}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎓 ViMultiAgent</h1>
+  <span class="tag">Đa tác tử · STEM Tiếng Việt</span>
+  <span class="tag" id="health">đang kiểm tra…</span>
+</header>
+
+<div class="wrap">
+  <!-- ============ CỘT TRÁI ============ -->
+  <div>
+    <div class="card">
+      <h2>Đề bài</h2>
+      <textarea id="problem" placeholder="Dán đề bài Toán / Vật lý / Hóa học cấp THPT…"></textarea>
+      <div class="row">
+        <button id="go">Giải bài</button>
+        <button id="stop" class="ghost hidden">Dừng</button>
+        <span id="timer" class="muted"></span>
+        <label class="sel">Chế độ
+          <select id="strategy">
+            <option value="local" selected>local (Ollama)</option>
+            <option value="fast">fast</option>
+            <option value="balanced">balanced (cần cloud)</option>
+            <option value="rigorous">rigorous (cần cloud)</option>
+          </select>
+        </label>
+      </div>
+      <div class="row" id="examples"></div>
+    </div>
+
+    <div class="card">
+      <h2>Quy trình tác tử</h2>
+      <div id="timeline"><div class="muted">Chưa chạy.</div></div>
+    </div>
+
+    <div class="card hidden" id="metrics-card">
+      <h2>Đo lường</h2>
+      <div class="metrics" id="metrics"></div>
+    </div>
+  </div>
+
+  <!-- ============ CỘT PHẢI ============ -->
+  <div>
+    <div class="card">
+      <h2>Lời giải</h2>
+      <div id="output"><div class="muted">Kết quả sẽ hiện ở đây.</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const AGENT_ICON = {analyzer:"🔍",retriever:"📚",solver:"🧮",verifier:"✅",repair:"🔁",explainer:"👩‍🏫",system:"⚠️"};
+let cards = {};
+
+function renderMath(el){
+  if(window.renderMathInElement){
+    renderMathInElement(el,{delimiters:[
+      {left:"\\[",right:"\\]",display:true},{left:"$$",right:"$$",display:true},
+      {left:"\\(",right:"\\)",display:false},{left:"$",right:"$",display:false}
+    ],throwOnError:false});
+  }
+}
+const esc = s => (s??"").toString().replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+// ---------- timeline ----------
+function agentKey(e){ return e.agent + "#" + (e.round ?? 0); }
+
+function onStart(e){
+  const k = agentKey(e);
+  if(cards[k]) return;
+  const div = document.createElement("div");
+  div.className = "agent";
+  div.innerHTML = `<div class="dot run">${AGENT_ICON[e.agent]||"•"}</div>
+    <div class="agent-body">
+      <div class="agent-name"><span>${esc(e.label)}${e.round?` (vòng ${e.round})`:""}</span>
+      <span class="agent-ms">…</span></div>
+      <div class="agent-detail"></div>
+    </div>`;
+  $("#timeline").appendChild(div);
+  cards[k] = {div, t0: e.elapsed_ms};
+}
+
+function onEnd(e){
+  const k = agentKey(e), c = cards[k];
+  if(!c) return;
+  const d = e.data || {};
+  const ms = Math.round(e.elapsed_ms - c.t0);
+  c.div.querySelector(".agent-ms").textContent = ms + " ms";
+  const dot = c.div.querySelector(".dot");
+  dot.classList.remove("run");
+
+  let html = "";
+  if(e.agent === "analyzer"){
+    html = `<span class="chip">${esc(d.domain)}</span><span class="chip">${esc(d.subtopic||"—")}</span>
+            <span class="chip">${esc(d.question_type)}</span>`;
+    if(d.givens?.length) html += `<div>Đề cho: ${d.givens.map(g=>esc(g.symbol+(g.value!=null?"="+g.value:"")+(g.unit?" "+g.unit:""))).join(", ")}</div>`;
+    if(d.ambiguity_flags?.length) html += `<div style="color:var(--warn)">⚠ ${d.ambiguity_flags.map(esc).join("; ")}</div>`;
+    dot.classList.add("ok");
+  } else if(e.agent === "retriever"){
+    html = (d.knowledge||[]).map(c=>`<span class="chip">${esc(c.title)}</span>`).join("")
+         + `<div>backend: ${esc(d.backend)}</div>`;
+    dot.classList.add("ok");
+  } else if(e.agent === "solver" || e.agent === "repair"){
+    html = `<div>Đáp án: <b>${esc(d.final_answer||d.mcq_choice||"—")}</b></div>
+            <div>${d.n_steps} bước · ${d.n_tool_calls||0} lượt gọi công cụ</div>`;
+    if(d.self_consistency) html += `<div>Đồng thuận ${Math.round(d.self_consistency.agreement*100)}% trên ${d.self_consistency.n_samples} mẫu</div>`;
+    (d.steps||[]).forEach(s=>(s.tools||[]).forEach(t=>{
+      html += `<span class="chip ${t.ok?"ok":"bad"}">${esc(t.tool)}</span>`;
+    }));
+    dot.classList.add("ok");
+  } else if(e.agent === "verifier"){
+    const v = d.verdict;
+    dot.classList.add(v==="PASS"?"ok":"fail");
+    html = `<div><b class="${v==='PASS'?'':''}">${v}</b>${d.independent_answer?` · kiểm độc lập: ${esc(d.independent_answer)}`:""}</div>`;
+    html += (d.items||[]).map(i=>`<span class="chip ${i.passed?"ok":"bad"}">${i.passed?"✓":"✗"} ${esc(i.check_type)}</span>`).join("");
+    const bad = (d.items||[]).filter(i=>!i.passed);
+    if(bad.length) html += `<div style="color:var(--err);margin-top:5px">${esc(bad[0].detail_vi)}</div>`;
+  } else if(e.agent === "explainer"){
+    dot.classList.add("ok");
+    html = `<div>${(d.steps||[]).length} bước giảng</div>`;
+  }
+  c.div.querySelector(".agent-detail").innerHTML = html;
+}
+
+// ---------- kết quả ----------
+function renderResult(ev){
+  const r = ev.result, s = ev.summary;
+  const out = $("#output");
+  if(r.error){
+    out.innerHTML = `<div class="verdict FAIL">✗ Lỗi: ${esc(r.error)}</div>`;
+    return;
+  }
+  const v = r.verification?.verdict || "UNCERTAIN";
+  const icon = {PASS:"✓",FAIL:"✗",UNCERTAIN:"?"}[v];
+  const text = {PASS:"Đã kiểm chứng độc lập",FAIL:"KHÔNG xác nhận được",UNCERTAIN:"Chưa chắc chắn"}[v];
+
+  let h = `<div class="verdict ${v}">${icon} ${text}
+    <span style="margin-left:auto;font-weight:500;font-size:12px">độ tin cậy ${Math.round((r.confidence||0)*100)}%</span></div>`;
+  if(r.warning_vi) h += `<div class="warn-box">⚠️ ${esc(r.warning_vi)}</div>`;
+
+  const e = r.explanation;
+  if(e){
+    if(e.restated_problem_vi) h += `<p><b>Đề bài yêu cầu:</b> ${esc(e.restated_problem_vi)}</p>`;
+    if(e.prerequisites?.length)
+      h += `<p><b>Kiến thức cần dùng:</b></p><ul>${e.prerequisites.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+    (e.steps||[]).forEach((st,i)=>{
+      h += `<div class="step"><div class="step-title">Bước ${i+1}. ${esc(st.title_vi)}</div>
+            <div>${st.narrative_vi||""}</div>
+            ${st.latex?`<div class="math">\\[${st.latex}\\]</div>`:""}
+            ${st.why_vi?`<div class="why"><b>Tại sao?</b> ${st.why_vi}</div>`:""}</div>`;
+    });
+    h += `<div class="answer">Đáp án: ${e.final_answer_vi||r.solution?.final_answer||""}</div>`;
+    if(e.sanity_check_vi) h += `<p class="muted">🔎 ${esc(e.sanity_check_vi)}</p>`;
+    if(e.common_mistakes?.length)
+      h += `<p><b>Lỗi thường gặp:</b></p><ul>${e.common_mistakes.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+    if(e.practice_hint) h += `<p class="muted">📝 ${esc(e.practice_hint)}</p>`;
+  }
+  out.innerHTML = h;
+  renderMath(out);
+
+  $("#metrics-card").classList.remove("hidden");
+  $("#metrics").innerHTML = [
+    ["Tổng thời gian",(s.total_ms/1000).toFixed(1)+"s"],
+    ["Token",s.total_tokens],
+    ["Chi phí","$"+s.cost_usd.toFixed(4)],
+    ["Vòng sửa",s.repair_rounds],
+    ["Gọi từ cache",s.cached_calls],
+  ].map(([k,v])=>`<div class="metric"><div class="v">${v}</div><div class="k">${k}</div></div>`).join("");
+}
+
+// ---------- SSE qua fetch (EventSource không hỗ trợ POST) ----------
+let controller = null, timerId = null;
+
+function startTimer(){
+  const t0 = Date.now();
+  timerId = setInterval(()=>{
+    const s = (Date.now()-t0)/1000;
+    // Đồng hồ chạy là cách rẻ nhất để phân biệt "đang xử lý" với "đã treo".
+    // Không có nó, người dùng ngồi nhìn màn hình tĩnh và không biết chờ tiếp hay tắt.
+    $("#timer").textContent = s.toFixed(0)+"s";
+    $("#timer").style.color = s>90 ? "var(--err)" : s>45 ? "var(--warn)" : "var(--muted)";
+  }, 200);
+}
+function stopTimer(){ if(timerId){ clearInterval(timerId); timerId=null; } }
+
+async function run(){
+  const problem = $("#problem").value.trim();
+  if(!problem) return;
+  cards = {};
+  $("#timeline").innerHTML = "";
+  $("#output").innerHTML = '<div class="muted">Đang chạy các tác tử… (theo dõi tiến độ ở cột trái)</div>';
+  $("#metrics-card").classList.add("hidden");
+  $("#go").disabled = true;
+  $("#stop").classList.remove("hidden");
+  startTimer();
+
+  controller = new AbortController();
+  try{
+    const res = await fetch("/api/solve/stream",{
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({problem, strategy:$("#strategy").value}),
+      signal: controller.signal
+    });
+    if(!res.ok){
+      $("#output").innerHTML = `<div class="verdict FAIL">✗ Server trả lỗi HTTP ${res.status}</div>`;
+      return;
+    }
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "", gotDone = false, nEvents = 0;
+    while(true){
+      const {done,value} = await reader.read();
+      if(done) break;
+      buf += dec.decode(value,{stream:true});
+      // sse-starlette phân cách khối bằng CRLF. Chỉ tách theo "\n\n" thì không
+      // khớp và timeline im lặng hoàn toàn — đúng lỗi đã gặp. Chuẩn hoá trước.
+      buf = buf.replace(/\r\n/g, "\n");
+      const parts = buf.split("\n\n");
+      buf = parts.pop();
+      for(const chunk of parts){
+        const line = chunk.split("\n").find(l=>l.startsWith("data:"));
+        if(!line) continue;
+        let ev; try{ ev = JSON.parse(line.slice(5).trim()); }catch{ continue; }
+        nEvents++;
+        if(ev.type==="agent_start") onStart(ev);
+        else if(ev.type==="agent_end") onEnd(ev);
+        else if(ev.type==="done"){ gotDone = true; renderResult(ev); }
+        else if(ev.type==="error"){
+          $("#output").innerHTML = `<div class="verdict FAIL">✗ ${esc(ev.message)}</div>`;
+        }
+      }
+    }
+    // Luồng kết thúc mà không có 'done' => server chết giữa chừng hoặc parse hỏng.
+    // Im lặng ở đây chính là thứ khiến màn hình đứng 210 giây mà không báo gì.
+    if(!gotDone){
+      $("#output").innerHTML = `<div class="verdict FAIL">✗ Luồng kết thúc bất thường
+        (nhận ${nEvents} sự kiện, không có kết quả cuối).<br>
+        <span style="font-weight:400;font-size:13px">Xem log ở cửa sổ terminal đang chạy uvicorn.</span></div>`;
+    }
+  }catch(err){
+    if(err.name === "AbortError"){
+      $("#output").innerHTML = `<div class="warn-box">⏹ Đã dừng theo yêu cầu.</div>`;
+    }else{
+      $("#output").innerHTML = `<div class="verdict FAIL">✗ Lỗi kết nối: ${esc(err.message)}</div>`;
+    }
+  }finally{
+    stopTimer();
+    $("#go").disabled = false;
+    $("#stop").classList.add("hidden");
+    controller = null;
+  }
+}
+
+$("#go").onclick = run;
+$("#stop").onclick = ()=>{ if(controller) controller.abort(); };
+$("#problem").addEventListener("keydown",e=>{ if(e.ctrlKey&&e.key==="Enter") run(); });
+
+// ---------- khởi động ----------
+fetch("/api/health").then(r=>r.json()).then(h=>{
+  const el = $("#health");
+  if(h.status==="ok"){
+    el.textContent = `${h.profile} · ${h.usable_providers.join(", ")} · KB ${h.memory.knowledge_chunks}`;
+    el.classList.add("live");
+  }else{
+    el.textContent = "⚠ chưa cấu hình provider";
+    el.style.color = "var(--warn)";
+    $("#output").innerHTML = `<div class="warn-box">${esc(h.hint)}</div>`;
+  }
+});
+
+fetch("/api/examples").then(r=>r.json()).then(list=>{
+  $("#examples").innerHTML = "";
+  list.forEach(ex=>{
+    const b = document.createElement("button");
+    b.className = "ghost"; b.textContent = ex.label;
+    b.onclick = ()=>{ $("#problem").value = ex.problem; };
+    $("#examples").appendChild(b);
+  });
+});
+</script>
+</body>
+</html>

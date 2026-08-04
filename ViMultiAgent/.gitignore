@@ -1,0 +1,20 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# cache LLM — có thể rất lớn, và chứa nội dung đề bài
+.cache/
+
+# checkpoint model: dùng HF Hub nếu cần chia sẻ
+checkpoints/
+
+# đầu ra sinh tự động (dựng lại bằng scripts/)
+traces/
+eval/reports/*.json
+vimultiagent/memory/data/solved_examples.jsonl
+
+.vscode/
+.idea/
+*.log
