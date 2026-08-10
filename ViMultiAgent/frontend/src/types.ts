@@ -50,6 +50,23 @@ export interface CuuDapAnEvent {
   cach_lam: string;
 }
 
+/**
+ * Đáp án đã chốt, phát TRƯỚC khi Explain Agent chạy.
+ *
+ * Đáp số xong hẳn từ lúc này — Explain chỉ diễn đạt lại và không được đổi nó.
+ * Trước đây giao diện phải chờ sự kiện `done` (sau khi giảng xong) mới hiện được
+ * đáp án, tức bắt người dùng chờ thêm ~10 giây để đọc một con số đã có sẵn.
+ */
+export interface DapAnEvent {
+  type: "dap_an";
+  gia_tri: string;
+  latex: string;
+  mcq: string | null;
+  verdict: Verdict | "";
+  confidence: number;
+  warning: string;
+}
+
 // ---------------------------------------------------------------------------
 // Kết quả đầy đủ, gửi kèm sự kiện `done`
 // ---------------------------------------------------------------------------
@@ -126,6 +143,7 @@ export type StreamEvent =
   | RetryEvent
   | ArbiterEvent
   | CuuDapAnEvent
+  | DapAnEvent
   | DoneEvent
   | ErrorEvent;
 
@@ -149,4 +167,19 @@ export interface HistoryRow {
   verdict: string;
   duration_ms: number;
   created_at: string;
+}
+
+/** Bài tập cùng dạng sinh sau khi giải xong.
+ *
+ * `dap_an` do Python tính từ tham số của chính đề bài (mẫu tham số hoá trong
+ * `eval/`), không do model sinh — nên không cần trường verdict như bài chính.
+ */
+export interface BaiTuongTuData {
+  de_bai: string;
+  dap_an: string;
+  don_vi: string;
+  topic: string;
+  muc_do: string;
+  goi_y: string;
+  nguon: string;
 }

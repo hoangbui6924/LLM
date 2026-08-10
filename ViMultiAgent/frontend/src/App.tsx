@@ -1,10 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import AgentTimeline from "./components/AgentTimeline";
+import BaiTuongTu from "./components/BaiTuongTu";
 import FinalAnswer from "./components/FinalAnswer";
 import Performance from "./components/Performance";
 import SolutionSteps from "./components/SolutionSteps";
 import { fetchHealth, solveStream, type Health } from "./api";
-import type { AgentName, AgentState, SolveResult, StreamEvent, Verdict } from "./types";
+import type {
+  AgentName,
+  AgentState,
+  DapAnEvent,
+  SolveResult,
+  StreamEvent,
+  Verdict,
+} from "./types";
 import "./App.css";
 
 // Thứ tự cố định để thanh tiến trình không nhảy loạn khi sự kiện về. Ba Subject
@@ -48,6 +56,9 @@ export default function App() {
   const [agents, setAgents] = useState<AgentState[]>([]);
   const [answer, setAnswer] = useState("");
   const [ketQua, setKetQua] = useState<SolveResult | null>(null);
+  // Đáp án về TRƯỚC lời giảng. Giữ riêng để hiện ngay, thay vì chờ sự kiện `done`
+  // vốn chỉ đến sau khi Explain Agent giảng xong (~10 giây sau).
+  const [dapAnSom, setDapAnSom] = useState<DapAnEvent | null>(null);
   const [totalMs, setTotalMs] = useState(0);
   const [withinSla, setWithinSla] = useState<boolean | null>(null);
   const [warning, setWarning] = useState("");
@@ -70,6 +81,7 @@ export default function App() {
     setAgents(QUY_TRINH.map((a) => ({ ...a, status: "waiting" as const })));
     setAnswer("");
     setKetQua(null);
+    setDapAnSom(null);
     setTotalMs(0);
     setWithinSla(null);
     setWarning("");
@@ -116,6 +128,10 @@ export default function App() {
       case "arbiter":
         setSympyFixes(ev.items);
         break;
+      case "dap_an":
+        setDapAnSom(ev);
+        if (ev.warning) setWarning(ev.warning);
+        break;
       case "cuu_dap_an":
         setWarning(
           `Đáp án ${ev.gia_tri} do công cụ tính trực tiếp từ đề (${ev.cach_lam}), ` +
@@ -151,8 +167,11 @@ export default function App() {
   }
 
   const sol = ketQua?.solution ?? null;
-  const verdict: Verdict | null = ketQua?.verify?.verdict ?? null;
-  const doTinCay = ketQua?.verify?.confidence ?? sol?.confidence ?? null;
+  // Ưu tiên kết quả đầy đủ khi đã có; trước đó thì dùng đáp án về sớm. Nhờ vậy
+  // người dùng đọc được đáp số ngay khi nó chốt, không phải chờ giảng bài xong.
+  const dapAn = sol?.final_answer || dapAnSom?.gia_tri || "";
+  const verdict: Verdict | null =
+    ketQua?.verify?.verdict ?? (dapAnSom?.verdict || null) ?? null;
   const moTaDapAn =
     ketQua?.plan?.unknowns?.[0]?.description_vi ||
     ketQua?.plan?.unknowns?.[0]?.symbol ||
@@ -255,12 +274,7 @@ export default function App() {
           <AgentTimeline agents={agents} />
 
           {totalMs > 0 && (
-            <Performance
-              agents={agents}
-              totalMs={totalMs}
-              doTinCay={doTinCay}
-              daKiemChung={verdict === "PASS"}
-            />
+            <Performance agents={agents} totalMs={totalMs} />
           )}
 
           {totalMs > 0 && withinSla !== null && (
@@ -272,12 +286,7 @@ export default function App() {
         </div>
 
         <div className="cot">
-          <FinalAnswer
-            dapAn={sol?.final_answer ?? ""}
-            moTa={moTaDapAn}
-            verdict={verdict}
-            doTinCay={doTinCay}
-          />
+          <FinalAnswer dapAn={dapAn} moTa={moTaDapAn} verdict={verdict} />
 
           {error && <div className="bang err">Lỗi: {error}</div>}
           {warning && <div className="bang warn">{warning}</div>}
@@ -293,6 +302,14 @@ export default function App() {
           )}
 
           <SolutionSteps steps={sol?.steps ?? []} markdown={answer} dangChay={running} />
+
+          {!running && totalMs > 0 && (
+            <BaiTuongTu
+              mon={ketQua?.plan?.subject ?? ketQua?.route?.subject ?? "math"}
+              topic={ketQua?.plan?.topic ?? ""}
+              cauHoiGoc={ketQua?.question ?? ""}
+            />
+          )}
 
           {luuY.length > 0 && !running && (
             <div className="card luu-y">

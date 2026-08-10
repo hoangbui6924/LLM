@@ -8,7 +8,53 @@ nào phát hiện.
 
 from __future__ import annotations
 
-from agents.recompute_agent import KetQua, _boc_ve_phai, compare
+import pytest
+
+from agents.recompute_agent import KetQua, _boc_ve_phai, _con_ky_hieu_tu_do, compare
+
+
+class TestConKyHieuTuDo:
+    """Chặn kết quả tính lại DỞ DANG.
+
+    Ca sinh ra bộ test này: đo trên 150 bài thấy cơ chế cứu đáp án LÀM HỎNG 10 bài
+    trong khi chỉ cứu được 8. Sáu ca hỏng cùng một kiểu — bộ tính lại dừng ở nguyên
+    hàm chưa thay cận (`x*(3*x + 4)` cho bài tích phân có cận) hoặc ở chính hàm số
+    chưa tìm cực trị (`x + 25/x`), rồi thứ dở dang đó được đem đè lên đáp số ĐÚNG
+    của Subject Agent.
+    """
+
+    @pytest.mark.parametrize(
+        "bieu_thuc",
+        [
+            "x*(3*x + 4)",       # nguyên hàm chưa thay cận
+            "x*(x + 1)",
+            "x**3 - 3*x + 1",    # chính hàm số, chưa tìm GTLN
+            "x + 25/x",          # chưa áp dụng Cauchy
+        ],
+    )
+    def test_bat_ket_qua_do_dang(self, bieu_thuc):
+        assert _con_ky_hieu_tu_do(bieu_thuc) is True
+
+    @pytest.mark.parametrize(
+        "bieu_thuc",
+        ["232/3", "5.6/56*22.4", "sqrt(73)", "2*pi*2*0.05", "-1"],
+    )
+    def test_bieu_thuc_tinh_duoc_thi_cho_qua(self, bieu_thuc):
+        assert _con_ky_hieu_tu_do(bieu_thuc) is False
+
+    def test_rong_va_hong_coi_nhu_do_dang(self):
+        # Không đọc được thì không đủ căn cứ để tin — thà bỏ còn hơn đè bừa.
+        assert _con_ky_hieu_tu_do("") is True
+        assert _con_ky_hieu_tu_do("   ") is True
+        assert _con_ky_hieu_tu_do("!!!hong") is True
+
+    def test_dap_so_bieu_thuc_that_van_con_an(self):
+        """Phương trình tiếp tuyến ĐÚNG là có `x` — nên hàm này không đủ để quyết.
+
+        Chốt chặn thật nằm ở `question_type != "symbolic"` phía ngoài: chỉ đề hỏi
+        MỘT CON SỐ mới bị chặn.
+        """
+        assert _con_ky_hieu_tu_do("-x + 7") is True
 
 
 class TestBocVeTrai:

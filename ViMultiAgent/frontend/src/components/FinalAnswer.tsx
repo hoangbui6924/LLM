@@ -6,11 +6,14 @@
 
 import type { Verdict } from "../types";
 
+// Cố ý KHÔNG hiện "độ tin cậy": con số đó do chính model 4B tự khai, và khi lời
+// giải bị bắt lỗi nó còn bị nâng lên 0,8 — nghĩa là "chắc chắn 80% rằng bài này
+// SAI". Đặt cạnh đáp án thì người đọc hiểu ngược hoàn toàn. Nhãn kiểm chứng bên
+// dưới mới là thứ có căn cứ, vì nó đến từ các phép kiểm tất định.
 interface Props {
   dapAn: string;
   moTa: string;
   verdict: Verdict | null;
-  doTinCay: number | null;
 }
 
 const NHAN: Record<Verdict, { chu: string; lop: string }> = {
@@ -19,7 +22,7 @@ const NHAN: Record<Verdict, { chu: string; lop: string }> = {
   UNCERTAIN: { chu: "Chưa đủ căn cứ", lop: "warn" },
 };
 
-export default function FinalAnswer({ dapAn, moTa, verdict, doTinCay }: Props) {
+export default function FinalAnswer({ dapAn, moTa, verdict }: Props) {
   if (!dapAn) return null;
   const n = verdict ? NHAN[verdict] : null;
 
@@ -33,16 +36,11 @@ export default function FinalAnswer({ dapAn, moTa, verdict, doTinCay }: Props) {
       <div className="dap-an">{dapAn}</div>
       {moTa && <div className="dap-an-mo-ta">{moTa}</div>}
 
-      {(n || doTinCay !== null) && (
+      {n && (
         <div className="ket-qua-chan">
-          {n && (
-            <span className={`nhan ${n.lop}`}>
-              {verdict === "PASS" ? "✓" : verdict === "FAIL" ? "✕" : "!"} {n.chu}
-            </span>
-          )}
-          {doTinCay !== null && (
-            <span className="tin-cay">Độ tin cậy: {Math.round(doTinCay * 100)}%</span>
-          )}
+          <span className={`nhan ${n.lop}`}>
+            {verdict === "PASS" ? "✓" : verdict === "FAIL" ? "✕" : "!"} {n.chu}
+          </span>
         </div>
       )}
     </div>

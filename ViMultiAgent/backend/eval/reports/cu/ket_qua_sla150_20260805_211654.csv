@@ -1,0 +1,4 @@
+﻿id,subject,topic,level,question_type,dung,verdict,tong_s,dat_45s,dat_sla,dap_an_he_thong,dap_an_chuan,mcq_he_thong,mcq_chuan,planner_s,router_s,subject_s,recompute_s,verify_s,explain_s,so_chunk_stream,retry,router_theo,canh_bao,loi,question
+math_nb_001,math,dao_ham,NB,numeric,1,PASS,73.28,0,1,119,119,,,12.81,0.00,6.23,39.20,4.07,8.10,450,0,phobert,,,Tính đạo hàm của hàm số y = 4x^3 + 11x - 1 tại điểm x = 3.
+phys_nb_001,physics,doi_don_vi,NB,numeric,1,PASS,54.12,0,1,20.0 m/s,20 m/s,,,4.47,0.00,4.52,38.33,3.93,6.90,408,0,phobert,,,Một ô tô chuyển động với vận tốc 72 km/h. Tính vận tốc của ô tô theo đơn vị m/s.
+chem_nb_001,chemistry,khoi_luong_mol,NB,numeric,1,PASS,68.64,0,1,106.0 g/mol,106 g/mol,,,5.62,0.00,12.96,46.84,3.80,12.03,692,0,phobert,,,"Tính khối lượng mol của hợp chất Na2CO3. Biết C = 12, Na = 23, O = 16."

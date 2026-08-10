@@ -18,25 +18,15 @@ const MAU: Record<string, string> = {
 interface Props {
   agents: AgentState[];
   totalMs: number;
-  doTinCay: number | null;
-  daKiemChung: boolean;
 }
 
-export default function Performance({
-  agents,
-  totalMs,
-  doTinCay,
-  daKiemChung,
-}: Props) {
+export default function Performance({ agents, totalMs }: Props) {
   const muc = agents.filter((a) => typeof a.ms === "number" && a.ms > 0);
   if (muc.length === 0 || totalMs <= 0) return null;
 
   // Chia theo tổng thời gian THẬT, không theo tổng các vai: chênh lệch chính là
   // phần chi phí điều phối, giấu đi thì bảng số không cộng lại đúng 100%.
   const phanTram = (ms: number) => (ms / totalMs) * 100;
-
-  const vong = doTinCay === null ? 0 : Math.round(doTinCay * 100);
-  const chuVi = 2 * Math.PI * 26;
 
   return (
     <div className="card">
@@ -77,26 +67,6 @@ export default function Performance({
           </div>
         </div>
 
-        {doTinCay !== null && (
-          <div className="gauge">
-            <svg viewBox="0 0 64 64" width="76" height="76">
-              <circle cx="32" cy="32" r="26" className="gauge-bg" />
-              <circle
-                cx="32"
-                cy="32"
-                r="26"
-                className={`gauge-fg ${daKiemChung ? "ok" : "warn"}`}
-                strokeDasharray={`${(vong / 100) * chuVi} ${chuVi}`}
-                transform="rotate(-90 32 32)"
-              />
-            </svg>
-            <span className="gauge-num">{vong}%</span>
-            <span className="gauge-label">Độ tin cậy</span>
-            <span className="gauge-sub">
-              {daKiemChung ? "Kết quả đã được kiểm chứng" : "Chưa qua kiểm chứng"}
-            </span>
-          </div>
-        )}
       </div>
     </div>
   );

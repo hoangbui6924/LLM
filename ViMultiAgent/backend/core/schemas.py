@@ -221,6 +221,23 @@ class Trace(BaseModel):
         return sum(s.prompt_tokens + s.completion_tokens for s in self.spans)
 
 
+class BaiTuongTu(BaseModel):
+    """Bài tập cùng dạng sinh ra sau khi giải xong, để học sinh tự luyện.
+
+    `dap_an` luôn do Python tính từ tham số của chính đề bài, không do LLM khai —
+    xem `agents/sinh_bai_tuong_tu.py`. Vì vậy trường này tin được, khác hẳn đáp số
+    trong `Solution` vốn phải qua cả tầng kiểm chứng mới dám tin.
+    """
+
+    de_bai: str = ""
+    dap_an: str = ""
+    don_vi: str = ""
+    topic: str = ""
+    muc_do: str = ""                      # NB | TH | VD | VDC
+    goi_y: str = ""                       # công thức cần dùng, không phải lời giải
+    nguon: str = "mau_tat_dinh"
+
+
 class SolveResult(BaseModel):
     question: str = ""
     plan: Plan | None = None

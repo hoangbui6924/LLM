@@ -31,13 +31,36 @@ async def lifespan(app: FastAPI):
 
 
 def _ham_nong() -> None:
+    """Nạp sẵn PhoBERT, và KÊU TO nếu không có nó.
+
+    Vì sao phải kêu: mô hình đã fine-tune nặng 515 MB nên bị .gitignore chặn —
+    GitHub từ chối mọi tệp trên 100 MB. Bản clone về vì thế KHÔNG có mô hình, và
+    `classifier.available()` trả False rồi Router lùi êm ru về luật từ khoá.
+
+    Lùi êm chính là vấn đề: máy vẫn chạy, vẫn ra đáp án, không một dòng lỗi nào —
+    chỉ có tầng học sâu biến mất mà không ai biết. Một dòng cảnh báo lúc khởi động
+    rẻ hơn nhiều so với việc phát hiện ra điều đó khi đang bảo vệ đồ án.
+    """
     try:
         from ml import classifier
 
         if classifier.available():
             classifier.du_doan("Tính đạo hàm của hàm số y = x^2")
-    except Exception:  # noqa: BLE001 — không có PhoBERT thì Router tự lùi về luật
-        pass
+            print("[ViMultiAgent] PhoBERT router: đã nạp, tầng 1 hoạt động.")
+            return
+        _canh_bao_thieu_phobert("chưa có thư mục ml/phobert_router")
+    except Exception as e:  # noqa: BLE001 — thiếu thư viện thì Router vẫn lùi về luật
+        _canh_bao_thieu_phobert(f"nạp lỗi: {e}")
+
+
+def _canh_bao_thieu_phobert(vi_sao: str) -> None:
+    print(
+        f"\n[ViMultiAgent] CẢNH BÁO: KHÔNG có PhoBERT router ({vi_sao}).\n"
+        "  Router sẽ chạy bằng luật từ khoá + LLM. Chương trình vẫn giải được bài,\n"
+        "  nhưng định tuyến kém chính xác hơn và chậm hơn khi luật không khớp.\n"
+        "  Huấn luyện lại (~15 phút, có GPU): python ml/train_phobert.py\n"
+        "  Xem mục 5 trong INSTALL.md.\n"
+    )
 
 
 app = FastAPI(

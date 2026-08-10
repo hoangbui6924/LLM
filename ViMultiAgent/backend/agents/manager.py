@@ -32,6 +32,7 @@ from agents import (
     verify_agent,
 )
 from core import config, db
+from memory import kho_loi_giai
 from tools import arbiter
 from core.schemas import (
     AgentSpan,
@@ -136,6 +137,16 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
                 recompute_agent.compute(plan, timeout=config.TIMEOUT_RECOMPUTE),
             )
             record(rc_span)
+            # Chẩn đoán bộ tính lại. Vai này ngốn 62% tổng thời gian mà chỉ dùng
+            # được ở ~16% số bài — phát ra đây để bench ghi lại và tìm ra 84% còn
+            # lại hỏng ở khâu nào.
+            yield {
+                "type": "recompute_info",
+                "co_gia_tri": doc_lap.co_gia_tri,
+                "ly_do_hong": doc_lap.ly_do_hong,
+                "giay": round(rc_span.duration_ms / 1000.0, 1) if rc_span else 0.0,
+                "mo_ta": doc_lap.mo_ta() if doc_lap.co_gia_tri else "",
+            }
         else:
             solution, sspan = await agent_mod.run(plan, feedback)
         record(sspan)
@@ -244,6 +255,25 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
             "Lời giải chưa qua được bước kiểm chứng. Hãy đọc kỹ và tự đối chiếu lại."
         )
 
+    # ---- Chốt đáp án cho người dùng, TRƯỚC khi giảng bài -------------------
+    #
+    # Đáp số đã xong hẳn ở đây: Subject giải, trọng tài sửa số, Verify kiểm, cơ chế
+    # cứu đã chạy. Explain chỉ diễn đạt lại, KHÔNG được đổi đáp số.
+    #
+    # Trước đây frontend chỉ nhận đáp án ở sự kiện `done`, tức sau khi giảng xong —
+    # ĐO ĐƯỢC: bắt người dùng chờ thêm 10,6 giây để đọc một con số đã có sẵn. Phát
+    # riêng ở đây cắt đúng khoản đó khỏi thời gian chờ, không tốn gì.
+    if solution is not None:
+        yield {
+            "type": "dap_an",
+            "gia_tri": solution.final_answer,
+            "latex": solution.final_answer_latex,
+            "mcq": solution.mcq_choice,
+            "verdict": report.verdict if report else "",
+            "confidence": (report.confidence if report else solution.confidence),
+            "warning": result.warning_vi,
+        }
+
     # ---- 5. Explain (streaming) -------------------------------------------
     yield {"type": "agent", "name": "explain_agent", "label": label("explain_agent"), "status": "start"}
     t_ex = time.perf_counter()
@@ -304,6 +334,23 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
         )
     except Exception:  # noqa: BLE001 — lưu lịch sử hỏng không được làm hỏng câu trả lời
         pass
+
+    # Cất lời giải vào memory pool — CHỈ khi đã qua kiểm chứng. Lưu lời giải sai là
+    # tự đầu độc: lần sau nó được lấy ra làm ví dụ mẫu và nhân bản cái sai.
+    if (
+        config.LUU_LOI_GIAI_MAU
+        and report is not None
+        and report.verdict == "PASS"
+        and solution is not None
+        and not result.warning_vi          # có cảnh báo nghĩa là đáp án chưa chắc
+    ):
+        kho_loi_giai.luu(
+            question=question,
+            subject=plan.subject,
+            topic=plan.topic,
+            steps=[s.model_dump(mode="json") for s in solution.steps],
+            final_answer=solution.final_answer,
+        )
 
     yield {
         "type": "done",

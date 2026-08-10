@@ -15,7 +15,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from sse_starlette.sse import EventSourceResponse
 
-from agents import manager
+from agents import manager, sinh_bai_tuong_tu
 from core import config, db
 from tools import units_tool
 
@@ -24,6 +24,19 @@ router = APIRouter(prefix="/api")
 
 class SolveRequest(BaseModel):
     question: str = Field(min_length=1, max_length=4000)
+
+
+class BaiTuongTuRequest(BaseModel):
+    """Nhận sẵn `mon`/`topic` mà Planner đã xác định ở lượt giải trước.
+
+    Cố ý không chạy lại Planner: nó tốn ~4 giây và thông tin đó đã có trong kết
+    quả mà giao diện đang giữ. Nhờ vậy endpoint này trả về gần như tức thì.
+    """
+
+    mon: str = "math"
+    topic: str = ""
+    cau_hoi_goc: str = ""
+    muc: str = ""
 
 
 @router.get("/health")
@@ -68,6 +81,21 @@ async def solve_sync(req: SolveRequest) -> dict[str, Any]:
     """Bản chờ trọn gói — tiện cho kiểm thử bằng curl và cho phần đo hiệu năng."""
     result = await manager.solve(req.question.strip())
     return result.model_dump(mode="json")
+
+
+@router.post("/bai_tuong_tu")
+async def bai_tuong_tu(req: BaiTuongTuRequest) -> dict[str, Any]:
+    """Sinh một bài cùng dạng. Không gọi LLM nên tính bằng mili giây.
+
+    Tách khỏi `/api/solve` là có chủ đích: gộp vào sẽ cộng thẳng thời gian sinh đề
+    vào chỉ số độ trễ end-to-end đang đo.
+    """
+    bai = sinh_bai_tuong_tu.sinh(
+        mon=req.mon, topic=req.topic, cau_hoi_goc=req.cau_hoi_goc, muc=req.muc
+    )
+    if bai is None:
+        return {"co": False, "ly_do": "Chưa có mẫu đề nào cho dạng bài này."}
+    return {"co": True, "bai": bai.model_dump()}
 
 
 @router.get("/history")

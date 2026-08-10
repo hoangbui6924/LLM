@@ -10,6 +10,7 @@ from __future__ import annotations
 from agents.base import run_structured
 from core import config
 from core.schemas import AgentSpan, Plan, Solution
+from memory import kho_dinh_ly, kho_loi_giai
 
 _COMMON = """
 Bạn trả về JSON đúng schema:
@@ -89,6 +90,19 @@ def _task(plan: Plan, feedback: str | None) -> str:
         )
     if plan.steps_outline:
         parts.append("Hướng làm gợi ý:\n" + "\n".join(f"- {s}" for s in plan.steps_outline))
+
+    # Memory pool — chèn công thức chuẩn và ví dụ đã kiểm chứng. Đặt SAU hướng làm
+    # và TRƯỚC phản hồi sửa lỗi: model đọc đề trước, rồi mới tới tài liệu tham khảo,
+    # và phản hồi sửa lỗi phải nằm cuối để nó là thứ đọng lại sau cùng.
+    de_bai = plan.raw_question or plan.normalized_question
+    if config.DUNG_KHO_DINH_LY:
+        ct = kho_dinh_ly.doan_van(plan.subject, plan.topic, de_bai)
+        if ct:
+            parts.append(ct)
+    if config.DUNG_KHO_LOI_GIAI:
+        vd = kho_loi_giai.doan_van(plan.subject, plan.topic, de_bai)
+        if vd:
+            parts.append(vd)
     if feedback:
         parts.append(
             "LẦN GIẢI TRƯỚC BỊ BÁO SAI. Hãy sửa đúng chỗ được chỉ ra, giữ nguyên "

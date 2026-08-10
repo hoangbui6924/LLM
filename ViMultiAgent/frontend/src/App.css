@@ -537,54 +537,6 @@ button:disabled {
   font-variant-numeric: tabular-nums;
 }
 
-.gauge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 118px;
-  text-align: center;
-  position: relative;
-}
-
-.gauge svg {
-  transform: translateY(2px);
-}
-
-.gauge-bg {
-  fill: none;
-  stroke: var(--bg);
-  stroke-width: 7;
-}
-
-.gauge-fg {
-  fill: none;
-  stroke-width: 7;
-  stroke-linecap: round;
-  transition: stroke-dasharray 0.5s ease;
-}
-
-.gauge-fg.ok { stroke: var(--ok); }
-.gauge-fg.warn { stroke: var(--warn); }
-
-.gauge-num {
-  position: absolute;
-  top: 28px;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.gauge-label {
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 3px;
-}
-
-.gauge-sub {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.35;
-}
-
 /* ---- kết quả cuối cùng ---- */
 
 .ket-qua-card {
@@ -626,9 +578,6 @@ button:disabled {
 .nhan.bad { background: var(--err-nhat); color: var(--err); }
 .nhan.warn { background: var(--warn-nhat); color: var(--warn); }
 
-.tin-cay {
-  color: var(--muted);
-}
 
 /* ---- lời giải chi tiết ---- */
 
@@ -809,4 +758,68 @@ button:disabled {
 .sla.over {
   background: var(--err-nhat);
   color: var(--err);
+}
+
+/* ---- Bài tập tương tự ---------------------------------------------------- */
+/* Nút "Sinh bài" nằm ngay trên đầu thẻ, đẩy sang phải bằng margin-left tự động
+   để không phải dựng thêm một lớp bọc chỉ để căn lề. */
+.bai-tuong-tu .card-head button { margin-left: auto; }
+
+.bai-tuong-tu .de-bai {
+  margin: 4px 0 12px;
+  padding: 12px 14px;
+  background: var(--primary-nhat);
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+.bai-tuong-tu .hang-nut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bai-tuong-tu .the-muc {
+  margin-left: auto;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--line-manh);
+  border-radius: 999px;
+}
+
+.bai-tuong-tu .goi-y {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--warn);
+  background: var(--warn-nhat);
+  border-radius: 6px;
+}
+
+/* Đáp án ở đây không cần huy hiệu kiểm chứng: nó tính bằng công thức chứ không
+   do model sinh, nên không có gì để nghi ngờ. */
+.bai-tuong-tu .dap-an-tuong-tu {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ok);
+  background: var(--ok-nhat);
+  border-radius: 6px;
+}
+
+.bai-tuong-tu .ghi-chu {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+button.ghost.nho {
+  padding: 4px 10px;
+  font-size: 12px;
 }

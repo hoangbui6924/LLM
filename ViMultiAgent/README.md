@@ -86,6 +86,7 @@ Trang chủ có ba nút **Toán / Lý / Hoá** điền sẵn câu hỏi mẫu. B
 rồi quan sát:
 
 * thanh tiến trình sáng dần qua từng agent: Planner → Router → Subject → Verify → Explain
+* thẻ **Bài tập tương tự** ở cuối: sinh đề luyện cùng dạng, đáp án bảo đảm đúng
 * lời giải chảy chữ theo thời gian thực ở khung dưới
 * dòng cuối báo tổng thời gian và có đạt mốc KPI không
 
@@ -127,7 +128,8 @@ python ml/compare.py
 ```
 ViMultiAgent/
 ├── backend/
-│   ├── agents/          7 agent: planner, router, 3 subject, verify, explain
+│   ├── agents/          8 agent: planner, router, 3 subject, verify, explain,
+│   │                    recompute, sinh bài tương tự
 │   │   ├── manager.py   điều phối toàn luồng, phát sự kiện SSE
 │   │   └── base.py      lớp vỏ chung dựng trên AutoGen + Ollama
 │   ├── tools/           SymPy, hoá học, đơn vị, trọng tài số học

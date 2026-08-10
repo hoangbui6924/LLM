@@ -1,0 +1,263 @@
+﻿stt,id,subject,level,dung,verdict,tong_s,dat_45s,dap_an_he_thong
+1,math_nb_k001,math,NB,1,PASS,68.40,0,1208
+2,math_th_k002,math,TH,1,PASS,60.40,0,27
+3,math_th_k003,math,TH,1,PASS,59.40,0,8
+4,math_vd_k004,math,VD,1,FAIL,64.40,0,3280.5
+5,math_th_k005,math,TH,1,PASS,58.00,0,286
+6,math_th_k006,math,TH,1,PASS,77.80,0,13
+7,math_vd_k007,math,VD,1,PASS,69.80,0,4
+8,math_vd_k008,math,VD,1,FAIL,70.00,0,1
+9,math_vd_k009,math,VD,0,PASS,78.90,0,4.24264
+10,math_vd_k010,math,VD,0,FAIL,76.50,0,54.59
+11,math_vdc_k011,math,VDC,0,UNCERTAIN,73.80,0,2/9 e^3 + 1/9
+12,math_vdc_k012,math,VDC,1,PASS,66.20,0,4/3
+13,math_vd_k013,math,VD,1,PASS,55.90,0,6
+14,math_th_k014,math,TH,1,PASS,57.80,0,5
+15,math_vdc_k015,math,VDC,1,PASS,53.10,0,0.441
+16,math_vdc_k016,math,VDC,0,PASS,67.70,0,sqrt(2)
+17,math_vd_k017,math,VD,1,FAIL,79.20,0,-3
+18,math_vd_k018,math,VD,0,PASS,68.60,0,7x - 6
+19,math_th_k019,math,TH,0,FAIL,74.70,0,5.29
+20,math_vd_k020,math,VD,1,UNCERTAIN,71.50,0,2\\sqrt{19} unit
+21,math_th_k021,math,TH,1,PASS,64.20,0,11.25 unit²
+22,math_vd_k022,math,VD,1,PASS,53.40,0,8.5 unit
+23,math_vd_k023,math,VD,1,PASS,53.80,0,3.0 unit
+24,math_th_k024,math,TH,1,PASS,59.20,0,144\\pi
+25,math_nb_k025,math,NB,1,PASS,49.10,0,100\\pi
+26,math_nb_k026,math,NB,1,PASS,55.60,0,113.097 \\pi m³
+27,math_nb_k027,math,NB,1,FAIL,63.70,0,113.097 m²
+28,math_th_k028,math,TH,1,FAIL,69.10,0,94.2478
+29,math_vd_k029,math,VD,0,PASS,64.40,0,2\\sqrt{5}
+30,math_vdc_k030,math,VDC,1,PASS,67.50,0,12\\sqrt{7}
+31,math_vdc_k031,math,VDC,0,FAIL,86.20,0,2.0
+32,math_nb_k032,math,NB,0,PASS,64.30,0,2√19
+33,math_vd_k033,math,VD,1,PASS,82.40,0,16/√17
+34,math_th_k034,math,TH,1,UNCERTAIN,85.30,0,25/√52
+35,math_vd_k035,math,VD,1,UNCERTAIN,71.40,0,√33
+36,math_vdc_k036,math,VDC,0,PASS,84.60,0,\\frac{15}{\\sqrt{308}}
+37,math_nb_k037,math,NB,1,PASS,49.30,0,2
+38,math_th_k038,math,TH,0,PASS,59.00,0,243
+39,math_th_k039,math,TH,1,PASS,57.50,0,3
+40,math_vd_k040,math,VD,1,PASS,59.10,0,1020
+41,math_th_k041,math,TH,1,PASS,59.90,0,3003
+42,math_th_k042,math,TH,1,PASS,57.20,0,10
+43,math_vd_k043,math,VD,1,FAIL,83.60,0,4
+44,math_vd_k044,math,VD,1,PASS,43.50,1,1
+45,math_vd_k045,math,VD,1,FAIL,80.40,0,6.32456
+46,math_vd_k046,math,VD,1,FAIL,71.10,0,0.0909
+47,math_vdc_k047,math,VDC,0,UNCERTAIN,71.50,0,3e^4/16
+48,math_vdc_k048,math,VDC,1,PASS,67.10,0,32/3
+49,math_vd_k049,math,VD,1,PASS,55.80,0,24
+50,math_th_k050,math,TH,1,PASS,56.40,0,5
+51,math_vdc_k051,math,VDC,1,PASS,59.00,0,0.4116
+52,math_vdc_k052,math,VDC,0,UNCERTAIN,68.30,0,2/sqrt(3)
+53,math_vd_k053,math,VD,1,UNCERTAIN,68.50,0,4
+54,math_vd_k054,math,VD,0,UNCERTAIN,67.20,0,24x - 27
+55,math_th_k055,math,TH,1,PASS,41.90,1,24.0
+56,math_vd_k056,math,VD,1,UNCERTAIN,68.60,0,6.56
+57,math_th_k057,math,TH,1,PASS,61.80,0,8.75 unit²
+58,math_vd_k058,math,VD,1,PASS,35.90,1,2.5 unit
+59,math_vd_k059,math,VD,1,PASS,55.90,0,3.0
+60,math_th_k060,math,TH,1,PASS,57.30,0,48\\pi
+61,math_nb_k061,math,NB,1,PASS,56.50,0,40\\pi
+62,math_nb_k062,math,NB,1,PASS,47.70,0,\\frac{32}{3}\\pi  m^3
+63,math_nb_k063,math,NB,0,PASS,49.30,0,314.159 \\pi  m^2
+64,math_th_k064,math,TH,1,PASS,61.20,0,50\\pi
+65,math_vd_k065,math,VD,1,PASS,67.00,0,sqrt(31)
+66,math_vdc_k066,math,VDC,1,PASS,76.90,0,12\\sqrt{31}
+67,math_vdc_k067,math,VDC,0,UNCERTAIN,77.70,0,1.0
+68,math_nb_k068,math,NB,1,PASS,68.40,0,14
+69,math_vd_k069,math,VD,1,PASS,88.20,0,29/(2√3)
+70,math_th_k070,math,TH,0,UNCERTAIN,84.00,0,2√5
+71,math_vd_k071,math,VD,1,FAIL,75.40,0,5.56776
+72,math_vdc_k072,math,VDC,0,UNCERTAIN,82.50,0,\\frac{14}{\\sqrt{510}}
+73,math_nb_k073,math,NB,1,PASS,60.40,0,200
+74,math_th_k074,math,TH,1,PASS,61.40,0,8
+75,math_th_k075,math,TH,1,UNCERTAIN,61.60,0,6
+76,math_vd_k076,math,VD,1,PASS,54.70,0,510
+77,math_th_k077,math,TH,1,PASS,60.90,0,462
+78,math_th_k078,math,TH,1,PASS,54.70,0,34
+79,math_vd_k079,math,VD,1,UNCERTAIN,71.70,0,5
+80,math_vd_k080,math,VD,1,PASS,52.00,0,1
+81,math_vd_k081,math,VD,1,PASS,51.00,0,4\\sqrt{5}
+82,math_vd_k082,math,VD,1,PASS,55.80,0,0.227
+83,math_vdc_k083,math,VDC,0,UNCERTAIN,91.70,0,\\frac{5e^{6} + 1}{9}
+84,math_vdc_k084,math,VDC,1,PASS,71.60,0,8/3
+85,math_vd_k085,math,VD,1,PASS,55.90,0,120
+86,math_th_k086,math,TH,1,PASS,53.60,0,3
+87,math_vdc_k087,math,VDC,1,PASS,62.50,0,0.3456
+88,math_vdc_k088,math,VDC,0,PASS,78.10,0,0.5
+89,math_vd_k089,math,VD,1,PASS,40.90,1,-1
+90,math_vd_k090,math,VD,0,UNCERTAIN,69.90,0,12x - 5
+91,math_th_k091,math,TH,1,PASS,46.10,0,6.0
+92,math_vd_k092,math,VD,1,UNCERTAIN,81.80,0,7.55 unit
+93,math_th_k093,math,TH,1,PASS,58.90,0,11.25 unit²
+94,math_vd_k094,math,VD,1,PASS,46.60,0,5.0 unit
+95,math_vd_k095,math,VD,1,PASS,55.60,0,1.0 unit
+96,math_th_k096,math,TH,1,PASS,62.80,0,64\\pi
+97,math_nb_k097,math,NB,1,PASS,45.50,0,16\\pi
+98,math_nb_k098,math,NB,1,PASS,54.80,0,\\frac{256}{3}\\pi  m^3
+99,math_nb_k099,math,NB,1,PASS,37.30,1,324\\pi
+100,math_th_k100,math,TH,1,PASS,50.80,0,52\\pi
+101,phys_th_k001,physics,TH,0,PASS,70.50,0,0.5685 m/s²
+102,phys_vd_k002,physics,VD,1,PASS,74.60,0,0.314159 s
+103,phys_vd_k003,physics,VD,1,PASS,62.90,0,0.08 J
+104,phys_vdc_k004,physics,VDC,1,PASS,77.40,0,1.33 m
+105,phys_vd_k005,physics,VD,1,PASS,86.10,0,4.714 A
+106,phys_vdc_k006,physics,VDC,0,FAIL,72.80,0,589.0 W
+107,phys_vdc_k007,physics,VDC,1,PASS,50.00,0,400.0 W
+108,phys_vdc_k008,physics,VDC,1,PASS,63.40,0,3.375e-3 m
+109,phys_vd_k009,physics,VD,1,PASS,67.40,0,175.0 gam
+110,phys_vdc_k010,physics,VDC,0,FAIL,74.10,0,0 m
+111,phys_vd_k011,physics,VD,1,UNCERTAIN,72.70,0,2.67 m/s
+112,phys_vd_k012,physics,VD,0,PASS,84.40,0,0.08 N
+113,phys_vd_k013,physics,VD,1,PASS,50.90,0,3.43 A
+114,phys_vdc_k014,physics,VDC,1,PASS,66.00,0,11.9 W
+115,phys_vdc_k015,physics,VDC,1,UNCERTAIN,63.80,0,0.240 m
+116,phys_th_k016,physics,TH,1,PASS,48.80,0,6.0 atm
+117,phys_th_k017,physics,TH,1,UNCERTAIN,71.40,0,9200.0 J
+118,phys_vdc_k018,physics,VDC,0,PASS,69.50,0,1.015625 eV
+119,phys_th_k019,physics,TH,1,PASS,70.40,0,500.0 V
+120,phys_nb_k020,physics,NB,1,PASS,44.20,1,0.68 m
+121,phys_th_k021,physics,TH,1,PASS,66.20,0,15.49 m/s
+122,phys_vd_k022,physics,VD,1,PASS,52.80,0,12000 J
+123,phys_vd_k023,physics,VD,1,PASS,56.30,0,0.200 N
+124,phys_vdc_k024,physics,VDC,1,PASS,60.40,0,10 V
+125,phys_vdc_k025,physics,VDC,1,PASS,63.00,0,1.6 m/s
+126,phys_nb_k026,physics,NB,1,PASS,45.50,0,180000 J
+127,phys_vdc_k027,physics,VDC,1,UNCERTAIN,71.70,0,159154.9431 Hz
+128,phys_nb_k028,physics,NB,1,PASS,63.30,0,300000 J
+129,phys_th_k029,physics,TH,1,PASS,57.30,0,40000 Pa
+130,phys_vd_k030,physics,VD,1,PASS,56.70,0,0.40 m
+131,phys_th_k031,physics,TH,1,UNCERTAIN,68.40,0,2.5 m
+132,phys_nb_k032,physics,NB,1,PASS,39.30,1,143.0
+133,phys_th_k033,physics,TH,0,PASS,87.20,0,0.32 m/s²
+134,phys_vd_k034,physics,VD,0,FAIL,81.00,0,0.392699 s
+135,phys_vd_k035,physics,VD,1,PASS,66.20,0,0.25 J
+136,phys_vdc_k036,physics,VDC,1,PASS,62.30,0,1.07 m
+137,phys_vd_k037,physics,VD,1,PASS,63.00,0,1.77 A
+138,phys_vdc_k038,physics,VDC,1,UNCERTAIN,72.60,0,372.3 W
+139,phys_vdc_k039,physics,VDC,1,PASS,63.00,0,968.0 W
+140,phys_vdc_k040,physics,VDC,0,UNCERTAIN,64.80,0,0.00375 m
+141,phys_vd_k041,physics,VD,1,PASS,81.60,0,175.0 gam
+142,phys_vdc_k042,physics,VDC,0,UNCERTAIN,76.70,0,80.0 m
+143,phys_vd_k043,physics,VD,1,PASS,70.90,0,1.71 m/s
+144,phys_vd_k044,physics,VD,0,UNCERTAIN,92.40,0,0.45 N
+145,phys_vd_k045,physics,VD,1,PASS,62.90,0,2.0 A
+146,phys_vdc_k046,physics,VDC,1,PASS,68.40,0,47.6 W
+147,phys_vdc_k047,physics,VDC,1,FAIL,73.00,0,0.400 m
+148,phys_th_k048,physics,TH,1,PASS,82.50,0,4.0 atm
+149,phys_th_k049,physics,TH,1,PASS,48.10,0,36800 J
+150,phys_vdc_k050,physics,VDC,0,PASS,67.10,0,1.220703125 eV
+151,phys_th_k051,physics,TH,1,PASS,66.40,0,800.0 V
+152,phys_nb_k052,physics,NB,1,PASS,42.00,1,0.400 m
+153,phys_th_k053,physics,TH,1,PASS,62.00,0,7.75 m/s
+154,phys_vd_k054,physics,VD,1,PASS,61.60,0,2400 J
+155,phys_vd_k055,physics,VD,1,PASS,70.30,0,0.300 N
+156,phys_vdc_k056,physics,VDC,1,PASS,47.50,0,50 V
+157,phys_vdc_k057,physics,VDC,0,PASS,54.90,0,0.4 m/s
+158,phys_nb_k058,physics,NB,1,PASS,42.60,1,900000 J
+159,phys_vdc_k059,physics,VDC,0,PASS,62.90,0,1.59e+4 Hz
+160,phys_nb_k060,physics,NB,1,PASS,67.90,0,50000 J
+161,phys_th_k061,physics,TH,1,PASS,59.30,0,100000 Pa
+162,phys_vd_k062,physics,VD,1,PASS,56.00,0,0.40 m
+163,phys_th_k063,physics,TH,1,UNCERTAIN,70.60,0,3.400 m
+164,phys_nb_k064,physics,NB,1,PASS,38.20,1,8.0
+165,phys_th_k065,physics,TH,0,PASS,68.90,0,3.0 π² m/s²
+166,phys_vd_k066,physics,VD,1,PASS,57.40,0,0.444288 s
+167,phys_vd_k067,physics,VD,1,PASS,57.50,0,1 J
+168,phys_vdc_k068,physics,VDC,1,PASS,62.60,0,0.8 m
+169,phys_vd_k069,physics,VD,1,PASS,62.10,0,4.40 A
+170,phys_vdc_k070,physics,VDC,0,UNCERTAIN,86.50,0,34.5 W
+171,phys_vdc_k071,physics,VDC,1,PASS,51.90,0,800.0 W
+172,phys_vdc_k072,physics,VDC,0,PASS,66.10,0,0.003 m
+173,phys_vd_k073,physics,VD,0,UNCERTAIN,68.80,0,37.5 gam
+174,phys_vdc_k074,physics,VDC,1,UNCERTAIN,74.50,0,77.9 m
+175,phys_vd_k075,physics,VD,1,PASS,71.90,0,4.5 m/s
+176,phys_vd_k076,physics,VD,0,FAIL,86.80,0,0.00288 N
+177,phys_vd_k077,physics,VD,1,PASS,50.40,0,2.0 A
+178,phys_vdc_k078,physics,VDC,1,PASS,67.00,0,58.0 W
+179,phys_vdc_k079,physics,VDC,1,PASS,65.90,0,12.0 cm
+180,phys_th_k080,physics,TH,1,PASS,79.60,0,1.5 atm
+181,phys_th_k081,physics,TH,1,PASS,55.80,0,70400 J
+182,phys_vdc_k082,physics,VDC,0,PASS,66.90,0,2.0703125 eV
+183,phys_th_k083,physics,TH,1,PASS,54.10,0,1600 V
+184,phys_nb_k084,physics,NB,1,PASS,46.60,0,0.800 m
+185,phys_th_k085,physics,TH,1,PASS,59.30,0,7.75 m/s
+186,phys_vd_k086,physics,VD,1,PASS,62.60,0,5400 J
+187,phys_vd_k087,physics,VD,1,PASS,57.90,0,1.0 N
+188,phys_vdc_k088,physics,VDC,1,PASS,65.60,0,20 V
+189,phys_vdc_k089,physics,VDC,0,UNCERTAIN,72.10,0,1.0 m/s
+190,phys_nb_k090,physics,NB,1,PASS,53.60,0,300000 J
+191,phys_vdc_k091,physics,VDC,1,UNCERTAIN,72.70,0,100658 Hz
+192,phys_nb_k092,physics,NB,1,PASS,62.00,0,75000 J
+193,phys_th_k093,physics,TH,1,PASS,61.30,0,80000 Pa
+194,phys_vd_k094,physics,VD,1,PASS,69.00,0,0.20 m
+195,phys_th_k095,physics,TH,1,UNCERTAIN,70.90,0,3.000 m
+196,phys_nb_k096,physics,NB,1,PASS,39.00,1,146
+197,phys_th_k097,physics,TH,0,PASS,61.10,0,0.24π² m/s²
+198,phys_vd_k098,physics,VD,1,PASS,48.50,0,0.2221441439159923 s
+199,phys_vd_k099,physics,VD,1,PASS,67.30,0,0.5 J
+200,phys_vdc_k100,physics,VDC,1,PASS,63.20,0,0.8 m
+201,chem_th_k001,chemistry,TH,1,UNCERTAIN,67.00,0,213.0 g/mol
+202,chem_th_k002,chemistry,TH,1,PASS,46.00,0,0.3125 mol
+203,chem_vd_k003,chemistry,VD,1,PASS,54.90,0,3
+204,chem_vd_k004,chemistry,VD,1,PASS,68.20,0,0.57 M
+205,chem_vdc_k005,chemistry,VDC,1,PASS,72.10,0,4.15 L
+206,chem_vd_k006,chemistry,VD,1,PASS,78.60,0,13.44 L
+207,chem_vd_k007,chemistry,VD,1,PASS,82.30,0,30.0 g
+208,chem_vdc_k008,chemistry,VDC,1,PASS,71.50,0,9.2 g
+209,chem_vdc_k009,chemistry,VDC,1,PASS,69.60,0,8.2 g
+210,chem_vd_k010,chemistry,VD,1,PASS,64.00,0,13.0
+211,chem_vdc_k011,chemistry,VDC,1,PASS,71.60,0,0.8 mol
+212,chem_vd_k012,chemistry,VD,1,UNCERTAIN,72.50,0,89.6 g
+213,chem_nb_k013,chemistry,NB,1,PASS,58.00,0,40 l
+214,chem_nb_k014,chemistry,NB,1,PASS,43.30,1,0.1 mol
+215,chem_nb_k015,chemistry,NB,1,PASS,41.90,1,2.24 lít
+216,chem_th_k016,chemistry,TH,1,PASS,55.40,0,40.0 gam
+217,chem_vdc_k017,chemistry,VDC,1,PASS,64.10,0,28 g/mol
+218,chem_vdc_k018,chemistry,VDC,0,FAIL,74.40,0,1.93 g
+219,chem_vdc_k019,chemistry,VDC,0,PASS,68.10,0,0.916291
+220,chem_vd_k020,chemistry,VD,1,PASS,70.30,0,2.24 L
+221,chem_th_k021,chemistry,TH,1,PASS,62.70,0,38.0 gam
+222,chem_vd_k022,chemistry,VD,1,UNCERTAIN,78.20,0,1.12 L
+223,chem_vdc_k023,chemistry,VDC,0,FAIL,87.30,0,121.5 gam
+224,chem_vdc_k024,chemistry,VDC,1,PASS,64.30,0,28.4 g
+225,chem_vd_k025,chemistry,VD,1,PASS,57.60,0,0.2 mol
+226,chem_nb_k026,chemistry,NB,1,PASS,61.30,0,0.125 mol
+227,chem_vd_k027,chemistry,VD,1,PASS,66.80,0,11.2 L
+228,chem_vdc_k028,chemistry,VDC,0,PASS,60.20,0,2:3
+229,chem_vd_k029,chemistry,VD,1,PASS,71.40,0,6.40 g
+230,chem_vdc_k030,chemistry,VDC,1,UNCERTAIN,58.80,0,16.8 gam
+231,chem_th_k031,chemistry,TH,0,FAIL,76.70,0,0.20 M
+232,chem_vdc_k032,chemistry,VDC,1,PASS,82.90,0,0.30 mol
+233,chem_th_k033,chemistry,TH,0,UNCERTAIN,63.70,0,60.0 g/mol
+234,chem_th_k034,chemistry,TH,1,PASS,44.10,1,0.83 mol
+235,chem_vd_k035,chemistry,VD,1,FAIL,82.10,0,11 mol
+236,chem_vd_k036,chemistry,VD,1,PASS,67.60,0,0.55 M
+237,chem_vdc_k037,chemistry,VDC,1,UNCERTAIN,87.10,0,4.15 L
+238,chem_vd_k038,chemistry,VD,1,PASS,148.00,0,6.72 L
+239,chem_vd_k039,chemistry,VD,1,FAIL,183.60,0,20.0 g
+240,chem_vdc_k040,chemistry,VDC,0,PASS,148.00,0,8.8 g
+241,chem_vdc_k041,chemistry,VDC,0,PASS,178.50,0,4.1 g
+242,chem_vd_k042,chemistry,VD,0,PASS,171.10,0,13.70
+243,chem_vdc_k043,chemistry,VDC,1,UNCERTAIN,148.00,0,0.5 mol
+244,chem_vd_k044,chemistry,VD,1,UNCERTAIN,148.00,0,44.8 g
+245,chem_nb_k045,chemistry,NB,1,PASS,148.00,0,20.0 l
+246,chem_nb_k046,chemistry,NB,1,PASS,139.80,0,0.1 mol
+247,chem_nb_k047,chemistry,NB,1,PASS,146.30,0,11.2 lít
+248,chem_th_k048,chemistry,TH,1,PASS,148.00,0,50.0 gam
+249,chem_vdc_k049,chemistry,VDC,1,UNCERTAIN,148.00,0,42 g/mol
+250,chem_vdc_k050,chemistry,VDC,1,PASS,148.00,0,1.27 g
+251,chem_vdc_k051,chemistry,VDC,0,UNCERTAIN,196.00,0,1.20397
+252,chem_vd_k052,chemistry,VD,1,PASS,189.40,0,4.48 L
+253,chem_th_k053,chemistry,TH,1,PASS,148.00,0,46.0 gam
+254,chem_vd_k054,chemistry,VD,1,FAIL,148.00,0,2.24 L
+255,chem_vdc_k055,chemistry,VDC,0,UNCERTAIN,148.00,0,243 gam
+256,chem_vdc_k056,chemistry,VDC,0,FAIL,798.50,0,
+257,chem_vd_k057,chemistry,VD,1,PASS,59.80,0,0.6 mol
+258,chem_nb_k058,chemistry,NB,1,PASS,50.70,0,0.200 mol
+259,chem_vd_k059,chemistry,VD,1,PASS,66.10,0,14.56 L
+260,chem_vdc_k060,chemistry,VDC,0,PASS,62.60,0,5:6
+261,chem_vd_k061,chemistry,VD,1,PASS,69.60,0,12.80 g
+262,chem_vdc_k062,chemistry,VDC,1,PASS,47.60,0,11.2 gam
