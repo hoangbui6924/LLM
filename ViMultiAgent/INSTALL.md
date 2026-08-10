@@ -404,6 +404,7 @@ ViMultiAgent/
 │   └── main.py              điểm khởi động FastAPI
 ├── frontend/                React + TypeScript + Vite + KaTeX
 ├── .env.example             mẫu cấu hình (mặc định trong code đã đúng)
+├── HUONGDAN.md              hướng dẫn sử dụng: API, script, cấu hình, demo
 ├── TAILIEU.md               tài liệu kỹ thuật chi tiết
 └── yeucaumoi.md             đề bài gốc
 ```

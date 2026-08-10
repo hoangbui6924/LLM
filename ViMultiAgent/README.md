@@ -3,6 +3,16 @@
 Hệ thống đa tác tử giải bài tập STEM (Toán – Lý – Hoá) bằng tiếng Việt.
 Chạy **hoàn toàn ngoại tuyến**, không dùng API key của bất kỳ dịch vụ nào.
 
+### Bộ tài liệu
+
+| File | Trả lời câu hỏi |
+|---|---|
+| **README.md** (file này) | Chạy nhanh thế nào? |
+| [INSTALL.md](INSTALL.md) | Cài trên máy mới thế nào? |
+| [HUONGDAN.md](HUONGDAN.md) | Dùng và vận hành thế nào? API, script, cấu hình, kịch bản demo |
+| [TAILIEU.md](TAILIEU.md) | Bên trong hoạt động ra sao? |
+| [GIAITRINH.md](GIAITRINH.md) | Giải trình cho hội đồng: dataset, thời gian train, đối chiếu chỉ số |
+
 ---
 
 ## 1. Cần có sẵn trên máy
@@ -151,8 +161,11 @@ Sửa trong file `.env` ở thư mục gốc:
 |---|---|---|
 | `VMA_MODEL_HEAVY` | `qwen3:4b` | Mô hình cho Subject Agent và Verify |
 | `VMA_MODEL_LIGHT` | `qwen3:4b` | Mô hình cho Planner, Router, Explain |
-| `VMA_SLA_SECONDS` | `150` | Mốc thời gian mục tiêu cho một lượt hỏi |
-| `VMA_MAX_RETRY_ROUNDS` | `1` | Số lần Verify được bắt giải lại |
-| `VMA_AGENTS_SUY_NGHI` | `recompute` | Agent nào được bật chế độ suy nghĩ của Qwen3 |
+| `VMA_SLA_SECONDS` | `45` | Mốc thời gian mục tiêu cho một lượt hỏi |
+| `VMA_MAX_RETRY_ROUNDS` | `0` | Số lần Verify được bắt giải lại (mặc định tắt) |
+| `VMA_AGENTS_SUY_NGHI` | *(rỗng)* | Agent nào được bật chế độ suy nghĩ của Qwen3 |
 
 Đổi `.env` xong phải **khởi động lại backend** thì mới có hiệu lực.
+
+Bảng đầy đủ mọi biến, kèm hậu quả đo được khi bật/tắt từng cờ: xem
+[HUONGDAN.md](HUONGDAN.md) mục 5.
