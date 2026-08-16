@@ -1,0 +1,307 @@
+﻿id,subject,topic,level,question_type,che_do,dung,tong_s,dat_45s,dap_an_he_thong,dap_an_chuan,mcq_he_thong,mcq_chuan,so_buoc,bi_cat,loi,question
+math_nb_k001,math,dao_ham,NB,numeric,json,0,4.73,1,20*4^3 - 18*4 = 1280 - 18*4 = 1280 - 72 = 1208,1208,,,1,0,,Tính đạo hàm của hàm số y = 5x^4 - 9x^2 + 5 tại điểm x = 4.
+math_th_k002,math,tich_phan,TH,numeric,json,1,6.36,1,27,27,,,4,0,,Tính tích phân I = ∫ từ 0 đến 3 của 3x^2 dx.
+math_th_k003,math,logarit,TH,numeric,json,1,2.95,1,8,8,,,1,0,,Tính giá trị biểu thức log cơ số 2 của 256.
+math_vd_k004,math,cap_so_nhan,VD,numeric,json,0,3.43,1,3642,3279,,,1,0,,"Cho cấp số nhân có u1 = 3, công bội q = 3. Tính tổng 7 số hạng đầu tiên."
+math_th_k005,math,to_hop,TH,numeric,json,1,5.49,1,286,286,,,2,0,,Tính số tổ hợp chập 3 của 13 phần tử.
+math_th_k006,math,so_phuc,TH,numeric,json,1,5.95,1,13,13,,,3,0,,Cho số phức z = 3 + 2i. Tính môđun của z^2.
+math_vd_k007,math,phuong_trinh_mu,VD,numeric,json,1,9.79,1,4,4,,,5,0,,Giải phương trình 2^(2x) - 10·2^x + 16 = 0. Tính tổng các nghiệm.
+math_vd_k008,math,diem_uon,VD,numeric,json,1,4.59,1,1,1,,,2,0,,Cho hàm số y = x^3 - 3x^2 + 4x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k009,math,gtln_gtnn,VD,numeric,json,1,10.39,1,2\sqrt{6},4.89898,,,5,0,,Tìm giá trị nhỏ nhất của hàm số y = 2x + 3/x với x > 0.
+math_vd_k010,math,xac_suat,VD,numeric,json,1,6.41,1,0.083,0.0833333,,,3,0,,Một hộp có 5 bi đỏ và 5 bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất để cả 3 viên đều màu đỏ.
+math_vdc_k011,math,tich_phan_tung_phan,VDC,numeric,json,0,10.43,1,1.5475202928792225,4.57456,,,5,0,,Tính tích phân I = ∫ từ 0 đến 1 của x·e^(3x) dx.
+math_vdc_k012,math,dien_tich_hinh_phang,VDC,numeric,json,0,8.67,1,8/3 m^2,1.33333,,,4,0,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = x^2 và y = 2x.
+math_vd_k013,math,hoan_vi_vong,VD,numeric,json,1,3.13,1,6,6,,,1,0,,Có bao nhiêu cách xếp 4 người ngồi quanh một bàn tròn?
+math_th_k014,math,he_phuong_trinh,TH,numeric,json,1,5.02,1,x = 5,5,,,3,0,,Giải hệ phương trình x + y = 11 và x - y = -1. Tìm giá trị của x.
+math_vdc_k015,math,xac_suat_nhi_thuc,VDC,numeric,json,1,5.71,1,0.441,0.441,,,3,0,,"Một xạ thủ bắn 3 phát độc lập, xác suất trúng mỗi phát là 0,3. Tính xác suất trúng đúng 1 phát."
+math_vdc_k016,math,gioi_han,VDC,numeric,json,1,10.32,1,\frac{\sqrt{2}}{2},0.707107,,,4,0,,Tính giới hạn của biểu thức sqrt(2x^2 + 2x) - sqrt(2)·x khi x tiến tới dương vô cùng.
+math_vd_k017,math,phuong_trinh_logarit,VD,numeric,json,1,4.00,1,-3,-3,,,2,0,,Giải phương trình log cơ số 2 của (x + 7) bằng 2. Tìm nghiệm x.
+math_vd_k018,math,tiep_tuyen,VD,symbolic,json,1,5.71,1,y = 7x - 1,7*x + -1,,,3,0,,Cho hàm số y = x^3 + 4x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 1.
+math_th_k019,math,hinh_hoc_phang,TH,numeric,json,1,5.69,1,12,12,,,2,0,,"Cho tam giác có ba cạnh lần lượt là 5, 5 và 6. Tính diện tích tam giác đó."
+math_vd_k020,math,hinh_hoc_phang,VD,numeric,json,0,3.87,1,8,8.7178,,,2,0,,"Cho tam giác ABC có AB = 10, AC = 6 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k021,math,hinh_hoc_phang,TH,numeric,json,1,4.07,1,11.25,11.25,,,2,0,,"Cho tam giác có hai cạnh 5 và 9, góc xen giữa bằng 150 độ. Tính diện tích tam giác."
+math_vd_k022,math,hinh_hoc_phang,VD,numeric,json,1,5.58,1,8.5 m,8.5,,,3,0,,"Cho tam giác vuông có hai cạnh góc vuông 8 và 15, cạnh huyền 17. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k023,math,hinh_hoc_phang,VD,numeric,json,0,2.94,1,r = 4,3,,,1,0,,"Cho tam giác vuông có hai cạnh góc vuông 8 và 15, cạnh huyền 17. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k024,math,hinh_hoc_khong_gian,TH,numeric,json,1,9.51,1,452.39 m^3,452.389,,,4,0,,Tính thể tích khối nón có bán kính đáy 6 và chiều cao 12.
+math_nb_k025,math,hinh_hoc_khong_gian,NB,numeric,json,1,6.07,1,314.159,314.159,,,4,0,,Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 4.
+math_nb_k026,math,hinh_hoc_khong_gian,NB,numeric,json,1,7.32,1,113.09733552923255 m^3,113.097,,,3,0,,Tính thể tích khối cầu có bán kính 3.
+math_nb_k027,math,hinh_hoc_khong_gian,NB,numeric,json,1,6.16,1,113.09733552923255 m²,113.097,,,3,0,,Tính diện tích mặt cầu có bán kính 3.
+math_th_k028,math,hinh_hoc_khong_gian,TH,numeric,json,0,7.03,1,30\pi \text{ m}^2,94.2478,,,3,0,,Tính diện tích xung quanh của hình nón có bán kính đáy 3 và độ dài đường sinh 10.
+math_vd_k029,math,hinh_hoc_khong_gian,VD,numeric,json,0,6.93,1,2\sqrt{5} m,5.2915,,,4,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 4 và cạnh bên bằng 6. Tính chiều cao của khối chóp.
+math_vdc_k030,math,hinh_hoc_khong_gian,VDC,numeric,json,0,4.79,1,43.28709090648102,31.749,,,1,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 5. Tính thể tích khối chóp.
+math_vdc_k031,math,hinh_hoc_khong_gian,VDC,numeric,json,0,7.83,1,2\sqrt{2},4,,,3,0,,Cho hình lập phương ABCD.A'B'C'D' có cạnh bằng 4. Tính khoảng cách giữa hai đường thẳng chéo nhau AC và B'D'.
+math_nb_k032,math,hinh_hoc_toa_do,NB,numeric,json,1,3.99,1,2\sqrt{22},9.38083,,,1,0,,"Trong không gian Oxyz, cho hai điểm A(3; 0; 1) và B(9; 4; 7). Tính độ dài đoạn thẳng AB."
+math_vd_k033,math,hinh_hoc_toa_do,VD,numeric,json,0,7.00,1,3.391,3.88057,,,3,0,,"Trong không gian Oxyz, tính khoảng cách từ điểm M(1; 4; 0) đến mặt phẳng có phương trình 2x + 2y + 3z + 6 = 0."
+math_th_k034,math,hinh_hoc_toa_do,TH,numeric,json,1,6.80,1,3.43 m,3.46688,,,3,0,,"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; 3) đến đường thẳng 4x + 6y + 3 = 0."
+math_vd_k035,math,hinh_hoc_toa_do,VD,numeric,json,1,7.06,1,5.744562646538029,5.74456,,,3,0,,"Trong mặt phẳng Oxy, cho đường tròn có phương trình x^2 + y^2 - 6x - 4y + (-20) = 0. Tính bán kính đường tròn."
+math_vdc_k036,math,hinh_hoc_toa_do,VDC,numeric,json,0,10.68,1,0.942,0.854704,,,5,0,,"Trong không gian Oxyz, cho hai vectơ u = (3; 3; 2) và v = (2; 1; 3). Tính côsin của góc giữa hai vectơ."
+math_nb_k037,math,dao_ham,NB,numeric,json,1,4.50,1,2,2,,,2,0,,Tính đạo hàm của hàm số y = 5x^4 - 9x^2 + 5 tại điểm x = 1.
+math_th_k038,math,tich_phan,TH,numeric,json,0,6.01,1,243/5,145.8,,,2,0,,Tính tích phân I = ∫ từ 0 đến 3 của 3x^4 dx.
+math_th_k039,math,logarit,TH,numeric,json,1,2.83,1,3,3,,,1,0,,Tính giá trị biểu thức log cơ số 7 của 343.
+math_vd_k040,math,cap_so_nhan,VD,numeric,json,1,6.57,1,1020,1020,,,4,0,,"Cho cấp số nhân có u1 = 4, công bội q = 2. Tính tổng 8 số hạng đầu tiên."
+math_th_k041,math,to_hop,TH,numeric,json,1,5.87,1,3003,3003,,,2,0,,Tính số tổ hợp chập 5 của 15 phần tử.
+math_th_k042,math,so_phuc,TH,numeric,json,1,5.57,1,10,10,,,3,0,,Cho số phức z = 3 + i. Tính môđun của z^2.
+math_vd_k043,math,phuong_trinh_mu,VD,numeric,json,0,2.77,1,10,4,,,1,0,,Giải phương trình 3^(2x) - 30·3^x + 81 = 0. Tính tổng các nghiệm.
+math_vd_k044,math,diem_uon,VD,numeric,json,1,4.46,1,1,1,,,2,0,,Cho hàm số y = x^3 - 3x^2 + 8x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k045,math,gtln_gtnn,VD,numeric,json,0,7.20,1,3\sqrt{10},6.32456,,,4,0,,Tìm giá trị nhỏ nhất của hàm số y = 2x + 5/x với x > 0.
+math_vd_k046,math,xac_suat,VD,numeric,json,1,6.10,1,0.0909,0.0909091,,,3,0,,Một hộp có 6 bi đỏ và 6 bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất để cả 3 viên đều màu đỏ.
+math_vdc_k047,math,tich_phan_tung_phan,VDC,numeric,json,0,18.01,1,0.325528925349158,10.2997,,,10,0,,Tính tích phân I = ∫ từ 0 đến 1 của x·e^(4x) dx.
+math_vdc_k048,math,dien_tich_hinh_phang,VDC,numeric,json,1,8.60,1,32/3,10.6667,,,3,0,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = x^2 và y = 4x.
+math_vd_k049,math,hoan_vi_vong,VD,numeric,json,1,5.06,1,24 cách,24,,,3,0,,Có bao nhiêu cách xếp 5 người ngồi quanh một bàn tròn?
+math_th_k050,math,he_phuong_trinh,TH,numeric,json,1,4.99,1,5,5,,,3,0,,Giải hệ phương trình x + y = 12 và x - y = -2. Tìm giá trị của x.
+math_vdc_k051,math,xac_suat_nhi_thuc,VDC,numeric,json,1,9.03,1,0.4116,0.4116,,,6,0,,"Một xạ thủ bắn 4 phát độc lập, xác suất trúng mỗi phát là 0,3. Tính xác suất trúng đúng 1 phát."
+math_vdc_k052,math,gioi_han,VDC,numeric,json,1,3.34,1,1/sqrt(3),0.57735,,,1,0,,Tính giới hạn của biểu thức sqrt(3x^2 + 2x) - sqrt(3)·x khi x tiến tới dương vô cùng.
+math_vd_k053,math,phuong_trinh_logarit,VD,numeric,json,1,3.29,1,4,4,,,1,0,,Giải phương trình log cơ số 3 của (x + 5) bằng 2. Tìm nghiệm x.
+math_vd_k054,math,tiep_tuyen,VD,symbolic,json,0,6.83,1,y = 18x - 19,30*x + -31,,,4,0,,Cho hàm số y = 2x^3 + 6x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 2.
+math_th_k055,math,hinh_hoc_phang,TH,numeric,json,1,7.10,1,24,24,,,4,0,,"Cho tam giác có ba cạnh lần lượt là 6, 8 và 10. Tính diện tích tam giác đó."
+math_vd_k056,math,hinh_hoc_phang,VD,numeric,json,0,3.58,1,BC = 7.00,6.55744,,,1,0,,"Cho tam giác ABC có AB = 7, AC = 6 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k057,math,hinh_hoc_phang,TH,numeric,json,1,7.39,1,8.75 m²,8.75,,,3,0,,"Cho tam giác có hai cạnh 5 và 7, góc xen giữa bằng 30 độ. Tính diện tích tam giác."
+math_vd_k058,math,hinh_hoc_phang,VD,numeric,json,1,5.10,1,2.5,2.5,,,3,0,,"Cho tam giác vuông có hai cạnh góc vuông 3 và 4, cạnh huyền 5. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k059,math,hinh_hoc_phang,VD,numeric,json,1,6.34,1,3 cm,3,,,3,0,,"Cho tam giác vuông có hai cạnh góc vuông 9 và 12, cạnh huyền 15. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k060,math,hinh_hoc_khong_gian,TH,numeric,json,1,7.62,1,150.80 m³,150.796,,,4,0,,Tính thể tích khối nón có bán kính đáy 4 và chiều cao 9.
+math_nb_k061,math,hinh_hoc_khong_gian,NB,numeric,json,1,6.32,1,125.66 m^3,125.664,,,3,0,,Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 10.
+math_nb_k062,math,hinh_hoc_khong_gian,NB,numeric,json,1,5.60,1,33.51 m³,33.5103,,,3,0,,Tính thể tích khối cầu có bán kính 2.
+math_nb_k063,math,hinh_hoc_khong_gian,NB,numeric,json,1,3.19,1,100\pi,314.159,,,1,0,,Tính diện tích mặt cầu có bán kính 5.
+math_th_k064,math,hinh_hoc_khong_gian,TH,numeric,json,1,7.63,1,157.08 m^2,157.08,,,4,0,,Tính diện tích xung quanh của hình nón có bán kính đáy 5 và độ dài đường sinh 10.
+math_vd_k065,math,hinh_hoc_khong_gian,VD,numeric,json,0,6.28,1,\sqrt{17} \text{ (m)},5.56776,,,3,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 7. Tính chiều cao của khối chóp.
+math_vdc_k066,math,hinh_hoc_khong_gian,VDC,numeric,json,0,8.27,1,24\sqrt{10} \text{ m}^3,66.8132,,,3,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 7. Tính thể tích khối chóp.
+math_vdc_k067,math,hinh_hoc_khong_gian,VDC,numeric,json,0,19.63,1,0 m,3,,,9,0,,Cho hình lập phương ABCD.A'B'C'D' có cạnh bằng 3. Tính khoảng cách giữa hai đường thẳng chéo nhau AC và B'D'.
+math_nb_k068,math,hinh_hoc_toa_do,NB,numeric,json,1,7.74,1,14,14,,,3,0,,"Trong không gian Oxyz, cho hai điểm A(1; 4; 3) và B(7; 8; 15). Tính độ dài đoạn thẳng AB."
+math_vd_k069,math,hinh_hoc_toa_do,VD,numeric,json,0,5.30,1,21,8.37158,,,2,0,,"Trong không gian Oxyz, tính khoảng cách từ điểm M(3; 4; 5) đến mặt phẳng có phương trình 2x + 2y + 2z + 5 = 0."
+math_th_k070,math,hinh_hoc_toa_do,TH,numeric,json,0,7.63,1,2.68328157302,5.36656,,,3,0,,"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(4; 2) đến đường thẳng 2x + 1y + 2 = 0."
+math_vd_k071,math,hinh_hoc_toa_do,VD,numeric,json,1,7.05,1,5.567764362830021,5.56776,,,3,0,,"Trong mặt phẳng Oxy, cho đường tròn có phương trình x^2 + y^2 - 4x - 8y + (-11) = 0. Tính bán kính đường tròn."
+math_vdc_k072,math,hinh_hoc_toa_do,VDC,numeric,json,1,11.89,1,0.7527,0.752773,,,6,0,,"Trong không gian Oxyz, cho hai vectơ u = (2; 3; 2) và v = (2; 1; 5). Tính côsin của góc giữa hai vectơ."
+math_nb_k073,math,dao_ham,NB,numeric,json,1,6.50,1,200,200,,,3,0,,Tính đạo hàm của hàm số y = 7x^4 - 6x^2 + 5 tại điểm x = 2.
+math_th_k074,math,tich_phan,TH,numeric,json,1,5.43,1,8,8,,,3,0,,Tính tích phân I = ∫ từ 0 đến 2 của 3x^2 dx.
+math_th_k075,math,logarit,TH,numeric,json,1,7.96,1,6,6,,,4,0,,Tính giá trị biểu thức log cơ số 7 của 117649.
+math_vd_k076,math,cap_so_nhan,VD,numeric,json,0,3.39,1,254,510,,,1,0,,"Cho cấp số nhân có u1 = 2, công bội q = 2. Tính tổng 8 số hạng đầu tiên."
+math_th_k077,math,to_hop,TH,numeric,json,1,5.37,1,462,462,,,2,0,,Tính số tổ hợp chập 5 của 11 phần tử.
+math_th_k078,math,so_phuc,TH,numeric,json,0,5.83,1,\sqrt{34},34,,,3,0,,Cho số phức z = 5 + 3i. Tính môđun của z^2.
+math_vd_k079,math,phuong_trinh_mu,VD,numeric,json,0,2.72,1,4,5,,,1,0,,Giải phương trình 2^(2x) - 12·2^x + 32 = 0. Tính tổng các nghiệm.
+math_vd_k080,math,diem_uon,VD,numeric,json,0,4.75,1,x = 2,1,,,2,0,,Cho hàm số y = 2x^3 - 6x^2 + 8x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k081,math,gtln_gtnn,VD,numeric,json,0,2.88,1,8,8.94427,,,1,0,,Tìm giá trị nhỏ nhất của hàm số y = 4x + 5/x với x > 0.
+math_vd_k082,math,xac_suat,VD,numeric,json,1,5.81,1,0.227,0.227273,,,3,0,,Một hộp có 6 bi đỏ và 6 bi xanh. Lấy ngẫu nhiên 2 viên. Tính xác suất để cả 2 viên đều màu đỏ.
+math_vdc_k083,math,tich_phan_tung_phan,VDC,numeric,json,1,14.74,1,\frac{1}{9}(5e^{6} + 1),224.238,,,8,0,,Tính tích phân I = ∫ từ 0 đến 2 của x·e^(3x) dx.
+math_vdc_k084,math,dien_tich_hinh_phang,VDC,numeric,json,0,6.07,1,4 m^2,2.66667,,,3,0,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = 2x^2 và y = 4x.
+math_vd_k085,math,hoan_vi_vong,VD,numeric,json,1,4.22,1,120,120,,,2,0,,Có bao nhiêu cách xếp 6 người ngồi quanh một bàn tròn?
+math_th_k086,math,he_phuong_trinh,TH,numeric,json,1,5.46,1,x = 3,3,,,4,0,,Giải hệ phương trình x + y = 5 và x - y = 1. Tìm giá trị của x.
+math_vdc_k087,math,xac_suat_nhi_thuc,VDC,numeric,json,0,3.45,1,0.2304,0.3456,,,1,0,,"Một xạ thủ bắn 4 phát độc lập, xác suất trúng mỗi phát là 0,4. Tính xác suất trúng đúng 2 phát."
+math_vdc_k088,math,gioi_han,VDC,numeric,json,1,9.04,1,0.25,0.25,,,5,0,,Tính giới hạn của biểu thức sqrt(4x^2 + 1x) - sqrt(4)·x khi x tiến tới dương vô cùng.
+math_vd_k089,math,phuong_trinh_logarit,VD,numeric,json,1,3.96,1,-1,-1,,,2,0,,Giải phương trình log cơ số 2 của (x + 5) bằng 2. Tìm nghiệm x.
+math_vd_k090,math,tiep_tuyen,VD,symbolic,json,1,6.80,1,y = 12x - 3,12*x + -3,,,4,0,,Cho hàm số y = 2x^3 + 6x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 1.
+math_th_k091,math,hinh_hoc_phang,TH,numeric,json,1,5.03,1,6 cm²,6,,,2,0,,"Cho tam giác có ba cạnh lần lượt là 3, 4 và 5. Tính diện tích tam giác đó."
+math_vd_k092,math,hinh_hoc_phang,VD,numeric,json,0,6.59,1,5.744562646538029,7.54983,,,4,0,,"Cho tam giác ABC có AB = 7, AC = 8 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k093,math,hinh_hoc_phang,TH,numeric,json,1,6.67,1,11.25 cm²,11.25,,,4,0,,"Cho tam giác có hai cạnh 5 và 9, góc xen giữa bằng 30 độ. Tính diện tích tam giác."
+math_vd_k094,math,hinh_hoc_phang,VD,numeric,json,1,4.35,1,5,5,,,3,0,,"Cho tam giác vuông có hai cạnh góc vuông 6 và 8, cạnh huyền 10. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k095,math,hinh_hoc_phang,VD,numeric,json,1,5.74,1,1 m,1,,,3,0,,"Cho tam giác vuông có hai cạnh góc vuông 3 và 4, cạnh huyền 5. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k096,math,hinh_hoc_khong_gian,TH,numeric,json,1,7.43,1,201.06 m^3,201.062,,,4,0,,Tính thể tích khối nón có bán kính đáy 4 và chiều cao 12.
+math_nb_k097,math,hinh_hoc_khong_gian,NB,numeric,json,0,5.44,1,25.13 m^3,50.2655,,,3,0,,Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 4.
+math_nb_k098,math,hinh_hoc_khong_gian,NB,numeric,json,0,6.23,1,33.510321638291124 m^3,268.083,,,3,0,,Tính thể tích khối cầu có bán kính 4.
+math_nb_k099,math,hinh_hoc_khong_gian,NB,numeric,json,1,5.72,1,1017.876,1017.88,,,3,0,,Tính diện tích mặt cầu có bán kính 9.
+math_th_k100,math,hinh_hoc_khong_gian,TH,numeric,json,1,6.38,1,52\pi m^2,163.363,,,3,0,,Tính diện tích xung quanh của hình nón có bán kính đáy 4 và độ dài đường sinh 13.
+phys_th_k001,physics,dao_dong_dieu_hoa,TH,numeric,json,1,9.91,1,1.206 m/s²,1.18435 m/s^2,,,5,0,,Một vật dao động điều hoà với biên độ 3 cm và tần số 1 Hz. Tính gia tốc cực đại của vật.
+phys_vd_k002,physics,con_lac_lo_xo,VD,numeric,json,1,7.42,1,0.31 s,0.314159 s,,,4,0,,"Con lắc lò xo có khối lượng 0,1 kg và độ cứng 40 N/m. Tính chu kỳ dao động."
+phys_vd_k003,physics,nang_luong_dao_dong,VD,numeric,json,1,5.54,1,0.08 J,0.08 J,,,3,0,,Con lắc lò xo có độ cứng 100 N/m dao động với biên độ 4 cm. Tính cơ năng của con lắc.
+phys_vdc_k004,physics,song_dung,VDC,numeric,json,1,6.87,1,1.33 m,1.33333 m,,,5,0,,Một sợi dây dài 2 m hai đầu cố định có sóng dừng với 3 bụng sóng. Tính bước sóng.
+phys_vd_k005,physics,mach_rlc,VD,numeric,json,0,3.75,1,2.0 A,4.71405 A,,,1,0,,"Đặt hiệu điện thế hiệu dụng 200 V vào mạch RLC nối tiếp có R = 30 Ω và cảm kháng 30 Ω, dung kháng bằng 0. Tính cường độ dòng điện hiệu dụng."
+phys_vdc_k006,physics,mach_rlc,VDC,numeric,json,1,10.87,1,605 W,605 W,,,4,0,,"Mạch RLC nối tiếp có R = 40 Ω, ZL = 80 Ω, ZC = 40 Ω, đặt vào hiệu điện thế hiệu dụng 220 V. Tính công suất tiêu thụ của mạch."
+phys_vdc_k007,physics,mach_rlc,VDC,numeric,json,1,6.84,1,400 W,400 W,,,3,0,,"Mạch RLC nối tiếp có R = 100 Ω. Điều chỉnh tần số để xảy ra cộng hưởng, hiệu điện thế hiệu dụng 200 V. Tính công suất cực đại của mạch."
+phys_vdc_k008,physics,giao_thoa_anh_sang,VDC,numeric,json,1,6.93,1,3.375 mm,3.375 mm,,,3,0,,"Thí nghiệm Y-âng có a = 1 mm, D = 1,5 m, bước sóng 750 nm. Tính khoảng cách từ vân trung tâm đến vân sáng bậc 3."
+phys_vd_k009,physics,phong_xa,VD,numeric,json,1,8.24,1,175 gam,175 gam,,,4,0,,"Chất phóng xạ ban đầu 200 gam, chu kỳ bán rã 5 ngày. Tính khối lượng đã phân rã sau 15 ngày."
+phys_vdc_k010,physics,nem_xien,VDC,numeric,json,1,6.99,1,40 m,40 m,,,4,0,,Ném một vật với vận tốc ban đầu 20 m/s hợp với phương ngang góc 45 độ. Lấy g = 10 m/s^2. Tính tầm xa của vật.
+phys_vd_k011,physics,dong_luong,VD,numeric,json,1,6.25,1,2.67 m/s,2.66667 m/s,,,3,0,,Vật khối lượng 2 kg chuyển động với vận tốc 4 m/s va chạm mềm vào vật 1 kg đang đứng yên. Tính vận tốc chung sau va chạm.
+phys_vd_k012,physics,dien_tich,VD,numeric,json,0,8.11,1,800 N,0.8 N,,,4,0,,"Hai điện tích 2 μC và 4 μC đặt cách nhau 0,3 m trong chân không. Tính lực tương tác giữa chúng. Lấy k = 9·10^9."
+phys_vd_k013,physics,mach_dien_mot_chieu,VD,numeric,json,0,4.70,1,4 A,3.42857 A,,,3,0,,"Nguồn điện có suất điện động 24 V, điện trở trong 2 Ω, mắc với điện trở ngoài 5 Ω. Tính cường độ dòng điện trong mạch."
+phys_vdc_k014,physics,mach_dien_mot_chieu,VDC,numeric,json,0,5.17,1,10 W,11.9008 W,,,3,0,,"Nguồn có suất điện động 12 V, điện trở trong 1 Ω nối với điện trở ngoài 10 Ω. Tính công suất tiêu thụ ở mạch ngoài."
+phys_vdc_k015,physics,thau_kinh,VDC,numeric,json,1,4.99,1,24 cm,24 cm,,,3,0,,"Vật sáng đặt cách thấu kính hội tụ 40 cm, tiêu cự thấu kính 15 cm. Tính khoảng cách từ ảnh đến thấu kính."
+phys_th_k016,physics,chat_khi,TH,numeric,json,1,11.62,1,6 atm,6 atm,,,5,0,,Khí lí tưởng ở áp suất 3 atm có thể tích 4 lít. Nén đẳng nhiệt đến thể tích 2 lít. Tính áp suất khí sau khi nén.
+phys_th_k017,physics,nhiet_luong,TH,numeric,json,1,6.18,1,9200 J,9200 J,,,3,0,,"Tính nhiệt lượng cần cung cấp cho 0,5 kg vật liệu có nhiệt dung riêng 460 J/(kg.K) để tăng 40 độ C."
+phys_vdc_k018,physics,luong_tu,VDC,numeric,json,0,8.10,1,0.94140625 eV,3.10547 eV,,,3,0,,"Tính năng lượng của photon ánh sáng có bước sóng 400 nm, kết quả theo đơn vị eV. Lấy h = 6,625·10^-34, c = 3·10^8, 1 eV = 1,6·10^-19 J."
+phys_th_k019,physics,may_bien_ap,TH,numeric,json,1,4.66,1,500 V,500 V,,,3,0,,"Máy biến áp có cuộn sơ cấp 800 vòng, thứ cấp 2000 vòng. Điện áp sơ cấp 200 V. Tính điện áp thứ cấp."
+phys_nb_k020,physics,song_co,NB,numeric,json,1,5.52,1,0.68 m,0.68 m,,,3,0,,"Sóng âm truyền với tốc độ 340 m/s, tần số 500 Hz. Tính bước sóng."
+phys_th_k021,physics,co_nang,TH,numeric,json,0,2.15,1,,15.4919 m/s,,,0,0,"ValidationError: 1 validation error for Solution
+  Invalid JSON: EOF while parsing a string at line 1 column 156 [type=json_invalid, input_value='{ ""steps"": [ { ""id"": 1, ...00000000000000000000000', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid",Vật 2 kg rơi tự do từ độ cao 12 m. Lấy g = 10 m/s^2. Tính vận tốc khi chạm đất.
+phys_vd_k022,physics,nhiet_dien,VD,numeric,json,0,3.12,1,6000 J,12000 J,,,1,0,,Dòng điện 2 A qua điện trở 10 Ω trong 300 giây. Tính nhiệt lượng toả ra.
+phys_vd_k023,physics,tu_truong,VD,numeric,json,1,6.86,1,"0,2 N",0.2 N,,,3,0,,"Đoạn dây dài 0,5 m mang dòng 2 A đặt vuông góc từ trường 0,2 T. Tính lực từ tác dụng lên dây."
+phys_vdc_k024,physics,cam_ung_dien_tu,VDC,numeric,json,0,3.13,1,"0,1 V",10 V,,,1,0,,"Cuộn dây 100 vòng, từ thông qua mỗi vòng biến thiên 0,02 Wb trong 0,2 s. Tính suất điện động cảm ứng."
+phys_vdc_k025,physics,dao_dong_dieu_hoa,VDC,numeric,json,1,9.71,1,1.6 m/s,1.6 m/s,,,6,0,,"Vật dao động điều hoà biên độ 10 cm, tần số góc 20 rad/s. Tính tốc độ của vật khi li độ bằng 6 cm."
+phys_nb_k026,physics,cong_suat_dien,NB,numeric,json,1,4.90,1,180000 J,180000 J,,,2,0,,Thiết bị công suất 1500 W hoạt động trong 120 giây. Tính điện năng tiêu thụ.
+phys_vdc_k027,physics,mach_dao_dong,VDC,numeric,json,0,7.95,1,15915494.309189535 Hz,159155 Hz,,,4,0,,Mạch dao động LC có L = 5 mH và C = 200 pF. Tính tần số dao động riêng.
+phys_nb_k028,physics,dong_nang,NB,numeric,json,0,6.06,1,200000 J,300000 J,,,3,0,,Ô tô khối lượng 1500 kg chạy với vận tốc 20 m/s. Tính động năng.
+phys_th_k029,physics,ap_suat,TH,numeric,json,1,6.42,1,40000 Pa,40000 Pa,,,3,0,,Tính áp suất tại độ sâu 5 m trong chất lỏng có khối lượng riêng 800 kg/m^3. Lấy g = 10 m/s^2.
+phys_vd_k030,physics,dao_dong_dieu_hoa,VD,numeric,json,1,4.75,1,"0,4 m",40 cm,,,2,0,,"Vật dao động điều hoà biên độ 10 cm, chu kỳ 0,4 s. Tính quãng đường vật đi được trong một chu kỳ."
+phys_th_k031,physics,song_co,TH,numeric,json,0,2.88,1,1.5 m,2.5 m,,,1,0,,"Hai điểm trên phương truyền sóng cách nhau nửa bước sóng. Sóng có tần số 60 Hz, tốc độ 300 m/s. Tính khoảng cách hai điểm đó."
+phys_nb_k032,physics,hat_nhan,NB,numeric,json,1,3.23,1,143,143,,,2,0,,Hạt nhân có số khối 235 và số proton 92. Tính số neutron trong hạt nhân.
+phys_th_k033,physics,dao_dong_dieu_hoa,TH,numeric,json,1,10.49,1,3.16 m/s^2,3.15827 m/s^2,,,5,0,,Một vật dao động điều hoà với biên độ 8 cm và tần số 1 Hz. Tính gia tốc cực đại của vật.
+phys_vd_k034,physics,con_lac_lo_xo,VD,numeric,json,1,5.85,1,0.628 s,0.628319 s,,,3,0,,"Con lắc lò xo có khối lượng 0,4 kg và độ cứng 40 N/m. Tính chu kỳ dao động."
+phys_vd_k035,physics,nang_luong_dao_dong,VD,numeric,json,1,5.69,1,0.25 J,0.25 J,,,2,0,,Con lắc lò xo có độ cứng 200 N/m dao động với biên độ 5 cm. Tính cơ năng của con lắc.
+phys_vdc_k036,physics,song_dung,VDC,numeric,json,1,7.68,1,"1,07 m",1.06667 m,,,5,0,,"Một sợi dây dài 1,6 m hai đầu cố định có sóng dừng với 3 bụng sóng. Tính bước sóng."
+phys_vd_k037,physics,mach_rlc,VD,numeric,json,1,10.05,1,1.7678 A,1.76777 A,,,3,0,,"Đặt hiệu điện thế hiệu dụng 100 V vào mạch RLC nối tiếp có R = 40 Ω và cảm kháng 40 Ω, dung kháng bằng 0. Tính cường độ dòng điện hiệu dụng."
+phys_vdc_k038,physics,mach_rlc,VDC,numeric,json,0,8.04,1,193.6 W,372.308 W,,,4,0,,"Mạch RLC nối tiếp có R = 40 Ω, ZL = 100 Ω, ZC = 40 Ω, đặt vào hiệu điện thế hiệu dụng 220 V. Tính công suất tiêu thụ của mạch."
+phys_vdc_k039,physics,mach_rlc,VDC,numeric,json,1,4.73,1,968 W,968 W,,,2,0,,"Mạch RLC nối tiếp có R = 50 Ω. Điều chỉnh tần số để xảy ra cộng hưởng, hiệu điện thế hiệu dụng 220 V. Tính công suất cực đại của mạch."
+phys_vdc_k040,physics,giao_thoa_anh_sang,VDC,numeric,json,1,7.82,1,1.5 cm,15 mm,,,4,0,,"Thí nghiệm Y-âng có a = 0,5 mm, D = 2 m, bước sóng 750 nm. Tính khoảng cách từ vân trung tâm đến vân sáng bậc 5."
+phys_vd_k041,physics,phong_xa,VD,numeric,json,0,7.77,1,187.5 gam,175 gam,,,4,0,,"Chất phóng xạ ban đầu 200 gam, chu kỳ bán rã 10 ngày. Tính khối lượng đã phân rã sau 30 ngày."
+phys_vdc_k042,physics,nem_xien,VDC,numeric,json,0,8.11,1,51.96 m,77.9423 m,,,4,0,,Ném một vật với vận tốc ban đầu 30 m/s hợp với phương ngang góc 60 độ. Lấy g = 10 m/s^2. Tính tầm xa của vật.
+phys_vd_k043,physics,dong_luong,VD,numeric,json,0,6.01,1,1.33 m/s,1.71429 m/s,,,3,0,,Vật khối lượng 3 kg chuyển động với vận tốc 4 m/s va chạm mềm vào vật 4 kg đang đứng yên. Tính vận tốc chung sau va chạm.
+phys_vd_k044,physics,dien_tich,VD,numeric,json,0,8.23,1,"1.35 \times 10^4 \, N",13.5 N,,,4,0,,"Hai điện tích 3 μC và 5 μC đặt cách nhau 0,1 m trong chân không. Tính lực tương tác giữa chúng. Lấy k = 9·10^9."
+phys_vd_k045,physics,mach_dien_mot_chieu,VD,numeric,json,1,5.37,1,2 A,2 A,,,3,0,,"Nguồn điện có suất điện động 24 V, điện trở trong 2 Ω, mắc với điện trở ngoài 10 Ω. Tính cường độ dòng điện trong mạch."
+phys_vdc_k046,physics,mach_dien_mot_chieu,VDC,numeric,json,0,5.04,1,20 W,47.6033 W,,,3,0,,"Nguồn có suất điện động 24 V, điện trở trong 1 Ω nối với điện trở ngoài 10 Ω. Tính công suất tiêu thụ ở mạch ngoài."
+phys_vdc_k047,physics,thau_kinh,VDC,numeric,json,1,4.90,1,40 cm,40 cm,,,2,0,,"Vật sáng đặt cách thấu kính hội tụ 40 cm, tiêu cự thấu kính 20 cm. Tính khoảng cách từ ảnh đến thấu kính."
+phys_th_k048,physics,chat_khi,TH,numeric,json,1,6.49,1,4.053 atm,4 atm,,,3,0,,Khí lí tưởng ở áp suất 2 atm có thể tích 4 lít. Nén đẳng nhiệt đến thể tích 2 lít. Tính áp suất khí sau khi nén.
+phys_th_k049,physics,nhiet_luong,TH,numeric,json,1,6.06,1,36800 J,36800 J,,,3,0,,Tính nhiệt lượng cần cung cấp cho 2 kg vật liệu có nhiệt dung riêng 460 J/(kg.K) để tăng 40 độ C.
+phys_vdc_k050,physics,luong_tu,VDC,numeric,json,1,8.35,1,2.0703125 \text{ eV},2.07031 eV,,,3,0,,"Tính năng lượng của photon ánh sáng có bước sóng 600 nm, kết quả theo đơn vị eV. Lấy h = 6,625·10^-34, c = 3·10^8, 1 eV = 1,6·10^-19 J."
+phys_th_k051,physics,may_bien_ap,TH,numeric,json,1,6.02,1,800 V,800 V,,,3,0,,"Máy biến áp có cuộn sơ cấp 500 vòng, thứ cấp 2000 vòng. Điện áp sơ cấp 200 V. Tính điện áp thứ cấp."
+phys_nb_k052,physics,song_co,NB,numeric,json,1,5.74,1,0.4 m,0.4 m,,,3,0,,"Sóng âm truyền với tốc độ 320 m/s, tần số 800 Hz. Tính bước sóng."
+phys_th_k053,physics,co_nang,TH,numeric,json,0,2.21,1,,7.74597 m/s,,,0,0,"ValidationError: 1 validation error for Solution
+  Invalid JSON: EOF while parsing a string at line 1 column 157 [type=json_invalid, input_value='{ ""steps"": [ { ""id"": 1, ...00000000000000000000000', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid","Vật 0,5 kg rơi tự do từ độ cao 3 m. Lấy g = 10 m/s^2. Tính vận tốc khi chạm đất."
+phys_vd_k054,physics,nhiet_dien,VD,numeric,json,1,3.12,1,2400 J,2400 J,,,1,0,,Dòng điện 2 A qua điện trở 10 Ω trong 60 giây. Tính nhiệt lượng toả ra.
+phys_vd_k055,physics,tu_truong,VD,numeric,json,1,7.28,1,"0,3 N",0.3 N,,,3,0,,"Đoạn dây dài 0,3 m mang dòng 2 A đặt vuông góc từ trường 0,5 T. Tính lực từ tác dụng lên dây."
+phys_vdc_k056,physics,cam_ung_dien_tu,VDC,numeric,json,0,7.29,1,-5 V,50 V,,,3,0,,"Cuộn dây 100 vòng, từ thông qua mỗi vòng biến thiên 0,05 Wb trong 0,1 s. Tính suất điện động cảm ứng."
+phys_vdc_k057,physics,dao_dong_dieu_hoa,VDC,numeric,json,1,8.46,1,0.92 m/s,0.916515 m/s,,,4,0,,"Vật dao động điều hoà biên độ 10 cm, tần số góc 10 rad/s. Tính tốc độ của vật khi li độ bằng 4 cm."
+phys_nb_k058,physics,cong_suat_dien,NB,numeric,json,1,5.46,1,900000 J,900000 J,,,3,0,,Thiết bị công suất 1500 W hoạt động trong 600 giây. Tính điện năng tiêu thụ.
+phys_vdc_k059,physics,mach_dao_dong,VDC,numeric,json,0,9.86,1,79577.4715459477 Hz,251646 Hz,,,6,0,,Mạch dao động LC có L = 2 mH và C = 200 pF. Tính tần số dao động riêng.
+phys_nb_k060,physics,dong_nang,NB,numeric,json,0,5.21,1,5000 J,50000 J,,,3,0,,Ô tô khối lượng 1000 kg chạy với vận tốc 10 m/s. Tính động năng.
+phys_th_k061,physics,ap_suat,TH,numeric,json,1,5.35,1,100000 Pa,100000 Pa,,,3,0,,Tính áp suất tại độ sâu 10 m trong chất lỏng có khối lượng riêng 1000 kg/m^3. Lấy g = 10 m/s^2.
+phys_vd_k062,physics,dao_dong_dieu_hoa,VD,numeric,json,1,3.93,1,"0,4 m",40 cm,,,2,0,,"Vật dao động điều hoà biên độ 10 cm, chu kỳ 0,8 s. Tính quãng đường vật đi được trong một chu kỳ."
+phys_th_k063,physics,song_co,TH,numeric,json,0,2.95,1,0.34 m,3.4 m,,,1,0,,"Hai điểm trên phương truyền sóng cách nhau nửa bước sóng. Sóng có tần số 50 Hz, tốc độ 340 m/s. Tính khoảng cách hai điểm đó."
+phys_nb_k064,physics,hat_nhan,NB,numeric,json,1,3.48,1,8,8,,,2,0,,Hạt nhân có số khối 14 và số proton 6. Tính số neutron trong hạt nhân.
+phys_th_k065,physics,dao_dong_dieu_hoa,TH,numeric,json,0,7.60,1,9.42 m/s²,29.6088 m/s^2,,,5,0,,Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính gia tốc cực đại của vật.
+phys_vd_k066,physics,con_lac_lo_xo,VD,numeric,json,0,6.27,1,0.316 s,0.444288 s,,,3,0,,"Con lắc lò xo có khối lượng 0,2 kg và độ cứng 40 N/m. Tính chu kỳ dao động."
+phys_vd_k067,physics,nang_luong_dao_dong,VD,numeric,json,1,6.77,1,1.0 J,1 J,,,3,0,,Con lắc lò xo có độ cứng 200 N/m dao động với biên độ 10 cm. Tính cơ năng của con lắc.
+phys_vdc_k068,physics,song_dung,VDC,numeric,json,1,6.78,1,"0,8 m",0.8 m,,,4,0,,"Một sợi dây dài 1,2 m hai đầu cố định có sóng dừng với 3 bụng sóng. Tính bước sóng."
+phys_vd_k069,physics,mach_rlc,VD,numeric,json,1,7.19,1,4.4 A,4.4 A,,,3,0,,"Đặt hiệu điện thế hiệu dụng 220 V vào mạch RLC nối tiếp có R = 30 Ω và cảm kháng 40 Ω, dung kháng bằng 0. Tính cường độ dòng điện hiệu dụng."
+phys_vdc_k070,physics,mach_rlc,VDC,numeric,json,1,8.73,1,333.33 W,333.333 W,,,4,0,,"Mạch RLC nối tiếp có R = 60 Ω, ZL = 100 Ω, ZC = 40 Ω, đặt vào hiệu điện thế hiệu dụng 200 V. Tính công suất tiêu thụ của mạch."
+phys_vdc_k071,physics,mach_rlc,VDC,numeric,json,1,6.32,1,800 W,800 W,,,3,0,,"Mạch RLC nối tiếp có R = 50 Ω. Điều chỉnh tần số để xảy ra cộng hưởng, hiệu điện thế hiệu dụng 200 V. Tính công suất cực đại của mạch."
+phys_vdc_k072,physics,giao_thoa_anh_sang,VDC,numeric,json,1,8.48,1,4.5 mm,4.5 mm,,,4,0,,"Thí nghiệm Y-âng có a = 1 mm, D = 2 m, bước sóng 750 nm. Tính khoảng cách từ vân trung tâm đến vân sáng bậc 3."
+phys_vd_k073,physics,phong_xa,VD,numeric,json,1,7.87,1,75 gam,75 gam,,,4,0,,"Chất phóng xạ ban đầu 100 gam, chu kỳ bán rã 10 ngày. Tính khối lượng đã phân rã sau 20 ngày."
+phys_vdc_k074,physics,nem_xien,VDC,numeric,json,1,10.07,1,78 m,77.9423 m,,,6,0,,Ném một vật với vận tốc ban đầu 30 m/s hợp với phương ngang góc 30 độ. Lấy g = 10 m/s^2. Tính tầm xa của vật.
+phys_vd_k075,physics,dong_luong,VD,numeric,json,1,6.66,1,4.5 m/s,4.5 m/s,,,3,0,,Vật khối lượng 3 kg chuyển động với vận tốc 6 m/s va chạm mềm vào vật 1 kg đang đứng yên. Tính vận tốc chung sau va chạm.
+phys_vd_k076,physics,dien_tich,VD,numeric,json,0,5.62,1,0.36 N,1.8 N,,,3,0,,"Hai điện tích 2 μC và 4 μC đặt cách nhau 0,2 m trong chân không. Tính lực tương tác giữa chúng. Lấy k = 9·10^9."
+phys_vd_k077,physics,mach_dien_mot_chieu,VD,numeric,json,1,5.76,1,2 A,2 A,,,3,0,,"Nguồn điện có suất điện động 24 V, điện trở trong 1 Ω, mắc với điện trở ngoài 11 Ω. Tính cường độ dòng điện trong mạch."
+phys_vdc_k078,physics,mach_dien_mot_chieu,VDC,numeric,json,0,2.83,1,100 W,58.7755 W,,,1,0,,"Nguồn có suất điện động 24 V, điện trở trong 2 Ω nối với điện trở ngoài 5 Ω. Tính công suất tiêu thụ ở mạch ngoài."
+phys_vdc_k079,physics,thau_kinh,VDC,numeric,json,1,5.76,1,12 cm,12 cm,,,3,0,,"Vật sáng đặt cách thấu kính hội tụ 60 cm, tiêu cự thấu kính 10 cm. Tính khoảng cách từ ảnh đến thấu kính."
+phys_th_k080,physics,chat_khi,TH,numeric,json,1,6.60,1,1.5 atm,1.5 atm,,,3,0,,Khí lí tưởng ở áp suất 3 atm có thể tích 4 lít. Nén đẳng nhiệt đến thể tích 8 lít. Tính áp suất khí sau khi nén.
+phys_th_k081,physics,nhiet_luong,TH,numeric,json,1,6.05,1,70400 J,70400 J,,,3,0,,Tính nhiệt lượng cần cung cấp cho 2 kg vật liệu có nhiệt dung riêng 880 J/(kg.K) để tăng 40 độ C.
+phys_vdc_k082,physics,luong_tu,VDC,numeric,json,0,7.96,1,0.775 eV,2.48437 eV,,,3,0,,"Tính năng lượng của photon ánh sáng có bước sóng 500 nm, kết quả theo đơn vị eV. Lấy h = 6,625·10^-34, c = 3·10^8, 1 eV = 1,6·10^-19 J."
+phys_th_k083,physics,may_bien_ap,TH,numeric,json,1,5.20,1,1600 V,1600 V,,,3,0,,"Máy biến áp có cuộn sơ cấp 500 vòng, thứ cấp 4000 vòng. Điện áp sơ cấp 200 V. Tính điện áp thứ cấp."
+phys_nb_k084,physics,song_co,NB,numeric,json,1,6.32,1,0.8 m,0.8 m,,,3,0,,"Sóng âm truyền với tốc độ 320 m/s, tần số 400 Hz. Tính bước sóng."
+phys_th_k085,physics,co_nang,TH,numeric,json,0,2.18,1,,7.74597 m/s,,,0,0,"ValidationError: 1 validation error for Solution
+  Invalid JSON: EOF while parsing a string at line 1 column 155 [type=json_invalid, input_value='{ ""steps"": [ { ""id"": 1, ...00000000000000000000000', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid",Vật 5 kg rơi tự do từ độ cao 3 m. Lấy g = 10 m/s^2. Tính vận tốc khi chạm đất.
+phys_vd_k086,physics,nhiet_dien,VD,numeric,json,0,3.17,1,1080 J,5400 J,,,1,0,,Dòng điện 3 A qua điện trở 10 Ω trong 60 giây. Tính nhiệt lượng toả ra.
+phys_vd_k087,physics,tu_truong,VD,numeric,json,1,6.47,1,1 N,1 N,,,3,0,,"Đoạn dây dài 0,5 m mang dòng 4 A đặt vuông góc từ trường 0,5 T. Tính lực từ tác dụng lên dây."
+phys_vdc_k088,physics,cam_ung_dien_tu,VDC,numeric,json,0,3.23,1,0.2 V,20 V,,,1,0,,"Cuộn dây 100 vòng, từ thông qua mỗi vòng biến thiên 0,02 Wb trong 0,1 s. Tính suất điện động cảm ứng."
+phys_vdc_k089,physics,dao_dong_dieu_hoa,VDC,numeric,json,1,8.85,1,0.8 m/s,0.8 m/s,,,4,0,,"Vật dao động điều hoà biên độ 10 cm, tần số góc 10 rad/s. Tính tốc độ của vật khi li độ bằng 6 cm."
+phys_nb_k090,physics,cong_suat_dien,NB,numeric,json,0,3.94,1,300 000 J,300000 J,,,2,0,,Thiết bị công suất 500 W hoạt động trong 600 giây. Tính điện năng tiêu thụ.
+phys_vdc_k091,physics,mach_dao_dong,VDC,numeric,json,0,7.50,1,1.59e+7 Hz,100658 Hz,,,4,0,,Mạch dao động LC có L = 5 mH và C = 500 pF. Tính tần số dao động riêng.
+phys_nb_k092,physics,dong_nang,NB,numeric,json,1,6.30,1,75000 J,75000 J,,,3,0,,Ô tô khối lượng 1500 kg chạy với vận tốc 10 m/s. Tính động năng.
+phys_th_k093,physics,ap_suat,TH,numeric,json,1,3.52,1,78500 Pa,80000 Pa,,,1,0,,Tính áp suất tại độ sâu 10 m trong chất lỏng có khối lượng riêng 800 kg/m^3. Lấy g = 10 m/s^2.
+phys_vd_k094,physics,dao_dong_dieu_hoa,VD,numeric,json,1,4.07,1,"0,2 m",20 cm,,,2,0,,"Vật dao động điều hoà biên độ 5 cm, chu kỳ 0,4 s. Tính quãng đường vật đi được trong một chu kỳ."
+phys_th_k095,physics,song_co,TH,numeric,json,1,5.34,1,3 m,3 m,,,3,0,,"Hai điểm trên phương truyền sóng cách nhau nửa bước sóng. Sóng có tần số 50 Hz, tốc độ 300 m/s. Tính khoảng cách hai điểm đó."
+phys_nb_k096,physics,hat_nhan,NB,numeric,json,1,3.12,1,146,146,,,2,0,,Hạt nhân có số khối 238 và số proton 92. Tính số neutron trong hạt nhân.
+phys_th_k097,physics,dao_dong_dieu_hoa,TH,numeric,json,1,11.34,1,2.38 m/s^2,2.36871 m/s^2,,,5,0,,Một vật dao động điều hoà với biên độ 6 cm và tần số 1 Hz. Tính gia tốc cực đại của vật.
+phys_vd_k098,physics,con_lac_lo_xo,VD,numeric,json,0,6.15,1,0.25 s,0.222144 s,,,3,0,,"Con lắc lò xo có khối lượng 0,2 kg và độ cứng 160 N/m. Tính chu kỳ dao động."
+phys_vd_k099,physics,nang_luong_dao_dong,VD,numeric,json,1,5.34,1,0.5 J,0.5 J,,,3,0,,Con lắc lò xo có độ cứng 100 N/m dao động với biên độ 10 cm. Tính cơ năng của con lắc.
+phys_vdc_k100,physics,song_dung,VDC,numeric,json,1,7.83,1,"0,8 m",0.8 m,,,5,0,,"Một sợi dây dài 1,6 m hai đầu cố định có sóng dừng với 4 bụng sóng. Tính bước sóng."
+chem_th_k001,chemistry,khoi_luong_mol,TH,numeric,json,1,5.22,1,213 g/mol,213 g/mol,,,2,0,,Tính khối lượng mol của hợp chất Al(NO3)3.
+chem_th_k002,chemistry,so_mol,TH,numeric,json,1,3.88,1,0.3125 mol,0.3125 mol,,,1,0,,Tính số mol có trong 50 gam Fe2O3. Biết M(Fe2O3) = 160 g/mol.
+chem_vd_k003,chemistry,can_bang_pthh,VD,numeric,json,1,4.23,1,3,3,,,2,0,,Cân bằng phương trình Fe + Cl2 → FeCl3. Cho biết hệ số của Cl2.
+chem_vd_k004,chemistry,nong_do_mol,VD,numeric,json,1,8.22,1,0.57 M,0.571429 M,,,4,0,,"Trộn 200 ml dung dịch NaCl 1M với 500 ml dung dịch NaCl 0,4M. Tính nồng độ mol của dung dịch thu được."
+chem_vdc_k005,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,7.59,1,4.14 L,4.13538 lit,,,5,0,,"Hỗn hợp 30 gam gồm Zn và Cu, trong đó Zn chiếm 40% khối lượng. Cho hỗn hợp tác dụng HCl dư. Tính thể tích khí H2 thu được ở đktc. Biết Zn = 65."
+chem_vd_k006,chemistry,kim_loai_axit,VD,numeric,json,1,7.27,1,"13,44 lít",13.44 lit,,,4,0,,"Cho 10,8 gam Al tác dụng hết với dung dịch H2SO4 loãng. Tính thể tích H2 thu được ở đktc. Biết Al = 27."
+chem_vd_k007,chemistry,ket_tua,VD,numeric,json,1,7.00,1,30 g,30 gam,,,4,0,,"Sục 6,72 lít CO2 (đktc) vào dung dịch Ca(OH)2 dư. Tính khối lượng kết tủa CaCO3 thu được. Biết M(CaCO3) = 100."
+chem_vdc_k008,chemistry,len_men,VDC,numeric,json,1,8.50,1,9.2 gam,9.2 gam,,,5,0,,"Lên men hoàn toàn 18 gam glucozơ C6H12O6 thành ancol etylic. Tính khối lượng ancol thu được. Biết M(C6H12O6) = 180, M(C2H5OH) = 46."
+chem_vdc_k009,chemistry,este,VDC,numeric,json,1,6.49,1,8.2 g,8.2 gam,,,4,0,,"Thuỷ phân hoàn toàn 8,6 gam este trong NaOH vừa đủ, thu được muối. Biết M(este) = 86 và M(muối) = 82 g/mol. Tính khối lượng muối."
+chem_vd_k010,chemistry,ph,VD,numeric,json,1,7.02,1,13,13,,,5,0,,"Tính pH của dung dịch NaOH nồng độ 0,1M."
+chem_vdc_k011,chemistry,bao_toan_electron,VDC,numeric,json,0,10.94,1,"0,5 mol",0.8 mol,,,6,0,,"Hỗn hợp 0,2 mol Fe và 0,1 mol Cu tan hết trong HNO3 đặc nóng dư, chỉ tạo khí NO2. Tính số mol NO2 thu được. Biết Fe lên số oxi hoá +3 và Cu lên +2."
+chem_vd_k012,chemistry,hieu_suat,VD,numeric,json,1,12.72,1,89.6 g,89.6 gam,,,6,0,,"Nung 200 gam CaCO3 với hiệu suất 80%. Tính khối lượng CaO thu được. Biết M(CaCO3) = 100, M(CaO) = 56."
+chem_nb_k013,chemistry,thanh_phan_khong_khi,NB,numeric,json,1,5.72,1,40 lít,40 lit,,,2,0,,Trong 200 lít không khí có bao nhiêu lít O2? Biết O2 chiếm 20% thể tích không khí.
+chem_nb_k014,chemistry,so_mol,NB,numeric,json,1,4.93,1,0.1 mol,0.1 mol,,,2,0,,Tính số mol có trong 6 gam chất có khối lượng mol 60 g/mol.
+chem_nb_k015,chemistry,the_tich_khi,NB,numeric,json,1,4.86,1,2.24 L,2.24 lit,,,2,0,,"Tính thể tích của 0,1 mol khí ở điều kiện tiêu chuẩn."
+chem_th_k016,chemistry,nong_do_phan_tram,TH,numeric,json,1,5.38,1,40 g,40 gam,,,2,0,,Tính khối lượng chất tan trong 200 gam dung dịch nồng độ 20%.
+chem_vdc_k017,chemistry,tim_cong_thuc_phan_tu,VDC,numeric,json,1,9.33,1,28 g/mol,28 g/mol,,,5,0,,"Đốt cháy hoàn toàn 0,1 mol anken X thu được 0,2 mol CO2. Xác định khối lượng mol của X. Biết anken có công thức chung CnH2n."
+chem_vdc_k018,chemistry,dien_phan,VDC,numeric,json,0,7.13,1,"2,12 kg",2.16 gam,,,4,0,,"Điện phân dung dịch muối Ag với cường độ 1,93 A trong 1000 giây. Tính khối lượng Ag thu được ở catot. Biết Ag = 108, F = 96500."
+chem_vdc_k019,chemistry,ph,VDC,numeric,json,0,7.82,1,"0,60",0.39794,,,5,0,,"Trộn dung dịch chứa 0,4 mol HCl với dung dịch chứa 0,2 mol NaOH, thu được 0,5 lít dung dịch. Tính pH dung dịch sau phản ứng."
+chem_vd_k020,chemistry,kim_loai_nuoc,VD,numeric,json,1,8.88,1,2.24 lít,2.24 lit,,,5,0,,"Cho 2,4 gam Mg tác dụng hết với nước dư. Tính thể tích H2 thu được ở đktc. Biết Mg = 24, hoá trị 2."
+chem_th_k021,chemistry,bao_toan_khoi_luong,TH,numeric,json,1,4.74,1,38 gam,38 gam,,,3,0,,Cho 10 gam chất A phản ứng hết với 30 gam chất B tạo thành chất C và 2 gam khí thoát ra. Tính khối lượng chất C.
+chem_vd_k022,chemistry,amin,VD,numeric,json,1,7.87,1,"1,12 lít",1.12 lit,,,4,0,,"Đốt cháy hoàn toàn 0,1 mol metylamin CH3NH2. Tính thể tích khí N2 thu được ở đktc."
+chem_vdc_k023,chemistry,cacbohidrat,VDC,numeric,json,0,9.30,1,810 gam,135 gam,,,3,0,,"Thuỷ phân 162 gam tinh bột (C6H10O5)n với hiệu suất 75%. Tính khối lượng glucozơ thu được. Biết mắt xích 162, glucozơ 180."
+chem_vdc_k024,chemistry,chat_du,VDC,numeric,json,0,2.95,1,"14,2 g",28.4 gam,,,1,0,,"Cho 0,2 mol H2SO4 phản ứng với 0,4 mol NaOH. Tính khối lượng muối Na2SO4 thu được. Biết M(Na2SO4) = 142."
+chem_vd_k025,chemistry,bao_toan_electron,VD,numeric,json,1,6.00,1,0.2 mol,0.2 mol,,,4,0,,"Hoà tan 2,4 gam kim loại hoá trị 2 có M = 24 vào axit dư. Tính số mol electron kim loại đã nhường."
+chem_nb_k026,chemistry,nong_do_mol,NB,numeric,json,1,4.52,1,0.125 mol,0.125 mol,,,2,0,,"Tính số mol chất tan trong 250 ml dung dịch nồng độ 0,5M."
+chem_vd_k027,chemistry,dot_chay_huu_co,VD,numeric,json,1,8.27,1,11.2 L,11.2 lit,,,4,0,,"Đốt cháy hoàn toàn 0,1 mol ankan C3H8. Tính thể tích O2 cần dùng ở đktc."
+chem_vdc_k028,chemistry,lap_cong_thuc,VDC,numeric,json,0,4.37,1,2:3,0.666667,,,2,0,,"Một oxit sắt chứa 16,8 gam Fe và 7,2 gam O. Tính tỉ lệ số mol Fe : O trong oxit. Đáp số là tỉ số n(Fe)/n(O). Biết Fe = 56, O = 16."
+chem_vd_k029,chemistry,phan_ung_the,VD,numeric,json,1,6.76,1,6.4 gam,6.4 gam,,,4,0,,"Cho 6,5 gam Zn vào dung dịch CuSO4 dư. Tính khối lượng Cu sinh ra. Biết Zn = 65, Cu = 64."
+chem_vdc_k030,chemistry,bao_toan_nguyen_to,VDC,numeric,json,1,8.42,1,16.8 gam,16.8 gam,,,4,0,,"Nung 30 gam hỗn hợp muối cacbonat, thu được 13,2 gam CO2. Tính khối lượng chất rắn còn lại. Bảo toàn khối lượng."
+chem_th_k031,chemistry,pha_loang,TH,numeric,json,1,7.42,1,1 M,1 M,,,4,0,,Thêm 150 ml nước vào 50 ml dung dịch 4M. Tính nồng độ mol dung dịch sau khi pha.
+chem_vdc_k032,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,6.50,1,0.3 mol,0.3 mol,,,3,0,,"Hỗn hợp Al và Mg tác dụng HCl dư thu được 3,36 lít H2 (đktc). Tính tổng số mol electron mà kim loại đã nhường."
+chem_th_k033,chemistry,khoi_luong_mol,TH,numeric,json,0,3.74,1,180 g/mol,80 g/mol,,,1,0,,Tính khối lượng mol của hợp chất NH4NO3.
+chem_th_k034,chemistry,so_mol,TH,numeric,json,1,5.31,1,0.833 mol,0.833333 mol,,,2,0,,Tính số mol có trong 50 gam CH3COOH. Biết M(CH3COOH) = 60 g/mol.
+chem_vd_k035,chemistry,can_bang_pthh,VD,numeric,json,1,8.54,1,11,11,,,5,0,,Cân bằng phương trình FeS2 + O2 → Fe2O3 + SO2. Cho biết hệ số của O2.
+chem_vd_k036,chemistry,nong_do_mol,VD,numeric,json,1,8.07,1,0.55 mol/L,0.55 M,,,4,0,,"Trộn 100 ml dung dịch NaCl 1M với 300 ml dung dịch NaCl 0,4M. Tính nồng độ mol của dung dịch thu được."
+chem_vdc_k037,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,7.30,1,4.14 L,4.13538 lit,,,5,0,,"Hỗn hợp 20 gam gồm Zn và Cu, trong đó Zn chiếm 60% khối lượng. Cho hỗn hợp tác dụng HCl dư. Tính thể tích khí H2 thu được ở đktc. Biết Zn = 65."
+chem_vd_k038,chemistry,kim_loai_axit,VD,numeric,json,1,7.79,1,6.72 lít,6.72 lit,,,5,0,,"Cho 5,4 gam Al tác dụng hết với dung dịch H2SO4 loãng. Tính thể tích H2 thu được ở đktc. Biết Al = 27."
+chem_vd_k039,chemistry,ket_tua,VD,numeric,json,1,7.86,1,20.0 g,20 gam,,,4,0,,"Sục 4,48 lít CO2 (đktc) vào dung dịch Ca(OH)2 dư. Tính khối lượng kết tủa CaCO3 thu được. Biết M(CaCO3) = 100."
+chem_vdc_k040,chemistry,len_men,VDC,numeric,json,1,9.16,1,18.4 gam,18.4 gam,,,5,0,,"Lên men hoàn toàn 36 gam glucozơ C6H12O6 thành ancol etylic. Tính khối lượng ancol thu được. Biết M(C6H12O6) = 180, M(C2H5OH) = 46."
+chem_vdc_k041,chemistry,este,VDC,numeric,json,1,14.06,1,6.8 g,6.8 gam,,,5,0,,"Thuỷ phân hoàn toàn 7,4 gam este trong NaOH vừa đủ, thu được muối. Biết M(este) = 74 và M(muối) = 68 g/mol. Tính khối lượng muối."
+chem_vd_k042,chemistry,ph,VD,numeric,json,1,7.73,1,"13,30",13.301,,,5,0,,"Tính pH của dung dịch NaOH nồng độ 0,2M."
+chem_vdc_k043,chemistry,bao_toan_electron,VDC,numeric,json,1,9.04,1,"0,5 mol",0.5 mol,,,6,0,,"Hỗn hợp 0,1 mol Fe và 0,1 mol Cu tan hết trong HNO3 đặc nóng dư, chỉ tạo khí NO2. Tính số mol NO2 thu được. Biết Fe lên số oxi hoá +3 và Cu lên +2."
+chem_vd_k044,chemistry,hieu_suat,VD,numeric,json,1,9.50,1,44.8 g,44.8 gam,,,5,0,,"Nung 100 gam CaCO3 với hiệu suất 80%. Tính khối lượng CaO thu được. Biết M(CaCO3) = 100, M(CaO) = 56."
+chem_nb_k045,chemistry,thanh_phan_khong_khi,NB,numeric,json,1,4.52,1,20 lít,20 lit,,,2,0,,Trong 100 lít không khí có bao nhiêu lít O2? Biết O2 chiếm 20% thể tích không khí.
+chem_nb_k046,chemistry,so_mol,NB,numeric,json,1,5.02,1,0.1 mol,0.1 mol,,,2,0,,"Tính số mol có trong 4,6 gam chất có khối lượng mol 46 g/mol."
+chem_nb_k047,chemistry,the_tich_khi,NB,numeric,json,1,4.76,1,"11,2 L",11.2 lit,,,2,0,,"Tính thể tích của 0,5 mol khí ở điều kiện tiêu chuẩn."
+chem_th_k048,chemistry,nong_do_phan_tram,TH,numeric,json,1,6.24,1,50 gam,50 gam,,,3,0,,Tính khối lượng chất tan trong 500 gam dung dịch nồng độ 10%.
+chem_vdc_k049,chemistry,tim_cong_thuc_phan_tu,VDC,numeric,json,1,9.36,1,42 g/mol,42 g/mol,,,5,0,,"Đốt cháy hoàn toàn 0,1 mol anken X thu được 0,3 mol CO2. Xác định khối lượng mol của X. Biết anken có công thức chung CnH2n."
+chem_vdc_k050,chemistry,dien_phan,VDC,numeric,json,0,11.94,1,0.255 g,1.28 gam,,,6,0,,"Điện phân dung dịch muối Cu với cường độ 1,93 A trong 2000 giây. Tính khối lượng Cu thu được ở catot. Biết Cu = 64, F = 96500."
+chem_vdc_k051,chemistry,ph,VDC,numeric,json,1,8.85,1,0.52,0.522879,,,4,0,,"Trộn dung dịch chứa 0,4 mol HCl với dung dịch chứa 0,1 mol NaOH, thu được 1 lít dung dịch. Tính pH dung dịch sau phản ứng."
+chem_vd_k052,chemistry,kim_loai_nuoc,VD,numeric,json,1,8.01,1,4.48 L,4.48 lit,,,4,0,,"Cho 4,8 gam Mg tác dụng hết với nước dư. Tính thể tích H2 thu được ở đktc. Biết Mg = 24, hoá trị 2."
+chem_th_k053,chemistry,bao_toan_khoi_luong,TH,numeric,json,1,4.88,1,46 gam,46 gam,,,3,0,,Cho 20 gam chất A phản ứng hết với 30 gam chất B tạo thành chất C và 4 gam khí thoát ra. Tính khối lượng chất C.
+chem_vd_k054,chemistry,amin,VD,numeric,json,1,8.05,1,"2,24 lít",2.24 lit,,,4,0,,"Đốt cháy hoàn toàn 0,2 mol metylamin CH3NH2. Tính thể tích khí N2 thu được ở đktc."
+chem_vdc_k055,chemistry,cacbohidrat,VDC,numeric,json,0,5.67,1,243 gam,270 gam,,,2,0,,"Thuỷ phân 324 gam tinh bột (C6H10O5)n với hiệu suất 75%. Tính khối lượng glucozơ thu được. Biết mắt xích 162, glucozơ 180."
+chem_vdc_k056,chemistry,chat_du,VDC,numeric,json,1,3.12,1,"14,2 g",14.2 gam,,,1,0,,"Cho 0,1 mol H2SO4 phản ứng với 0,3 mol NaOH. Tính khối lượng muối Na2SO4 thu được. Biết M(Na2SO4) = 142."
+chem_vd_k057,chemistry,bao_toan_electron,VD,numeric,json,1,4.75,1,0.6 mol,0.6 mol,,,3,0,,"Hoà tan 5,4 gam kim loại hoá trị 3 có M = 27 vào axit dư. Tính số mol electron kim loại đã nhường."
+chem_nb_k058,chemistry,nong_do_mol,NB,numeric,json,1,4.13,1,0.2 mol,0.2 mol,,,2,0,,"Tính số mol chất tan trong 400 ml dung dịch nồng độ 0,5M."
+chem_vd_k059,chemistry,dot_chay_huu_co,VD,numeric,json,1,9.09,1,"14,56 lít",14.56 lit,,,4,0,,"Đốt cháy hoàn toàn 0,1 mol ankan C4H10. Tính thể tích O2 cần dùng ở đktc."
+chem_vdc_k060,chemistry,lap_cong_thuc,VDC,numeric,json,0,4.48,1,2:3,0.666667,,,2,0,,"Một oxit sắt chứa 11,2 gam Fe và 4,8 gam O. Tính tỉ lệ số mol Fe : O trong oxit. Đáp số là tỉ số n(Fe)/n(O). Biết Fe = 56, O = 16."
+chem_vd_k061,chemistry,phan_ung_the,VD,numeric,json,1,9.21,1,12.8 g,12.8 gam,,,5,0,,"Cho 13 gam Zn vào dung dịch CuSO4 dư. Tính khối lượng Cu sinh ra. Biết Zn = 65, Cu = 64."
+chem_vdc_k062,chemistry,bao_toan_nguyen_to,VDC,numeric,json,1,6.96,1,11.2 gam,11.2 gam,,,3,0,,"Nung 20 gam hỗn hợp muối cacbonat, thu được 8,8 gam CO2. Tính khối lượng chất rắn còn lại. Bảo toàn khối lượng."
+chem_th_k063,chemistry,pha_loang,TH,numeric,json,1,7.48,1,1.33 mol/L,1.33333 M,,,3,0,,Thêm 200 ml nước vào 100 ml dung dịch 4M. Tính nồng độ mol dung dịch sau khi pha.
+chem_vdc_k064,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,6.30,1,0.6 mol,0.6 mol,,,3,0,,"Hỗn hợp Al và Mg tác dụng HCl dư thu được 6,72 lít H2 (đktc). Tính tổng số mol electron mà kim loại đã nhường."
+chem_th_k065,chemistry,khoi_luong_mol,TH,numeric,json,1,6.41,1,110.98 g/mol,111 g/mol,,,4,0,,Tính khối lượng mol của hợp chất CaCl2.
+chem_th_k066,chemistry,so_mol,TH,numeric,json,1,4.80,1,0.25 mol,0.25 mol,,,2,0,,Tính số mol có trong 20 gam NH4NO3. Biết M(NH4NO3) = 80 g/mol.
+chem_vd_k067,chemistry,can_bang_pthh,VD,numeric,json,1,4.91,1,2,2,,,2,0,,Cân bằng phương trình Na + H2O → NaOH + H2. Cho biết hệ số của Na.
+chem_vd_k068,chemistry,nong_do_mol,VD,numeric,json,1,10.22,1,"0,44 mol/L",0.44 M,,,5,0,,"Trộn 200 ml dung dịch NaCl 0,5M với 300 ml dung dịch NaCl 0,4M. Tính nồng độ mol của dung dịch thu được."
+chem_vdc_k069,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,7.35,1,6.20 L,6.20308 lit,,,5,0,,"Hỗn hợp 30 gam gồm Zn và Cu, trong đó Zn chiếm 60% khối lượng. Cho hỗn hợp tác dụng HCl dư. Tính thể tích khí H2 thu được ở đktc. Biết Zn = 65."
+chem_vd_k070,chemistry,ket_tua,VD,numeric,json,1,7.70,1,10.0 g,10 gam,,,4,0,,"Sục 2,24 lít CO2 (đktc) vào dung dịch Ca(OH)2 dư. Tính khối lượng kết tủa CaCO3 thu được. Biết M(CaCO3) = 100."
+chem_vdc_k071,chemistry,len_men,VDC,numeric,json,1,9.24,1,46 gam,46 gam,,,5,0,,"Lên men hoàn toàn 90 gam glucozơ C6H12O6 thành ancol etylic. Tính khối lượng ancol thu được. Biết M(C6H12O6) = 180, M(C2H5OH) = 46."
+chem_vdc_k072,chemistry,este,VDC,numeric,json,1,13.96,1,"8,2 gam",8.2 gam,,,7,0,,"Thuỷ phân hoàn toàn 10,2 gam este trong NaOH vừa đủ, thu được muối. Biết M(este) = 102 và M(muối) = 82 g/mol. Tính khối lượng muối."
+chem_vdc_k073,chemistry,bao_toan_electron,VDC,numeric,json,1,10.38,1,"0,9 mol",0.9 mol,,,6,0,,"Hỗn hợp 0,2 mol Fe và 0,15 mol Cu tan hết trong HNO3 đặc nóng dư, chỉ tạo khí NO2. Tính số mol NO2 thu được. Biết Fe lên số oxi hoá +3 và Cu lên +2."
+chem_vd_k074,chemistry,hieu_suat,VD,numeric,json,1,9.68,1,100.8 g,100.8 gam,,,6,0,,"Nung 200 gam CaCO3 với hiệu suất 90%. Tính khối lượng CaO thu được. Biết M(CaCO3) = 100, M(CaO) = 56."
+chem_nb_k075,chemistry,so_mol,NB,numeric,json,1,4.25,1,0.2 mol,0.2 mol,,,2,0,,"Tính số mol có trong 9,2 gam chất có khối lượng mol 46 g/mol."
+chem_nb_k076,chemistry,the_tich_khi,NB,numeric,json,1,5.97,1,"5,6 L",5.6 lit,,,3,0,,"Tính thể tích của 0,25 mol khí ở điều kiện tiêu chuẩn."
+chem_th_k077,chemistry,nong_do_phan_tram,TH,numeric,json,1,4.95,1,20 gam,20 gam,,,2,0,,Tính khối lượng chất tan trong 200 gam dung dịch nồng độ 10%.
+chem_vdc_k078,chemistry,tim_cong_thuc_phan_tu,VDC,numeric,json,1,10.37,1,56 g/mol,56 g/mol,,,4,0,,"Đốt cháy hoàn toàn 0,1 mol anken X thu được 0,4 mol CO2. Xác định khối lượng mol của X. Biết anken có công thức chung CnH2n."
+chem_vdc_k079,chemistry,dien_phan,VDC,numeric,json,0,6.04,1,6.63 g,3.31606 gam,,,3,0,,"Điện phân dung dịch muối Cu với cường độ 5 A trong 2000 giây. Tính khối lượng Cu thu được ở catot. Biết Cu = 64, F = 96500."
+chem_vdc_k080,chemistry,ph,VDC,numeric,json,0,3.11,1,"1,3",0.221849,,,1,0,,"Trộn dung dịch chứa 0,4 mol HCl với dung dịch chứa 0,1 mol NaOH, thu được 0,5 lít dung dịch. Tính pH dung dịch sau phản ứng."
+chem_vd_k081,chemistry,kim_loai_nuoc,VD,numeric,json,1,6.84,1,"2,24 lít",2.24 lit,,,4,0,,"Cho 4,6 gam Na tác dụng hết với nước dư. Tính thể tích H2 thu được ở đktc. Biết Na = 23, hoá trị 1."
+chem_th_k082,chemistry,bao_toan_khoi_luong,TH,numeric,json,1,4.99,1,48 gam,48 gam,,,2,0,,Cho 10 gam chất A phản ứng hết với 40 gam chất B tạo thành chất C và 2 gam khí thoát ra. Tính khối lượng chất C.
+chem_vdc_k083,chemistry,cacbohidrat,VDC,numeric,json,1,11.02,1,144 gam,144 gam,,,6,0,,"Thuỷ phân 162 gam tinh bột (C6H10O5)n với hiệu suất 80%. Tính khối lượng glucozơ thu được. Biết mắt xích 162, glucozơ 180."
+chem_vdc_k084,chemistry,chat_du,VDC,numeric,json,0,3.55,1,14.24 g,21.3 gam,,,1,0,,"Cho 0,2 mol H2SO4 phản ứng với 0,3 mol NaOH. Tính khối lượng muối Na2SO4 thu được. Biết M(Na2SO4) = 142."
+chem_vd_k085,chemistry,bao_toan_electron,VD,numeric,json,1,6.33,1,0.2 mol,0.2 mol,,,4,0,,"Hoà tan 6,5 gam kim loại hoá trị 2 có M = 65 vào axit dư. Tính số mol electron kim loại đã nhường."
+chem_nb_k086,chemistry,nong_do_mol,NB,numeric,json,1,4.77,1,0.500 mol,0.5 mol,,,2,0,,Tính số mol chất tan trong 250 ml dung dịch nồng độ 2M.
+chem_vd_k087,chemistry,dot_chay_huu_co,VD,numeric,json,1,9.28,1,"7,84 lít",7.84 lit,,,4,0,,"Đốt cháy hoàn toàn 0,1 mol ankan C2H6. Tính thể tích O2 cần dùng ở đktc."
+chem_vdc_k088,chemistry,lap_cong_thuc,VDC,numeric,json,1,4.64,1,2/3,0.666667,,,2,0,,"Một oxit sắt chứa 5,6 gam Fe và 2,4 gam O. Tính tỉ lệ số mol Fe : O trong oxit. Đáp số là tỉ số n(Fe)/n(O). Biết Fe = 56, O = 16."
+chem_th_k089,chemistry,pha_loang,TH,numeric,json,1,7.08,1,0.8 M,0.8 M,,,3,0,,Thêm 200 ml nước vào 50 ml dung dịch 4M. Tính nồng độ mol dung dịch sau khi pha.
+chem_th_k090,chemistry,khoi_luong_mol,TH,numeric,json,1,3.92,1,60.0 g/mol,60 g/mol,,,1,0,,Tính khối lượng mol của hợp chất CH3COOH.
+chem_th_k091,chemistry,so_mol,TH,numeric,json,1,3.44,1,0.450 mol,0.45045 mol,,,1,0,,Tính số mol có trong 50 gam CaCl2. Biết M(CaCl2) = 111 g/mol.
+chem_vd_k092,chemistry,can_bang_pthh,VD,numeric,json,1,4.96,1,5,5,,,1,0,,Cân bằng phương trình C3H8 + O2 → CO2 + H2O. Cho biết hệ số của O2.
+chem_vd_k093,chemistry,nong_do_mol,VD,numeric,json,1,9.79,1,"0,64 M",0.64 M,,,5,0,,"Trộn 200 ml dung dịch NaCl 1M với 300 ml dung dịch NaCl 0,4M. Tính nồng độ mol của dung dịch thu được."
+chem_vdc_k094,chemistry,hon_hop_kim_loai,VDC,numeric,json,1,7.21,1,2.76 L,2.75692 lit,,,5,0,,"Hỗn hợp 20 gam gồm Zn và Cu, trong đó Zn chiếm 40% khối lượng. Cho hỗn hợp tác dụng HCl dư. Tính thể tích khí H2 thu được ở đktc. Biết Zn = 65."
+chem_vdc_k095,chemistry,bao_toan_electron,VDC,numeric,json,0,11.03,1,"0,45 mol",0.6 mol,,,6,0,,"Hỗn hợp 0,1 mol Fe và 0,15 mol Cu tan hết trong HNO3 đặc nóng dư, chỉ tạo khí NO2. Tính số mol NO2 thu được. Biết Fe lên số oxi hoá +3 và Cu lên +2."
+chem_vd_k096,chemistry,hieu_suat,VD,numeric,json,1,9.59,1,50.4 gam,50.4 gam,,,6,0,,"Nung 100 gam CaCO3 với hiệu suất 90%. Tính khối lượng CaO thu được. Biết M(CaCO3) = 100, M(CaO) = 56."
+chem_th_k097,chemistry,nong_do_phan_tram,TH,numeric,json,1,5.62,1,100 g,100 gam,,,2,0,,Tính khối lượng chất tan trong 500 gam dung dịch nồng độ 20%.
+chem_vdc_k098,chemistry,dien_phan,VDC,numeric,json,1,8.13,1,5.60 g,5.59585 gam,,,5,0,,"Điện phân dung dịch muối Ag với cường độ 5 A trong 1000 giây. Tính khối lượng Ag thu được ở catot. Biết Ag = 108, F = 96500."
+chem_vdc_k099,chemistry,ph,VDC,numeric,json,0,3.00,1,"1,0",0.69897,,,1,0,,"Trộn dung dịch chứa 0,4 mol HCl với dung dịch chứa 0,2 mol NaOH, thu được 1 lít dung dịch. Tính pH dung dịch sau phản ứng."
+chem_vd_k100,chemistry,kim_loai_nuoc,VD,numeric,json,1,8.61,1,4.48 lít,4.48 lit,,,5,0,,"Cho 8 gam Ca tác dụng hết với nước dư. Tính thể tích H2 thu được ở đktc. Biết Ca = 40, hoá trị 2."

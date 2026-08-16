@@ -1,0 +1,4 @@
+﻿id,subject,topic,level,question_type,che_do,dung,tong_s,dat_45s,dap_an_he_thong,dap_an_chuan,mcq_he_thong,mcq_chuan,so_buoc,bi_cat,loi,question
+math_nb_001,math,dao_ham,NB,numeric,tho,1,25.73,1,31,31,,,45,0,,Tính đạo hàm của hàm số y = 2x^3 + 7x - 1 tại điểm x = 2.
+phys_nb_001,physics,doi_don_vi,NB,numeric,tho,1,14.30,1,25 m/s,25 m/s,,,24,0,,Một ô tô chuyển động với vận tốc 90 km/h. Tính vận tốc của ô tô theo đơn vị m/s.
+chem_nb_001,chemistry,khoi_luong_mol,NB,numeric,tho,1,13.08,1,63 g/mol,63 g/mol,,,34,0,,"Tính khối lượng mol của hợp chất HNO3. Biết H = 1, N = 14, O = 16."

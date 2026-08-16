@@ -1,0 +1,7 @@
+﻿id,subject,topic,level,question_type,che_do,dung,tong_s,dat_45s,dap_an_he_thong,dap_an_chuan,mcq_he_thong,mcq_chuan,so_buoc,bi_cat,loi,question
+math_th_008,math,tich_phan,TH,numeric,tho,1,18.00,1,14,14,,,24,0,,Tính tích phân I = ∫ từ 1 đến 3 của (2x + 3) dx.
+math_th_010,math,to_hop,TH,numeric,tho,1,16.62,1,66,66,,,28,0,,Một lớp có 12 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?
+math_th_012,math,so_phuc,TH,numeric,tho,1,17.78,1,7,7,,,48,0,,Cho số phức z = (1 + 2i)(3 - 2i). Tìm phần thực của z.
+math_th_014,math,tiem_can,TH,numeric,tho,1,20.20,1,2,2,,,39,0,,Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 4).
+math_th_032,math,tich_phan,TH,numeric,tho,1,17.41,1,18,18,,,31,0,,Tính tích phân I = ∫ từ 1 đến 3 của (4x + 1) dx.
+math_th_034,math,to_hop,TH,numeric,tho,1,13.06,1,45,45,,,14,0,,Một lớp có 10 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?

@@ -5,13 +5,13 @@ import FinalAnswer from "./components/FinalAnswer";
 import Performance from "./components/Performance";
 import SolutionSteps from "./components/SolutionSteps";
 import { fetchHealth, solveStream, type Health } from "./api";
+import { lamSachToan, laTiengAnh } from "./vanban";
 import type {
   AgentName,
   AgentState,
   DapAnEvent,
   SolveResult,
   StreamEvent,
-  Verdict,
 } from "./types";
 import "./App.css";
 
@@ -40,14 +40,41 @@ const VI_DU = [
   },
 ];
 
-/** Bóc mục "Dễ sai ở đâu" khỏi lời giảng để dựng thành thẻ riêng. */
+/** Bóc mục "Dễ sai ở đâu" khỏi lời giảng để dựng thành thẻ riêng.
+ *
+ * Bốn chốt chặn, mỗi cái đến từ một lần hỏng thật quan sát được trên giao diện:
+ *
+ * 1. **Cắt khối `<think>` trước.** Model đôi khi nhắc lại tiêu đề "Dễ sai ở đâu"
+ *    ngay trong lúc suy nghĩ. Bắt trúng chỗ đó thì toàn bộ lời giảng phía sau bị
+ *    đổ vào thẻ, kể cả thẻ đóng `</think>`.
+ * 2. **Lấy lần xuất hiện CUỐI CÙNG**, không phải lần đầu — vì mục này luôn nằm
+ *    cuối lời giảng.
+ * 3. **Chỉ nhận dòng gạch đầu dòng.** Nội dung thật luôn là danh sách; mọi thứ
+ *    khác (tiêu đề, đoạn văn, công thức `$$`) đều bị loại.
+ * 4. **Chấp nhận cả `*Dễ sai ở đâu**` lẫn `**Dễ sai ở đâu**`** — model sinh thiếu
+ *    một dấu sao là chuyện thường gặp.
+ *
+ * Sau khi bóc còn hai bước dọn, xem `vanban.ts`: hạ LaTeX xuống chữ thường
+ * (thẻ này không dựng công thức) và bỏ những dòng model lỡ viết tiếng Anh.
+ */
+
 function bocLuuY(md: string): string[] {
-  const m = md.match(/\*\*Dễ sai ở đâu\*\*([\s\S]*)$/i);
-  if (!m) return [];
-  return m[1]
+  const sach = md
+    .replace(/<think>[\s\S]*?<\/think>/gi, "")
+    .replace(/<\/?think>/gi, "");
+
+  const cac = [...sach.matchAll(/\*{1,2}\s*Dễ sai ở đâu\s*\*{1,2}/gi)];
+  if (cac.length === 0) return [];
+  const cuoi = cac[cac.length - 1];
+
+  return sach
+    .slice((cuoi.index ?? 0) + cuoi[0].length)
     .split("\n")
-    .map((l) => l.replace(/^\s*[-*•]\s*/, "").trim())
-    .filter((l) => l.length > 2 && !l.startsWith("**"));
+    .filter((l) => /^\s*[-*•]\s+/.test(l))
+    .map((l) => l.replace(/^\s*[-*•]\s+/, "").trim())
+    .filter((l) => l.length > 2 && !l.includes("**"))
+    .map(lamSachToan)
+    .filter((l) => l.length > 2 && !laTiengAnh(l));
 }
 
 export default function App() {
@@ -170,8 +197,6 @@ export default function App() {
   // Ưu tiên kết quả đầy đủ khi đã có; trước đó thì dùng đáp án về sớm. Nhờ vậy
   // người dùng đọc được đáp số ngay khi nó chốt, không phải chờ giảng bài xong.
   const dapAn = sol?.final_answer || dapAnSom?.gia_tri || "";
-  const verdict: Verdict | null =
-    ketQua?.verify?.verdict ?? (dapAnSom?.verdict || null) ?? null;
   const moTaDapAn =
     ketQua?.plan?.unknowns?.[0]?.description_vi ||
     ketQua?.plan?.unknowns?.[0]?.symbol ||
@@ -286,7 +311,7 @@ export default function App() {
         </div>
 
         <div className="cot">
-          <FinalAnswer dapAn={dapAn} moTa={moTaDapAn} verdict={verdict} />
+          <FinalAnswer dapAn={dapAn} moTa={moTaDapAn} />
 
           {error && <div className="bang err">Lỗi: {error}</div>}
           {warning && <div className="bang warn">{warning}</div>}
@@ -302,7 +327,12 @@ export default function App() {
           )}
 
           <SolutionSteps steps={sol?.steps ?? []} markdown={answer} dangChay={running} />
+        </div>
 
+        {/* Cột 3 — phần học thêm sau khi đã đọc xong lời giải. Tách riêng để lời
+            giải ở cột giữa không bị đẩy dài thêm, và để hai thẻ này nằm ngang tầm
+            mắt thay vì phải cuộn xuống cuối trang mới thấy. */}
+        <div className="cot cot-phu">
           {!running && totalMs > 0 && (
             <BaiTuongTu
               mon={ketQua?.plan?.subject ?? ketQua?.route?.subject ?? "math"}

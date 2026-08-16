@@ -39,6 +39,14 @@ $$<công thức LaTeX>$$
 **Dễ sai ở đâu**
 - (1-3 gạch đầu dòng, ngắn)
 
+RIÊNG MỤC "Dễ sai ở đâu" — viết như thầy giáo dặn miệng:
+- Mỗi gạch đầu dòng là MỘT CÂU TIẾNG VIỆT hoàn chỉnh, tối đa 20 chữ.
+- KHÔNG dùng LaTeX ở mục này: không có dấu $, không \\frac, không \\dfrac,
+  không dấu ngoặc nhọn { }.
+- Cần nhắc công thức thì viết như học sinh viết tay: 2^(x+1), a/b, căn bậc hai
+  của x, log cơ số 2.
+- Số thì viết trần: viết "chia 12 cho 3", không viết "chia $12$ cho $3$".
+
 QUY TẮC NGÔN NGỮ — QUAN TRỌNG NHẤT:
 - Viết HOÀN TOÀN bằng TIẾNG VIỆT. Mọi câu, mọi từ.
 - TUYỆT ĐỐI KHÔNG dùng tiếng Anh. Không "Step", không "First", không "Therefore",

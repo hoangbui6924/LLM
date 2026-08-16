@@ -58,7 +58,7 @@ body {
 }
 
 .app {
-  max-width: 1280px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 22px 22px 64px;
 }
@@ -174,9 +174,12 @@ body {
 
 /* ---- lưới hai cột ---- */
 
+/* Ba cột: điều khiển | lời giải | học thêm.
+   Cột giữa rộng nhất vì chứa lời giải nhiều bước kèm công thức LaTeX — đây là nội
+   dung dài nhất trang và là thứ người dùng đọc lâu nhất. */
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.34fr) minmax(0, 0.92fr);
   gap: 18px;
   align-items: start;
 }
@@ -188,9 +191,28 @@ body {
   min-width: 0;
 }
 
+/* Màn hẹp hơn thì cột "học thêm" tụt xuống dưới và trải hết bề ngang, chứ không
+   bóp cả ba cột lại — thẻ Bài tập tương tự dưới 300px là không đọc nổi đề. */
+@media (max-width: 1400px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  }
+  .cot-phu {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: start;
+  }
+  .cot-phu > * {
+    flex: 1;
+  }
+}
+
 @media (max-width: 940px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .cot-phu {
+    flex-direction: column;
   }
 }
 
@@ -214,18 +236,18 @@ body {
 
 .card-head h2 {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 16.5px;
   font-weight: 600;
 }
 
 .card-icon {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.85;
 }
 
 .head-note {
   margin-left: auto;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
@@ -410,6 +432,7 @@ button:disabled {
 
 .node-name {
   font-weight: 600;
+  font-size: 15px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -417,7 +440,7 @@ button:disabled {
 
 .node-desc {
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 13.5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -431,7 +454,7 @@ button:disabled {
 }
 
 .status {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -441,7 +464,7 @@ button:disabled {
 .node.waiting .status { color: var(--muted); }
 
 .ms {
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
@@ -458,7 +481,7 @@ button:disabled {
 .node-detail {
   padding: 0 2px 12px 60px;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 13.5px;
   overflow-wrap: anywhere;
 }
 
@@ -506,9 +529,9 @@ button:disabled {
 .perf-item {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2px 6px;
+  gap: 3px 7px;
   align-items: center;
-  font-size: 12px;
+  font-size: 13.5px;
 }
 
 .tick {
@@ -533,7 +556,7 @@ button:disabled {
 .perf-ms {
   grid-column: 2;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -541,10 +564,11 @@ button:disabled {
 
 .ket-qua-card {
   text-align: center;
+  padding: 13px 18px 14px;
 }
 
 .dap-an {
-  font-size: 33px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--primary);
   word-break: break-word;
@@ -553,30 +577,9 @@ button:disabled {
 
 .dap-an-mo-ta {
   color: var(--muted);
-  font-size: 12.5px;
-  margin-top: 5px;
+  font-size: 13.5px;
+  margin-top: 4px;
 }
-
-.ket-qua-chan {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 15px;
-  padding-top: 13px;
-  border-top: 1px solid var(--line);
-  font-size: 12.5px;
-}
-
-.nhan {
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 3px 11px;
-}
-
-.nhan.ok { background: var(--ok-nhat); color: var(--ok); }
-.nhan.bad { background: var(--err-nhat); color: var(--err); }
-.nhan.warn { background: var(--warn-nhat); color: var(--warn); }
 
 
 /* ---- lời giải chi tiết ---- */
@@ -744,9 +747,10 @@ button:disabled {
 
 .sla {
   border-radius: 10px;
-  padding: 9px 14px;
+  padding: 10px 14px;
   text-align: center;
-  font-size: 12.5px;
+  font-size: 13.5px;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 
