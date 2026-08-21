@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import sys
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -32,6 +33,8 @@ async def lifespan(app: FastAPI):
     # lười thì toàn bộ chi phí đó rơi vào người dùng ĐẦU TIÊN, ăn mất 15% ngân
     # sách 45 giây của họ. Các lượt sau chỉ còn ~40 ms.
     await asyncio.to_thread(_ham_nong)
+    # Hâm nóng nốt model ngôn ngữ — cùng một lý do, nhưng đắt hơn nhiều.
+    await _ham_nong_ollama()
     yield
 
 
@@ -56,6 +59,44 @@ def _ham_nong() -> None:
         _canh_bao_thieu_phobert("chưa có thư mục ml/phobert_router")
     except Exception as e:  # noqa: BLE001 — thiếu thư viện thì Router vẫn lùi về luật
         _canh_bao_thieu_phobert(f"nạp lỗi: {e}")
+
+
+async def _ham_nong_ollama() -> None:
+    """Nạp sẵn model ngôn ngữ vào VRAM trước khi có người hỏi.
+
+    Vì sao đáng làm — P1 trong `PHUONGAN_TOCDO.md`:
+
+    Ollama nạp model theo kiểu lười: lần gọi ĐẦU TIÊN phải đọc 2,5 GB trọng số từ
+    đĩa lên VRAM, mất 8-15 giây. Toàn bộ chi phí đó rơi vào đúng lượt hỏi đầu —
+    tức đúng lượt người chấm bấm khi demo. Đo được một lượt giải mất 33,8 giây
+    trong đó Planner chiếm 12,6 giây, và phần lớn con số bất thường ấy nhiều khả
+    năng là chi phí nạp model chứ không phải Planner chậm.
+
+    Chuyển chi phí đó sang lúc khởi động: backend chậm thêm ~10 giây một lần, đổi
+    lại mọi lượt hỏi đều gặp model đã nóng.
+
+    Gửi `prompt` rỗng với `num_predict: 0` — Ollama hiểu đây là lệnh NẠP model chứ
+    không sinh chữ, nên không tốn thời gian suy luận.
+
+    Hỏng thì bỏ qua, tuyệt đối không chặn khởi động: máy chưa bật Ollama vẫn phải
+    vào được giao diện để đọc hướng dẫn.
+    """
+    ten_model = list(dict.fromkeys([config.MODEL_HEAVY, config.MODEL_LIGHT]))
+    try:
+        import ollama
+
+        client = ollama.AsyncClient(host=config.OLLAMA_HOST)
+        for ten in ten_model:
+            t0 = time.perf_counter()
+            await client.generate(model=ten, prompt="", options={"num_predict": 0})
+            giay = time.perf_counter() - t0
+            print(f"[ViMultiAgent] Ollama: {ten} đã nạp vào VRAM ({giay:.1f}s).")
+    except Exception as e:  # noqa: BLE001 — không có Ollama thì vẫn cho khởi động
+        print(
+            f"\n[ViMultiAgent] CẢNH BÁO: không hâm nóng được Ollama ({e}).\n"
+            "  Chương trình vẫn chạy, nhưng LƯỢT HỎI ĐẦU TIÊN sẽ chậm thêm\n"
+            "  8-15 giây do phải nạp model. Kiểm tra: ollama ps\n"
+        )
 
 
 def _canh_bao_thieu_phobert(vi_sao: str) -> None:

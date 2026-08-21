@@ -236,4 +236,206 @@ lớn con số 12,6 giây, và khi đó không cần đụng tới hai phương 
 
 **Không làm P6.**
 
-Cần bạn duyệt trước khi tôi bắt tay.
+---
+
+# 5. KẾT QUẢ SAU KHI THỰC HIỆN — 2026-08-21
+
+Đã làm xong P0, P1, P2, P3. Đo hai lần trên **cùng 24 bài** của `de_chuan.csv`.
+
+## 5.1. P0 đã bác bỏ chẩn đoán ban đầu
+
+Số liệu 24 bài khác hẳn suy đoán rút từ MỘT lượt đo:
+
+| Vai | Suy đoán (1 lượt) | **Đo thật (24 bài)** |
+|---|---:|---:|
+| Planner | 12,6 s | **6,0 s** |
+| Router | 0,0 s | 0,3 s |
+| Subject | 5,8 s | 8,4 s |
+| Recompute | — | 7,0 s |
+| Verify | 4,2 s | 3,6 s |
+| **Explain** | 8,1 s | **11,1 s** |
+
+**Explain mới là khâu tốn nhất, không phải Planner.** Con số 12,6 giây trước đây
+phần lớn là chi phí nạp model, đúng như giả thuyết ở mục 1.
+
+Hệ quả trực tiếp: **P5 (bỏ Planner) mất phần lớn giá trị** — nó chỉ cắt được 6
+giây chứ không phải 12, trong khi rủi ro hỏng độ chính xác vẫn nguyên. Không nên
+làm nữa.
+
+## 5.2. Bảng đối chiếu trước / sau
+
+| | Trước (P0) | Sau (P1+P2+P3) |
+|---|---:|---:|
+| Tổng thời gian trung bình | 30,7 s | 30,8 s |
+| p50 | 29,8 s | 30,8 s |
+| **Thời gian tới đáp án** | *(chưa đo được)* | **19,8 s** |
+| Đạt mốc 45 s | 24/24 | 24/24 |
+| **Độ chính xác** | **21/24** | **21/24** |
+| Planner | 6,0 s | 5,7 s |
+| Subject | 8,4 s | 8,2 s |
+| Recompute | 7,0 s | **8,4 s** |
+| Verify | 3,6 s | 3,7 s |
+| Explain | 11,1 s | 11,0 s |
+
+## 5.3. Từng phương án — thực tế ra sao
+
+**P1 — có tác dụng, nhưng KHÔNG xuất hiện trong bảng trên.**
+Lý do: `scripts/bench.py` gọi thẳng `agents.manager`, **không đi qua FastAPI**,
+nên `lifespan` và phần hâm nóng không hề chạy. Kiểm riêng qua đường ứng dụng thật
+thì thấy rõ:
+```
+[ViMultiAgent] Ollama: qwen3:4b đã nạp vào VRAM (6.2s).
+Khởi động backend: 13.7s
+```
+Tức 6,2 giây được dời khỏi lượt hỏi đầu tiên sang lúc khởi động. Đây là **lượt mà
+người chấm sẽ bấm khi demo**, nên vẫn đáng giá — chỉ là bench không đo được.
+
+**P2 — giao đúng thứ đã hứa.** Người dùng có đáp án ở giây **19,8** trong khi tổng
+là 30,8 giây. Phần giảng bài chiếm 11,0 giây chảy sau đó. Cả hai con số đều được
+in trong báo cáo bench, không thay thế cho nhau.
+
+**P3 — đúng về chức năng, nhưng không đo được ở đây, VÀ có cái giá phải trả.**
+
+Không đo được vì trong 24 bài chỉ có **2 bài hình học** (`the_tich_khoi_chop`,
+`the_tich_lang_tru`). Đây đúng là hạn chế đã ghi trước ở mục D3 của
+`CONGVIECNGAYMAI.md`: `de_chuan` chỉ có 4/50 bài hình.
+
+Cái giá: **Recompute tăng từ 7,0 lên 8,4 giây.** Nguyên nhân nhiều khả năng là
+prompt của vai này dài thêm ~25 dòng hướng dẫn hình học. Chưa tách được khỏi
+nhiễu đo vì mỗi cấu hình mới chạy một lượt.
+
+Về chức năng thì P3 chạy đúng, có 18 test phủ cả hai chiều: đáp án đúng thì ĐẠT,
+sai thì bắt được, đáp số âm do quên giá trị tuyệt đối thì bắt được, gặp hình lạ
+hoặc mặt bậc hai thì im lặng chứ không đoán bừa.
+
+## 5.4. Phát hiện mới: Recompute đã thành đường găng
+
+Chính bench cảnh báo:
+
+```
+>> RECOMPUTE đang là đường găng (8.4s so với Subject 8.2s).
+   Nó KHÔNG còn ẩn dưới Subject.
+```
+
+Đây là thay đổi về chất. Recompute chạy SONG SONG với Subject Agent, nên bao lâu
+nay nó "miễn phí" về thời gian. Nay nó dài hơn Subject, tức **mọi nỗ lực tối ưu
+Subject Agent đều vô ích** — thời gian bị quyết định bởi Recompute.
+
+---
+
+# 6. ĐỀ XUẤT TIẾP THEO
+
+### P7 — Hạ trần token của Recompute 🟢 **nên làm ngay**
+
+`MAX_TOKENS_RECOMPUTE` đang là **2200**, kèm chú thích trong `config.py`:
+*"Có suy nghĩ nên cần rộng: ~1800 token cho `<think>` + ~200 cho biểu thức"*.
+
+Nhưng `VMA_AGENTS_SUY_NGHI` **mặc định rỗng** — chế độ suy nghĩ đang TẮT. Vai này
+giờ chỉ trích xuất cấu trúc bài toán, không suy luận, nên 2200 token là thừa rất
+nhiều so với nhu cầu thật.
+
+- **Ưu:** sửa một dòng cấu hình; nhắm đúng đường găng mới; không đụng độ chính xác
+  vì vai này chỉ điền JSON ngắn.
+- **Nhược:** cắt quá tay thì JSON bị cụt và bộ tính lại mất tác dụng — phải đo lại
+  tỉ lệ `ly_do_hong` sau khi đổi.
+- **Cải thiện ước tính:** −2 đến −4 giây, vì nó cắt thẳng vào đường găng.
+
+### P8 — Rút gọn phần hình học trong prompt Recompute 🟢
+
+Bù lại cái giá của P3. Gộp bảng thứ tự tham số cho 7 loại khối thành vài dòng
+ngắn hơn.
+
+- **Cải thiện ước tính:** trả lại phần lớn 1,4 giây mà P3 đã lấy đi.
+
+### Cần đo lại P3 cho tử tế
+
+Chạy bench trên `de_kho.csv` (46/100 bài hình học) thay vì `de_chuan.csv`
+(4/50). Chỉ ở đó mới thấy được P3 có cắt được lượt LLM của Verify hay không.
+
+### P5 — nên gạch bỏ
+
+P0 cho thấy Planner chỉ tốn 6 giây, không phải 12,6. Lợi ích giảm một nửa trong
+khi rủi ro không đổi. Không đáng.
+
+---
+
+# 7. KẾT QUẢ CUỐI — bốn loạt đo, cùng 24 bài `de_chuan.csv`
+
+| | P0 mốc nền | P1–P3 | P8 | **P8b (cuối)** |
+|---|---:|---:|---:|---:|
+| Tổng thời gian TB | 30,7 s | 30,8 s | 30,3 s | **29,1 s** |
+| p50 | 29,8 s | 30,8 s | 28,6 s | **27,6 s** |
+| p95 | 40,5 s | 40,6 s | 43,0 s | **39,9 s** |
+| Nhanh nhất | 22,9 s | 22,8 s | 22,7 s | **20,0 s** |
+| **Thời gian tới đáp án** | — | 19,8 s | 20,2 s | **18,6 s** |
+| **Độ chính xác** | 21/24 | 21/24 | 21/24 | **22/24** |
+| Đạt mốc 45 s | 24/24 | 24/24 | 24/24 | 24/24 |
+| Planner | 6,0 | 5,7 | 5,5 | 5,5 |
+| Router | 0,3 | 0,3 | 0,3 | 0,3 |
+| Subject | 8,4 | 8,2 | 9,1 | 8,0 |
+| Recompute | 7,0 | **8,4** | **5,3** | 6,6 |
+| Verify | 3,6 | 3,7 | 4,0 | **3,4** |
+| Explain | 11,1 | 11,0 | 10,2 | 10,5 |
+| Đường găng | 29,4 | 29,2 | 29,2 | **27,7** |
+
+## 7.1. Kết luận
+
+**Đạt được:** tổng thời gian 30,7 → 29,1 giây (−5%), đường găng 29,4 → 27,7 giây,
+và có thêm chỉ số **18,6 giây tới đáp án** — đây mới là độ trễ người dùng cảm
+nhận. Độ chính xác không giảm, thậm chí nhích lên 22/24.
+
+**Phải nói rõ:** mức giảm 1,6 giây trên 24 mẫu là **bằng chứng yếu**. Mô hình chạy
+ở `temperature 0.2` chứ không phải 0, nên mỗi loạt đo có sai khác tự nhiên. Muốn
+kết luận chắc thì phải lặp mỗi cấu hình vài lượt, hoặc chạy trên cả 50 bài.
+
+**Verdict lật qua lật lại giữa các loạt** cũng là biểu hiện của nhiễu đó, không
+phải hồi quy:
+
+| Bài | P0 | P8 | P8b |
+|---|---|---|---|
+| `math_th_037` (số phức) | FAIL | PASS | FAIL |
+| `math_th_009` (phương trình mũ) | PASS | FAIL | FAIL |
+
+Cả hai đều là bài ĐẠI SỐ, không dính tới phần hình học đã thêm.
+
+## 7.2. Tổng kết từng phương án
+
+| | Kết quả thực tế |
+|---|---|
+| **P0** | Bác bỏ chẩn đoán ban đầu. Explain (11,1s) mới là khâu tốn nhất, không phải Planner (6,0s). |
+| **P1** | Chạy đúng, dời 6,2 s khỏi lượt hỏi đầu. **Không đo được bằng bench** vì bench không đi qua FastAPI lifespan. |
+| **P2** | Giao đúng: 18,6 s tới đáp án so với 29,1 s tổng. |
+| **P3** | Chức năng đúng nhưng **hai lần suýt hỏng** — xem 7.3. |
+| **P7** | **Bác bỏ.** Recompute chỉ sinh 32–46 token, không hề chạm trần 2200. `num_predict` là mức chặn, không phải mục tiêu. |
+| **P8** | Prompt Recompute 101 → 41 dòng (−45%). Recompute 8,4 → 6,6 s, hết là đường găng. |
+| **P5** | Gạch bỏ. Chỉ cắt được 6 s chứ không phải 12,6 s như tưởng. |
+| **P6** | Không làm, đúng như đã loại từ đầu. |
+
+## 7.3. Hai lỗi P3 tự gây ra — bài học đắt nhất của đợt này
+
+**Lỗi 1 — tính năng chưa từng chạy.** `compute()` kiểm tay `loai_kiem and ham_goc`
+trong khi hình học không dùng `ham_goc`. Mọi bài thể tích rơi vào `bieu_thuc_rong`.
+18 test của `kiem_symbolic` đều XANH vì chúng gọi thẳng tầng dưới, không đi qua
+chỗ nối.
+
+**Lỗi 2 — phép kiểm tất định tự báo oan.** Đề "khối chóp đáy hình vuông CẠNH 3,
+cao 9", mô hình điền `hinh="chop", tham_so="3; 9"` — nhét cạnh vào ô diện tích.
+SymPy tính 9 rồi **phủ quyết** đáp án đúng 27.
+
+Lỗi 2 nguy hiểm hơn nhiều: phép kiểm tất định có quyền phủ quyết, nên nó sai một
+lần là mất luôn một đáp án đúng. Đã vá ba lớp: thêm biến thể `chop_day_vuong`
+nhận cạnh đáy, prompt nêu thẳng ca sai làm phản ví dụ, và `_the_tich_mo_ho()` từ
+chối kiểm khi đề mô tả đáy bằng hình dạng mà mô hình vẫn chọn ô diện tích.
+
+**Bài học:** test đơn vị cho tầng dưới KHÔNG thay được test cho chỗ nối. Đã bổ
+sung 26 test phủ đúng hai chỗ này (tổng 236), và kiểm ngược bằng cách khôi phục
+logic cũ để chắc chúng thật sự bắt được lỗi.
+
+## 7.4. Còn lại
+
+- [ ] **Đo P3 cho tử tế**: `de_chuan` chỉ có 2/24 bài hình học nên phần hình gần
+      như không được kiểm. Phải chạy trên `de_kho.csv` (46/100 bài hình).
+- [ ] **Lặp phép đo**: mỗi cấu hình chạy 3 lượt rồi lấy trung vị, mới tách được
+      tín hiệu khỏi nhiễu.
+- [ ] Explain 10,5 s vẫn là khâu tốn nhất và **chưa có phương án nào chạm tới nó**.
+      Nhưng nó nằm SAU mốc có đáp án, nên ưu tiên thấp.

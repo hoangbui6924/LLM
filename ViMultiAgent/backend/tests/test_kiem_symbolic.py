@@ -199,3 +199,92 @@ class TestChotChanLoaiKiem:
         from agents.recompute_agent import _loai_kiem_hop_le
         assert _loai_kiem_hop_le("hoa_hoc", "bất kỳ đề nào") is False
         assert _loai_kiem_hop_le("", "Tính đạo hàm") is False
+
+
+# ---------------------------------------------------------------------------
+# Hình học — thêm ở P3.
+#
+# Trước P3 bài hình học không có phép kiểm tất định nào chạy được, nên Verify
+# buộc phải hỏi LLM. Chính lượt hỏi đó là nguồn báo oan: đo được một bài thể tích
+# ra đáp án 20 (ĐÚNG) nhưng LLM viết "1/3 * 12 * 5 = 20 nhưng đúng là 20" rồi
+# kết luận FAIL.
+# ---------------------------------------------------------------------------
+
+
+class TestTheTich:
+    @pytest.mark.parametrize(
+        "hinh, tham_so, dung",
+        [
+            ("chop", "12; 5", "20"),
+            ("lang_tru", "12; 5", "60"),
+            ("lap_phuong", "4", "64"),
+            ("hop_chu_nhat", "2; 3; 4", "24"),
+            ("cau", "3", "113.097"),
+            ("non", "4; 6", "100.531"),
+            ("tru", "2; 5", "62.832"),
+        ],
+    )
+    def test_dap_an_dung_thi_dat(self, hinh, tham_so, dung):
+        r = ks.kiem(loai="the_tich", dap_an=dung, hinh=hinh, tham_so=tham_so)
+        assert r.dat is True
+
+    def test_dap_an_sai_thi_bat_duoc(self):
+        r = ks.kiem(loai="the_tich", dap_an="60", hinh="chop", tham_so="12; 5")
+        assert r.dat is False
+        assert "20" in r.mo_ta
+
+    def test_hinh_la_thi_im_lang(self):
+        """Không có công thức thì trả None, TUYỆT ĐỐI không đoán bừa."""
+        r = ks.kiem(loai="the_tich", dap_an="20", hinh="khoi_da_dien_deu", tham_so="1")
+        assert r.dat is None
+
+    def test_thieu_tham_so_thi_im_lang(self):
+        r = ks.kiem(loai="the_tich", dap_an="20", hinh="chop", tham_so="12")
+        assert r.dat is None
+
+
+class TestKhoangCach:
+    def test_hai_diem_trong_khong_gian(self):
+        r = ks.kiem(loai="kc_hai_diem", dap_an="5", diem="1;2;3", diem2="4;6;3")
+        assert r.dat is True
+
+    def test_hai_diem_trong_mat_phang(self):
+        r = ks.kiem(loai="kc_hai_diem", dap_an="5", diem="0;0", diem2="3;4")
+        assert r.dat is True
+
+    def test_hai_diem_sai(self):
+        r = ks.kiem(loai="kc_hai_diem", dap_an="7", diem="1;2;3", diem2="4;6;3")
+        assert r.dat is False
+
+    def test_lech_so_chieu_thi_im_lang(self):
+        r = ks.kiem(loai="kc_hai_diem", dap_an="5", diem="1;2", diem2="4;6;3")
+        assert r.dat is None
+
+    def test_diem_den_mat_phang(self):
+        # |2(1) - 2 + 2(3) - 3| / sqrt(4+1+4) = 3/3 = 1
+        r = ks.kiem(
+            loai="kc_diem_mp", dap_an="1",
+            ham_goc="2x - y + 2z - 3 = 0", diem="1;2;3",
+        )
+        assert r.dat is True
+
+    def test_quen_gia_tri_tuyet_doi_ra_so_am(self):
+        """Lỗi hay gặp nhất của bài này: quên |...| ở tử nên ra số âm."""
+        r = ks.kiem(
+            loai="kc_diem_mp", dap_an="-1",
+            ham_goc="2x - y + 2z - 3 = 0", diem="1;2;3",
+        )
+        assert r.dat is False
+
+    def test_dau_phay_thay_dau_cham_phay(self):
+        """Sách Việt Nam ghi A(1; 2; 3), model hay viết A(1, 2, 3). Nhận cả hai."""
+        r = ks.kiem(loai="kc_hai_diem", dap_an="5", diem="1, 2, 3", diem2="4, 6, 3")
+        assert r.dat is True
+
+    def test_mat_phang_bac_hai_thi_im_lang(self):
+        """Mặt cầu không phải mặt phẳng — lấy bừa hệ số là nguồn báo oan."""
+        r = ks.kiem(
+            loai="kc_diem_mp", dap_an="1",
+            ham_goc="x^2 + y^2 + z^2 - 9 = 0", diem="1;2;3",
+        )
+        assert r.dat is None

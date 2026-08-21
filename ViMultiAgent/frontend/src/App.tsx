@@ -312,6 +312,13 @@ export default function App() {
             <div className={`sla ${withinSla ? "ok" : "over"}`}>
               Tổng thời gian {(totalMs / 1000).toFixed(1)}s — {withinSla ? "đạt" : "vượt"}{" "}
               mốc {health?.sla_seconds ?? 150} giây
+              {/* Đáp án được chốt TRƯỚC khi Explain chảy chữ, nên đây mới là độ
+                  trễ người dùng cảm nhận. Nêu cả hai, không thay thế nhau. */}
+              {dapAnSom?.ms ? (
+                <span className="sla-som">
+                  {" "}· có đáp án từ giây {(dapAnSom.ms / 1000).toFixed(1)}
+                </span>
+              ) : null}
             </div>
           )}
         </div>

@@ -140,3 +140,132 @@ class TestPlannerGiuSoLieu:
         from agents.planner import _giu_nguyen_so_lieu
 
         assert not _giu_nguyen_so_lieu("R = 110 Ω", "R = 100 Ω")
+
+
+# ---------------------------------------------------------------------------
+# Đường tích hợp cấu trúc -> kiểm chứng.
+#
+# Vì sao có nhóm test này: P3 thêm ba dạng hình học và test của `kiem_symbolic`
+# đều XANH, nhưng phép kiểm KHÔNG BAO GIỜ chạy được trên thực tế. Lý do là các
+# test đó gọi thẳng `kiem_symbolic.kiem()`, còn đường thật phải đi qua `KetQua`
+# rồi mới tới `compare()` — và chính chỗ nối ấy hỏng ở hai điểm:
+#
+#   1. `compute()` kiểm tay `loai_kiem and ham_goc`, trong khi hình học không
+#      dùng `ham_goc`. Mọi bài thể tích rơi vào `bieu_thuc_rong`.
+#   2. Đáp số hình học kèm đơn vị (`20.0 đv³`) làm SymPy đọc `đv` thành ký hiệu
+#      tự do, phép kiểm im lặng bỏ qua.
+#
+# Bài học: test đơn vị cho tầng dưới KHÔNG thay được test cho chỗ nối.
+# ---------------------------------------------------------------------------
+
+
+class TestCauTrucHinhHoc:
+    @pytest.mark.parametrize(
+        "kw",
+        [
+            dict(loai_kiem="the_tich", hinh="chop", tham_so="12;5"),
+            dict(loai_kiem="the_tich", hinh="lap_phuong", tham_so="4"),
+            dict(loai_kiem="kc_hai_diem", diem="1;2;3", diem2="4;6;3"),
+            dict(loai_kiem="kc_diem_mp", ham_goc="x+2y-2z+1=0", diem="1;2;3"),
+        ],
+    )
+    def test_du_truong_thi_co_cau_truc(self, kw):
+        """Hình học KHÔNG dùng `ham_goc`, nên không được đòi trường đó."""
+        assert KetQua(**kw).co_cau_truc is True
+
+    @pytest.mark.parametrize(
+        "kw",
+        [
+            dict(loai_kiem="the_tich", hinh="chop"),           # thiếu tham_so
+            dict(loai_kiem="the_tich", tham_so="12;5"),        # thiếu hinh
+            dict(loai_kiem="kc_hai_diem", diem="1;2;3"),       # thiếu diem2
+            dict(loai_kiem="kc_diem_mp", diem="1;2;3"),        # thiếu mặt phẳng
+        ],
+    )
+    def test_thieu_truong_thi_khong_co_cau_truc(self, kw):
+        assert KetQua(**kw).co_cau_truc is False
+
+    def test_dai_so_van_doi_ham_goc(self):
+        assert KetQua(loai_kiem="dao_ham", ham_goc="x**2").co_cau_truc is True
+        assert KetQua(loai_kiem="dao_ham", diem="1").co_cau_truc is False
+
+
+class TestCompareHinhHoc:
+    """`compare()` phải kết luận được, kể cả khi đáp án kèm đơn vị."""
+
+    @pytest.mark.parametrize(
+        "dap_an", ["20", "20.0", "20 cm^3", "20.0 đv³", "20 đvtt", "20 đơn vị thể tích"]
+    )
+    def test_the_tich_dung_du_kem_don_vi(self, dap_an):
+        kq = KetQua(loai_kiem="the_tich", hinh="chop", tham_so="12;5")
+        c = compare(kq, dap_an)
+        assert c is not None and c.passed is True
+
+    def test_the_tich_sai_thi_bat_duoc(self):
+        kq = KetQua(loai_kiem="the_tich", hinh="chop", tham_so="12;5")
+        c = compare(kq, "60 cm^3")
+        assert c is not None and c.passed is False
+
+    def test_khoang_cach_diem_mat_phang(self):
+        kq = KetQua(loai_kiem="kc_diem_mp", ham_goc="2x - y + 2z - 3 = 0", diem="1;2;3")
+        c = compare(kq, "1")
+        assert c is not None and c.passed is True
+
+    def test_quen_tri_tuyet_doi_ra_am(self):
+        kq = KetQua(loai_kiem="kc_diem_mp", ham_goc="2x - y + 2z - 3 = 0", diem="1;2;3")
+        c = compare(kq, "-1")
+        assert c is not None and c.passed is False
+
+    def test_hinh_la_thi_khong_ket_luan(self):
+        kq = KetQua(loai_kiem="the_tich", hinh="khoi_bat_ky", tham_so="1;2")
+        assert compare(kq, "20") is None
+
+
+class TestTheTichMoHo:
+    """Chốt chặn cho ca báo oan đã đo được.
+
+    Đề "khối chóp đáy là hình vuông CẠNH 3, cao 9" bị mô hình khai
+    `hinh="chop", tham_so="3; 9"` — điền cạnh vào ô diện tích. SymPy tính 9 rồi
+    PHỦ QUYẾT đáp án đúng 27. Phép kiểm tất định có quyền phủ quyết nên nó phải
+    CHẮC; không chắc thì im lặng.
+    """
+
+    def test_day_ta_bang_hinh_dang_thi_tu_choi(self):
+        from agents.recompute_agent import _the_tich_mo_ho
+        assert _the_tich_mo_ho(
+            "chop", "Cho khối chóp có đáy là hình vuông cạnh 3 và chiều cao 9"
+        ) is True
+
+    def test_de_cho_san_dien_tich_thi_nhan(self):
+        from agents.recompute_agent import _the_tich_mo_ho
+        assert _the_tich_mo_ho(
+            "chop", "Tính thể tích khối chóp có diện tích đáy 12 và chiều cao 5"
+        ) is False
+
+    def test_bien_the_ro_rang_thi_luon_nhan(self):
+        from agents.recompute_agent import _the_tich_mo_ho
+        assert _the_tich_mo_ho(
+            "chop_day_vuong", "Cho khối chóp đáy hình vuông cạnh 3, cao 9"
+        ) is False
+
+    def test_hinh_khong_qua_dien_tich_thi_khong_lien_quan(self):
+        from agents.recompute_agent import _the_tich_mo_ho
+        assert _the_tich_mo_ho("lap_phuong", "Hình lập phương cạnh 4") is False
+        assert _the_tich_mo_ho("cau", "Khối cầu bán kính 3") is False
+
+
+class TestBienTheTheTich:
+    def test_chop_day_vuong_tinh_dung(self):
+        from tools.kiem_symbolic import kiem
+        r = kiem(loai="the_tich", dap_an="27", hinh="chop_day_vuong", tham_so="3;9")
+        assert r.dat is True
+
+    def test_chop_day_vuong_bat_duoc_sai(self):
+        from tools.kiem_symbolic import kiem
+        r = kiem(loai="the_tich", dap_an="9", hinh="chop_day_vuong", tham_so="3;9")
+        assert r.dat is False
+
+    def test_lang_tru_day_vuong(self):
+        from tools.kiem_symbolic import kiem
+        r = kiem(loai="the_tich", dap_an="20", hinh="lang_tru_day_vuong", tham_so="2;5")
+        assert r.dat is True

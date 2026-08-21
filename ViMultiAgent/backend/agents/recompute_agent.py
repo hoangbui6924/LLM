@@ -57,7 +57,10 @@ class RecomputeSpec(BaseModel):
     # Đúng triết lý dự án: LLM quyết định LÀM GÌ, SymPy quyết định RA BAO NHIÊU.
     loai_kiem: str = Field(
         default="",
-        description="dao_ham | tich_phan | gioi_han | phuong_trinh | tiep_tuyen | rỗng",
+        description=(
+            "dao_ham | tich_phan | gioi_han | phuong_trinh | tiep_tuyen | "
+            "the_tich | kc_hai_diem | kc_diem_mp | rỗng"
+        ),
     )
     ham_goc: str = ""
     bien: str = "x"
@@ -65,81 +68,61 @@ class RecomputeSpec(BaseModel):
     can_duoi: str = ""
     can_tren: str = ""
 
+    # Ba trường cho nhóm HÌNH HỌC, thêm ở P3. Bài hình học trước đây không có
+    # phép kiểm tất định nào chạy được, nên Verify buộc phải hỏi LLM — vừa tốn
+    # 4-6 giây vừa là nguồn báo oan.
+    diem2: str = ""
+    hinh: str = ""
+    tham_so: str = ""
 
-SYSTEM = """Bạn là bộ tính lại độc lập. Bạn KHÔNG trình bày lời giải.
 
-QUAN TRỌNG NHẤT — nếu đề thuộc một trong năm dạng dưới đây, hãy CHÉP LẠI ĐỀ dưới
-dạng máy đọc được. Đừng tính gì cả, công cụ sẽ tự giải:
+SYSTEM = """Bạn là bộ tính lại độc lập. KHÔNG trình bày lời giải, KHÔNG tự tính ra
+số cuối. Việc của bạn là CHÉP LẠI ĐỀ dưới dạng máy đọc được; công cụ sẽ tính.
 
-- Tính đạo hàm  -> loai_kiem="dao_ham",  ham_goc=hàm số, bien="x", diem=điểm (nếu có)
-- Tính tích phân -> loai_kiem="tich_phan", ham_goc=hàm dưới dấu tích phân,
-                    can_duoi và can_tren (nếu là tích phân xác định)
-- Tính giới hạn -> loai_kiem="gioi_han", ham_goc=biểu thức, diem=điểm tiến tới
-                    (viết "oo" cho vô cùng)
-- Giải phương trình -> loai_kiem="phuong_trinh", ham_goc="vế trái = vế phải"
-- Viết phương trình tiếp tuyến -> loai_kiem="tiep_tuyen", ham_goc=hàm số,
-                    diem=hoành độ tiếp điểm
+Chọn `loai_kiem` theo đề, rồi điền các trường của dạng đó:
 
-Ví dụ:
-Đề "Tính đạo hàm của y = x^3 - 3x^2 + 2x tại x = 1"
--> loai_kiem: "dao_ham", ham_goc: "x**3 - 3*x**2 + 2*x", bien: "x", diem: "1"
+| loai_kiem    | trường cần điền                                  |
+|--------------|--------------------------------------------------|
+| dao_ham      | ham_goc, bien, diem (nếu hỏi tại một điểm)       |
+| tich_phan    | ham_goc, bien, can_duoi, can_tren (nếu xác định) |
+| gioi_han     | ham_goc, bien, diem ("oo" nếu là vô cùng)        |
+| phuong_trinh | ham_goc = "vế trái = vế phải", bien              |
+| tiep_tuyen   | ham_goc, bien, diem = hoành độ tiếp điểm         |
+| the_tich     | hinh, tham_so                                    |
+| kc_hai_diem  | diem, diem2                                      |
+| kc_diem_mp   | ham_goc = phương trình mặt phẳng, diem           |
 
-Đề "Tính tích phân I = ∫ từ 0 đến 1 của x·e^x dx"
--> loai_kiem: "tich_phan", ham_goc: "x*exp(x)", bien: "x", can_duoi: "0", can_tren: "1"
+`tham_so` là các số cách nhau bằng dấu chấm phẩy, ĐÚNG thứ tự sau:
+  chop, lang_tru            -> "DIỆN TÍCH đáy; chiều cao"
+  chop_day_vuong, lang_tru_day_vuong -> "CẠNH đáy; chiều cao"
+  non, tru                  -> "bán kính đáy; chiều cao"
+  cau -> "bán kính"   lap_phuong -> "cạnh"   hop_chu_nhat -> "dài; rộng; cao"
 
-Đề "Cho y = x^2 + 3x + 5. Viết phương trình tiếp tuyến tại x = 2"
--> loai_kiem: "tiep_tuyen", ham_goc: "x**2 + 3*x + 5", bien: "x", diem: "2"
-
-Đề "Giải phương trình x^2 - 5x + 6 = 0"
--> loai_kiem: "phuong_trinh", ham_goc: "x**2 - 5*x + 6 = 0", bien: "x"
-
-Nếu đề KHÔNG thuộc năm dạng trên (bài hình học không gian, bài toạ độ, bài đếm,
-bài xác suất) thì để loai_kiem rỗng và làm theo phần dưới đây.
-
----
-
-Nhiệm vụ dự phòng: đọc đề, chọn công thức đúng, THAY SỐ vào, rồi trả về MỘT biểu
-thức duy nhất mà giá trị của nó chính là đáp số.
-
-TUYỆT ĐỐI KHÔNG tự tính ra con số cuối. Công cụ sẽ tính. Việc của bạn là viết
-đúng công thức đã thay số.
-
-Trả JSON:
-- expression: biểu thức theo cú pháp SymPy/Python. Dùng pi, sqrt(), exp(), log().
-  Chỉ chứa số và phép toán, KHÔNG chứa ký hiệu chưa biết giá trị.
-- unit: đơn vị của kết quả, không có thì để rỗng
-- approach_vi: một câu ngắn nêu công thức đã dùng
-- solvable: false nếu đề không quy được về một biểu thức
+CHÚ Ý — lỗi hay mắc nhất: đề cho CẠNH đáy thì KHÔNG được điền cạnh vào ô diện
+tích. Đề "đáy là hình vuông cạnh 3, cao 9" phải là
+hinh="chop_day_vuong", tham_so="3; 9"  — KHÔNG phải hinh="chop", tham_so="3; 9".
+Chỉ dùng "chop" khi đề cho SẴN diện tích đáy.
+Toạ độ điểm cũng ngăn bằng dấu chấm phẩy: "1;2;3".
 
 Ví dụ:
-Đề "Tính đạo hàm của y = x^3 - 3x^2 + 2x tại x = 1"
--> expression: "3*1**2 - 6*1 + 2"
-   unit: ""
-   approach_vi: "y' = 3x^2 - 6x + 2, thay x = 1"
+"Đạo hàm của y = x^3 - 3x^2 tại x = 1"  -> dao_ham, ham_goc="x**3-3*x**2", diem="1"
+"Tích phân x·e^x từ 0 đến 1"            -> tich_phan, ham_goc="x*exp(x)", can_duoi="0", can_tren="1"
+"Tiếp tuyến của y = x^2+3x tại x = 2"   -> tiep_tuyen, ham_goc="x**2+3*x", diem="2"
+"Thể tích khối chóp đáy 12, cao 5"      -> the_tich, hinh="chop", tham_so="12; 5"
+"Khoảng cách A(1;2;3) đến x+2y-2z+1=0"  -> kc_diem_mp, ham_goc="x+2y-2z+1=0", diem="1;2;3"
 
-Đề "Khối chóp có diện tích đáy 12 và chiều cao 5. Tính thể tích"
--> expression: "12*5/3"
-   unit: ""
-   approach_vi: "V = (1/3)*S_đáy*h"
+ĐỀ KHÔNG THUỘC TÁM DẠNG TRÊN (bài đếm, xác suất, hình không có công thức ở trên):
+để `loai_kiem` rỗng, và thay vào đó viết `expression` — MỘT biểu thức đã thay số
+mà giá trị của nó chính là đáp số. Cú pháp SymPy: pi, sqrt(), exp(), log(),
+binomial(). Không được chứa ký hiệu chưa biết giá trị.
+  "Chọn 3 học sinh từ 10"  -> expression="binomial(10, 3)"
+  "Thể tích khối cầu r=3"  -> expression="4/3*pi*3**3"
 
-Đề "Trong Oxyz, tính khoảng cách từ A(1;2;3) đến mặt phẳng x + 2y - 2z + 1 = 0"
--> expression: "Abs(1 + 2*2 - 2*3 + 1)/sqrt(1**2 + 2**2 + (-2)**2)"
-   unit: ""
-   approach_vi: "d = |ax0 + by0 + cz0 + d|/sqrt(a^2 + b^2 + c^2)"
+Nếu đáp số là BIỂU THỨC chứ không phải số (tiếp tuyến, nguyên hàm), viết vế phải
+theo biến của đề, đừng ghi "y =" ở đầu.
 
-Đề "Có bao nhiêu cách chọn 3 học sinh từ 10 học sinh"
--> expression: "binomial(10, 3)"
-   unit: ""
-   approach_vi: "Tổ hợp C(10,3), không kể thứ tự"
-
-Khi đáp số KHÔNG phải một con số mà là BIỂU THỨC (phương trình tiếp tuyến, đạo
-hàm, nguyên hàm, nghiệm theo tham số), vẫn viết một biểu thức duy nhất — phần vế
-phải, theo biến của đề. Đừng ghi "y =" ở đầu.
-
-Đề "Cho y = (x^2+1)/(x-1). Viết phương trình tiếp tuyến tại điểm có hoành độ x = 2"
--> expression: "-1*(x - 2) + 5"
-   unit: ""
-   approach_vi: "y(2) = 5; y' = (x^2-2x-1)/(x-1)^2, y'(2) = -1; tiếp tuyến y = y'(2)(x-2) + y(2)"
+Các trường khác: `unit` là đơn vị (không có thì rỗng), `approach_vi` một câu ngắn
+nêu công thức đã dùng, `solvable` = false nếu đề không quy về được.
 """
 
 
@@ -237,7 +220,38 @@ _TU_KHOA_LOAI = {
     "gioi_han": ("giới hạn", "gioi han", "lim", "tiến tới", "tien toi", "dần tới"),
     "phuong_trinh": ("giải phương trình", "giai phuong trinh", "nghiệm", "nghiem"),
     "tiep_tuyen": ("tiếp tuyến", "tiep tuyen"),
+    "the_tich": ("thể tích", "the tich"),
+    "kc_hai_diem": ("khoảng cách giữa", "khoang cach giua", "độ dài đoạn", "do dai doan"),
+    "kc_diem_mp": ("mặt phẳng", "mat phang"),
 }
+
+
+# Đề mô tả đáy bằng HÌNH DẠNG chứ không cho sẵn diện tích.
+_DAY_THEO_HINH = (
+    "hình vuông", "hinh vuong", "tam giác", "tam giac", "hình chữ nhật",
+    "hinh chu nhat", "lục giác", "luc giac", "hình thoi", "hinh thoi",
+)
+_CHO_SAN_DIEN_TICH = ("diện tích đáy", "dien tich day", "diện tích mặt đáy")
+
+
+def _the_tich_mo_ho(hinh: str, de_bai: str) -> bool:
+    """Mô hình có khả năng nhầm CẠNH đáy thành DIỆN TÍCH đáy hay không.
+
+    ĐO ĐƯỢC — đây là ca báo oan thật, và nó nguy hiểm vì phép kiểm tất định có
+    quyền PHỦ QUYẾT: đề "khối chóp đáy là hình vuông cạnh 3, chiều cao 9" bị mô
+    hình khai `hinh="chop", tham_so="3; 9"`. SymPy tính 3*9/3 = 9 rồi kết luận
+    đáp án ĐÚNG (27) là sai.
+
+    Chốt chặn: chỉ nhận ô "diện tích đáy" khi đề THẬT SỰ cho sẵn diện tích. Đề mô
+    tả đáy bằng hình dạng mà mô hình vẫn chọn `chop`/`lang_tru` thì gần như chắc
+    chắn nó đã điền nhầm kích thước — bỏ qua, đừng phủ quyết.
+    """
+    if hinh not in ("chop", "lang_tru"):
+        return False
+    thap = (de_bai or "").lower()
+    if any(t in thap for t in _CHO_SAN_DIEN_TICH):
+        return False
+    return any(t in thap for t in _DAY_THEO_HINH)
 
 
 def _loai_kiem_hop_le(loai: str, de_bai: str) -> bool:
@@ -300,9 +314,20 @@ class KetQua(BaseModel):
     diem: str = ""
     can_duoi: str = ""
     can_tren: str = ""
+    diem2: str = ""
+    hinh: str = ""
+    tham_so: str = ""
 
     @property
     def co_cau_truc(self) -> bool:
+        # Nhóm hình học không dùng `ham_goc` như một hàm số: thể tích cần `hinh`
+        # và `tham_so`, khoảng cách hai điểm cần `diem` và `diem2`.
+        if self.loai_kiem == "the_tich":
+            return bool(self.hinh and self.tham_so)
+        if self.loai_kiem == "kc_hai_diem":
+            return bool(self.diem and self.diem2)
+        if self.loai_kiem == "kc_diem_mp":
+            return bool(self.ham_goc and self.diem)
         return bool(self.loai_kiem and self.ham_goc)
 
     @property
@@ -344,6 +369,8 @@ async def compute(
     de_goc = f"{plan.raw_question} {plan.normalized_question}"
     if loai and not _loai_kiem_hop_le(loai, de_goc):
         loai = ""
+    if loai == "the_tich" and _the_tich_mo_ho((spec.hinh or "").strip(), de_goc):
+        loai = ""
 
     cau_truc = dict(
         loai_kiem=loai,
@@ -352,14 +379,24 @@ async def compute(
         diem=(spec.diem or "").strip(),
         can_duoi=(spec.can_duoi or "").strip(),
         can_tren=(spec.can_tren or "").strip(),
+        diem2=(spec.diem2 or "").strip(),
+        hinh=(spec.hinh or "").strip(),
+        tham_so=(spec.tham_so or "").strip(),
     )
 
     if not spec.solvable:
         return KetQua(ly_do_hong="model_bo_tay", **cau_truc), span
     if not spec.expression.strip():
         # Không có biểu thức nhưng CÓ cấu trúc thì vẫn dùng được — SymPy tự giải.
-        if cau_truc["loai_kiem"] and cau_truc["ham_goc"]:
-            return KetQua(approach_vi=spec.approach_vi, **cau_truc), span
+        #
+        # Hỏi chính `KetQua.co_cau_truc` thay vì kiểm tay `loai_kiem and ham_goc`:
+        # nhóm hình học KHÔNG dùng `ham_goc` (thể tích cần `hinh` + `tham_so`,
+        # khoảng cách hai điểm cần `diem` + `diem2`). Kiểm tay ở đây từng khiến
+        # MỌI bài thể tích rơi vào `bieu_thuc_rong` dù cấu trúc đã đủ — tức phép
+        # kiểm hình học thêm ở P3 không bao giờ chạy được.
+        thu = KetQua(approach_vi=spec.approach_vi, **cau_truc)
+        if thu.co_cau_truc:
+            return thu, span
         return KetQua(ly_do_hong="bieu_thuc_rong", **cau_truc), span
 
     tinh = sympy_tool.evaluate(spec.expression)
@@ -431,6 +468,9 @@ def _kiem_bang_cau_truc(kq: KetQua, final_answer: str) -> Check | None:
         diem=kq.diem,
         can_duoi=kq.can_duoi,
         can_tren=kq.can_tren,
+        diem2=kq.diem2,
+        hinh=kq.hinh,
+        tham_so=kq.tham_so,
     )
     if r.dat is None:
         return None

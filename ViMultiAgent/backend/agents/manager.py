@@ -274,6 +274,11 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
     # Trước đây frontend chỉ nhận đáp án ở sự kiện `done`, tức sau khi giảng xong —
     # ĐO ĐƯỢC: bắt người dùng chờ thêm 10,6 giây để đọc một con số đã có sẵn. Phát
     # riêng ở đây cắt đúng khoản đó khỏi thời gian chờ, không tốn gì.
+    # Mốc thời gian NGƯỜI DÙNG THẬT SỰ CÓ ĐÁP ÁN. Đây là chỉ số đúng để đánh giá
+    # độ trễ cảm nhận được, còn `total_ms` thì tính cả phần giảng bài chảy sau đó.
+    # Hai con số phải báo cáo CÙNG NHAU, không được thay thế cho nhau.
+    ms_toi_dap_an = (time.perf_counter() - t_start) * 1000.0
+
     if solution is not None:
         yield {
             "type": "dap_an",
@@ -283,6 +288,7 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
             "verdict": report.verdict if report else "",
             "confidence": (report.confidence if report else solution.confidence),
             "warning": result.warning_vi,
+            "ms": round(ms_toi_dap_an),
         }
 
     # ---- 5. Explain (streaming) -------------------------------------------
@@ -366,6 +372,8 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
     yield {
         "type": "done",
         "total_ms": round(total_ms),
+        # Người dùng thấy đáp án ở mốc này, phần còn lại là lời giảng chảy chữ.
+        "ms_toi_dap_an": round(ms_toi_dap_an),
         "within_sla": total_ms <= config.SLA_SECONDS * 1000.0,
         "warning": result.warning_vi,
         "result": result.model_dump(mode="json"),

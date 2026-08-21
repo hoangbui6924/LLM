@@ -71,6 +71,8 @@ export interface DapAnEvent {
   verdict: Verdict | "";
   confidence: number;
   warning: string;
+  /** Mốc người dùng thật sự có đáp án, tính từ lúc bấm Giải bài. */
+  ms?: number;
 }
 
 // ---------------------------------------------------------------------------

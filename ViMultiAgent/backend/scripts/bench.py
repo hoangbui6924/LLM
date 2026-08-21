@@ -387,6 +387,7 @@ async def chay_mot_bai(bai: Bai) -> dict:
     """
     t0 = time.perf_counter()
     tong_ms = 0.0
+    ms_dap_an = 0.0
     so_chunk = 0
     ket: dict = {}
     loi = ""
@@ -416,6 +417,7 @@ async def chay_mot_bai(bai: Bai) -> dict:
                 rc_ly_do_hong = ev.get("ly_do_hong", "")
             elif ev["type"] == "done":
                 tong_ms = ev.get("total_ms", 0.0)
+                ms_dap_an = ev.get("ms_toi_dap_an", 0.0)
                 ket = ev.get("result") or {}
             elif ev["type"] == "error":
                 loi = ev.get("message", "")
@@ -458,6 +460,9 @@ async def chay_mot_bai(bai: Bai) -> dict:
         "mcq": mcq,
         "verdict": verdict,
         "tong_s": tong_s,
+        # Mốc người dùng THẬT SỰ có đáp án. `tong_s` tính cả phần giảng bài chảy
+        # chữ sau đó, nên nó KHÔNG phải độ trễ cảm nhận được. Báo cáo cả hai.
+        "dap_an_s": (ms_dap_an / 1000.0) if ms_dap_an else tong_s,
         "dat_45s": tong_s <= MOC_DE_BAI,
         "dat_sla": tong_s <= config.SLA_SECONDS,
         "so_chunk": so_chunk,
@@ -568,6 +573,18 @@ def in_latency(kq: list[dict]) -> None:
     p95 = t[min(n - 1, int(n * 0.95))]
     print(f"  Trung bình {sum(t) / n:6.1f}s   |  p50 {p50:6.1f}s  |  p95 {p95:6.1f}s")
     print(f"  Nhanh nhất {t[0]:6.1f}s   |  Chậm nhất {t[-1]:6.1f}s")
+
+    # Độ trễ CẢM NHẬN ĐƯỢC. Manager phát đáp án ngay sau Verify, trước khi Explain
+    # chạy — người dùng đọc được đáp số từ mốc này, phần sau chỉ là lời giảng chảy
+    # chữ. Báo cáo cả hai con số, KHÔNG thay thế cho nhau: tổng thời gian vẫn là
+    # con số phải đối chiếu với mốc 45 giây của đề bài.
+    d = sorted(r.get("dap_an_s", r["tong_s"]) for r in kq)
+    if d and d[n // 2] > 0:
+        print()
+        print(f"  Thời gian TỚI ĐÁP ÁN (trước khi giảng bài):")
+        print(f"  Trung bình {sum(d) / n:6.1f}s   |  p50 {d[n // 2]:6.1f}s  "
+              f"|  p95 {d[min(n - 1, int(n * 0.95))]:6.1f}s")
+        print(f"  Phần giảng bài chảy sau đó chiếm thêm {sum(t) / n - sum(d) / n:.1f}s trung bình.")
     print()
     print(f"  Đạt mốc ĐỀ BÀI  {MOC_DE_BAI:.0f}s : {_ti_le(sum(1 for r in kq if r['dat_45s']), n)}")
     print(f"  Đạt mốc CẤU HÌNH {config.SLA_SECONDS:.0f}s : {_ti_le(sum(1 for r in kq if r['dat_sla']), n)}")
