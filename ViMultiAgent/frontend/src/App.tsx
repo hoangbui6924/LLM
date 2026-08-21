@@ -15,28 +15,28 @@ import type {
 } from "./types";
 import "./App.css";
 
-// Thứ tự cố định để thanh tiến trình không nhảy loạn khi sự kiện về. Ba Subject
-// Agent dùng chung một ô vì mỗi lượt chỉ chạy đúng một trong ba.
+// Thứ tự cố định để thanh tiến trình không nhảy loạn khi sự kiện về. Hai Subject
+// Agent dùng chung một ô vì mỗi lượt chỉ chạy đúng một trong hai.
 const QUY_TRINH: { name: AgentName; label: string; mo_ta: string }[] = [
   { name: "planner", label: "Planner Agent", mo_ta: "Phân tích và lập kế hoạch giải bài toán" },
   { name: "router", label: "Router Agent", mo_ta: "Chọn tác tử chuyên môn phù hợp" },
-  { name: "math_agent", label: "Subject Agent", mo_ta: "Giải bài toán theo chuyên môn" },
+  { name: "dai_so_agent", label: "Subject Agent", mo_ta: "Giải bài toán theo phân môn" },
   { name: "verify_agent", label: "Verification Agent", mo_ta: "Kiểm tra và xác minh kết quả" },
   { name: "explain_agent", label: "Explanation Agent", mo_ta: "Tạo lời giải chi tiết" },
 ];
 
 const VI_DU = [
   {
-    mon: "Toán",
+    mon: "Đại số",
     de: "Cho hàm số y = (x^2 + 1)/(x - 1). Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 2.",
   },
   {
-    mon: "Lý",
-    de: "Chiếu ánh sáng có bước sóng 0,40 μm vào một kim loại có công thoát 2,2 eV. Biết năng lượng photon là 3,1 eV. Động năng ban đầu cực đại của electron quang điện là",
+    mon: "Giải tích",
+    de: "Tìm giá trị nhỏ nhất của hàm số y = x + 25/x trên khoảng (0; +∞).",
   },
   {
-    mon: "Hoá",
-    de: "Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2 dư thu được Fe3O4. Tính khối lượng Fe3O4 thu được.",
+    mon: "Hình học",
+    de: "Trong không gian Oxyz, cho điểm A(1; 2; 3) và mặt phẳng (P): x + 2y - 2z + 1 = 0. Tính khoảng cách từ A đến (P).",
   },
 ];
 
@@ -125,12 +125,14 @@ export default function App() {
             ev.name !== "verify_agent" &&
             ev.name !== "explain_agent" &&
             ev.name.endsWith("_agent");
-          const o = laSubject ? "math_agent" : ev.name;
+          const o = laSubject ? "dai_so_agent" : ev.name;
           const i = next.findIndex((a) => a.name === o);
           if (i === -1) return prev;
           next[i] = {
             ...next[i],
             label: laSubject ? ev.label : next[i].label,
+            // Giữ tên agent THỰC để biểu tượng đổi theo phân môn đang chạy.
+            agent_that: laSubject ? ev.name : next[i].agent_that,
             mo_ta:
               ev.name === "router" && ev.detail
                 ? ev.detail.split("—")[0].trim()
@@ -141,6 +143,10 @@ export default function App() {
             detail: ev.detail ?? next[i].detail,
             verdict: ev.verdict ?? next[i].verdict,
             retry: ev.retry ?? next[i].retry,
+            decided_by: ev.decided_by ?? next[i].decided_by,
+            topic: ev.topic ?? next[i].topic,
+            phobert_confidence:
+              ev.phobert_confidence ?? next[i].phobert_confidence,
           };
           return next;
         });
@@ -252,7 +258,7 @@ export default function App() {
               <textarea
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
-                placeholder="Nhập câu hỏi Toán, Vật lý hoặc Hoá học…"
+                placeholder="Nhập câu hỏi Toán THPT — Đại số, Giải tích hoặc Hình học…"
                 rows={4}
                 disabled={running}
                 onKeyDown={(e) => {

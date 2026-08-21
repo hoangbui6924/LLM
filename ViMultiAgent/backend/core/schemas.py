@@ -13,7 +13,17 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
-Subject = Literal["math", "physics", "chemistry"]
+# Hệ thống chỉ làm MỘT môn: Toán THPT. `Subject` vì vậy không còn là "môn học" mà
+# là PHÂN MÔN Toán theo đúng cách chương trình phổ thông chia:
+#
+#   dai_so   — Đại số & Giải tích: hàm số, đạo hàm, tích phân, phương trình, logarit,
+#              dãy số, tổ hợp - xác suất, số phức
+#   hinh_hoc — Hình học: hình phẳng, hình không gian, hình học toạ độ Oxy/Oxyz
+#
+# Thu từ ba môn (Toán/Lý/Hoá) về một môn là quyết định phạm vi, không phải cắt tính
+# năng: multi-agent vẫn còn nguyên, chỉ đổi trục chuyên môn hoá từ "môn" sang "phân
+# môn", nhờ đó mỗi agent có vai trò hẹp và rõ hơn hẳn.
+Subject = Literal["dai_so", "hinh_hoc"]
 QuestionType = Literal["mcq", "numeric", "symbolic", "proof"]
 
 
@@ -50,8 +60,8 @@ class Quantity(_Tolerant):
 class Plan(_Tolerant):
     """Đầu ra của Planner Agent."""
 
-    subject: Subject = "math"
-    topic: str = ""                       # "dao_dong_dieu_hoa", "tich_phan"
+    subject: Subject = "dai_so"
+    topic: str = ""                       # "dao_ham", "tich_phan", "toa_do_the_tich"
     question_type: QuestionType = "numeric"
     givens: list[Quantity] = Field(default_factory=list)
     unknowns: list[Quantity] = Field(default_factory=list)
@@ -70,7 +80,11 @@ class Plan(_Tolerant):
 
 class Route(BaseModel):
     subject: Subject
-    agent_name: str                       # "math_agent" | "physics_agent" | ...
+    agent_name: str                       # "dai_so_agent" | "hinh_hoc_agent"
+    # Dạng bài PhoBERT nhận ra ("dao_ham", "toa_do_the_tich"...). Rỗng khi Router
+    # quyết định bằng luật hoặc LLM. Manager dùng nó để bù cho `Plan.topic` — model
+    # 4B sinh slug sai chính tả rất thường xuyên, còn đây là nhãn tất định.
+    topic: str = ""
     reason_vi: str = ""
     confidence: float = 0.5
     # Router quyết định theo ba nguồn, xếp theo thứ tự ưu tiên:

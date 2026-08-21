@@ -20,11 +20,11 @@ class TestKhopChuDe:
     @pytest.mark.parametrize(
         "mon, topic",
         [
-            ("math", "dao_ham"),
-            ("math", "tich_phan"),
-            ("physics", "dao_dong_dieu_hoa"),
-            ("chemistry", "khoi_luong_mol"),
-            ("chemistry", "tinh_theo_pthh"),
+            ("dai_so", "dao_ham"),
+            ("dai_so", "tich_phan"),
+            ("dai_so", "xac_suat"),
+            ("hinh_hoc", "the_tich_khoi_chop"),
+            ("hinh_hoc", "hinh_hoc_toa_do"),
         ],
     )
     def test_sinh_dung_chu_de(self, mon, topic):
@@ -33,16 +33,16 @@ class TestKhopChuDe:
         assert S._bo_dau(bai.topic) == topic
 
     def test_topic_co_dau_van_khop(self):
-        """Planner sinh `khối_lượng_mol`, mẫu ghi `khoi_luong_mol` — phải khớp.
+        """Planner sinh `thể_tích_khối_chóp`, mẫu ghi `the_tich_khoi_chop` — phải khớp.
 
         Đã có lần chấm điểm chủ đề không bao giờ khớp chỉ vì thiếu bước bỏ dấu.
         """
-        bai = S.sinh(mon="chemistry", topic="khối_lượng_mol", seed=3)
+        bai = S.sinh(mon="hinh_hoc", topic="thể_tích_khối_chóp", seed=3)
         assert bai is not None
-        assert bai.topic == "khoi_luong_mol"
+        assert bai.topic == "the_tich_khoi_chop"
 
     def test_khong_co_chu_de_thi_tut_ve_cung_mon(self):
-        bai = S.sinh(mon="math", topic="chu_de_khong_ton_tai_abc", seed=5)
+        bai = S.sinh(mon="dai_so", topic="chu_de_khong_ton_tai_abc", seed=5)
         assert bai is not None
         assert bai.de_bai
 
@@ -71,29 +71,31 @@ class TestDapAnDungVeKienTao:
                     f"nhưng mẫu lưu {gt}"
                 )
                 so_kiem += 1
-        assert so_kiem > 100, f"chỉ kiểm được {so_kiem} mẫu, quá ít để yên tâm"
+        # Ngưỡng 50: kho mẫu nay chỉ còn Toán (25 mẫu chuẩn + 36 mẫu khó).
+        # Bản ba môn có 175 mẫu nên ngưỡng cũ là 100.
+        assert so_kiem > 50, f"chỉ kiểm được {so_kiem} mẫu, quá ít để yên tâm"
 
 
 class TestKhongTrungDeVuaGiai:
     def test_khong_tra_lai_dung_de_goc(self):
-        goc = S.sinh(mon="math", topic="dao_ham", seed=1)
+        goc = S.sinh(mon="dai_so", topic="dao_ham", seed=1)
         assert goc is not None
         for lan in range(20):
             moi = S.sinh(
-                mon="math", topic="dao_ham", cau_hoi_goc=goc.de_bai, seed=lan
+                mon="dai_so", topic="dao_ham", cau_hoi_goc=goc.de_bai, seed=lan
             )
             assert moi is not None
             assert moi.de_bai != goc.de_bai
 
     def test_goi_nhieu_lan_ra_de_khac_nhau(self):
         """Là SINH chứ không phải tra cứu: cùng chủ đề phải ra nhiều đề khác nhau."""
-        cac_de = {S.sinh(mon="math", topic="dao_ham", seed=i).de_bai for i in range(15)}
+        cac_de = {S.sinh(mon="dai_so", topic="dao_ham", seed=i).de_bai for i in range(15)}
         assert len(cac_de) > 3
 
 
 class TestDangTraVe:
     def test_du_truong_va_dap_an_khong_rong(self):
-        bai = S.sinh(mon="physics", topic="dao_dong_dieu_hoa", seed=11)
+        bai = S.sinh(mon="hinh_hoc", topic="dao_dong_dieu_hoa", seed=11)
         assert bai is not None
         assert bai.de_bai.strip()
         assert bai.dap_an.strip()

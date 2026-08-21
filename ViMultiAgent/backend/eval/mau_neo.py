@@ -1,6 +1,6 @@
 """Mẫu neo — lời giải chuẩn mực soạn tay, trộn vào phiếu chấm để hiệu chỉnh thang điểm.
 
-    python eval/mau_neo.py          nối 3 mẫu neo vào loi_giang.jsonl
+    python eval/mau_neo.py          nối mẫu neo vào loi_giang.jsonl
 
 Vì sao cần
 ----------
@@ -19,7 +19,7 @@ Ba nguyên tắc khi soạn
 3. **Không hoàn hảo giả tạo** — viết như một giáo viên viết cho học sinh, không
    phải như một bài mẫu thi.
 
-Ba bài được chọn nằm NGOÀI 20 bài đã thu, để không trùng lặp.
+Bài được chọn nằm NGOÀI 20 bài đã thu, để không trùng lặp.
 """
 
 from __future__ import annotations
@@ -36,8 +36,8 @@ RA = GOC / "eval" / "phieu_cham" / "loi_giang.jsonl"
 
 MAU_NEO = [
     {
-        "id": "neo_math_008",
-        "subject": "math",
+        "id": "neo_ds_008",
+        "subject": "dai_so",
         "topic": "tich_phan",
         "level": "TH",
         "question": "Tính tích phân I = ∫ từ 2 đến 4 của (2x + 1) dx.",
@@ -74,90 +74,6 @@ $$I = 20 - 6 = 14$$
 **Dễ sai ở đâu**
 - Lấy $F(2) - F(4)$ thay vì $F(4) - F(2)$, ra kết quả âm
 - Quên bình phương khi thay số, tính $F(4) = 4 + 4 = 8$
-""",
-    },
-    {
-        "id": "neo_phys_008",
-        "subject": "physics",
-        "topic": "dao_dong_dieu_hoa",
-        "level": "TH",
-        "question": ("Một vật dao động điều hoà với biên độ A = 6 cm và tần số góc "
-                     "ω = 20 rad/s. Tính vận tốc cực đại của vật."),
-        "dap_an_he_thong": "1,2 m/s",
-        "dap_an_chuan": "1.2 m/s",
-        "verdict": "PASS",
-        "nguon": "sach_giai",
-        "bi_cat": False,
-        "giay": 0,
-        "loi": "",
-        "loi_giang": """**Tóm tắt đề**
-Cho biên độ và tần số góc của một dao động điều hoà, cần tìm vận tốc cực đại.
-
-**Bước 1 — Đổi biên độ về hệ SI**
-Đây là bước bắt buộc và cũng là chỗ mất điểm nhiều nhất. Công thức vật lý luôn dùng đơn vị SI, mà đề cho biên độ bằng centimét:
-
-$$A = 6\\ \\text{cm} = 0,06\\ \\text{m}$$
-
-**Bước 2 — Nhớ lại ý nghĩa của vận tốc cực đại**
-Trong dao động điều hoà, vật chạy nhanh nhất khi đi qua vị trí cân bằng. Tại đó toàn bộ cơ năng đã chuyển thành động năng, và độ lớn vận tốc đạt giá trị:
-
-$$v_{max} = A\\omega$$
-
-**Bước 3 — Thay số**
-$$v_{max} = 0,06 \\times 20 = 1,2\\ \\text{m/s}$$
-
-**Đáp án**
-**v_max = 1,2 m/s**
-
-**Dễ sai ở đâu**
-- Quên đổi cm sang m, ra 120 m/s — một con số vô lý cho vật dao động
-- Nhầm $\\omega$ với tần số $f$; nếu đề cho $f$ thì phải nhân thêm $2\\pi$
-""",
-    },
-    {
-        "id": "neo_chem_008",
-        "subject": "chemistry",
-        "topic": "tinh_theo_pthh",
-        "level": "TH",
-        "question": ("Đốt cháy hoàn toàn 4,8 gam Mg trong khí O2 dư thu được MgO. "
-                     "Tính khối lượng MgO thu được. Biết Mg = 24, O = 16."),
-        "dap_an_he_thong": "8 gam",
-        "dap_an_chuan": "8 gam",
-        "verdict": "PASS",
-        "nguon": "sach_giai",
-        "bi_cat": False,
-        "giay": 0,
-        "loi": "",
-        "loi_giang": """**Tóm tắt đề**
-Đốt 4,8 gam magie trong oxi dư, cần tìm khối lượng magie oxit tạo thành.
-
-**Bước 1 — Viết và cân bằng phương trình phản ứng**
-Mọi bài tính theo phương trình đều phải bắt đầu từ đây, vì tỉ lệ mol lấy từ hệ số cân bằng:
-
-$$2Mg + O_2 \\rightarrow 2MgO$$
-
-Chữ "O2 dư" cho biết magie phản ứng hết, nên ta tính theo magie.
-
-**Bước 2 — Đổi khối lượng Mg sang số mol**
-$$n_{Mg} = \\frac{m}{M} = \\frac{4,8}{24} = 0,2\\ \\text{mol}$$
-
-**Bước 3 — Lập tỉ lệ theo phương trình**
-Hệ số của Mg và MgO đều bằng 2, tức tỉ lệ 1 : 1. Cứ 1 mol Mg cháy cho 1 mol MgO:
-
-$$n_{MgO} = n_{Mg} = 0,2\\ \\text{mol}$$
-
-**Bước 4 — Đổi ngược về khối lượng**
-Khối lượng mol của MgO bằng $24 + 16 = 40$ g/mol, nên:
-
-$$m_{MgO} = 0,2 \\times 40 = 8\\ \\text{gam}$$
-
-**Đáp án**
-**m(MgO) = 8 gam**
-
-**Dễ sai ở đâu**
-- Quên cân bằng phương trình rồi lấy tỉ lệ sai
-- Nhớ nhầm khối lượng mol MgO thành 24 hoặc 16 thay vì tổng của cả hai
-- Tính theo O2 thay vì Mg, trong khi O2 dư nên không quyết định lượng sản phẩm
 """,
     },
 ]

@@ -107,15 +107,17 @@ GOC_BACKEND = Path(__file__).resolve().parents[1]
 # Prompt cố ý viết TỐT, không phải viết cho có. Mốc nền bị dìm thì kết luận "đa
 # tác tử hơn" là kết luận rỗng, và người phản biện nhìn ra ngay khi đọc phụ lục.
 # Đây là prompt mà một người dùng cẩn thận sẽ viết: nêu vai, nêu kỷ luật từng
-# môn, và bắt kết bằng một dòng đáp số để chấm được tự động.
-SYSTEM_THO = """Bạn là giáo viên THPT giỏi cả ba môn Toán, Vật lý và Hoá học.
+# phân môn, và bắt kết bằng một dòng đáp số để chấm được tự động.
+SYSTEM_THO = """Bạn là giáo viên Toán THPT giàu kinh nghiệm, giỏi cả Đại số -
+Giải tích lẫn Hình học.
 
 Hãy giải bài toán được giao, trình bày từng bước rõ ràng bằng tiếng Việt.
 
 Kỷ luật bắt buộc:
-- Với Vật lý: đổi mọi dữ kiện về hệ SI trước khi tính.
-- Với Hoá học: viết và cân bằng phương trình phản ứng trước khi tính.
-- Với Toán: nêu điều kiện xác định trước khi biến đổi, loại nghiệm ngoại lai.
+- Với Đại số - Giải tích: nêu điều kiện xác định trước khi biến đổi, loại nghiệm
+  ngoại lai sau khi giải.
+- Với Hình học: mô tả lại hình trước khi tính, chỉ rõ đáy và đường cao; kiểm lại
+  đáp số phải không âm với độ dài, diện tích, thể tích, khoảng cách.
 - Không làm tròn giữa chừng, chỉ làm tròn ở đáp số cuối.
 - Nếu là câu trắc nghiệm, phải chọn một phương án A/B/C/D.
 
@@ -273,7 +275,7 @@ def _thong_ke(kq: list[dict]) -> dict:
         "theo_mon": {
             m: (sum(1 for r in kq if r["bai"].subject == m and r["dung"]),
                 sum(1 for r in kq if r["bai"].subject == m))
-            for m in ("math", "physics", "chemistry")
+            for m in ("dai_so", "hinh_hoc")
         },
         "theo_muc": {
             mu: (sum(1 for r in kq if r["bai"].level == mu and r["dung"]),
@@ -381,7 +383,7 @@ def doi_chung(kq: list[dict], duong_dan_multi: Path) -> dict | None:
                 sum(1 for _, mm in cap if mm.get("subject") == m and mm.get("dung") == "1"),
                 sum(1 for r, _ in cap if r["bai"].subject == m),
             )
-            for m in ("math", "physics", "chemistry")
+            for m in ("dai_so", "hinh_hoc")
         },
         "theo_muc": {
             mu: (
@@ -684,7 +686,7 @@ if __name__ == "__main__":
     ap.add_argument("--che-do", choices=("tho", "json"), default="tho",
                     dest="che_do", help="tho = văn xuôi tự do; json = ép schema")
     ap.add_argument("--n", type=int, default=1, help="số lượt lặp")
-    ap.add_argument("--mon", help="lọc môn: math,physics,chemistry")
+    ap.add_argument("--mon", help="lọc phân môn: dai_so,hinh_hoc")
     ap.add_argument("--muc", help="lọc mức độ: NB,TH,VD,VDC")
     ap.add_argument("--so-luong", type=int, dest="so_luong",
                     help="chỉ chạy N bài lấy trải đều — để chạy thử nhanh")

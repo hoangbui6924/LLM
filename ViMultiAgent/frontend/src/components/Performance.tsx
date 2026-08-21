@@ -8,9 +8,8 @@ import type { AgentState } from "../types";
 const MAU: Record<string, string> = {
   planner: "var(--c-planner)",
   router: "var(--c-router)",
-  math_agent: "var(--c-subject)",
-  physics_agent: "var(--c-subject)",
-  chemistry_agent: "var(--c-subject)",
+  dai_so_agent: "var(--c-subject)",
+  hinh_hoc_agent: "var(--c-subject)",
   verify_agent: "var(--c-verify)",
   explain_agent: "var(--c-explain)",
 };

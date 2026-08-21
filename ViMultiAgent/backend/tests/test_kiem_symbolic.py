@@ -188,7 +188,7 @@ class TestChotChanLoaiKiem:
              "hình học không gian"),
             ("tich_phan", "Tính thể tích khối lăng trụ đứng", "không có tích phân nào"),
             ("tiep_tuyen", "Tìm giá trị cực đại của hàm số", "cực trị, không phải tiếp tuyến"),
-            ("phuong_trinh", "Tính khối lượng Fe3O4 thu được", "bài Hoá"),
+            ("phuong_trinh", "Tính thể tích khối chóp có đáy 12", "bài hình học"),
         ],
     )
     def test_tu_choi_khi_de_khac_loai(self, loai, de_bai, vi_sao):

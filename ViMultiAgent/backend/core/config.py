@@ -102,25 +102,6 @@ LOC_TINH_LAI_DO_DANG = os.getenv("VMA_LOC_TINH_LAI_DO_DANG", "1").strip().lower(
 # ~20 giây (Subject + Verify) và Explain phía sau cần thêm ~15 giây.
 NGUONG_GIAI_LAI = _float("VMA_NGUONG_GIAI_LAI", 40.0)
 
-# Soát khối lượng mol bằng `chem_tool` thay vì tin trí nhớ của model.
-#
-# Dự án đã có sẵn bộ tính khối lượng mol chính xác (đọc công thức, tra bảng nguyên
-# tử khối, cộng lại — tất định) nhưng KHÔNG agent nào gọi tới. Model 4B thì phải
-# tự nhớ M(Fe3O4) = 232, và nhớ sai là hỏng cả bài mà không tầng nào phát hiện.
-#
-# Phép kiểm này không tốn token nào. Đặt 0 để tắt khi cần đối chứng A/B.
-KIEM_KHOI_LUONG_MOL = os.getenv("VMA_KIEM_KHOI_LUONG_MOL", "1").strip().lower() not in (
-    "0",
-    "false",
-    "no",
-)
-
-# Sách giáo khoa làm tròn nguyên tử khối (Cu = 64, Zn = 65) còn `chem_tool` dùng
-# bảng chính xác (63,546 và 65,38). Đo được: lệch tối đa 0,71% ở Cu, các hợp chất
-# thường dưới 0,3%. Ngưỡng 1,5% chừa đủ chỗ cho cách làm tròn hợp lệ mà vẫn bắt
-# được lỗi thật — nhớ nhầm sang chất khác thường lệch hàng chục phần trăm.
-DUNG_SAI_KHOI_LUONG_MOL = _float("VMA_DUNG_SAI_KHOI_LUONG_MOL", 0.015)
-
 # Bỏ bước hỏi LLM của Verify khi các phép kiểm TẤT ĐỊNH đã đủ căn cứ.
 #
 # ĐO ĐƯỢC trên 150 bài ở cấu hình C: lượt gọi LLM của Verify tốn 6,5 giây, trong
@@ -162,8 +143,8 @@ TEMPERATURE = _float("VMA_TEMPERATURE", 0.2)
 # VRAM thật: `ollama ps` báo 3,3 GB ở 8192 nhưng chỉ 2,9 GB ở 4096, trong khi trọng
 # số model chỉ 2,5 GB.
 #
-# ĐO ĐƯỢC nhu cầu thật: prompt dài nhất (Subject Agent môn Hoá, có memory pool) là
-# ~620 token, cộng trần đầu ra 1100 thành ~1720 token. 4096 vẫn dư 2,4 lần.
+# ĐO ĐƯỢC nhu cầu thật: prompt dài nhất (Subject Agent có memory pool) là ~620
+# token, cộng trần đầu ra 1100 thành ~1720 token. 4096 vẫn dư 2,4 lần.
 #
 # Đo 20 bài ở 4096: thời gian 30,5s so với 30,0s ở 8192, model vẫn nằm TRỌN trong
 # GPU. Tiết kiệm 400 MB VRAM mà không mất gì — đủ để máy 4 GB chạy được.

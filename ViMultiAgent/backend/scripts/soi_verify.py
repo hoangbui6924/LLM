@@ -1,6 +1,6 @@
 """Soi Verify Agent trên những bài cụ thể — công cụ chẩn đoán, không phải đo đạc.
 
-Chạy:  python scripts/soi_verify.py math_nb_007 phys_th_012
+Chạy:  python scripts/soi_verify.py ds_nb_007 hh_th_012
 
 In ra toàn bộ lời giải và TỪNG PHÉP KIỂM của Verify, kèm phép kiểm nào không đạt.
 Dùng khi bench báo một bài bị "báo oan" (đáp án đúng mà Verify kêu FAIL) và cần

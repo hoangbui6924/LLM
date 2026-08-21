@@ -1,10 +1,11 @@
 """Multi-Agent Manager — điều phối toàn bộ luồng ở mục 4.
 
-    User -> Planner -> Router -> Subject Agent -> SymPy -> Verify -> Explain -> User
+    User -> Planner -> Router -> Đại số / Hình học Agent -> SymPy -> Verify
+         -> Explain -> User
 
 Manager là một *async generator*: nó phát sự kiện ra ngoài ngay khi từng agent
 xong việc, thay vì chờ trọn gói rồi mới trả. Nhờ vậy frontend vẽ được tiến trình
-"Planner ✓ Router ✓ Math Agent ✓..." theo thời gian thực, đúng yêu cầu mục 10.
+"Planner ✓ Router ✓ Đại số Agent ✓..." theo thời gian thực, đúng yêu cầu mục 10.
 
 Hai điều Manager chịu trách nhiệm mà không agent nào lo:
 
@@ -22,10 +23,9 @@ import time
 from typing import Any, AsyncIterator
 
 from agents import (
-    chemistry_agent,
+    dai_so_agent,
     explain_agent,
-    math_agent,
-    physics_agent,
+    hinh_hoc_agent,
     planner,
     recompute_agent,
     router,
@@ -46,17 +46,15 @@ from core.schemas import (
 )
 
 _SUBJECT_AGENTS = {
-    "math_agent": math_agent,
-    "physics_agent": physics_agent,
-    "chemistry_agent": chemistry_agent,
+    "dai_so_agent": dai_so_agent,
+    "hinh_hoc_agent": hinh_hoc_agent,
 }
 
 _NHAN = {
     "planner": "Planner",
     "router": "Router",
-    "math_agent": "Math Agent",
-    "physics_agent": "Physics Agent",
-    "chemistry_agent": "Chemistry Agent",
+    "dai_so_agent": "Đại số Agent",
+    "hinh_hoc_agent": "Hình học Agent",
     "verify_agent": "Verify",
     "explain_agent": "Explain",
 }
@@ -100,6 +98,15 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
     record(rspan)
     result.route = route
     plan.subject = route.subject
+    # Nhãn dạng bài của PhoBERT đáng tin hơn slug do Planner sinh: nó là một trong
+    # bộ nhãn cố định, còn model 4B thì đo được là hay trả về `khối_lượng_mol` có
+    # dấu thay vì slug không dấu. Chỉ ghi đè khi Router thực sự có nhãn.
+    if route.topic:
+        plan.topic = route.topic
+    # Phát kèm ba trường mà giao diện cần để CHỨNG MINH tầng học sâu đang chạy:
+    # dạng bài PhoBERT nhận ra, tầng nào đã quyết định, và độ tin cậy của nó.
+    # Trước đây chúng chỉ nằm trong `result.route` của sự kiện `done`, tức người
+    # xem phải chờ hết lượt mới thấy — mà lúc đó thanh tiến trình đã chạy xong.
     yield {
         "type": "agent",
         "name": "router",
@@ -108,10 +115,14 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
         "ok": True,
         "ms": round(rspan.duration_ms) if rspan else 0,
         "detail": f"{route.agent_name} — {route.reason_vi}",
+        "subject": route.subject,
+        "topic": route.topic,
+        "decided_by": route.decided_by,
+        "phobert_confidence": route.phobert_confidence,
     }
 
     # ---- 3. Subject Agent + 4. Verify (có vòng sửa sai) --------------------
-    agent_mod = _SUBJECT_AGENTS.get(route.agent_name, math_agent)
+    agent_mod = _SUBJECT_AGENTS.get(route.agent_name, dai_so_agent)
     solution: Solution | None = None
     report: VerifyReport | None = None
     feedback: str | None = None
@@ -212,10 +223,10 @@ async def solve_stream(question: str) -> AsyncIterator[dict[str, Any]]:
     #
     # Cả hai đều lấy giá trị của bộ tính lại độc lập, kèm cảnh báo rõ ràng.
     #
-    # Trường hợp 2 là bài học đo được trên môn Hoá: Subject Agent kiên định trả
-    # 2,4 gam qua cả hai vòng, trong khi bộ tính lại ra 7,73 gam — đúng. Trước đây
-    # ta giữ 2,4 chỉ vì nó đến từ agent "chính", tức vứt đi câu trả lời đúng đang
-    # cầm trong tay.
+    # Trường hợp 2 là bài học đo được từ bản trước của hệ thống: Subject Agent kiên
+    # định trả một giá trị qua cả hai vòng, trong khi bộ tính lại ra giá trị khác —
+    # và bộ tính lại đúng. Trước đây ta giữ giá trị của Subject chỉ vì nó đến từ
+    # agent "chính", tức vứt đi câu trả lời đúng đang cầm trong tay.
     #
     # Lời giải ĐÃ qua kiểm chứng thì tuyệt đối không đụng vào.
     co_cong_cu = doc_lap is not None and doc_lap.co_gia_tri

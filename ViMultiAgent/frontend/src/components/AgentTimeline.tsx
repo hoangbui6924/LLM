@@ -10,9 +10,8 @@ import type { AgentState } from "../types";
 const BIEU_TUONG: Record<string, string> = {
   planner: "◈",
   router: "⇄",
-  math_agent: "∑",
-  physics_agent: "⚛",
-  chemistry_agent: "⌬",
+  dai_so_agent: "∑",
+  hinh_hoc_agent: "△",
   verify_agent: "🛡",
   explain_agent: "📖",
 };
@@ -22,6 +21,14 @@ const TRANG_THAI: Record<AgentState["status"], string> = {
   running: "Đang chạy",
   done: "Hoàn tất",
   failed: "Lỗi",
+};
+
+// Ba tầng định tuyến, rẻ trước đắt sau. Hiện rõ tầng nào đã quyết định là cách
+// duy nhất để người xem thấy PhoBERT có thực sự được dùng hay chỉ nằm không.
+const TANG: Record<string, { chu: string; ten: string }> = {
+  phobert: { chu: "PhoBERT", ten: "Bộ phân loại học sâu, ~30 ms" },
+  rule: { chu: "Luật từ khoá", ten: "Không tốn mô hình, 0 ms" },
+  llm: { chu: "LLM", ten: "Hỏi mô hình ngôn ngữ, 2-4 giây" },
 };
 
 export default function AgentTimeline({ agents }: { agents: AgentState[] }) {
@@ -59,14 +66,26 @@ export default function AgentTimeline({ agents }: { agents: AgentState[] }) {
                   {a.status === "done" ? "✓" : a.status === "failed" ? "✕" : ""}
                 </span>
 
-                <span className={`glyph agent-${a.name}`}>
-                  {BIEU_TUONG[a.name] ?? "●"}
+                <span className={`glyph agent-${a.agent_that ?? a.name}`}>
+                  {BIEU_TUONG[a.agent_that ?? a.name] ?? "●"}
                 </span>
 
                 <span className="node-text">
                   <span className="node-name">
                     {a.label}
                     {a.retry && <span className="badge">giải lại</span>}
+                    {a.decided_by && (
+                      <span
+                        className={`badge tang tang-${a.decided_by}`}
+                        title={TANG[a.decided_by]?.ten}
+                      >
+                        {TANG[a.decided_by]?.chu ?? a.decided_by}
+                        {a.decided_by === "phobert" &&
+                          typeof a.phobert_confidence === "number" &&
+                          ` ${a.phobert_confidence.toFixed(2)}`}
+                      </span>
+                    )}
+                    {a.topic && <span className="badge dang">{a.topic}</span>}
                   </span>
                   <span className="node-desc">{a.mo_ta}</span>
                 </span>

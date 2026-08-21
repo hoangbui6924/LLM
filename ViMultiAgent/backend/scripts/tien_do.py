@@ -19,12 +19,12 @@ from pathlib import Path
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-# Dòng bench in ra:  [ 23/150] Toán  VD  math_vd_016    ĐÚNG   66.7s  PASS  '...'
+# Dòng bench in ra:  [ 23/100] Đại số VD  ds_vd_016    ĐÚNG   66.7s  PASS  '...'
 DONG = re.compile(
     r"\[\s*(\d+)/(\d+)\]\s+\S+\s+(\S+)\s+(\w+?)_\w+?_\w*?(\d+)\s+(ĐÚNG|SAI)\s+([\d.]+)s\s+(\S*)"
 )
 
-TEN_MON = {"math": "Toán", "phys": "Lý", "chem": "Hoá"}
+TEN_MON = {"ds": "Đại số", "hh": "Hình học"}
 MUC = ("NB", "TH", "VD", "VDC")
 
 

@@ -15,7 +15,7 @@ Cập nhật: 2026-08-10 · 222 kiểm thử đạt · cấu hình D · đo trê
 
 ## 1. Tổng quan
 
-Hệ thống đa tác tử giải bài tập STEM (Toán – Vật lý – Hoá học) bậc THPT bằng
+Hệ thống đa tác tử giải bài tập **Toán** bậc THPT bằng
 tiếng Việt, **chạy hoàn toàn ngoại tuyến**, không dùng API key của bất kỳ dịch vụ
 nào.
 
@@ -52,7 +52,7 @@ Người dùng
     ├──────────────────────────────┐
     ▼                              ▼
  Subject Agent              Bộ tính lại độc lập
- (Toán/Lý/Hoá)              (chạy SONG SONG)
+ (Đại số/Hình học)          (chạy SONG SONG)
     │                              │
     ▼                              │
  Trọng tài SymPy                   │
@@ -129,7 +129,7 @@ cho nhau; bất đồng thì đẩy xuống LLM.
 
 ### 3.3 Ba Subject Agent
 
-Toán, Lý, Hoá — chung khung `subject.py`, khác nhau ở system prompt. Đây chính là
+Đại số và Hình học — chung khung `subject.py`, khác nhau ở system prompt. Đây chính là
 **role specialization**: cùng mô hình nền, khác vai trò và kỷ luật chuyên môn.
 
 Ràng buộc `min_length=1` trên `Solution.steps` đi thẳng vào grammar JSON của
@@ -179,8 +179,7 @@ Năm phép kiểm tất định:
 | `_check_answer_present` | mọi bài | có bước giải và đáp số không |
 | `_check_arithmetic` | mọi bài | SymPy tính lại từng bước **sau khi thế ký hiệu**, ngưỡng lệch 1% |
 | `_check_units` | Vật lý | soát thứ nguyên bằng Pint |
-| `_check_chemistry` | Hoá | bảo toàn nguyên tố, kèm phương trình cân bằng đúng |
-| `_check_khoi_luong_mol` | Hoá | đối chiếu M(chất) với bảng nguyên tử khối |
+| `_check_hinh_hoc` | Hình học | bắt đáp số âm cho thể tích, diện tích, độ dài, khoảng cách |
 
 Cộng thêm phép kiểm từ bộ tính lại độc lập.
 
@@ -236,7 +235,7 @@ này, nên có test riêng chốt lại.
 
 | | |
 |---|---|
-| Số mẫu | 175 (61 Toán · 57 Lý · 57 Hoá) |
+| Số mẫu | 61 (25 chuẩn · 36 khó), toàn bộ là Toán |
 | Thời gian đáp ứng | **43 ms** (gồm cả lần nạp kho đầu tiên) |
 | Số lượt gọi LLM | **0** |
 | Bảo đảm đáp án | tính bằng công thức, có test soát toàn bộ 175 mẫu bằng SymPy |
@@ -413,7 +412,7 @@ Cần tách bạch hai thứ.
 | | |
 |---|---|
 | Mô hình nền | `vinai/phobert-base`, 135 triệu tham số |
-| Nhiệm vụ | phân loại 3 lớp Toán / Lý / Hoá |
+| Nhiệm vụ | phân loại 15 dạng bài Toán |
 | Dữ liệu | **810 câu tự xây**: 535 train · 116 val · 159 test |
 | Trọng số | 517 MB, huấn luyện ~12 phút trên CPU |
 | Suy luận | ~50 ms mỗi câu, chạy CPU |

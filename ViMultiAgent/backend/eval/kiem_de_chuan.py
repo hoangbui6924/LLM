@@ -18,7 +18,7 @@ Vì sao cần: bộ đề là ground truth. Một đáp án sai ở đây làm b
 nhìn vào bảng số liệu cuối cùng.
 
 Lưu ý về giới hạn: script này kiểm ĐÁP ÁN CÓ KHỚP CÔNG THỨC ĐÃ GHI hay không.
-Nó KHÔNG kiểm được công thức có đúng về mặt Lý/Hoá hay không — chuyện đó phải
+Nó KHÔNG kiểm được công thức có đúng về mặt Toán học hay không — chuyện đó phải
 đọc cột `ghi_chu` mà thẩm định bằng mắt. Hai việc khác nhau, đừng nhầm.
 """
 
@@ -139,7 +139,7 @@ def main() -> int:
         k = (d.get("subject", "?"), d.get("level", "?"))
         mon_muc[k] = mon_muc.get(k, 0) + 1
         chu_de.setdefault(d.get("subject", "?"), set()).add(d.get("topic", ""))
-    for mon in ("math", "physics", "chemistry"):
+    for mon in ("dai_so", "hinh_hoc"):
         phan = "  ".join(
             f"{mu} {mon_muc.get((mon, mu), 0):2}" for mu in ("NB", "TH", "VD", "VDC")
         )

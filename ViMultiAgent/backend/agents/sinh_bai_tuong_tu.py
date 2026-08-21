@@ -101,7 +101,7 @@ def _chon_mau(mon: str, topic: str, muc: str) -> list[Callable]:
 
 
 def sinh(
-    mon: str = "math",
+    mon: str = "dai_so",
     topic: str = "",
     cau_hoi_goc: str = "",
     muc: str = "",

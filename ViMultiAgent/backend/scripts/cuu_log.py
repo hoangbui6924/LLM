@@ -26,12 +26,12 @@ from pathlib import Path
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-# [ 42/300] Hoá   VDC chem_vdc_k041  SAI   178.5s  PASS      '4.1 g'  [VƯỢT SLA]
+# [ 42/200] Hình học VDC hh_vdc_k041  SAI   178.5s  PASS      '4.1'  [VƯỢT SLA]
 DONG = re.compile(
     r"\[\s*(\d+)/(\d+)\]\s+(\S+)\s+(\S+)\s+(\S+)\s+(ĐÚNG|SAI)\s+([\d.]+)s\s+(\S*)\s*(?:'(.*?)')?"
 )
 
-MON = {"Toán": "math", "Lý": "physics", "Hoá": "chemistry"}
+MON = {"Đại số": "dai_so", "Hình học": "hinh_hoc"}
 COT = ["stt", "id", "subject", "level", "dung", "verdict", "tong_s",
        "dat_45s", "dap_an_he_thong"]
 
@@ -86,7 +86,7 @@ def main() -> int:
     print(f"  Accuracy    : {d}/{len(dong)} = {d / len(dong) * 100:.1f}%")
     print(f"  Thời gian TB: {sum(float(r['tong_s']) for r in dong) / len(dong):.1f}s")
     print()
-    for mon, ten in (("math", "Toán"), ("physics", "Lý"), ("chemistry", "Hoá")):
+    for mon, ten in (("dai_so", "Đại số"), ("hinh_hoc", "Hình học")):
         g = [r for r in dong if r["subject"] == mon]
         if g:
             print(f"  {ten:<5} {sum(r['dung'] for r in g):3}/{len(g):<4}"

@@ -4,9 +4,8 @@
 export type AgentName =
   | "planner"
   | "router"
-  | "math_agent"
-  | "physics_agent"
-  | "chemistry_agent"
+  | "dai_so_agent"
+  | "hinh_hoc_agent"
   | "verify_agent"
   | "explain_agent";
 
@@ -23,6 +22,13 @@ export interface AgentEvent {
   verdict?: Verdict;
   retry?: boolean;
   sympy_fixed?: number;
+
+  // Chỉ có ở sự kiện `done` của Router. Đây là bằng chứng tầng học sâu đang chạy
+  // thật, nên giao diện hiển thị ngay thay vì chờ tới sự kiện `done` cuối lượt.
+  subject?: string;
+  topic?: string;
+  decided_by?: "phobert" | "rule" | "llm";
+  phobert_confidence?: number | null;
 }
 
 export interface TokenEvent {
@@ -157,6 +163,18 @@ export interface AgentState {
   detail?: string;
   verdict?: Verdict;
   retry?: boolean;
+
+  /** Tên agent THỰC đang chạy ở ô này.
+   *
+   * Hai Subject Agent dùng chung một ô nên `name` luôn là `dai_so_agent`. Không
+   * có trường này thì biểu tượng kẹt ở `∑` ngay cả khi Hình học Agent đang chạy.
+   */
+  agent_that?: AgentName;
+
+  /** Router: hiển thị tầng nào đã quyết định và dạng bài nhận ra. */
+  decided_by?: "phobert" | "rule" | "llm";
+  topic?: string;
+  phobert_confidence?: number | null;
 }
 
 export interface HistoryRow {

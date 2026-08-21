@@ -626,7 +626,7 @@ qwen3:4b    359d7dd4bcda    2.5 GB    2 minutes ago
 ## 6.2. Bộ phân loại môn học PhoBERT — kiểm tra trước, huấn luyện sau
 
 Đây là phần học sâu của đề tài: một mô hình PhoBERT được huấn luyện lại để đọc đề bài
-và đoán nó thuộc môn Toán, Lý hay Hoá.
+và đoán nó thuộc phân môn Đại số hay Hình học.
 
 **Bước 1 — kiểm tra người gửi có kèm sẵn không.** Vào thư mục `backend`:
 
@@ -857,7 +857,7 @@ demo được, chỉ là phải kiên nhẫn.
 
 ## 8.4. Giải thử một bài
 
-Trên giao diện web, bấm nút **Lý** để điền đề mẫu, rồi bấm **Giải bài**. Quan sát:
+Trên giao diện web, bấm nút **Hình học** để điền đề mẫu, rồi bấm **Giải bài**. Quan sát:
 
 - Năm vai sáng dần: Planner → Router → Subject → Verify → Explain
 - **Đáp án hiện ra trước khi lời giảng chảy xong** — hệ thống phát đáp số ngay khi

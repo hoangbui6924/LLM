@@ -4,7 +4,7 @@ Chạy:
     python scripts/bench.py                              3 bài mẫu dựng sẵn
     python scripts/bench.py --de eval/data/de_chuan.csv   bộ đề chuẩn
     python scripts/bench.py --de ... --n 3                lặp 3 lượt lấy trung bình
-    python scripts/bench.py --de ... --mon math           lọc một môn
+    python scripts/bench.py --de ... --mon dai_so         lọc một phân môn
     python scripts/bench.py --de ... --muc VD,VDC         lọc theo mức độ
 
 Bốn chỉ số của đề tài lấy ra từ đây:
@@ -44,7 +44,7 @@ from core import config, db  # noqa: E402
 import sympy as sp  # noqa: E402
 from sympy.parsing.sympy_parser import parse_expr as _parse_expr  # noqa: E402
 
-from tools import sympy_tool, units_tool  # noqa: E402
+from tools import sympy_tool  # noqa: E402
 
 GOC_BACKEND = Path(__file__).resolve().parents[1]
 
@@ -55,7 +55,7 @@ MOC_DE_BAI = 45.0
 # Dung sai chấm số: chấp nhận model làm tròn 0,6283 thành 0,63 hay 7,733 thành 7,73.
 DUNG_SAI = 0.02
 
-TEN_MON = {"math": "Toán", "physics": "Lý", "chemistry": "Hoá"}
+TEN_MON = {"dai_so": "Đại số", "hinh_hoc": "Hình học"}
 CAC_MUC = ("NB", "TH", "VD", "VDC")
 TEN_MUC = {
     "NB": "Nhận biết",
@@ -108,12 +108,12 @@ class Bai:
         return f"{self.answer_value:g}" + (f" {self.answer_unit}" if self.answer_unit else "")
 
 
-# Ba bài dựng sẵn — giữ nguyên từ bản trước để `python scripts/bench.py` trơn vẫn
+# Hai bài dựng sẵn — giữ nguyên từ bản trước để `python scripts/bench.py` trơn vẫn
 # chạy được như cũ, tiện kiểm tra nhanh sau mỗi lần sửa code.
 BAI_MAC_DINH = [
     Bai(
-        id="mau_toan",
-        subject="math",
+        id="mau_dai_so",
+        subject="dai_so",
         topic="dao_ham",
         level="TH",
         question="Tính đạo hàm của hàm số y = x^3 - 3x^2 + 2x tại điểm x = 1",
@@ -121,30 +121,16 @@ BAI_MAC_DINH = [
         bieu_thuc_kiem="3*1**2 - 6*1 + 2",
     ),
     Bai(
-        id="mau_ly",
-        subject="physics",
-        topic="dao_dong_dieu_hoa",
+        id="mau_hinh",
+        subject="hinh_hoc",
+        topic="toa_do_kc_diem_mp",
         level="TH",
         question=(
-            "Một vật dao động điều hoà với biên độ A = 5 cm và tần số f = 2 Hz. "
-            "Tính vận tốc cực đại của vật."
+            "Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; 3) "
+            "đến mặt phẳng x + 2y - 2z + 1 = 0."
         ),
-        answer_value=0.6283185307,
-        answer_unit="m/s",
-        bieu_thuc_kiem="0.05*2*pi*2",
-    ),
-    Bai(
-        id="mau_hoa",
-        subject="chemistry",
-        topic="tinh_theo_pthh",
-        level="TH",
-        question=(
-            "Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2 dư thu được Fe3O4. "
-            "Tính khối lượng Fe3O4 thu được."
-        ),
-        answer_value=7.7333333,
-        answer_unit="gam",
-        bieu_thuc_kiem="5.6/56/3*232",
+        answer_value=0.0,
+        bieu_thuc_kiem="Abs(1 + 2*2 - 2*3 + 1)/sqrt(1**2 + 2**2 + (-2)**2)",
     ),
 ]
 
@@ -182,7 +168,7 @@ def doc_de(duong_dan: Path) -> list[Bai]:
             bai.append(
                 Bai(
                     id=(dong.get("id") or f"bai_{len(bai) + 1}").strip(),
-                    subject=(dong.get("subject") or "math").strip(),
+                    subject=(dong.get("subject") or "dai_so").strip(),
                     question=cau,
                     topic=(dong.get("topic") or "").strip(),
                     level=(dong.get("level") or "TH").strip().upper(),
@@ -255,7 +241,7 @@ def _tinh_co_hang_so(bieu_thuc: str) -> float | None:
     vận dụng cao bị chấm oan đúng vì lý do này.
 
     Chỉ dùng cho việc CHẤM đáp số cuối, không đưa vào `sympy_tool` dùng chung:
-    trong lời giải Vật lý, `e` thường là điện tích electron chứ không phải 2,718 —
+    trong lời giải, `e` có thể là tên một điểm hình học chứ không phải 2,718 —
     đổi ở tầng dưới là gây hoạ chỗ khác.
     """
     try:
@@ -306,6 +292,24 @@ def _tach_don_vi(s: str) -> tuple[float | None, str]:
     m = _DUOI_DON_VI.search(_chuan_hoa_so(s))
     return v, (m.group(0).strip() if m else "")
 
+# Đổi đơn vị cho khâu chấm. Đề Toán THPT chỉ dùng đơn vị độ dài, diện tích, thể
+# tích — một bảng tra tất định là đủ, không cần thư viện đơn vị bên ngoài.
+#
+# Vì sao vẫn cần đổi: đề ghi đáp án chuẩn bằng cm³ mà lời giải trả lời bằng dm³
+# thì so số trần sẽ lệch 1000 lần và bị chấm sai. Phạt vì dùng đơn vị khác là
+# chấm sai, không phải chấm chặt.
+_HE_SO_DOI: dict[tuple[str, str], float] = {
+    ("m", "cm"): 100.0,      ("cm", "m"): 0.01,
+    ("m", "mm"): 1000.0,     ("mm", "m"): 0.001,
+    ("cm", "mm"): 10.0,      ("mm", "cm"): 0.1,
+    ("dm", "cm"): 10.0,      ("cm", "dm"): 0.1,
+    ("km", "m"): 1000.0,     ("m", "km"): 0.001,
+    ("m2", "cm2"): 10000.0,  ("cm2", "m2"): 0.0001,
+    ("dm2", "cm2"): 100.0,   ("cm2", "dm2"): 0.01,
+    ("m3", "cm3"): 1e6,      ("cm3", "m3"): 1e-6,
+    ("dm3", "cm3"): 1000.0,  ("cm3", "dm3"): 0.001,
+    ("l", "dm3"): 1.0,       ("dm3", "l"): 1.0,
+}
 
 def _cham_so(dap_an: str, dung: float, don_vi_chuan: str = "") -> bool:
     """So đáp số bằng số, CÓ quy đổi đơn vị khi hai bên ghi khác đơn vị.
@@ -318,9 +322,9 @@ def _cham_so(dap_an: str, dung: float, don_vi_chuan: str = "") -> bool:
     if v is None:
         return False
     if dv and don_vi_chuan and dv.lower() != don_vi_chuan.lower():
-        r = units_tool.convert(v, dv, don_vi_chuan)
-        if r.get("ok"):
-            v = float(r["value"])
+        he_so = _HE_SO_DOI.get((dv.lower(), don_vi_chuan.lower()))
+        if he_so is not None:
+            v *= he_so
     return abs(v - dung) <= DUNG_SAI * max(1.0, abs(dung))
 
 
@@ -369,9 +373,8 @@ _NHOM_SPAN = {
     "recompute": "recompute",
     "verify_agent": "verify",
     "explain_agent": "explain",
-    "math_agent": "subject",
-    "physics_agent": "subject",
-    "chemistry_agent": "subject",
+    "dai_so_agent": "subject",
+    "hinh_hoc_agent": "subject",
 }
 
 
@@ -489,7 +492,7 @@ def in_accuracy(kq: list[dict]) -> None:
         print(f"    -> tầng kiểm chứng + cứu đáp án đóng góp {dung - dung_sub:+d} bài")
 
     print("\n  Theo môn:")
-    for m in ("math", "physics", "chemistry"):
+    for m in TEN_MON:
         s = [r for r in kq if r["bai"].subject == m]
         if s:
             print(f"    {TEN_MON[m]:<6} {_ti_le(sum(1 for r in s if r['dung']), len(s))}")
@@ -720,7 +723,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Đo hiệu năng ViMultiAgent")
     ap.add_argument("--de", help="đường dẫn CSV bộ đề (mặc định: 3 bài dựng sẵn)")
     ap.add_argument("--n", type=int, default=1, help="số lượt lặp")
-    ap.add_argument("--mon", help="lọc môn: math,physics,chemistry")
+    ap.add_argument("--mon", help="lọc phân môn: dai_so,hinh_hoc")
     ap.add_argument("--muc", help="lọc mức độ: NB,TH,VD,VDC")
     ap.add_argument("--so-luong", type=int, help="chỉ chạy N bài lấy trải đều — để chạy thử nhanh")
     ap.add_argument("--out", help="thư mục ghi CSV kết quả")

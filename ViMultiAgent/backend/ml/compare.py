@@ -30,8 +30,19 @@ if hasattr(sys.stdout, "reconfigure"):
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PHOBERT_DIR = Path(__file__).resolve().parent / "phobert_router"
-NHAN = ["math", "physics", "chemistry"]
-TEN_VI = {"math": "Toán", "physics": "Lý", "chemistry": "Hoá"}
+from ml.seed_questions import NHAN  # noqa: E402
+
+# Tên hiển thị tiếng Việt của từng dạng bài.
+TEN_VI = {
+    "dao_ham": "Đạo hàm", "tich_phan": "Tích phân", "gioi_han": "Giới hạn",
+    "phuong_trinh": "Phương trình", "tiep_tuyen": "Tiếp tuyến",
+    "gtln": "GTLN", "gtnn": "GTNN", "so_diem_cuc_tri": "Cực trị",
+    "tiem_can_ngang": "Tiệm cận ngang", "tiem_can_dung": "Tiệm cận đứng",
+    "khac_dai_so": "Đại số khác",
+    "toa_do_khoang_cach": "Toạ độ - khoảng cách",
+    "toa_do_the_tich": "Thể tích", "toa_do_kc_diem_mp": "Điểm đến mặt phẳng",
+    "khac_hinh_hoc": "Hình học khác",
+}
 
 
 def doc(ten: str) -> tuple[list[str], list[str], list[str]]:

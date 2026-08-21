@@ -4,6 +4,9 @@ Việc của Planner không phải giải, mà là *đọc hiểu đề*: tách 
 ẩn cần tìm, chuẩn hoá câu hỏi lộn xộn của học sinh thành phát biểu gọn gàng.
 Chất lượng của toàn hệ thống phụ thuộc nặng vào bước này — Subject Agent giải
 sai đề thì mọi bước sau đều vô nghĩa.
+
+Phán đoán `subject` của Planner chỉ là ý kiến tham khảo: Router mới là nơi chốt
+phân môn, và nó có PhoBERT lẫn luật từ khoá để đối chiếu.
 """
 
 from __future__ import annotations
@@ -14,13 +17,13 @@ from agents.base import run_structured
 from core import config
 from core.schemas import AgentSpan, Plan
 
-SYSTEM = """Bạn là Planner Agent của hệ thống giải bài tập STEM tiếng Việt.
+SYSTEM = """Bạn là Planner Agent của hệ thống giải bài toán Toán THPT tiếng Việt.
 
 Nhiệm vụ: PHÂN TÍCH đề bài, KHÔNG giải.
 
 Bạn phải trả về JSON đúng schema với các trường:
-- subject: "math" | "physics" | "chemistry"
-- topic: chủ đề ngắn không dấu, ví dụ "tich_phan", "dao_dong_dieu_hoa", "phan_ung_oxi_hoa"
+- subject: "dai_so" nếu bài thuộc Đại số - Giải tích | "hinh_hoc" nếu thuộc Hình học
+- topic: dạng bài ngắn không dấu, ví dụ "dao_ham", "tich_phan", "toa_do_the_tich"
 - question_type: "mcq" nếu có phương án A/B/C/D | "numeric" nếu hỏi giá trị số |
   "symbolic" nếu hỏi biểu thức | "proof" nếu yêu cầu chứng minh
 - givens: danh sách dữ kiện, mỗi dữ kiện gồm symbol, value, unit, description_vi

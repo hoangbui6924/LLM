@@ -77,7 +77,7 @@ ollama serve
 | Vùng | Nội dung |
 |---|---|
 | Ô nhập trên cùng | Đề bài. `Ctrl + Enter` để gửi nhanh |
-| Ba nút Toán / Lý / Hoá | Điền sẵn đề mẫu — dùng khi demo |
+| Ba nút Đại số / Giải tích / Hình học | Điền sẵn đề mẫu — dùng khi demo |
 | Cột trái | Năm vai của quy trình, sáng dần theo tiến trình |
 | Đáp án | Hiện **trước khi** lời giảng chảy xong |
 | Các bước giải | Từng bước có công thức KaTeX |
@@ -218,7 +218,7 @@ curl.exe -X POST http://localhost:8000/api/bai_tuong_tu `
   -d '{\"mon\":\"math\",\"topic\":\"dao_ham\",\"muc\":\"TH\"}'
 ```
 
-`mon` nhận `math` / `physics` / `chemistry`. Endpoint **không chạy lại Planner** —
+`mon` nhận `dai_so` / `hinh_hoc`. Endpoint **không chạy lại Planner** —
 nó nhận sẵn `mon`/`topic` mà giao diện đang giữ từ lượt giải trước, nhờ vậy trả về
 gần như tức thì.
 
@@ -239,7 +239,7 @@ python scripts/bench.py --de eval/data/de_chuan.csv --so-luong 20
 | `--de <csv>` | Bộ đề. Bỏ trống thì dùng 3 bài dựng sẵn |
 | `--so-luong N` | Chỉ chạy N bài **lấy trải đều** — chạy thử nhanh |
 | `--n N` | Số lượt lặp (mặc định 1) |
-| `--mon math\|physics\|chemistry` | Lọc theo môn |
+| `--mon dai_so\|hinh_hoc` | Lọc theo phân môn |
 | `--muc NB\|TH\|VD\|VDC` | Lọc theo mức độ |
 | `--out <thư mục>` | Nơi ghi CSV kết quả |
 
@@ -467,14 +467,14 @@ Trình tự này cho thấy đủ cả bốn điểm của đề tài mà không
 
 | Phút | Làm gì | Chỉ vào đâu |
 |---|---|---|
-| 0–1 | Bấm nút **Lý**, bấm Giải bài | Năm vai sáng dần — kiến trúc đa tác tử |
+| 0–1 | Bấm nút **Hình học**, bấm Giải bài | Năm vai sáng dần — kiến trúc đa tác tử |
 | 1–2 | Chờ đáp án hiện | **Đáp án ra trước khi giảng xong** — cắt 10,6 giây chờ |
 | 2–3 | Cuộn xuống lời giảng đang chảy | Streaming thật, không phải chờ trắng màn hình |
 | 3–4 | Chỉ vào dòng thời gian cuối | Dưới mốc 45 giây, 600/600 lượt đã đo đạt |
 | 4–5 | Bấm **Sinh bài** ở thẻ Bài tập tương tự, bấm **Bài khác** | Tức thì — vì không gọi LLM, đáp án bảo đảm đúng |
 | 5–7 | Mở cửa sổ `pytest` | 222 test cho tầng kiểm chứng tất định |
 | 7–9 | Mở ảnh chụp `ml/compare.py` | Phần học sâu: PhoBERT tự huấn luyện, 94,7% quyết định định tuyến |
-| 9–10 | Giải một bài Hoá | Soát khối lượng mol bằng `chem_tool`, không tin trí nhớ model |
+| 9–10 | Giải một bài hình học | Soát đáp số âm cho thể tích, khoảng cách — công cụ bắt lỗi, không tin trí nhớ model |
 
 **Câu hỏi phản biện hay gặp và chỗ tra câu trả lời:**
 

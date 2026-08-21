@@ -15,9 +15,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from fastapi import FastAPI  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
+from fastapi.staticfiles import StaticFiles  # noqa: E402
 
 from api.routes import router  # noqa: E402
 from core import config, db  # noqa: E402
+
+# Bản build của giao diện. Có thư mục này thì backend tự phục vụ luôn, cả hệ thống
+# gói về MỘT tiến trình trên MỘT cổng.
+GIAO_DIEN = Path(__file__).resolve().parents[1] / "frontend" / "dist"
 
 
 @asynccontextmanager
@@ -81,6 +86,29 @@ app.add_middleware(
 app.include_router(router)
 
 
-@app.get("/")
-async def root() -> dict[str, str]:
-    return {"name": "ViMultiAgent", "docs": "/docs", "health": "/api/health"}
+# ---------------------------------------------------------------------------
+# Giao diện
+#
+# THỨ TỰ Ở ĐÂY LÀ BẮT BUỘC: `include_router` phải chạy TRƯỚC `app.mount("/")`.
+# Mount vào "/" bắt mọi đường dẫn, đặt trước thì nó nuốt luôn cả `/api/...` và
+# `/docs` — backend im lặng trả về index.html cho mọi lời gọi API.
+#
+# Có `frontend/dist` thì phục vụ nó, cả hệ thống còn MỘT tiến trình trên MỘT cổng:
+# người chấm mở http://localhost:8000 là xong, không cần chạy Vite song song.
+# Chưa build thì giữ nguyên endpoint JSON cũ để chế độ dev (Vite cổng 5173 proxy
+# sang đây) không bị ảnh hưởng.
+#
+# `html=True` cho phép trả index.html khi truy cập thư mục. Giao diện không dùng
+# router phía client nên chừng đó là đủ, không cần thêm SPA fallback.
+if (GIAO_DIEN / "index.html").exists():
+    app.mount("/", StaticFiles(directory=str(GIAO_DIEN), html=True), name="ui")
+else:
+
+    @app.get("/")
+    async def root() -> dict[str, str]:
+        return {
+            "name": "ViMultiAgent",
+            "docs": "/docs",
+            "health": "/api/health",
+            "ghi_chu": "Chưa có frontend/dist — chạy `npm run build` trong thư mục frontend.",
+        }

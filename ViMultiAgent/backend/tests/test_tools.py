@@ -1,17 +1,15 @@
 """Kiểm thử các công cụ tất định — chạy không cần Ollama.
 
-Đây là tầng đáng tin nhất của hệ thống: SymPy và các công cụ Hoá/đơn vị cho kết
-quả xác định, nên phải khoá chặt bằng test. Nếu tầng này sai thì Verify Agent
-mất luôn khả năng phân định đúng sai.
+Đây là tầng đáng tin nhất của hệ thống: SymPy cho kết quả xác định, nên phải khoá
+chặt bằng test. Nếu tầng này sai thì Verify Agent mất luôn khả năng phân định
+đúng sai.
 """
 
 from __future__ import annotations
 
-import math
-
 import pytest
 
-from tools import chem_tool, sympy_tool, units_tool
+from tools import sympy_tool
 
 
 class TestSymPy:
@@ -50,47 +48,6 @@ class TestSymPy:
     def test_bieu_thuc_hong_khong_lam_sap(self):
         r = sympy_tool.evaluate("(((")
         assert r["ok"] is False and "error" in r
-
-
-class TestHoaHoc:
-    def test_khoi_luong_mol(self):
-        assert chem_tool.molar_mass("H2O")["molar_mass"] == pytest.approx(18.0, abs=0.1)
-        assert chem_tool.molar_mass("Fe3O4")["molar_mass"] == pytest.approx(232.0, abs=0.5)
-
-    def test_phan_tich_cong_thuc_co_ngoac(self):
-        d = chem_tool.parse_formula("Ca(OH)2")
-        assert d == {"Ca": 1, "O": 2, "H": 2}
-
-    def test_bao_toan_nguyen_to_phat_hien_lech(self):
-        # Chưa cân bằng: 1 Fe bên trái nhưng 3 Fe bên phải.
-        r = chem_tool.check_conservation([("Fe", 1), ("O2", 1)], [("Fe3O4", 1)])
-        assert r["ok"] and r["conserved"] is False
-
-    def test_bao_toan_nguyen_to_chap_nhan_dung(self):
-        # 3Fe + 2O2 -> Fe3O4 là phương trình đã cân bằng.
-        r = chem_tool.check_conservation([("Fe", 3), ("O2", 2)], [("Fe3O4", 1)])
-        assert r["ok"] and r["conserved"] is True
-
-    def test_verify_tach_duoc_he_so(self):
-        """Bảo vệ lỗi đã gặp: Verify từng truyền list[str] vào hàm cần list[tuple]."""
-        from agents.verify_agent import _tach_he_so
-
-        assert _tach_he_so("3Fe + 2O2") == [("Fe", 3), ("O2", 2)]
-        assert _tach_he_so("Fe3O4") == [("Fe3O4", 1)]
-        assert _tach_he_so("không phải công thức!") is None
-
-
-class TestDonVi:
-    def test_co_pint(self):
-        assert units_tool.available() is True
-
-    def test_doi_don_vi(self):
-        r = units_tool.convert(5.0, "cm", "m")
-        assert r["ok"] and r["value"] == pytest.approx(0.05)
-
-    def test_thu_nguyen_khong_khop(self):
-        r = units_tool.check_dimension("5 m", "m/s")
-        assert r["ok"] and r.get("compatible") is False
 
 
 class TestTachTu:

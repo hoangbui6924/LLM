@@ -41,49 +41,32 @@ def _loi(sol: Solution) -> list[int]:
 
 class TestBatDuocLoiThat:
     def test_ca_trong_anh_chup_man_hinh(self):
-        """0,1 x 62 = 6,2 chứ không phải 3,8 — phải bắt đúng bước 4."""
+        """24 x 5 / 3 = 40 chứ không phải 60 — phải bắt đúng bước 4."""
         sol = _sol(
-            ("2Na + 1/2O2 -> Na2O", ""),
-            ("nNa = mNa/MNa", "0,2 mol"),
-            ("nNa2O = nNa/2", "0,1 mol"),
-            ("mNa2O = nNa2O * MNa2O", "3,8 g"),
+            ("Đáy là hình chữ nhật 6 x 4", ""),
+            ("Sday = 6*4", "24 cm2"),
+            ("h = 5", "5 cm"),
+            ("V = Sday*h/3", "60 cm^3"),
         )
         assert _loi(sol) == [4]
 
     def test_cung_bai_nhung_dung_thi_khong_bao(self):
         sol = _sol(
-            ("2Na + 1/2O2 -> Na2O", ""),
-            ("nNa = mNa/MNa", "0,2 mol"),
-            ("nNa2O = nNa/2", "0,1 mol"),
-            ("mNa2O = nNa2O * MNa2O", "6,2 g"),
+            ("Đáy là hình chữ nhật 6 x 4", ""),
+            ("Sday = 6*4", "24 cm2"),
+            ("h = 5", "5 cm"),
+            ("V = Sday*h/3", "40 cm^3"),
         )
         assert _loi(sol) == []
 
     def test_viet_dang_latex_co_chi_so_duoi(self):
-        """Chỉ số dưới lồng nhau `n_{Na_2O}` phải gộp về `nNa2O` mới tra được."""
+        """Chỉ số dưới lồng nhau `S_{day}` phải gộp về `Sday` mới tra được."""
         sol = _sol(
-            ("n_{Na} = m_{Na}/M_{Na}", "0,2 mol"),
-            ("n_{Na_2O} = n_{Na}/2", "0,1 mol"),
-            (r"m_{Na_2O} = n_{Na_2O} \cdot M_{Na_2O}", "3,8 g"),
+            ("S_{day} = 6*4", "24"),
+            ("h = 5", "5"),
+            ("V = S_{day}*h/3", "60"),
         )
         assert _loi(sol) == [3]
-
-    def test_khoi_luong_mol_lay_tu_bang_nguyen_tu_khoi(self):
-        """MFe2O3 không do model khai mà tra bảng — 0,25 x 159,7 = 39,9."""
-        sol = _sol(
-            ("nFe2O3 = 0,25", "0,25 mol"),
-            ("mFe2O3 = nFe2O3 * MFe2O3", "50 g"),
-        )
-        assert _loi(sol) == [2]
-
-    def test_bat_loi_o_buoc_giua_chu_khong_chi_buoc_cuoi(self):
-        sol = _sol(
-            ("a = 3", "3"),
-            ("b = a * 4", "15"),      # sai, phải 12
-            ("c = b + 1", "16"),      # nhất quán với b sai nên không bị báo thêm
-        )
-        assert _loi(sol) == [2]
-
 
 class TestKhongBaoOan:
     def test_doi_don_vi_giua_chung_khong_bi_bao_sai(self):
@@ -141,7 +124,7 @@ class TestBaoCaoTrungThuc:
         assert "2/2" in c.detail_vi
 
     def test_dem_dung_khi_co_buoc_khong_kiem_duoc(self):
-        sol = _sol(("nNa = mNa/MNa", "0,2 mol"), ("nNa2O = nNa/2", "0,1 mol"))
+        sol = _sol(("Sday = 6*4", "24"), ("V = Sday*h/3", "40"))
         (c,) = V._check_arithmetic(sol)
         assert "1/2" in c.detail_vi
 
@@ -150,11 +133,11 @@ class TestDocSoKetQua:
     @pytest.mark.parametrize(
         "chuoi, mong_doi",
         [
-            ("0,2 mol", 0.2),
-            ("3.8 g", 3.8),
+            ("12,5 cm^3", 12.5),
+            ("40 cm2", 40.0),
             ("6,2", 6.2),
-            ("1,2 m/s", 1.2),
-            ("232 g/mol", 232.0),
+            ("3,5 m", 3.5),
+            ("60 độ", 60.0),
             ("-1", -1.0),
             ("1/2", 0.5),
         ],

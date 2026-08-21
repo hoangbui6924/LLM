@@ -203,7 +203,7 @@ Số liệu lấy từ **bộ đề giữ riêng 150 bài**.
 
 | Chỉ số đăng ký | Ngưỡng | Đo được | Kết luận |
 |---|---|---|---|
-| Accuracy bài toán STEM cấp THPT tiếng Việt | ≥ 75% | **78,7% ± 6,6** | ✅ **Đạt** |
+| Accuracy bài toán Toán cấp THPT tiếng Việt | ≥ 75% | **78,7% ± 6,6** | ✅ **Đạt** |
 | Latency end-to-end | ≤ 45s | **150/150 = 100%**, trung bình 30,4s | ✅ **Đạt** |
 | Solution verification rate | ≥ 85% | 53,1% (chặt) · 71,9% (nới) | ❌ **Chưa đạt** |
 | Explanation quality (10 giáo viên, Likert 5) | ≥ 4/5 | Chưa tổ chức chấm | ⏳ **Chưa có số** |
@@ -293,7 +293,7 @@ vậy có thể kéo đổ cả phần trình bày.
 
 Đề nghị diễn đạt lại theo đúng những gì **chứng minh được bằng số đo**:
 
-> Hệ thống đa tác tử giải bài tập STEM tiếng Việt chạy **hoàn toàn ngoại tuyến trên
+> Hệ thống đa tác tử giải bài tập Toán THPT tiếng Việt chạy **hoàn toàn ngoại tuyến trên
 > máy phổ thông** (GPU 4–6 GB, không cần API key của bất kỳ dịch vụ nào), kết hợp tác
 > tử LLM với **tầng kiểm chứng tất định** (SymPy, cân bằng nguyên tố, khối lượng mol,
 > kiểm thứ nguyên) và **tác tử tính lại độc lập chạy song song** — đạt **78,7%** độ

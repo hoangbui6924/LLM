@@ -1,160 +1,56 @@
 question,label,source
-Mạch dao động LC có L = 2 mH và C = 5 microF. Tính tần số dao động riêng,physics,seed
-Tính thành phần phần trăm khối lượng của oxi trong hợp chất H2O,chemistry,template
-Giải phương trình 2x^2 - 3x - 5 = 0,math,template
-Một tấm pin mặt trời nhận 1000 W trên mỗi mét vuông. Tính công suất thu được trên 2 mét vuông,physics,hard
-Nêu ứng dụng của phản ứng lên men rượu từ glucozơ,chemistry,seed
-Một người đẩy tủ nhưng tủ không dịch chuyển. Công của người đó bằng bao nhiêu,physics,hard
-Vì sao dây dẫn điện thường làm bằng đồng chứ không phải sắt,physics,hard
-Xác suất để gieo con xúc xắc được mặt chẵn là bao nhiêu,math,hard
-Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 2,math,template
-"Tính lực ma sát trượt khi hệ số ma sát 0,2 và áp lực 50 N",physics,seed
-Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 0,math,template
-"Tính pH của dung dịch NaOH nồng độ 0,001 M",chemistry,template
-Tính thể tích khối chóp có diện tích đáy 12 và chiều cao 5,math,seed
-Sóng có tần số 200 Hz và bước sóng 6 m. Tính tốc độ truyền sóng,physics,template
-Tìm nghiệm của phương trình 2^x = 16,math,seed
-Tính thành phần phần trăm khối lượng của cacbon trong hợp chất H2O,chemistry,template
-Tính thời gian âm truyền hết 1 km trong không khí,physics,hard
-"Tìm quy luật của dãy số 2, 6, 12, 20, 30",math,hard
-"Tính pH của dung dịch HCl nồng độ 0,001 M",chemistry,template
-"Xác định công thức phân tử của hợp chất hữu cơ chứa 40% C, 6,67% H và còn lại là O",chemistry,seed
-Tính thành phần phần trăm khối lượng của oxi trong hợp chất H2SO4,chemistry,template
-Chia 120 cái bánh cho ba nhóm theo tỉ lệ 2 : 3 : 5,math,hard
-Tính thành phần phần trăm khối lượng của cacbon trong hợp chất H2SO4,chemistry,template
-Nêu hiện tượng khi nhỏ dung dịch NaOH vào dung dịch CuSO4,chemistry,seed
-"Tính pH của dung dịch NaOH nồng độ 0,1 M",chemistry,template
-Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 0,math,template
-Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 2,math,template
-Một hộp có 5 bi đỏ và 3 bi xanh. Tính xác suất lấy được bi đỏ khi bốc ngẫu nhiên một viên,math,seed
-Tính hiệu suất của động cơ nhiệt khi nhận 1000 J và sinh công 300 J,physics,seed
-"Tính pH của dung dịch HCl nồng độ 0,1 M",chemistry,template
-Tính thành phần phần trăm khối lượng của oxi trong hợp chất CO2,chemistry,template
-Tính khối lượng este thu được khi cho 6 gam axit axetic phản ứng hết với ancol etylic,chemistry,seed
-Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 3,math,template
-Tính khối lượng phân tử trung bình của hỗn hợp khí gồm N2 và O2 tỉ lệ mol 1:1,chemistry,seed
-Vì sao mùa hè mặc áo màu sáng mát hơn áo màu tối,physics,hard
-Một ô tô hãm phanh từ 20 m/s và dừng sau 40 m. Tính gia tốc hãm,physics,seed
-Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 0,math,template
-Sóng có tần số 100 Hz và bước sóng 6 m. Tính tốc độ truyền sóng,physics,template
-"Tính momen lực khi lực 30 N tác dụng cách trục quay 0,4 m",physics,seed
-Sóng có tần số 100 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,template
-Tính thành phần phần trăm khối lượng của oxi trong hợp chất CaCO3,chemistry,template
-Vì sao dùng bình chữa cháy CO2 dập được đám cháy thông thường,chemistry,hard
-Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 3,math,template
-Giải thích vì sao thức ăn để lâu trong không khí bị ôi thiu,chemistry,hard
-Điện phân dung dịch CuSO4 với dòng điện 2 A trong 30 phút. Tính khối lượng Cu bám vào catot,chemistry,seed
-"Tính khối lượng NaCl cần để pha 250 ml dung dịch 0,4 M",chemistry,seed
-Sóng có tần số 440 Hz và bước sóng 2 m. Tính tốc độ truyền sóng,physics,template
-Tính thành phần phần trăm khối lượng của cacbon trong hợp chất CaCO3,chemistry,template
-Tìm phương trình đường thẳng đi qua hai điểm A(1; 2) và B(3; 6),math,seed
-Giải phương trình x^2 + 4x + 4 = 0,math,template
-"Tính bước sóng của sóng âm trong không khí tần số 440 Hz, tốc độ âm 340 m/s",physics,seed
-Giải phương trình x^2 - 9 = 0,math,template
-Giải thích hiện tượng nước cứng làm giảm tác dụng của xà phòng,chemistry,hard
-Cho biết mối liên hệ giữa hai đại lượng tỉ lệ nghịch với nhau,math,hard
-Tính chu vi của hình tròn có đường kính 10,math,hard
-Tính lượng khí thải sinh ra khi đốt cháy hoàn toàn 1 kg nhiên liệu,chemistry,hard
-Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 2,math,template
-Tại sao khi thả một vật vào nước thì vật nhẹ hơn khi cân trong không khí,physics,hard
-Giải thích hiện tượng cầu vồng xuất hiện sau cơn mưa,physics,hard
-Vì sao khi mở nắp chai nước ngọt lại thấy có bọt khí thoát ra,chemistry,hard
-Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 1,math,template
-Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 1,math,template
-Một vật nặng 2 kg được kéo lên đều theo phương thẳng đứng 3 m. Tính công tối thiểu,physics,hard
-Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 0,math,template
-Sóng có tần số 50 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,template
-Tính thành phần phần trăm khối lượng của hiđro trong hợp chất H2O,chemistry,template
-Giải thích vì sao khi đi thang máy đi lên nhanh dần ta cảm thấy nặng hơn,physics,hard
-Tính đạo hàm cấp hai của hàm số y = sin(x),math,seed
-Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 2,math,template
-"Một vật rơi tự do từ độ cao 45 m. Tính thời gian rơi, lấy g = 10 m/s2",physics,seed
-Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 1,math,template
-Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = -1,math,template
-Giải hệ phương trình x + y = 5 và x - y = 1,math,seed
-"Tính áp suất chất lỏng ở độ sâu 5 m trong nước, khối lượng riêng 1000 kg/m3",physics,seed
-Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 3,math,template
-Có bao nhiêu cách xếp 4 người vào một hàng ghế,math,hard
-Tính giá trị của biểu thức khi thay x bằng 2,math,hard
-Một vật khối lượng 2 kg chịu lực 10 N. Tính gia tốc của vật,physics,seed
-"Tính thể tích khí O2 cần để đốt cháy hoàn toàn 3,2 gam khí metan",chemistry,seed
-"Đốt cháy hoàn toàn 2,24 lít khí metan ở điều kiện tiêu chuẩn. Tính khối lượng CO2 sinh ra",chemistry,seed
-"Trung hoà 100 ml dung dịch HCl 0,5 M cần bao nhiêu ml dung dịch NaOH 1 M",chemistry,seed
-Vì sao người ta bảo quản kim loại kiềm trong dầu hoả,chemistry,hard
-Tính lượng chất cần dùng để thu được 10 gam sản phẩm với hiệu suất 80%,chemistry,hard
-"Con lắc lò xo có độ cứng 100 N/m, vật nặng 250 g. Tính chu kỳ dao động",physics,seed
-Tính thành phần phần trăm khối lượng của hiđro trong hợp chất CaCO3,chemistry,template
-Giải phương trình chứa căn: căn bậc hai của (x + 3) bằng 2,math,seed
-Nếu tăng cạnh hình vuông lên gấp đôi thì diện tích tăng bao nhiêu lần,math,hard
-Sóng có tần số 200 Hz và bước sóng 3 m. Tính tốc độ truyền sóng,physics,template
-Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 1,math,template
-"Sắp xếp các kim loại Na, Fe, Cu theo chiều tăng dần tính khử",chemistry,seed
-"Cho tam giác có ba cạnh 5, 12, 13. Chứng minh tam giác đó vuông",math,seed
-Tìm hai số biết tổng bằng 20 và tích bằng 96,math,hard
-Trung bình cộng của năm số là 12. Tổng của chúng bằng bao nhiêu,math,hard
-Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 0,math,template
-Tính thành phần phần trăm khối lượng của cacbon trong hợp chất CO2,chemistry,template
-"Tính pH của dung dịch NaOH nồng độ 0,01 M",chemistry,template
-"Một hình hộp chữ nhật có ba kích thước 2, 3, 4. Tính thể tích",math,hard
-Tính tỉ số giữa động năng và thế năng của con lắc tại vị trí li độ bằng nửa biên độ,physics,hard
-Xét tính đơn điệu của hàm số y = x^3 + 3x trên tập số thực,math,seed
-"Tính pH của dung dịch HNO3 nồng độ 0,1 M",chemistry,template
-Sóng có tần số 50 Hz và bước sóng 2 m. Tính tốc độ truyền sóng,physics,template
-Sóng có tần số 440 Hz và bước sóng 6 m. Tính tốc độ truyền sóng,physics,template
-Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = -1,math,template
-"Đoạn mạch có điện trở 20 ôm, hiệu điện thế 12 V. Tính cường độ dòng điện",physics,seed
-Tính khối lượng riêng của vật có khối lượng 270 g và thể tích 100 cm3,physics,hard
-Một người gửi 100 triệu với lãi suất 6% một năm. Sau 3 năm nhận bao nhiêu,math,hard
-Vật khối lượng 5 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,seed
-"Một vật dao động điều hoà với biên độ 5 cm, tần số 2 Hz. Tính vận tốc cực đại",physics,seed
-"Một mẫu vật chứa hai thành phần, xác định tỉ lệ khối lượng của chúng",chemistry,hard
-Sóng có tần số 100 Hz và bước sóng 3 m. Tính tốc độ truyền sóng,physics,template
-Tại sao khi đốt than trong phòng kín lại nguy hiểm,chemistry,hard
-"Tính số nguyên tử oxi có trong 0,5 mol khí O2",chemistry,seed
-Sóng có tần số 200 Hz và bước sóng 2 m. Tính tốc độ truyền sóng,physics,template
-"Ánh sáng đi từ không khí vào nước có chiết suất 1,33. Tính góc khúc xạ khi góc tới 30 độ",physics,seed
-Tính nhiệt lượng toả ra trên điện trở 10 ôm khi dòng 2 A chạy qua trong 30 giây,physics,seed
-"Một bể chứa đầy sau 6 giờ nếu mở vòi thứ nhất, 4 giờ nếu mở vòi thứ hai. Mở cả hai thì bao lâu",math,hard
-"Hai xe khởi hành cùng lúc ngược chiều, sau bao lâu thì gặp nhau",physics,hard
-Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = -1,math,template
-"Tính pH của dung dịch HCl nồng độ 0,01 M",chemistry,template
-"Một mảnh vườn hình chữ nhật có chu vi 40 m, chiều dài hơn chiều rộng 4 m. Tính diện tích",math,hard
-Tìm tập xác định của hàm số y = căn bậc hai của (x - 4),math,seed
-Tính tổng các số tự nhiên từ 1 đến 100,math,hard
-Tính thành phần phần trăm khối lượng của hiđro trong hợp chất CO2,chemistry,template
-Giải phương trình x^2 - 5x + 6 = 0,math,template
-Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = -1,math,template
-Tính giới hạn của (x^2 - 1)/(x - 1) khi x tiến tới 1,math,seed
-Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 3,math,template
-Sóng có tần số 100 Hz và bước sóng 2 m. Tính tốc độ truyền sóng,physics,template
-Sóng có tần số 200 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,template
-Sóng có tần số 50 Hz và bước sóng 6 m. Tính tốc độ truyền sóng,physics,template
-Vì sao tàu thuỷ bằng thép lại nổi được trên mặt nước,physics,hard
-Tại sao khi nấu ăn người ta thường cho giấm vào để khử mùi tanh của cá,chemistry,hard
-Xe chuyển động thẳng đều đi được 120 km trong 2 giờ. Tính vận tốc,physics,seed
-Sóng có tần số 440 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,template
-Tính thành phần phần trăm khối lượng của hiđro trong hợp chất H2SO4,chemistry,template
-Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,seed
-Xác định thành phần của một hỗn hợp dựa vào khối lượng trước và sau phản ứng,chemistry,hard
-Giải thích tại sao đồ vật bằng sắt để ngoài trời lâu ngày bị gỉ,chemistry,hard
-Sóng có tần số 50 Hz và bước sóng 3 m. Tính tốc độ truyền sóng,physics,template
-Tính năng lượng cần để nâng một thùng hàng 50 kg lên độ cao 2 m,physics,hard
-"Cân bằng phản ứng oxi hoá khử KMnO4 + HCl tạo KCl, MnCl2, Cl2 và H2O",chemistry,seed
-Một bóng đèn ghi 220V - 100W. Tính điện trở của đèn khi sáng bình thường,physics,hard
-Cho hàm số y = e^x. Tính đạo hàm tại x = 0,math,seed
-"Một lò xo bị nén 4 cm, độ cứng 200 N/m. Tính thế năng đàn hồi",physics,seed
-"Tính pH của dung dịch HNO3 nồng độ 0,01 M",chemistry,template
-Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 2,math,template
-Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 3,math,template
-Sóng có tần số 440 Hz và bước sóng 3 m. Tính tốc độ truyền sóng,physics,template
-Vì sao vôi sống để lâu trong không khí bị giảm chất lượng,chemistry,hard
-Giải phương trình 3x - 7 = 2,math,template
-"Tính pH của dung dịch HNO3 nồng độ 0,001 M",chemistry,template
-"Con lắc đơn dài 1 m dao động tại nơi có g = 9,8 m/s2. Tính chu kỳ",physics,seed
-Vì sao không nên đổ nước vào axit đặc mà phải làm ngược lại,chemistry,hard
-Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = -1,math,template
-Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 1,math,template
-Tính lượng nguyên liệu cần để sản xuất 1 tấn sản phẩm với hao hụt 5%,chemistry,hard
-Giải phương trình logarit cơ số 2 của x bằng 5,math,seed
-Tính đạo hàm của y = ln(x) tại x = 2,math,seed
-Tính quãng đường vật đi được trong 4 s nếu gia tốc 2 m/s2 và vận tốc đầu bằng 0,physics,seed
+Tính thể tích khối chóp có diện tích đáy 12 và chiều cao 5,toa_do_the_tich,seed
+Tìm m để phương trình x^2 - 2mx + m + 2 = 0 có hai nghiệm phân biệt,phuong_trinh,seed
+Cho hai vectơ a = (1; 2) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,seed
+Một người gửi 100 triệu với lãi suất 6% một năm. Sau 3 năm nhận bao nhiêu,khac_dai_so,hard
+Tính diện tích mặt cầu bán kính 3,khac_hinh_hoc,seed
+Cho hình lập phương cạnh 4. Tính thể tích khối lập phương đó,toa_do_the_tich,seed
+Khảo sát sự biến thiên và vẽ đồ thị hàm số y = x^3 - 3x,khac_dai_so,seed
+Giải phương trình lượng giác sin(x) = 1/2 trên khoảng từ 0 đến 2pi,phuong_trinh,seed
+Nếu tăng cạnh hình vuông lên gấp đôi thì diện tích tăng bao nhiêu lần,khac_hinh_hoc,hard
+Tìm điểm cực trị của hàm số y = x^3 - 3x^2 + 1,so_diem_cuc_tri,seed
+Tìm phương trình đường thẳng đi qua hai điểm A(1; 2) và B(3; 6),khac_hinh_hoc,seed
+Giải phương trình bậc hai x^2 - 5x + 6 = 0,phuong_trinh,seed
+"Cho cấp số nhân có số hạng đầu bằng 2, công bội bằng 3. Tính tổng 5 số hạng đầu",khac_dai_so,seed
+"Tìm quy luật của dãy số 2, 6, 12, 20, 30",khac_dai_so,hard
+Tính số cách chọn 3 học sinh từ một nhóm 10 học sinh,khac_dai_so,seed
+Có bao nhiêu cách xếp 4 người vào một hàng ghế,khac_dai_so,hard
+Tính đạo hàm của hàm hợp y = (2x + 1)^4,dao_ham,seed
+Tính đạo hàm của hàm số y = x^3 - 3x^2 + 2x tại điểm x = 1,dao_ham,seed
+Xác suất để gieo con xúc xắc được mặt chẵn là bao nhiêu,khac_dai_so,hard
+Cho cấp số cộng có u1 = 3 và công sai d = 4. Tính u10,khac_dai_so,seed
+Tính tổng các số tự nhiên từ 1 đến 100,khac_dai_so,hard
+Cho số phức z = 3 + 4i. Tính môđun của z,khac_dai_so,seed
+Giải hệ phương trình x + y = 5 và x - y = 1,phuong_trinh,seed
+Tìm tập xác định của hàm số y = căn bậc hai của (x - 4),khac_dai_so,seed
+"Cho tam giác có ba cạnh 5, 12, 13. Chứng minh tam giác đó vuông",khac_hinh_hoc,seed
+"Cho tam giác ABC vuông tại A, AB = 3, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,seed
+Giải bất phương trình 2x - 7 > 3,phuong_trinh,seed
+Tìm nghiệm của phương trình 2^x = 16,phuong_trinh,seed
+Một hộp có 5 bi đỏ và 3 bi xanh. Tính xác suất lấy được bi đỏ khi bốc ngẫu nhiên một viên,khac_dai_so,seed
+Cho hàm số y = x^3 - 2x. Viết phương trình tiếp tuyến tại điểm có hoành độ bằng 2,tiep_tuyen,seed
+Tính giá trị của biểu thức khi thay x bằng 2,khac_dai_so,hard
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 3) và B(4; 6; 3)",toa_do_khoang_cach,seed
+Tìm hai số biết tổng bằng 20 và tích bằng 96,khac_dai_so,hard
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x - 1 trên đoạn [0; 3],gtln,seed
+Tính tích phân của x^2 từ 0 đến 3,tich_phan,seed
+Chia 120 cái bánh cho ba nhóm theo tỉ lệ 2 : 3 : 5,khac_dai_so,hard
+Xét tính đơn điệu của hàm số y = x^3 + 3x trên tập số thực,khac_dai_so,seed
+Tính diện tích hình phẳng giới hạn bởi đồ thị y = x^2 và trục hoành từ x = 0 đến x = 2,tich_phan,seed
+"Một hình hộp chữ nhật có ba kích thước 2, 3, 4. Tính thể tích",khac_hinh_hoc,hard
+Rút gọn biểu thức logarit cơ số 3 của 27 cộng logarit cơ số 3 của 9,khac_dai_so,seed
+Tính số hoán vị của 5 phần tử phân biệt,khac_dai_so,seed
+Cho hàm số y = e^x. Tính đạo hàm tại x = 0,dao_ham,seed
+Cho biết mối liên hệ giữa hai đại lượng tỉ lệ nghịch với nhau,khac_dai_so,hard
+Tìm giá trị nhỏ nhất của biểu thức x^2 + 4x + 7,gtnn,seed
+"Một mảnh vườn hình chữ nhật có chu vi 40 m, chiều dài hơn chiều rộng 4 m. Tính diện tích",khac_hinh_hoc,hard
+Tính tích phân của sin(x) từ 0 đến pi,tich_phan,seed
+Tìm nguyên hàm của hàm số f(x) = 2x + cos(x),tich_phan,seed
+Tính đạo hàm cấp hai của hàm số y = sin(x),dao_ham,seed
+"Một bể chứa đầy sau 6 giờ nếu mở vòi thứ nhất, 4 giờ nếu mở vòi thứ hai. Mở cả hai thì bao lâu",khac_dai_so,hard
+Trung bình cộng của năm số là 12. Tổng của chúng bằng bao nhiêu,khac_dai_so,hard
+Tính khoảng cách từ gốc toạ độ đến mặt phẳng 2x - y + 2z - 6 = 0,toa_do_kc_diem_mp,seed
+Tìm hệ số của x^3 trong khai triển nhị thức (1 + 2x)^5,khac_dai_so,seed
+Giải phương trình logarit cơ số 2 của x bằng 5,phuong_trinh,seed
+Tính chu vi của hình tròn có đường kính 10,khac_hinh_hoc,hard
+Tính đạo hàm của y = ln(x) tại x = 2,dao_ham,seed

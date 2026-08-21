@@ -418,9 +418,8 @@ button:disabled {
 
 .agent-planner { color: var(--c-planner); }
 .agent-router { color: var(--c-router); }
-.agent-math_agent,
-.agent-physics_agent,
-.agent-chemistry_agent { color: var(--c-subject); }
+.agent-dai_so_agent,
+.agent-hinh_hoc_agent { color: var(--c-subject); }
 .agent-verify_agent { color: var(--c-verify); }
 .agent-explain_agent { color: var(--c-explain); }
 
@@ -492,6 +491,28 @@ button:disabled {
   padding: 1px 8px;
   background: var(--warn-nhat);
   color: var(--warn);
+}
+
+/* Huy hiệu tầng định tuyến. Ba màu khác nhau để nhìn lướt là biết lượt này đi
+   qua tầng rẻ hay tầng đắt — PhoBERT ~30 ms, luật 0 ms, LLM 2-4 giây. */
+.badge.tang {
+  background: color-mix(in srgb, var(--c-router) 14%, transparent);
+  color: var(--c-router);
+  cursor: help;
+}
+
+.badge.tang-llm {
+  background: var(--warn-nhat);
+  color: var(--warn);
+}
+
+/* Dạng bài PhoBERT nhận ra — slug kỹ thuật nên dùng chữ đều nét. */
+.badge.dang {
+  background: color-mix(in srgb, var(--c-subject) 14%, transparent);
+  color: var(--c-subject);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-weight: 500;
+  letter-spacing: -0.2px;
 }
 
 /* ---- hiệu suất ---- */

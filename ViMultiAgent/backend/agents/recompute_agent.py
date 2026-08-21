@@ -93,8 +93,8 @@ Ví dụ:
 Đề "Giải phương trình x^2 - 5x + 6 = 0"
 -> loai_kiem: "phuong_trinh", ham_goc: "x**2 - 5*x + 6 = 0", bien: "x"
 
-Nếu đề KHÔNG thuộc năm dạng trên (bài Hoá, bài Lý nhiều bước, bài đếm) thì để
-loai_kiem rỗng và làm theo phần dưới đây.
+Nếu đề KHÔNG thuộc năm dạng trên (bài hình học không gian, bài toạ độ, bài đếm,
+bài xác suất) thì để loai_kiem rỗng và làm theo phần dưới đây.
 
 ---
 
@@ -112,20 +112,25 @@ Trả JSON:
 - solvable: false nếu đề không quy được về một biểu thức
 
 Ví dụ:
-Đề "Vật dao động điều hoà biên độ 5 cm, tần số 2 Hz, tính vận tốc cực đại"
--> expression: "0.05*2*pi*2"
-   unit: "m/s"
-   approach_vi: "v_max = A*omega = A*2*pi*f, đổi 5 cm = 0,05 m"
-
 Đề "Tính đạo hàm của y = x^3 - 3x^2 + 2x tại x = 1"
 -> expression: "3*1**2 - 6*1 + 2"
    unit: ""
    approach_vi: "y' = 3x^2 - 6x + 2, thay x = 1"
 
-Đề "Đốt cháy 5,6 gam Fe thu Fe3O4"
--> expression: "5.6/56/3*232"
-   unit: "gam"
-   approach_vi: "n(Fe) = 5,6/56; theo 3Fe -> Fe3O4 thì n(Fe3O4) = n(Fe)/3; nhân M = 232"
+Đề "Khối chóp có diện tích đáy 12 và chiều cao 5. Tính thể tích"
+-> expression: "12*5/3"
+   unit: ""
+   approach_vi: "V = (1/3)*S_đáy*h"
+
+Đề "Trong Oxyz, tính khoảng cách từ A(1;2;3) đến mặt phẳng x + 2y - 2z + 1 = 0"
+-> expression: "Abs(1 + 2*2 - 2*3 + 1)/sqrt(1**2 + 2**2 + (-2)**2)"
+   unit: ""
+   approach_vi: "d = |ax0 + by0 + cz0 + d|/sqrt(a^2 + b^2 + c^2)"
+
+Đề "Có bao nhiêu cách chọn 3 học sinh từ 10 học sinh"
+-> expression: "binomial(10, 3)"
+   unit: ""
+   approach_vi: "Tổ hợp C(10,3), không kể thứ tự"
 
 Khi đáp số KHÔNG phải một con số mà là BIỂU THỨC (phương trình tiếp tuyến, đạo
 hàm, nguyên hàm, nghiệm theo tham số), vẫn viết một biểu thức duy nhất — phần vế
@@ -178,10 +183,10 @@ _SO_DAN_DAU = re.compile(r"^\s*([-+]?\d+(?:[.,]\d+)?(?:[eE][-+]?\d+)?)")
 def _doc_so(s: str) -> float | None:
     """Đọc số từ đáp án có thể kèm đơn vị.
 
-    `sympy_tool.evaluate("0.628 m/s")` đọc `m` và `s` thành ký hiệu tự do nên
-    KHÔNG ra số — mà gần như mọi đáp án Lý và Hoá đều kèm đơn vị. Chỉ dựa vào
-    SymPy thì phép so sánh này im lặng bỏ qua phần lớn bài, đúng loại lỗi câm
-    đã gặp vài lần hôm nay.
+    `sympy_tool.evaluate("12.5 cm^3")` đọc `cm` thành ký hiệu tự do nên KHÔNG ra
+    số — mà đáp án hình học thường kèm đơn vị độ dài, diện tích hoặc thể tích.
+    Chỉ dựa vào SymPy thì phép so sánh này im lặng bỏ qua phần lớn bài hình, đúng
+    loại lỗi câm tệ nhất.
     """
     if not s or not s.strip():
         return None

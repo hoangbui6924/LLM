@@ -1,6 +1,6 @@
 # ViMultiAgent
 
-Hệ thống đa tác tử giải bài tập STEM (Toán – Lý – Hoá) bằng tiếng Việt.
+Hệ thống đa tác tử giải bài tập **Toán THPT** bằng tiếng Việt.
 Chạy **hoàn toàn ngoại tuyến**, không dùng API key của bất kỳ dịch vụ nào.
 
 ### Bộ tài liệu
@@ -50,49 +50,61 @@ cd ..
 copy .env.example .env
 ```
 
-## 3. Khởi động hằng ngày
+## 3. Khởi động
 
-Cần **ba** thứ chạy cùng lúc. Mở ba cửa sổ terminal.
+### Cách thường dùng — bấm một file
 
-### Cửa sổ 1 — Ollama
+Bấm đúp **`chay.bat`** ở thư mục gốc. Nó tự làm bốn việc: đặt `OLLAMA_MODELS`,
+bật Ollama nếu chưa chạy, build giao diện nếu chưa có `frontend/dist`, rồi khởi
+động backend và mở trình duyệt.
+
+Mở <http://localhost:8000>. Đóng cửa sổ terminal là tắt chương trình.
+
+Cả giao diện lẫn API nằm chung cổng 8000 — backend tự phục vụ `frontend/dist`,
+nên **không cần chạy Vite song song** nữa.
+
+> **Model nằm ở ổ E**, không phải thư mục mặc định `C:\Users\...\.ollama`.
+> Chạy Ollama bằng tay thì phải đặt trước:
+> `$env:OLLAMA_MODELS = "E:\DeepLearning\Ollama\models"`
+> Thiếu biến này Ollama sẽ báo không có model và đòi tải lại 2,5 GB.
+
+### Cách thủ công
 
 ```powershell
+# 1. Ollama (bỏ qua nếu đã chạy nền, kiểm bằng `ollama ps`)
+$env:OLLAMA_MODELS = "E:\DeepLearning\Ollama\models"
 ollama serve
-```
 
-Nếu đã cài Ollama dạng ứng dụng nền (có biểu tượng ở khay hệ thống) thì bỏ qua
-bước này, nó đã chạy sẵn. Kiểm tra:
+# 2. Build giao diện — chỉ cần làm lại khi sửa frontend
+cd E:\DeepLearning\LLM\ViMultiAgent\frontend
+npm run build
 
-```powershell
-ollama ps
-```
-
-### Cửa sổ 2 — Backend
-
-```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
+# 3. Backend, phục vụ luôn giao diện
+cd ..\backend
 python -m uvicorn main:app --port 8000
 ```
 
-Chờ đến khi thấy dòng `Application startup complete`. Lần khởi động đầu mất
-thêm vài giây để nạp PhoBERT vào RAM.
+Chờ đến khi thấy dòng `Application startup complete`. Lần khởi động đầu mất thêm
+vài giây để nạp PhoBERT vào RAM.
 
 Kiểm tra: mở <http://localhost:8000/api/health> — phải thấy JSON có `"status":"ok"`.
 
-### Cửa sổ 3 — Frontend
+### Chế độ phát triển giao diện
+
+Khi đang sửa frontend và cần nạp nóng, chạy thêm Vite ở cửa sổ riêng:
 
 ```powershell
-cd E:\DeepLearning\ViMultiAgent\frontend
-npm run dev
+cd E:\DeepLearning\LLM\ViMultiAgent\frontend
+npm run dev     # cổng 5173, tự chuyển tiếp /api sang cổng 8000
 ```
 
-Mở <http://localhost:5173>.
+Mở <http://localhost:5173>. Backend vẫn phải chạy sẵn ở cổng 8000.
 
 ---
 
 ## 4. Dùng thử
 
-Trang chủ có ba nút **Toán / Lý / Hoá** điền sẵn câu hỏi mẫu. Bấm **Giải bài**
+Trang chủ có ba nút **Đại số / Giải tích / Hình học** điền sẵn câu hỏi mẫu. Bấm **Giải bài**
 rồi quan sát:
 
 * thanh tiến trình sáng dần qua từng agent: Planner → Router → Subject → Verify → Explain

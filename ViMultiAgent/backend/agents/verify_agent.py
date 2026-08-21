@@ -2,10 +2,10 @@
 
 Đây là agent quyết định độ tin cậy của cả hệ thống, và nó **không tin LLM**.
 
-Thứ tự kiểm tra có chủ đích: chạy các phép kiểm TẤT ĐỊNH trước (tính lại bằng
-SymPy, soát thứ nguyên, soát bảo toàn nguyên tố), rồi mới đưa kết quả đó cho LLM
-đọc. Làm ngược lại thì LLM sẽ "đồng ý" với lời giải sai — mô hình 8B rất dễ bị
-cuốn theo lập luận trôi chảy.
+Thứ tự kiểm tra có chủ đích: chạy các phép kiểm TẤT ĐỊNH trước (SymPy tính lại
+từng bước, SymPy tự giải lại bài từ đề gốc), rồi mới đưa kết quả đó cho LLM đọc.
+Làm ngược lại thì LLM sẽ "đồng ý" với lời giải sai — mô hình nhỏ rất dễ bị cuốn
+theo lập luận trôi chảy.
 
 Một phép kiểm tất định thất bại là FAIL, bất kể LLM nói gì.
 """
@@ -21,7 +21,7 @@ from agents import recompute_agent
 from agents.base import run_structured
 from core import config
 from core.schemas import AgentSpan, Check, Plan, Solution, VerifyReport
-from tools import chem_tool, sympy_tool, units_tool
+from tools import sympy_tool
 
 SYSTEM = """Bạn là Verify Agent. Bạn KHÔNG giải lại bài, chỉ soi lỗi.
 
@@ -37,8 +37,11 @@ Trả JSON:
 
 Cách soi:
 - Kiểm tra logic từng bước có suy ra được từ bước trước không.
-- Kiểm tra đáp số có trả lời đúng câu hỏi của đề không (hỏi vận tốc mà đáp ra quãng đường là FAIL).
-- Kiểm tra đơn vị và điều kiện xác định.
+- Kiểm tra đáp số có trả lời đúng câu hỏi của đề không (hỏi giá trị nhỏ nhất mà
+  đáp ra giá trị lớn nhất là FAIL; hỏi thể tích mà đáp ra diện tích đáy là FAIL).
+- Kiểm tra điều kiện xác định và việc loại nghiệm ngoại lai.
+- Với bài hình học, kiểm đáp số có hợp lệ không: độ dài, diện tích, thể tích và
+  khoảng cách phải KHÔNG ÂM.
 - Nếu các phép kiểm tự động đã báo sai, bạn PHẢI kết luận FAIL.
 
 KHI NÀO KHÔNG ĐƯỢC BÁO FAIL — đọc kỹ, đây là lỗi hay mắc nhất:
@@ -51,21 +54,16 @@ Chỉ FAIL khi KẾT QUẢ SAI VỀ GIÁ TRỊ hoặc lập luận dẫn tới k
 Nếu bạn định viết "sai số 0" hay "lệch 0%" thì đó chính là PASS, không phải FAIL.
 """
 
-# Bắt phương trình phản ứng dạng "Fe + O2 -> Fe3O4" trong lời giải Hoá.
-_REACTION = re.compile(r"([A-Za-z0-9()\s\+\.]+?)\s*(?:->|→|=>|\\rightarrow)\s*([A-Za-z0-9()\s\+\.]+)")
-
-
 # Đuôi đơn vị dính sau con số ở trường `result`. Phải bóc trước khi đọc số, nếu
-# không SymPy coi "mol" là ký hiệu tự do và cả phép kiểm bị bỏ qua im lặng.
+# không SymPy coi "cm" là ký hiệu tự do và cả phép kiểm bị bỏ qua im lặng.
+#
+# Đề Toán THPT dùng ít đơn vị hơn hẳn đề Lý - Hoá: chỉ còn đơn vị độ dài, diện
+# tích, thể tích và số đo góc.
 _DUOI_DON_VI = re.compile(
-    r"\s*(g/mol|mol/l|kmol|mol|kg|g|lít|lit|ml|m/s\^?2|m/s|km/h|cm|mm|km|nm|m"
-    r"|giây|s|phút|giờ|h|N|J|kJ|W|Pa|atm|K|Hz|rad/s|rad|độ|%)\s*$",
+    r"\s*(cm\^?3|cm\^?2|m\^?3|m\^?2|dm\^?3|dm|cm|mm|km|m"
+    r"|đơn vị thể tích|đơn vị diện tích|đơn vị|rad|độ|%)\s*$",
     re.IGNORECASE,
 )
-
-# Ký hiệu khối lượng mol model hay viết: MNa2O, M_Na2O, M(Na2O) — sau chuẩn hoá
-# thì cả ba về cùng dạng MNa2O.
-_KY_HIEU_KHOI_LUONG_MOL = re.compile(r"^M([A-Z][A-Za-z0-9]*)$")
 
 # Tên ký hiệu hợp lệ để đưa vào bảng tra.
 _TEN_KY_HIEU = re.compile(r"[A-Za-z][A-Za-z0-9]*")
@@ -117,14 +115,7 @@ def _doc_so_ket_qua(s: str) -> float | None:
 
 
 def _tra_ky_hieu(ten: str, bang: dict[str, float]) -> float | None:
-    if ten in bang:
-        return bang[ten]
-    khop = _KY_HIEU_KHOI_LUONG_MOL.match(ten)
-    if khop:
-        tinh = chem_tool.molar_mass(khop.group(1))
-        if tinh.get("ok"):
-            return float(tinh["molar_mass"])
-    return None
+    return bang.get(ten)
 
 
 def _tinh_sau_khi_the(bieu_thuc: str, bang: dict[str, float]) -> float | None:
@@ -171,8 +162,13 @@ def _lech_do_doi_don_vi(va: float, vb: float) -> bool:
 
 
 def _dau_phay_thap_phan(s: str) -> str:
-    """0,2 -> 0.2. Chỉ đổi dấu phẩy nằm GIỮA hai chữ số, không đụng dấu ngăn cách."""
-    return re.sub(r"(?<=\d),(?=\d)", ".", s)
+    """0,2 -> 0.2, nhưng KHÔNG đụng dấu phẩy ngăn tham số hàm.
+
+    Dùng chung bộ đổi có trạng thái với trọng tài số học — bản cũ ở đây cũng là
+    `(?<=\\d),(?=\\d)` nên mắc đúng lỗi biến `C(5,2)` thành `C(5.2)`.
+    Xem `sympy_tool.dau_phay_thap_phan`.
+    """
+    return sympy_tool.dau_phay_thap_phan(s)
 
 
 def _chuan_hoa_dau_nhan(s: str) -> str:
@@ -204,17 +200,15 @@ def _check_arithmetic(sol: Solution) -> list[Check]:
     """SymPy tính lại từng bước, THẾ giá trị các ký hiệu vào trước khi tính.
 
     Vì sao phải thế ký hiệu: model gần như luôn viết vế phải bằng CÔNG THỨC CHỮ
-    (`mNa2O = nNa2O * MNa2O`) và chỉ để con số ở trường `result`. Bản cũ đọc thẳng
-    vế phải, gặp toàn ký hiệu tự do nên `numeric` là None và **bỏ qua bước đó** —
-    rồi vẫn báo "số học các bước khớp". Đo trên một bài Hoá thật: cả 4 bước đều bị
-    bỏ qua, lời giải ghi 0,1 × 62 = 3,8 (đúng phải là 6,2) mà vẫn PASS trót lọt.
+    (`V = Sday * h / 3`) và chỉ để con số ở trường `result`. Bản cũ đọc thẳng vế
+    phải, gặp toàn ký hiệu tự do nên `numeric` là None và **bỏ qua bước đó** — rồi
+    vẫn báo "số học các bước khớp". Đo được: mọi bước của một bài đều bị bỏ qua,
+    lời giải nhân sai một tích mà vẫn PASS trót lọt.
 
-    Hai nguồn giá trị để thế:
-      1. Vế trái các bước TRƯỚC — `nNa2O` lấy từ kết quả bước 3.
-      2. Ký hiệu khối lượng mol `M<công thức>` — tra bảng nguyên tử khối, tất định.
+    Nguồn giá trị để thế: vế trái các bước TRƯỚC — `Sday` lấy từ kết quả bước 2.
 
     Thế ở mức VĂN BẢN chứ không qua SymPy, vì `implicit_multiplication_application`
-    xé `nNa2O` thành `n*N*a**2*O` và ký hiệu ghép sẽ không bao giờ khớp bảng.
+    xé `Sday` thành `S*d*a*y` và ký hiệu ghép sẽ không bao giờ khớp bảng.
 
     Ngưỡng 1% là cố ý: model làm tròn 0,39738 -> 0,397 là hợp lệ, không phải lỗi.
     Báo oan một bước đúng thì tai hại hơn bỏ sót, vì nó kích hoạt vòng giải lại.
@@ -271,156 +265,49 @@ def _check_arithmetic(sol: Solution) -> list[Check]:
     return out
 
 
-def _check_units(plan: Plan, sol: Solution) -> list[Check]:
-    """Soát thứ nguyên đáp số — chỉ áp cho Vật lý, nơi sai đơn vị là sai thật."""
-    if plan.subject != "physics" or not units_tool.available():
-        return []
-    want = None
-    for u in plan.unknowns:
-        want = u.unit or units_tool.expected_unit_for(u.description_vi or u.symbol)
-        if want:
-            break
-    if not want or not sol.final_answer:
-        return []
-    r = units_tool.check_dimension(sol.final_answer, want)
-    if not r.get("ok"):
-        return []
-    return [
-        Check(
-            kind="unit",
-            passed=bool(r.get("compatible", True)),
-            detail_vi=r.get("detail", f"Đáp số cần có đơn vị quy về {want}."),
-        )
-    ]
-
-
-# Tách hệ số khỏi công thức: "3Fe" -> ("Fe", 3), "Fe" -> ("Fe", 1), "2H2O" -> ("H2O", 2).
-# Chỉ số ĐẦU chuỗi mới là hệ số; số nằm trong công thức là chỉ số nguyên tử.
-_HE_SO = re.compile(r"^\s*(\d+)?\s*([A-Za-z][A-Za-z0-9()]*)\s*$")
-
-
-def _tach_he_so(ve: str) -> list[tuple[str, int]] | None:
-    ra: list[tuple[str, int]] = []
-    for hang in ve.split("+"):
-        m = _HE_SO.match(hang)
-        if not m:
-            return None
-        ra.append((m.group(2), int(m.group(1) or 1)))
-    return ra or None
-
-
-def _check_chemistry(sol: Solution) -> list[Check]:
-    """Soát bảo toàn nguyên tố trên phương trình phản ứng tìm được trong lời giải."""
-    for st in sol.steps:
-        m = _REACTION.search(st.expression or "")
-        if not m:
-            continue
-        trai = _tach_he_so(m.group(1))
-        phai = _tach_he_so(m.group(2))
-        if not trai or not phai:
-            continue
-        r = chem_tool.check_conservation(trai, phai)
-        if not r.get("ok"):
-            continue
-
-        dat = bool(r.get("conserved", True))
-        chi_tiet = r.get("detail", "Đã soát bảo toàn nguyên tố.")
-
-        # Sai hệ số thì không chỉ báo sai — đưa luôn phương trình ĐÚNG vào phản
-        # hồi. `balance_equation` giải bằng không gian null của ma trận nguyên tố,
-        # tất định, không đoán. Model đang sai tỉ lệ hợp thức sẽ nhận được hệ số
-        # đúng ở vòng giải lại thay vì đoán lần nữa.
-        if not dat:
-            can_bang = chem_tool.balance_equation(
-                [f for f, _ in trai], [f for f, _ in phai]
-            )
-            if can_bang.get("ok") and can_bang.get("balanced"):
-                chi_tiet += (
-                    f" Phương trình đúng phải là: {can_bang['equation']}."
-                    " Hãy lấy tỉ lệ mol theo đúng các hệ số này."
-                )
-
-        return [Check(kind="conservation", passed=dat, step_id=st.id, detail_vi=chi_tiet)]
-    return []
-
-
-# Khối lượng mol model tự khai: "M(Fe3O4) = 232", "M_{Fe_3O_4}=232", "M (NaOH) = 40".
-_KHOI_LUONG_MOL = re.compile(
-    r"M\s*_?\s*[\(\{\[]\s*([A-Za-z][A-Za-z0-9()\._\{\}\s]*?)\s*[\)\}\]]\s*=\s*"
-    r"([0-9]+(?:[.,][0-9]+)?)"
+# Đại lượng hình học không bao giờ âm. Bắt theo mô tả của ẩn cần tìm, vì đề Toán
+# hiếm khi ghi đơn vị vào `unknowns`.
+_DAI_LUONG_DUONG = (
+    "thể tích", "diện tích", "độ dài", "khoảng cách", "bán kính", "chu vi",
+    "đường cao", "chiều cao", "cạnh",
 )
 
 
-def _don_gian_cong_thuc(s: str) -> str:
-    """`Fe_3O_4` và `Fe_{3}O_{4}` đều về `Fe3O4`.
+def _check_hinh_hoc(plan: Plan, sol: Solution) -> list[Check]:
+    """Soát tính hợp lệ hình học của đáp số — thay chỗ của phép soát thứ nguyên.
 
-    Model viết công thức hoá học bằng cú pháp LaTeX vì prompt bảo viết LaTeX trần.
-    Không gỡ chỉ số dưới thì `parse_formula` không đọc nổi và phép kiểm im lặng
-    bỏ qua — đúng loại lỗi câm tệ nhất.
+    Đề Toán gần như không ràng buộc đơn vị, nên soát thứ nguyên là vô nghĩa ở đây.
+    Cái thật sự bắt được lỗi ở Hình học là DẤU: thể tích, diện tích, độ dài và
+    khoảng cách không bao giờ âm.
+
+    Đây là lỗi có thật và tất định — model 4B nhầm dấu khi thay số vào công thức
+    khoảng cách từ điểm đến mặt phẳng (quên dấu giá trị tuyệt đối ở tử), hoặc trừ
+    ngược hai toạ độ khi tính độ dài. Phép kiểm này không tốn token nào.
     """
-    return re.sub(r"[_\{\}\s]", "", s or "")
-
-
-def _check_khoi_luong_mol(sol: Solution) -> list[Check]:
-    """Soát mọi khối lượng mol model tự khai, bằng bảng nguyên tử khối.
-
-    Vì sao cần: `chem_tool.molar_mass` tất định và không bao giờ sai, nhưng trước
-    đây không agent nào gọi tới — model 4B phải tự nhớ M(Fe3O4) = 232 và nhớ sai
-    thì hỏng cả bài mà không tầng nào phát hiện. Đây là lỗi Hoá hay gặp nhất.
-
-    Trả kèm GIÁ TRỊ ĐÚNG vào phần mô tả, giống cách `balance_equation` làm với hệ
-    số, để vòng giải lại có cái mà sửa thay vì đoán tiếp.
-    """
-    if not config.KIEM_KHOI_LUONG_MOL:
+    if plan.subject != "hinh_hoc" or not sol.final_answer.strip():
         return []
 
-    ra: list[Check] = []
-    da_soat: set[str] = set()
+    mo_ta = " ".join(
+        (u.description_vi or u.symbol or "") for u in plan.unknowns
+    ).lower()
+    if not any(t in mo_ta for t in _DAI_LUONG_DUONG):
+        return []
 
-    for st in sol.steps:
-        for nguon in (st.expression, st.result, st.goal_vi, st.reason_vi):
-            for khop in _KHOI_LUONG_MOL.finditer(nguon or ""):
-                cong_thuc = _don_gian_cong_thuc(khop.group(1))
-                if not cong_thuc or cong_thuc in da_soat:
-                    continue
-                try:
-                    khai = float(khop.group(2).replace(",", "."))
-                except ValueError:
-                    continue
-
-                tinh = chem_tool.molar_mass(cong_thuc)
-                if not tinh.get("ok"):
-                    continue  # không phải công thức hoá học hợp lệ, bỏ qua
-                da_soat.add(cong_thuc)
-
-                dung = float(tinh["molar_mass"])
-                lech = abs(dung - khai) / max(1e-9, dung)
-                if lech <= config.DUNG_SAI_KHOI_LUONG_MOL:
-                    continue
-
-                ra.append(
-                    Check(
-                        kind="conservation",
-                        passed=False,
-                        step_id=st.id,
-                        detail_vi=(
-                            f"SAI KHỐI LƯỢNG MOL: lời giải ghi M({cong_thuc}) = {khai:g} "
-                            f"nhưng tính từ bảng nguyên tử khối được {dung:.4g} g/mol "
-                            f"(lệch {lech * 100:.1f}%). Hãy dùng {dung:.4g} và tính lại "
-                            f"mọi bước phụ thuộc giá trị này."
-                        ),
-                    )
-                )
-
-    if not ra and da_soat:
-        ra.append(
-            Check(
-                kind="conservation",
-                passed=True,
-                detail_vi=f"Khối lượng mol đúng cho: {', '.join(sorted(da_soat))}.",
-            )
+    gia_tri = _doc_so_ket_qua(sol.final_answer)
+    if gia_tri is None or gia_tri >= 0:
+        return []
+    return [
+        Check(
+            kind="consistency",
+            passed=False,
+            detail_vi=(
+                f"ĐÁP SỐ ÂM cho một đại lượng hình học ({mo_ta.strip()}): "
+                f"{gia_tri:.6g}. Thể tích, diện tích, độ dài và khoảng cách luôn "
+                "không âm — hãy soát lại dấu khi thay số, thường là quên giá trị "
+                "tuyệt đối hoặc trừ ngược thứ tự."
+            ),
         )
-    return ra
+    ]
 
 
 def _check_answer_present(sol: Solution) -> list[Check]:
@@ -435,10 +322,7 @@ def deterministic_checks(plan: Plan, sol: Solution) -> list[Check]:
     checks: list[Check] = []
     checks += _check_answer_present(sol)
     checks += _check_arithmetic(sol)
-    checks += _check_units(plan, sol)
-    if plan.subject == "chemistry":
-        checks += _check_chemistry(sol)
-        checks += _check_khoi_luong_mol(sol)
+    checks += _check_hinh_hoc(plan, sol)
     return checks
 
 

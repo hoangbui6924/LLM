@@ -1,151 +1,51 @@
 ﻿id,subject,topic,level,question_type,question,choices,answer_value,answer_unit,answer_expr,answer_choice,bieu_thuc_kiem,nguon,ghi_chu
-math_nb_001,math,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 2x^3 + 7x - 1 tại điểm x = 2.,,31,,,,3*2*2**2 + 7,tu_soan,"y' = 3ax^2 + b, thay x0"
-math_nb_002,math,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 2 của (6x^2 + 2x) dx.,,20,,,,6*2**3/3 + 2*2**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"
-math_nb_003,math,phuong_trinh_bac_hai,NB,numeric,Tìm nghiệm lớn nhất của phương trình x^2 - 11x + 30 = 0.,,6,,,,(11 + sqrt(11**2 - 4*30))/2,tu_soan,"Công thức nghiệm, lấy nghiệm lớn"
-math_nb_004,math,logarit,NB,numeric,Tính giá trị của biểu thức log cơ số 5 của 3125.,,5,,,,log(3125)/log(5),tu_soan,log_a(a^k) = k
-math_nb_005,math,cap_so_cong,NB,numeric,Cho cấp số cộng có số hạng đầu u1 = 3 và công sai d = 2. Tính số hạng thứ 15.,,31,,,,3 + (15 - 1)*2,tu_soan,u_n = u1 + (n-1)d
-math_nb_006,math,cap_so_nhan,NB,numeric,Cho cấp số nhân có số hạng đầu u1 = 3 và công bội q = 3. Tính số hạng thứ 6.,,729,,,,3*3**(6 - 1),tu_soan,u_n = u1*q^(n-1)
-math_nb_007,math,gia_tri_ham_so,NB,numeric,Cho hàm số f(x) = 3x^2 + 4x - 1. Tính f(3).,,38,,,,3*3**2 + 4*3 - 1,tu_soan,Thay số vào hàm
-math_th_008,math,tich_phan,TH,numeric,Tính tích phân I = ∫ từ 1 đến 3 của (2x + 3) dx.,,14,,,,2*(3**2 - 1**2)/2 + 3*(3 - 1),tu_soan,"Nguyên hàm ax^2/2 + bx, hiệu hai cận"
-math_th_009,math,phuong_trinh_mu,TH,numeric,Giải phương trình 2^(x + 2) = 32.,,3,,,,5 - 2,tu_soan,Đưa về cùng cơ số rồi cân bằng số mũ
-math_th_010,math,to_hop,TH,numeric,Một lớp có 12 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?,,66,,,,factorial(12)/(factorial(2)*factorial(10)),tu_soan,"Tổ hợp chập k của n, không kể thứ tự"
-math_th_011,math,chinh_hop,TH,numeric,Có bao nhiêu cách xếp 3 học sinh vào 3 vị trí khác nhau từ một nhóm 7 học sinh?,,210,,,,factorial(7)/factorial(4),tu_soan,"Chỉnh hợp chập k của n, CÓ kể thứ tự"
-math_th_012,math,so_phuc,TH,numeric,Cho số phức z = (1 + 2i)(3 - 2i). Tìm phần thực của z.,,7,,,,1*3 + 2*2,tu_soan,(a+bi)(c-di) có phần thực ac + bd vì i^2 = -1
-math_th_013,math,so_phuc,TH,numeric,Tính môđun của số phức z = 8 + 4i.,,8.94427,,,,sqrt(8**2 + 4**2),tu_soan,|z| = sqrt(a^2 + b^2)
-math_th_014,math,tiem_can,TH,numeric,Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 4).,,2,,,,2/1,tu_soan,Tiệm cận ngang y = a/c khi bậc tử bằng bậc mẫu
-math_th_015,math,xac_suat,TH,numeric,Gieo đồng thời hai con xúc xắc cân đối. Tính xác suất để tổng số chấm bằng 5.,,0.111111,,,,4/36,tu_soan,"Xác suất cổ điển, không gian mẫu 36"
-math_vd_016,math,tiep_tuyen,VD,symbolic,Cho hàm số y = x^2 + 3x + 5. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm có hoành độ x = 1.,,,,5*x + 4,,5*(x - 1) + 9,tu_soan,y = y'(x0)(x - x0) + y(x0). Đáp số là BIỂU THỨC
-math_vd_017,math,cuc_tri,VD,numeric,Cho hàm số y = x^3 - 6x^2 + 1. Tìm giá trị cực đại của hàm số.,,1,,,,0**3 - 6*0**2 + 1,tu_soan,y' = 3x^2 - 6ax = 0 tại x=0 và x=2a; x=0 là điểm cực đại
-math_vd_018,math,gtln_gtnn,VD,numeric,Tìm giá trị lớn nhất của hàm số y = x^3 - 3x + 2 trên đoạn [0; 2].,,4,,,,2**3 - 3*2 + 2,tu_soan,So sánh giá trị tại hai đầu mút và các điểm tới hạn
-math_vd_019,math,the_tich_khoi_chop,VD,numeric,Cho khối chóp có đáy là hình vuông cạnh 4 và chiều cao bằng 9. Tính thể tích khối chóp.,,48,,,,1/3*4**2*9,tu_soan,V = (1/3)*S_đáy*h
-math_vd_020,math,the_tich_lang_tru,VD,numeric,"Cho khối lăng trụ đứng có đáy là tam giác vuông với hai cạnh góc vuông bằng 3 và 5, chiều cao lăng trụ bằng 10. Tính thể tích khối lăng trụ.",,75,,,,1/2*3*5*10,tu_soan,"V = S_đáy*h, đáy là tam giác vuông"
-math_vd_021,math,xac_suat,VD,numeric,Một hộp có 6 viên bi đỏ và 3 viên bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất lấy được đúng 2 viên bi đỏ.,,0.535714,,,,15*3/84,tu_soan,"C(do,2)*C(xanh,1)/C(tổng,3). Bài này Router hay nhầm sang môn Lý"
-math_vd_022,math,phuong_trinh_logarit,VD,numeric,Giải phương trình log cơ số 2 của x cộng log cơ số 2 của (x - 2) bằng 4. Tìm nghiệm của phương trình.,,5.12311,,,,(2 + sqrt(2**2 + 4*2**4))/2,tu_soan,x(x-2) = 2^4; điều kiện x > 2 nên loại nghiệm âm
-math_vdc_023,math,bat_dang_thuc,VDC,numeric,Tìm giá trị nhỏ nhất của biểu thức f(x) = x + 16/x với x > 0.,,8,,,,2*sqrt(16),tu_soan,"Cauchy: x + k/x >= 2*sqrt(k), dấu bằng khi x = sqrt(k)"
-math_vdc_024,math,xac_suat,VDC,numeric,Một nhóm có 6 nam và 5 nữ. Chọn ngẫu nhiên 3 người. Tính xác suất để trong nhóm được chọn có ít nhất một nữ.,,0.878788,,,,1 - 20/165,tu_soan,Dùng biến cố đối: 1 - P(toàn nam)
-math_nb_025,math,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 2x^3 + 11x - 2 tại điểm x = 3.,,65,,,,3*2*3**2 + 11,tu_soan,"y' = 3ax^2 + b, thay x0"
-math_nb_026,math,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 1 của (3x^2 + 4x) dx.,,3,,,,3*1**3/3 + 4*1**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"
-math_nb_027,math,phuong_trinh_bac_hai,NB,numeric,Tìm nghiệm lớn nhất của phương trình x^2 - 9x + 14 = 0.,,7,,,,(9 + sqrt(9**2 - 4*14))/2,tu_soan,"Công thức nghiệm, lấy nghiệm lớn"
-math_nb_028,math,logarit,NB,numeric,Tính giá trị của biểu thức log cơ số 3 của 27.,,3,,,,log(27)/log(3),tu_soan,log_a(a^k) = k
-math_nb_029,math,cap_so_cong,NB,numeric,Cho cấp số cộng có số hạng đầu u1 = 5 và công sai d = 6. Tính số hạng thứ 12.,,71,,,,5 + (12 - 1)*6,tu_soan,u_n = u1 + (n-1)d
-math_nb_030,math,cap_so_nhan,NB,numeric,Cho cấp số nhân có số hạng đầu u1 = 3 và công bội q = 3. Tính số hạng thứ 5.,,243,,,,3*3**(5 - 1),tu_soan,u_n = u1*q^(n-1)
-math_nb_031,math,gia_tri_ham_so,NB,numeric,Cho hàm số f(x) = 2x^2 + 4x - 6. Tính f(2).,,10,,,,2*2**2 + 4*2 - 6,tu_soan,Thay số vào hàm
-math_th_032,math,tich_phan,TH,numeric,Tính tích phân I = ∫ từ 1 đến 3 của (4x + 1) dx.,,18,,,,4*(3**2 - 1**2)/2 + 1*(3 - 1),tu_soan,"Nguyên hàm ax^2/2 + bx, hiệu hai cận"
-math_th_033,math,phuong_trinh_mu,TH,numeric,Giải phương trình 3^(x + 1) = 81.,,3,,,,4 - 1,tu_soan,Đưa về cùng cơ số rồi cân bằng số mũ
-math_th_034,math,to_hop,TH,numeric,Một lớp có 10 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?,,45,,,,factorial(10)/(factorial(2)*factorial(8)),tu_soan,"Tổ hợp chập k của n, không kể thứ tự"
-math_th_035,math,chinh_hop,TH,numeric,Có bao nhiêu cách xếp 2 học sinh vào 2 vị trí khác nhau từ một nhóm 8 học sinh?,,56,,,,factorial(8)/factorial(6),tu_soan,"Chỉnh hợp chập k của n, CÓ kể thứ tự"
-math_th_036,math,so_phuc,TH,numeric,Cho số phức z = (2 + 3i)(4 - 2i). Tìm phần thực của z.,,14,,,,2*4 + 3*2,tu_soan,(a+bi)(c-di) có phần thực ac + bd vì i^2 = -1
-math_th_037,math,so_phuc,TH,numeric,Tính môđun của số phức z = 6 + 4i.,,7.2111,,,,sqrt(6**2 + 4**2),tu_soan,|z| = sqrt(a^2 + b^2)
-math_th_038,math,tiem_can,TH,numeric,Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 5)/(2x - 3).,,2,,,,4/2,tu_soan,Tiệm cận ngang y = a/c khi bậc tử bằng bậc mẫu
-math_th_039,math,xac_suat,TH,numeric,Gieo đồng thời hai con xúc xắc cân đối. Tính xác suất để tổng số chấm bằng 8.,,0.138889,,,,5/36,tu_soan,"Xác suất cổ điển, không gian mẫu 36"
-math_vd_040,math,tiep_tuyen,VD,symbolic,Cho hàm số y = 2x^2 + 2x + 5. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm có hoành độ x = 1.,,,,6*x + 3,,6*(x - 1) + 9,tu_soan,y = y'(x0)(x - x0) + y(x0). Đáp số là BIỂU THỨC
-math_vd_041,math,cuc_tri,VD,numeric,Cho hàm số y = x^3 - 9x^2 + 5. Tìm giá trị cực đại của hàm số.,,5,,,,0**3 - 9*0**2 + 5,tu_soan,y' = 3x^2 - 6ax = 0 tại x=0 và x=2a; x=0 là điểm cực đại
-math_vd_042,math,gtln_gtnn,VD,numeric,Tìm giá trị lớn nhất của hàm số y = x^3 - 3x + 5 trên đoạn [0; 2].,,7,,,,2**3 - 3*2 + 5,tu_soan,So sánh giá trị tại hai đầu mút và các điểm tới hạn
-math_vd_043,math,the_tich_khoi_chop,VD,numeric,Cho khối chóp có đáy là hình vuông cạnh 6 và chiều cao bằng 4. Tính thể tích khối chóp.,,48,,,,1/3*6**2*4,tu_soan,V = (1/3)*S_đáy*h
-math_vd_044,math,the_tich_lang_tru,VD,numeric,"Cho khối lăng trụ đứng có đáy là tam giác vuông với hai cạnh góc vuông bằng 4 và 5, chiều cao lăng trụ bằng 4. Tính thể tích khối lăng trụ.",,40,,,,1/2*4*5*4,tu_soan,"V = S_đáy*h, đáy là tam giác vuông"
-math_vd_045,math,xac_suat,VD,numeric,Một hộp có 5 viên bi đỏ và 3 viên bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất lấy được đúng 2 viên bi đỏ.,,0.535714,,,,10*3/56,tu_soan,"C(do,2)*C(xanh,1)/C(tổng,3). Bài này Router hay nhầm sang môn Lý"
-math_vd_046,math,phuong_trinh_logarit,VD,numeric,Giải phương trình log cơ số 2 của x cộng log cơ số 2 của (x - 3) bằng 4. Tìm nghiệm của phương trình.,,5.772,,,,(3 + sqrt(3**2 + 4*2**4))/2,tu_soan,x(x-3) = 2^4; điều kiện x > 3 nên loại nghiệm âm
-math_vdc_047,math,bat_dang_thuc,VDC,numeric,Tìm giá trị nhỏ nhất của biểu thức f(x) = x + 4/x với x > 0.,,4,,,,2*sqrt(4),tu_soan,"Cauchy: x + k/x >= 2*sqrt(k), dấu bằng khi x = sqrt(k)"
-math_vdc_048,math,xac_suat,VDC,numeric,Một nhóm có 7 nam và 4 nữ. Chọn ngẫu nhiên 3 người. Tính xác suất để trong nhóm được chọn có ít nhất một nữ.,,0.787879,,,,1 - 35/165,tu_soan,Dùng biến cố đối: 1 - P(toàn nam)
-math_nb_049,math,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 4x^3 + 11x - 2 tại điểm x = 3.,,119,,,,3*4*3**2 + 11,tu_soan,"y' = 3ax^2 + b, thay x0"
-math_nb_050,math,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 2 của (3x^2 + 2x) dx.,,12,,,,3*2**3/3 + 2*2**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"
-phys_nb_001,physics,doi_don_vi,NB,numeric,Một ô tô chuyển động với vận tốc 90 km/h. Tính vận tốc của ô tô theo đơn vị m/s.,,25,m/s,,,90*1000/3600,tu_soan,"1 km/h = 1/3,6 m/s"
-phys_nb_002,physics,dinh_luat_ohm,NB,numeric,Đặt hiệu điện thế U = 6 V vào hai đầu điện trở R = 2 Ω. Tính cường độ dòng điện qua điện trở.,,3,A,,,6/2,tu_soan,I = U/R
-phys_nb_003,physics,dao_dong_dieu_hoa,NB,numeric,Một vật dao động điều hoà với tần số f = 5 Hz. Tính chu kỳ dao động của vật.,,0.2,s,,,1/5,tu_soan,T = 1/f
-phys_nb_004,physics,trong_luc,NB,numeric,"Một vật có khối lượng m = 2 kg. Tính trọng lượng của vật, lấy g = 10 m/s^2.",,20,N,,,2*10,tu_soan,P = mg
-phys_nb_005,physics,song_co,NB,numeric,Một sóng cơ có bước sóng 4 m và tần số 100 Hz. Tính tốc độ truyền sóng.,,400,m/s,,,4*100,tu_soan,v = lambda*f
-phys_nb_006,physics,cong_co_hoc,NB,numeric,Một lực 50 N kéo vật đi được quãng đường 10 m theo phương của lực. Tính công của lực.,,500,J,,,50*10,tu_soan,A = F*s khi lực cùng phương chuyển động
-phys_nb_007,physics,khoi_luong_rieng,NB,numeric,Một khối vật chất có khối lượng 270 g và thể tích 200 cm^3. Tính khối lượng riêng của vật.,,1.35,g/cm^3,,,270/200,tu_soan,D = m/V
-phys_th_008,physics,dao_dong_dieu_hoa,TH,numeric,Một vật dao động điều hoà với biên độ A = 6 cm và tần số góc ω = 10 rad/s. Tính vận tốc cực đại của vật.,,0.6,m/s,,,6/100*10,tu_soan,"v_max = A*omega, đổi cm sang m"
-phys_th_009,physics,con_lac_don,TH,numeric,"Một con lắc đơn có chiều dài l = 0,4 m dao động tại nơi có g = 9,8 m/s^2. Tính chu kỳ dao động của con lắc.",,1.2694,s,,,2*pi*sqrt(0.4/9.8),tu_soan,T = 2*pi*sqrt(l/g)
-phys_th_010,physics,dong_nang,TH,numeric,Một vật khối lượng 4 kg chuyển động với vận tốc 4 m/s. Tính động năng của vật.,,32,J,,,0.5*4*4**2,tu_soan,W_d = mv^2/2
-phys_th_011,physics,the_nang,TH,numeric,Một vật khối lượng 2 kg được đưa lên độ cao 20 m. Lấy g = 10 m/s^2. Tính thế năng trọng trường của vật.,,400,J,,,2*10*20,tu_soan,W_t = mgh
-phys_th_012,physics,quang_dien,TH,numeric,"Chiếu ánh sáng vào một kim loại có công thoát 3 eV. Biết năng lượng của photon là 4,2 eV. Tính động năng ban đầu cực đại của electron quang điện.",,1.2,eV,,,4.2 - 3.0,tu_soan,Einstein: W_d_max = epsilon - A
-phys_th_013,physics,dien_tro,TH,numeric,Hai điện trở R1 = 3 Ω và R2 = 7 Ω mắc nối tiếp vào hiệu điện thế U = 36 V. Tính cường độ dòng điện trong mạch.,,3.6,A,,,36/(3 + 7),tu_soan,"Nối tiếp: R = R1 + R2, I = U/R"
-phys_th_014,physics,dien_tro,TH,numeric,Hai điện trở R1 = 4 Ω và R2 = 12 Ω mắc song song. Tính điện trở tương đương của đoạn mạch.,,3,Ohm,,,4*12/(4 + 12),tu_soan,Song song: R = R1*R2/(R1+R2)
-phys_th_015,physics,nhiet_luong,TH,numeric,Tính nhiệt lượng cần cung cấp để đun nóng 2 kg nước tăng thêm 30 độ C. Biết nhiệt dung riêng của nước là 4200 J/(kg.K).,,252000,J,,,2*4200*30,tu_soan,Q = mc*delta_t
-phys_vd_016,physics,con_lac_lo_xo,VD,numeric,Một con lắc lò xo có độ cứng k = 100 N/m gắn vật nặng khối lượng m = 4 kg. Tính tần số góc của dao động.,,5,rad/s,,,sqrt(100/4),tu_soan,omega = sqrt(k/m)
-phys_vd_017,physics,mach_rlc,VD,numeric,"Một đoạn mạch xoay chiều có R = 40 Ω, cảm kháng ZL = 80 Ω và dung kháng ZC = 30 Ω. Tính tổng trở của đoạn mạch.",,64.0312,Ohm,,,sqrt(40**2 + (80 - 30)**2),tu_soan,Z = sqrt(R^2 + (ZL - ZC)^2)
-phys_vd_018,physics,giao_thoa_anh_sang,VD,numeric,"Trong thí nghiệm giao thoa Y-âng, khoảng cách giữa hai khe a = 1,5 mm, khoảng cách từ hai khe đến màn D = 2 m, ánh sáng đơn sắc có bước sóng 0,6 μm. Tính khoảng vân quan sát được trên màn.",,0.8,mm,,,0.6*1e-6*2/(1.5*1e-3)*1000,tu_soan,"i = lambda*D/a, chú ý đổi đơn vị"
-phys_vd_019,physics,phong_xa,VD,numeric,"Một chất phóng xạ có chu kỳ bán rã 20 ngày. Sau 60 ngày, phần trăm khối lượng chất phóng xạ còn lại so với ban đầu là bao nhiêu?",,12.5,%,,,100*(1/2)**(60/20),tu_soan,m = m0*(1/2)^(t/T)
-phys_vd_020,physics,nem_ngang,VD,numeric,Một vật được ném ngang từ độ cao 45 m. Lấy g = 10 m/s^2. Tính thời gian rơi của vật.,,3,s,,,sqrt(2*45/10),tu_soan,"Ném ngang: thời gian rơi chỉ phụ thuộc độ cao, t = sqrt(2h/g)"
-phys_vd_021,physics,may_bien_ap,VD,numeric,Một máy biến áp lí tưởng có cuộn sơ cấp 2000 vòng và cuộn thứ cấp 200 vòng. Đặt vào hai đầu cuộn sơ cấp hiệu điện thế 220 V. Tính hiệu điện thế ở cuộn thứ cấp.,,22,V,,,220*200/2000,tu_soan,U2/U1 = N2/N1
-phys_vd_022,physics,cong_suat_dien,VD,numeric,Một thiết bị điện hoạt động ở hiệu điện thế 110 V với cường độ dòng điện 2 A. Tính công suất tiêu thụ.,,220,W,,,110*2,tu_soan,P = U*I
-phys_vdc_023,physics,tong_hop_dao_dong,VDC,numeric,"Một vật thực hiện đồng thời hai dao động điều hoà cùng phương, cùng tần số, biên độ lần lượt là 3 cm và 8 cm, lệch pha nhau π/2. Tính biên độ dao động tổng hợp.",,8.544,cm,,,sqrt(3**2 + 8**2),tu_soan,Vuông pha: A = sqrt(A1^2 + A2^2)
-phys_vdc_024,physics,mach_dao_dong,VDC,numeric,"Một mạch dao động LC lí tưởng có độ tự cảm L = 0,4 H và điện dung C = 25 μF. Tính tần số dao động riêng của mạch.",,50.3292,Hz,,,1/(2*pi*sqrt(0.4*25*1e-6)),tu_soan,f = 1/(2*pi*sqrt(LC))
-phys_vdc_025,physics,nang_luong_dao_dong,VDC,numeric,"Một vật dao động điều hoà với biên độ A = 8 cm. Tại vị trí có li độ x = 6 cm, tính tỉ số giữa động năng và thế năng của vật.",,0.777778,,,,(8**2 - 6**2)/6**2,tu_soan,W_d/W_t = (A^2 - x^2)/x^2
-phys_nb_026,physics,doi_don_vi,NB,numeric,Một ô tô chuyển động với vận tốc 36 km/h. Tính vận tốc của ô tô theo đơn vị m/s.,,10,m/s,,,36*1000/3600,tu_soan,"1 km/h = 1/3,6 m/s"
-phys_nb_027,physics,dinh_luat_ohm,NB,numeric,Đặt hiệu điện thế U = 12 V vào hai đầu điện trở R = 2 Ω. Tính cường độ dòng điện qua điện trở.,,6,A,,,12/2,tu_soan,I = U/R
-phys_nb_028,physics,dao_dong_dieu_hoa,NB,numeric,Một vật dao động điều hoà với tần số f = 2 Hz. Tính chu kỳ dao động của vật.,,0.5,s,,,1/2,tu_soan,T = 1/f
-phys_nb_029,physics,trong_luc,NB,numeric,"Một vật có khối lượng m = 8 kg. Tính trọng lượng của vật, lấy g = 10 m/s^2.",,80,N,,,8*10,tu_soan,P = mg
-phys_nb_030,physics,song_co,NB,numeric,Một sóng cơ có bước sóng 2 m và tần số 50 Hz. Tính tốc độ truyền sóng.,,100,m/s,,,2*50,tu_soan,v = lambda*f
-phys_nb_031,physics,cong_co_hoc,NB,numeric,Một lực 50 N kéo vật đi được quãng đường 5 m theo phương của lực. Tính công của lực.,,250,J,,,50*5,tu_soan,A = F*s khi lực cùng phương chuyển động
-phys_nb_032,physics,khoi_luong_rieng,NB,numeric,Một khối vật chất có khối lượng 800 g và thể tích 100 cm^3. Tính khối lượng riêng của vật.,,8,g/cm^3,,,800/100,tu_soan,D = m/V
-phys_th_033,physics,dao_dong_dieu_hoa,TH,numeric,Một vật dao động điều hoà với biên độ A = 4 cm và tần số góc ω = 20 rad/s. Tính vận tốc cực đại của vật.,,0.8,m/s,,,4/100*20,tu_soan,"v_max = A*omega, đổi cm sang m"
-phys_th_034,physics,dong_nang,TH,numeric,Một vật khối lượng 4 kg chuyển động với vận tốc 6 m/s. Tính động năng của vật.,,72,J,,,0.5*4*6**2,tu_soan,W_d = mv^2/2
-phys_th_035,physics,the_nang,TH,numeric,Một vật khối lượng 3 kg được đưa lên độ cao 20 m. Lấy g = 10 m/s^2. Tính thế năng trọng trường của vật.,,600,J,,,3*10*20,tu_soan,W_t = mgh
-phys_th_036,physics,quang_dien,TH,numeric,Chiếu ánh sáng vào một kim loại có công thoát 3 eV. Biết năng lượng của photon là 5 eV. Tính động năng ban đầu cực đại của electron quang điện.,,2,eV,,,5.0 - 3.0,tu_soan,Einstein: W_d_max = epsilon - A
-phys_th_037,physics,dien_tro,TH,numeric,Hai điện trở R1 = 5 Ω và R2 = 7 Ω mắc nối tiếp vào hiệu điện thế U = 18 V. Tính cường độ dòng điện trong mạch.,,1.5,A,,,18/(5 + 7),tu_soan,"Nối tiếp: R = R1 + R2, I = U/R"
-phys_th_038,physics,dien_tro,TH,numeric,Hai điện trở R1 = 3 Ω và R2 = 12 Ω mắc song song. Tính điện trở tương đương của đoạn mạch.,,2.4,Ohm,,,3*12/(3 + 12),tu_soan,Song song: R = R1*R2/(R1+R2)
-phys_th_039,physics,nhiet_luong,TH,numeric,Tính nhiệt lượng cần cung cấp để đun nóng 2 kg nước tăng thêm 20 độ C. Biết nhiệt dung riêng của nước là 4200 J/(kg.K).,,168000,J,,,2*4200*20,tu_soan,Q = mc*delta_t
-phys_vd_040,physics,con_lac_lo_xo,VD,numeric,Một con lắc lò xo có độ cứng k = 100 N/m gắn vật nặng khối lượng m = 1 kg. Tính tần số góc của dao động.,,10,rad/s,,,sqrt(100/1),tu_soan,omega = sqrt(k/m)
-phys_vd_041,physics,mach_rlc,VD,numeric,"Một đoạn mạch xoay chiều có R = 60 Ω, cảm kháng ZL = 80 Ω và dung kháng ZC = 40 Ω. Tính tổng trở của đoạn mạch.",,72.111,Ohm,,,sqrt(60**2 + (80 - 40)**2),tu_soan,Z = sqrt(R^2 + (ZL - ZC)^2)
-phys_vd_042,physics,giao_thoa_anh_sang,VD,numeric,"Trong thí nghiệm giao thoa Y-âng, khoảng cách giữa hai khe a = 1,5 mm, khoảng cách từ hai khe đến màn D = 3 m, ánh sáng đơn sắc có bước sóng 0,5 μm. Tính khoảng vân quan sát được trên màn.",,1,mm,,,0.5*1e-6*3/(1.5*1e-3)*1000,tu_soan,"i = lambda*D/a, chú ý đổi đơn vị"
-phys_vd_043,physics,phong_xa,VD,numeric,"Một chất phóng xạ có chu kỳ bán rã 20 ngày. Sau 40 ngày, phần trăm khối lượng chất phóng xạ còn lại so với ban đầu là bao nhiêu?",,25,%,,,100*(1/2)**(40/20),tu_soan,m = m0*(1/2)^(t/T)
-phys_vd_044,physics,may_bien_ap,VD,numeric,Một máy biến áp lí tưởng có cuộn sơ cấp 2000 vòng và cuộn thứ cấp 500 vòng. Đặt vào hai đầu cuộn sơ cấp hiệu điện thế 110 V. Tính hiệu điện thế ở cuộn thứ cấp.,,27.5,V,,,110*500/2000,tu_soan,U2/U1 = N2/N1
-phys_vd_045,physics,cong_suat_dien,VD,numeric,Một thiết bị điện hoạt động ở hiệu điện thế 220 V với cường độ dòng điện 5 A. Tính công suất tiêu thụ.,,1100,W,,,220*5,tu_soan,P = U*I
-phys_vdc_046,physics,tong_hop_dao_dong,VDC,numeric,"Một vật thực hiện đồng thời hai dao động điều hoà cùng phương, cùng tần số, biên độ lần lượt là 8 cm và 4 cm, lệch pha nhau π/2. Tính biên độ dao động tổng hợp.",,8.94427,cm,,,sqrt(8**2 + 4**2),tu_soan,Vuông pha: A = sqrt(A1^2 + A2^2)
-phys_vdc_047,physics,mach_dao_dong,VDC,numeric,"Một mạch dao động LC lí tưởng có độ tự cảm L = 0,1 H và điện dung C = 10 μF. Tính tần số dao động riêng của mạch.",,159.155,Hz,,,1/(2*pi*sqrt(0.1*10*1e-6)),tu_soan,f = 1/(2*pi*sqrt(LC))
-phys_vdc_048,physics,nang_luong_dao_dong,VDC,numeric,"Một vật dao động điều hoà với biên độ A = 10 cm. Tại vị trí có li độ x = 4 cm, tính tỉ số giữa động năng và thế năng của vật.",,5.25,,,,(10**2 - 4**2)/4**2,tu_soan,W_d/W_t = (A^2 - x^2)/x^2
-phys_nb_049,physics,dinh_luat_ohm,NB,numeric,Đặt hiệu điện thế U = 6 V vào hai đầu điện trở R = 4 Ω. Tính cường độ dòng điện qua điện trở.,,1.5,A,,,6/4,tu_soan,I = U/R
-phys_nb_050,physics,song_co,NB,numeric,Một sóng cơ có bước sóng 2 m và tần số 20 Hz. Tính tốc độ truyền sóng.,,40,m/s,,,2*20,tu_soan,v = lambda*f
-chem_nb_001,chemistry,khoi_luong_mol,NB,numeric,"Tính khối lượng mol của hợp chất HNO3. Biết H = 1, N = 14, O = 16.",,63,g/mol,,,1*1 + 14*1 + 16*3,tu_soan,Cộng khối lượng nguyên tử theo chỉ số
-chem_nb_002,chemistry,so_mol,NB,numeric,"Tính số mol của 5,6 lít khí O2 ở điều kiện tiêu chuẩn.",,0.25,mol,,,5.6/22.4,tu_soan,"n = V/22,4 ở đktc"
-chem_nb_003,chemistry,so_mol,NB,numeric,Tính số mol có trong 20 gam NaOH. Biết M(NaOH) = 40 g/mol.,,0.5,mol,,,20.0/40,tu_soan,n = m/M
-chem_nb_004,chemistry,nong_do_mol,NB,numeric,"Hoà tan 0,2 mol NaCl vào nước thu được 250 ml dung dịch. Tính nồng độ mol của dung dịch.",,0.8,M,,,0.2/(250/1000),tu_soan,"C_M = n/V, V tính bằng lít"
-chem_nb_005,chemistry,khoi_luong_chat,NB,numeric,"Tính khối lượng của 0,1 mol H2SO4. Biết M(H2SO4) = 98 g/mol.",,9.8,gam,,,0.1*98,tu_soan,m = n*M
-chem_nb_006,chemistry,can_bang_pthh,NB,numeric,Cân bằng phương trình phản ứng Fe + O2 → Fe3O4. Cho biết hệ số của O2 sau khi cân bằng.,,2,,,,2,tu_soan,Phương trình cân bằng: 3Fe + 2O2 → Fe3O4 (tính bằng chem_tool)
-chem_nb_007,chemistry,so_mol_nguyen_tu,NB,numeric,"Trong 0,1 mol CaCO3 có bao nhiêu mol nguyên tử O?",,0.3,mol,,,0.1*3,tu_soan,Mỗi phân tử CaCO3 có 3 nguyên tử O
-chem_th_008,chemistry,tinh_theo_pthh,TH,numeric,"Đốt cháy hoàn toàn 13 gam Zn trong khí O2 dư thu được ZnO. Tính khối lượng ZnO thu được. Biết Zn = 65, O = 16.",,16.2,gam,,,13.0/65*81,tu_soan,"2Zn + O2 -> 2ZnO, tỉ lệ mol 1:1"
-chem_th_009,chemistry,axit_bazo,TH,numeric,"Trung hoà hoàn toàn 200 ml dung dịch HCl 0,5M bằng dung dịch NaOH. Tính khối lượng NaOH đã phản ứng. Biết M(NaOH) = 40 g/mol.",,4,gam,,,200/1000*0.5*40,tu_soan,"HCl + NaOH -> NaCl + H2O, tỉ lệ 1:1"
-chem_th_010,chemistry,ph,TH,numeric,"Tính pH của dung dịch HCl có nồng độ 0,01M.",,2,,,,-log(0.01)/log(10),tu_soan,"HCl là axit mạnh, phân li hoàn toàn nên pH = -log[H+]"
-chem_th_011,chemistry,kim_loai_axit,TH,numeric,"Hoà tan hoàn toàn 4,8 gam Mg vào dung dịch HCl dư. Tính thể tích khí H2 thu được ở điều kiện tiêu chuẩn. Biết Mg = 24.",,4.48,lit,,,4.800000000000001/24*2/2*22.4,tu_soan,"Mg hoá trị 2, mỗi mol Mg cho 2/2 mol H2"
-chem_th_012,chemistry,nong_do_phan_tram,TH,numeric,Hoà tan 40 gam muối vào 160 gam nước. Tính nồng độ phần trăm của dung dịch thu được.,,20,%,,,40/(40 + 160)*100,tu_soan,C% = m_chất tan/m_dung dịch*100
-chem_th_013,chemistry,dot_chay_huu_co,TH,numeric,"Đốt cháy hoàn toàn 0,1 mol C3H8. Tính thể tích khí CO2 thu được ở điều kiện tiêu chuẩn.",,6.72,lit,,,0.1*3*22.4,tu_soan,Mỗi mol C3H8 cháy cho 3 mol CO2 (bảo toàn nguyên tố C)
-chem_th_014,chemistry,pha_loang,TH,numeric,Pha loãng 100 ml dung dịch NaOH 1M thành 250 ml. Tính nồng độ mol của dung dịch sau khi pha loãng.,,0.4,M,,,1.0*100/250,tu_soan,Số mol chất tan không đổi: C1*V1 = C2*V2
-chem_vd_015,chemistry,hieu_suat,VD,numeric,"Đốt cháy 11,2 gam Fe trong O2 dư thu được Fe3O4 với hiệu suất phản ứng 80%. Tính khối lượng Fe3O4 thực tế thu được. Biết Fe = 56, O = 16.",,12.3733,gam,,,11.2/56/3*232*80/100,tu_soan,3Fe + 2O2 -> Fe3O4 nên n(Fe3O4) = n(Fe)/3; nhân hiệu suất
-chem_vd_016,chemistry,chat_du,VD,numeric,"Cho 0,15 mol NaOH vào dung dịch chứa 0,3 mol HCl. Tính khối lượng muối NaCl thu được sau phản ứng. Biết M(NaCl) = 58,5 g/mol.",,8.775,gam,,,0.15*58.5,tu_soan,Tỉ lệ 1:1 nên chất thiếu quyết định lượng muối
-chem_vd_017,chemistry,dien_phan,VD,numeric,"Điện phân dung dịch CuSO4 với cường độ dòng điện 5 A trong 1930 giây. Tính khối lượng Cu bám ở catot. Biết Cu = 64, F = 96500 C/mol.",,3.2,gam,,,64*5*1930/(2*96500),tu_soan,"Faraday: m = A*I*t/(n*F), Cu2+ nhận 2 electron nên n = 2"
-chem_vd_018,chemistry,bao_toan_khoi_luong,VD,numeric,Đốt cháy hoàn toàn 10 gam hỗn hợp kim loại trong khí O2 thu được 14 gam hỗn hợp oxit. Tính thể tích khí O2 đã phản ứng ở điều kiện tiêu chuẩn.,,2.8,lit,,,(14 - 10)/32*22.4,tu_soan,Bảo toàn khối lượng: m(O2) = m(oxit) - m(kim loại)
-chem_vdc_019,chemistry,hon_hop_kim_loai,VDC,numeric,"Cho 12 gam hỗn hợp Fe và Cu tác dụng với dung dịch HCl dư, thu được 4,48 lít khí H2 ở điều kiện tiêu chuẩn. Tính phần trăm khối lượng của Fe trong hỗn hợp. Biết Fe = 56.",,93.3333,%,,,4.48/22.4*56/12*100,tu_soan,"Cu KHÔNG tác dụng HCl, chỉ Fe sinh H2 nên n(Fe) = n(H2)"
-chem_vdc_020,chemistry,tim_cong_thuc_phan_tu,VDC,numeric,"Đốt cháy hoàn toàn 0,1 mol hiđrocacbon X thu được 0,1 mol CO2 và 0,2 mol H2O. Tính khối lượng mol của X. Biết C = 12, H = 1.",,16,g/mol,,,0.1/0.1*12 + 0.2*2/0.1*1,tu_soan,Số C = n(CO2)/n(X); số H = 2*n(H2O)/n(X)
-chem_vdc_021,chemistry,ph,VDC,numeric,"Trộn 200 ml dung dịch HCl 0,5M với 400 ml dung dịch NaOH 0,5M. Tính pH của dung dịch thu được.",,13.2218,,,,14 + log(0.16666666666666669)/log(10),tu_soan,"NaOH dư, tính [OH-] rồi pH = 14 - pOH"
-chem_vdc_022,chemistry,muoi_cacbonat,VDC,numeric,"Cho 20 gam CaCO3 vào dung dịch chứa 0,6 mol HCl. Sau phản ứng hoàn toàn, tính khối lượng muối CaCl2 thu được. Biết M(CaCO3) = 100, M(CaCl2) = 111 g/mol.",,22.2,gam,,,0.2*111,tu_soan,"CaCO3 + 2HCl -> CaCl2 + H2O + CO2. Cần 0.4 mol HCl, có 0.6 nên HCl dư, CaCO3 hết"
-chem_nb_023,chemistry,khoi_luong_mol,NB,numeric,"Tính khối lượng mol của hợp chất CaCO3. Biết C = 12, Ca = 40, O = 16.",,100,g/mol,,,12*1 + 40*1 + 16*3,tu_soan,Cộng khối lượng nguyên tử theo chỉ số
-chem_nb_024,chemistry,so_mol,NB,numeric,"Tính số mol của 2,24 lít khí CO2 ở điều kiện tiêu chuẩn.",,0.1,mol,,,2.24/22.4,tu_soan,"n = V/22,4 ở đktc"
-chem_nb_025,chemistry,so_mol,NB,numeric,Tính số mol có trong 4 gam NaOH. Biết M(NaOH) = 40 g/mol.,,0.1,mol,,,4.0/40,tu_soan,n = m/M
-chem_nb_026,chemistry,nong_do_mol,NB,numeric,"Hoà tan 0,2 mol NaCl vào nước thu được 200 ml dung dịch. Tính nồng độ mol của dung dịch.",,1,M,,,0.2/(200/1000),tu_soan,"C_M = n/V, V tính bằng lít"
-chem_nb_027,chemistry,khoi_luong_chat,NB,numeric,Tính khối lượng của 2 mol Al2O3. Biết M(Al2O3) = 102 g/mol.,,204,gam,,,2*102,tu_soan,m = n*M
-chem_nb_028,chemistry,can_bang_pthh,NB,numeric,Cân bằng phương trình phản ứng H2 + O2 → H2O. Cho biết hệ số của O2 sau khi cân bằng.,,1,,,,1,tu_soan,Phương trình cân bằng: 2H2 + O2 → 2H2O (tính bằng chem_tool)
-chem_nb_029,chemistry,so_mol_nguyen_tu,NB,numeric,"Trong 0,1 mol Al2O3 có bao nhiêu mol nguyên tử Al?",,0.2,mol,,,0.1*2,tu_soan,Mỗi phân tử Al2O3 có 2 nguyên tử Al
-chem_th_030,chemistry,tinh_theo_pthh,TH,numeric,"Đốt cháy hoàn toàn 8 gam Ca trong khí O2 dư thu được CaO. Tính khối lượng CaO thu được. Biết Ca = 40, O = 16.",,11.2,gam,,,8.0/40*56,tu_soan,"2Ca + O2 -> 2CaO, tỉ lệ mol 1:1"
-chem_th_031,chemistry,axit_bazo,TH,numeric,Trung hoà hoàn toàn 200 ml dung dịch HCl 1M bằng dung dịch NaOH. Tính khối lượng NaOH đã phản ứng. Biết M(NaOH) = 40 g/mol.,,8,gam,,,200/1000*1.0*40,tu_soan,"HCl + NaOH -> NaCl + H2O, tỉ lệ 1:1"
-chem_th_032,chemistry,kim_loai_axit,TH,numeric,Hoà tan hoàn toàn 13 gam Zn vào dung dịch HCl dư. Tính thể tích khí H2 thu được ở điều kiện tiêu chuẩn. Biết Zn = 65.,,4.48,lit,,,13.0/65*2/2*22.4,tu_soan,"Zn hoá trị 2, mỗi mol Zn cho 2/2 mol H2"
-chem_th_033,chemistry,nong_do_phan_tram,TH,numeric,Hoà tan 20 gam muối vào 160 gam nước. Tính nồng độ phần trăm của dung dịch thu được.,,11.1111,%,,,20/(20 + 160)*100,tu_soan,C% = m_chất tan/m_dung dịch*100
-chem_th_034,chemistry,dot_chay_huu_co,TH,numeric,"Đốt cháy hoàn toàn 0,2 mol C2H6. Tính thể tích khí CO2 thu được ở điều kiện tiêu chuẩn.",,8.96,lit,,,0.2*2*22.4,tu_soan,Mỗi mol C2H6 cháy cho 2 mol CO2 (bảo toàn nguyên tố C)
-chem_th_035,chemistry,pha_loang,TH,numeric,Pha loãng 50 ml dung dịch NaOH 2M thành 250 ml. Tính nồng độ mol của dung dịch sau khi pha loãng.,,0.4,M,,,2.0*50/250,tu_soan,Số mol chất tan không đổi: C1*V1 = C2*V2
-chem_vd_036,chemistry,hieu_suat,VD,numeric,"Đốt cháy 5,6 gam Fe trong O2 dư thu được Fe3O4 với hiệu suất phản ứng 80%. Tính khối lượng Fe3O4 thực tế thu được. Biết Fe = 56, O = 16.",,6.18667,gam,,,5.6/56/3*232*80/100,tu_soan,3Fe + 2O2 -> Fe3O4 nên n(Fe3O4) = n(Fe)/3; nhân hiệu suất
-chem_vd_037,chemistry,chat_du,VD,numeric,"Cho 0,1 mol NaOH vào dung dịch chứa 0,3 mol HCl. Tính khối lượng muối NaCl thu được sau phản ứng. Biết M(NaCl) = 58,5 g/mol.",,5.85,gam,,,0.1*58.5,tu_soan,Tỉ lệ 1:1 nên chất thiếu quyết định lượng muối
-chem_vd_038,chemistry,dien_phan,VD,numeric,"Điện phân dung dịch CuSO4 với cường độ dòng điện 2 A trong 1930 giây. Tính khối lượng Cu bám ở catot. Biết Cu = 64, F = 96500 C/mol.",,1.28,gam,,,64*2*1930/(2*96500),tu_soan,"Faraday: m = A*I*t/(n*F), Cu2+ nhận 2 electron nên n = 2"
-chem_vd_039,chemistry,bao_toan_khoi_luong,VD,numeric,Đốt cháy hoàn toàn 20 gam hỗn hợp kim loại trong khí O2 thu được 28 gam hỗn hợp oxit. Tính thể tích khí O2 đã phản ứng ở điều kiện tiêu chuẩn.,,5.6,lit,,,(28 - 20)/32*22.4,tu_soan,Bảo toàn khối lượng: m(O2) = m(oxit) - m(kim loại)
-chem_vdc_040,chemistry,hon_hop_kim_loai,VDC,numeric,"Cho 12 gam hỗn hợp Fe và Cu tác dụng với dung dịch HCl dư, thu được 2,24 lít khí H2 ở điều kiện tiêu chuẩn. Tính phần trăm khối lượng của Fe trong hỗn hợp. Biết Fe = 56.",,46.6667,%,,,2.24/22.4*56/12*100,tu_soan,"Cu KHÔNG tác dụng HCl, chỉ Fe sinh H2 nên n(Fe) = n(H2)"
-chem_vdc_041,chemistry,ph,VDC,numeric,"Trộn 100 ml dung dịch HCl 0,5M với 300 ml dung dịch NaOH 0,5M. Tính pH của dung dịch thu được.",,13.3979,,,,14 + log(0.24999999999999997)/log(10),tu_soan,"NaOH dư, tính [OH-] rồi pH = 14 - pOH"
-chem_vdc_042,chemistry,muoi_cacbonat,VDC,numeric,"Cho 10 gam CaCO3 vào dung dịch chứa 0,6 mol HCl. Sau phản ứng hoàn toàn, tính khối lượng muối CaCl2 thu được. Biết M(CaCO3) = 100, M(CaCl2) = 111 g/mol.",,11.1,gam,,,0.1*111,tu_soan,"CaCO3 + 2HCl -> CaCl2 + H2O + CO2. Cần 0.2 mol HCl, có 0.6 nên HCl dư, CaCO3 hết"
-chem_nb_043,chemistry,khoi_luong_mol,NB,numeric,"Tính khối lượng mol của hợp chất CuSO4. Biết Cu = 64, O = 16, S = 32.",,160,g/mol,,,64*1 + 16*4 + 32*1,tu_soan,Cộng khối lượng nguyên tử theo chỉ số
-chem_nb_044,chemistry,so_mol,NB,numeric,"Tính số mol của 22,4 lít khí H2 ở điều kiện tiêu chuẩn.",,1,mol,,,22.4/22.4,tu_soan,"n = V/22,4 ở đktc"
-chem_nb_045,chemistry,so_mol,NB,numeric,Tính số mol có trong 10 gam CaCO3. Biết M(CaCO3) = 100 g/mol.,,0.1,mol,,,10.0/100,tu_soan,n = m/M
-chem_nb_046,chemistry,nong_do_mol,NB,numeric,Hoà tan 1 mol NaCl vào nước thu được 500 ml dung dịch. Tính nồng độ mol của dung dịch.,,2,M,,,1.0/(500/1000),tu_soan,"C_M = n/V, V tính bằng lít"
-chem_nb_047,chemistry,khoi_luong_chat,NB,numeric,Tính khối lượng của 2 mol HNO3. Biết M(HNO3) = 63 g/mol.,,126,gam,,,2*63,tu_soan,m = n*M
-chem_nb_048,chemistry,so_mol_nguyen_tu,NB,numeric,"Trong 0,1 mol CaCO3 có bao nhiêu mol nguyên tử Ca?",,0.1,mol,,,0.1*1,tu_soan,Mỗi phân tử CaCO3 có 1 nguyên tử Ca
-chem_th_049,chemistry,tinh_theo_pthh,TH,numeric,"Đốt cháy hoàn toàn 2,4 gam Mg trong khí O2 dư thu được MgO. Tính khối lượng MgO thu được. Biết Mg = 24, O = 16.",,4,gam,,,2.4000000000000004/24*40,tu_soan,"2Mg + O2 -> 2MgO, tỉ lệ mol 1:1"
-chem_th_050,chemistry,kim_loai_axit,TH,numeric,"Hoà tan hoàn toàn 2,4 gam Mg vào dung dịch HCl dư. Tính thể tích khí H2 thu được ở điều kiện tiêu chuẩn. Biết Mg = 24.",,2.24,lit,,,2.4000000000000004/24*2/2*22.4,tu_soan,"Mg hoá trị 2, mỗi mol Mg cho 2/2 mol H2"
+math_nb_001,dai_so,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 2x^3 + 7x - 1 tại điểm x = 2.,,31,,,,3*2*2**2 + 7,tu_soan,"y' = 3ax^2 + b, thay x0"
+math_nb_002,dai_so,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 2 của (6x^2 + 2x) dx.,,20,,,,6*2**3/3 + 2*2**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"
+math_nb_003,dai_so,phuong_trinh_bac_hai,NB,numeric,Tìm nghiệm lớn nhất của phương trình x^2 - 11x + 30 = 0.,,6,,,,(11 + sqrt(11**2 - 4*30))/2,tu_soan,"Công thức nghiệm, lấy nghiệm lớn"
+math_nb_004,dai_so,logarit,NB,numeric,Tính giá trị của biểu thức log cơ số 5 của 3125.,,5,,,,log(3125)/log(5),tu_soan,log_a(a^k) = k
+math_nb_005,dai_so,cap_so_cong,NB,numeric,Cho cấp số cộng có số hạng đầu u1 = 3 và công sai d = 2. Tính số hạng thứ 15.,,31,,,,3 + (15 - 1)*2,tu_soan,u_n = u1 + (n-1)d
+math_nb_006,dai_so,cap_so_nhan,NB,numeric,Cho cấp số nhân có số hạng đầu u1 = 3 và công bội q = 3. Tính số hạng thứ 6.,,729,,,,3*3**(6 - 1),tu_soan,u_n = u1*q^(n-1)
+math_nb_007,dai_so,gia_tri_ham_so,NB,numeric,Cho hàm số f(x) = 3x^2 + 4x - 1. Tính f(3).,,38,,,,3*3**2 + 4*3 - 1,tu_soan,Thay số vào hàm
+math_th_008,dai_so,tich_phan,TH,numeric,Tính tích phân I = ∫ từ 1 đến 3 của (2x + 3) dx.,,14,,,,2*(3**2 - 1**2)/2 + 3*(3 - 1),tu_soan,"Nguyên hàm ax^2/2 + bx, hiệu hai cận"
+math_th_009,dai_so,phuong_trinh_mu,TH,numeric,Giải phương trình 2^(x + 2) = 32.,,3,,,,5 - 2,tu_soan,Đưa về cùng cơ số rồi cân bằng số mũ
+math_th_010,dai_so,to_hop,TH,numeric,Một lớp có 12 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?,,66,,,,factorial(12)/(factorial(2)*factorial(10)),tu_soan,"Tổ hợp chập k của n, không kể thứ tự"
+math_th_011,dai_so,chinh_hop,TH,numeric,Có bao nhiêu cách xếp 3 học sinh vào 3 vị trí khác nhau từ một nhóm 7 học sinh?,,210,,,,factorial(7)/factorial(4),tu_soan,"Chỉnh hợp chập k của n, CÓ kể thứ tự"
+math_th_012,dai_so,so_phuc,TH,numeric,Cho số phức z = (1 + 2i)(3 - 2i). Tìm phần thực của z.,,7,,,,1*3 + 2*2,tu_soan,(a+bi)(c-di) có phần thực ac + bd vì i^2 = -1
+math_th_013,dai_so,so_phuc,TH,numeric,Tính môđun của số phức z = 8 + 4i.,,8.94427,,,,sqrt(8**2 + 4**2),tu_soan,|z| = sqrt(a^2 + b^2)
+math_th_014,dai_so,tiem_can,TH,numeric,Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 4).,,2,,,,2/1,tu_soan,Tiệm cận ngang y = a/c khi bậc tử bằng bậc mẫu
+math_th_015,dai_so,xac_suat,TH,numeric,Gieo đồng thời hai con xúc xắc cân đối. Tính xác suất để tổng số chấm bằng 5.,,0.111111,,,,4/36,tu_soan,"Xác suất cổ điển, không gian mẫu 36"
+math_vd_016,dai_so,tiep_tuyen,VD,symbolic,Cho hàm số y = x^2 + 3x + 5. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm có hoành độ x = 1.,,,,5*x + 4,,5*(x - 1) + 9,tu_soan,y = y'(x0)(x - x0) + y(x0). Đáp số là BIỂU THỨC
+math_vd_017,dai_so,cuc_tri,VD,numeric,Cho hàm số y = x^3 - 6x^2 + 1. Tìm giá trị cực đại của hàm số.,,1,,,,0**3 - 6*0**2 + 1,tu_soan,y' = 3x^2 - 6ax = 0 tại x=0 và x=2a; x=0 là điểm cực đại
+math_vd_018,dai_so,gtln_gtnn,VD,numeric,Tìm giá trị lớn nhất của hàm số y = x^3 - 3x + 2 trên đoạn [0; 2].,,4,,,,2**3 - 3*2 + 2,tu_soan,So sánh giá trị tại hai đầu mút và các điểm tới hạn
+math_vd_019,hinh_hoc,the_tich_khoi_chop,VD,numeric,Cho khối chóp có đáy là hình vuông cạnh 4 và chiều cao bằng 9. Tính thể tích khối chóp.,,48,,,,1/3*4**2*9,tu_soan,V = (1/3)*S_đáy*h
+math_vd_020,hinh_hoc,the_tich_lang_tru,VD,numeric,"Cho khối lăng trụ đứng có đáy là tam giác vuông với hai cạnh góc vuông bằng 3 và 5, chiều cao lăng trụ bằng 10. Tính thể tích khối lăng trụ.",,75,,,,1/2*3*5*10,tu_soan,"V = S_đáy*h, đáy là tam giác vuông"
+math_vd_021,dai_so,xac_suat,VD,numeric,Một hộp có 6 viên bi đỏ và 3 viên bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất lấy được đúng 2 viên bi đỏ.,,0.535714,,,,15*3/84,tu_soan,"C(do,2)*C(xanh,1)/C(tổng,3). Bài này Router hay nhầm sang môn Lý"
+math_vd_022,dai_so,phuong_trinh_logarit,VD,numeric,Giải phương trình log cơ số 2 của x cộng log cơ số 2 của (x - 2) bằng 4. Tìm nghiệm của phương trình.,,5.12311,,,,(2 + sqrt(2**2 + 4*2**4))/2,tu_soan,x(x-2) = 2^4; điều kiện x > 2 nên loại nghiệm âm
+math_vdc_023,dai_so,bat_dang_thuc,VDC,numeric,Tìm giá trị nhỏ nhất của biểu thức f(x) = x + 16/x với x > 0.,,8,,,,2*sqrt(16),tu_soan,"Cauchy: x + k/x >= 2*sqrt(k), dấu bằng khi x = sqrt(k)"
+math_vdc_024,dai_so,xac_suat,VDC,numeric,Một nhóm có 6 nam và 5 nữ. Chọn ngẫu nhiên 3 người. Tính xác suất để trong nhóm được chọn có ít nhất một nữ.,,0.878788,,,,1 - 20/165,tu_soan,Dùng biến cố đối: 1 - P(toàn nam)
+math_nb_025,dai_so,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 2x^3 + 11x - 2 tại điểm x = 3.,,65,,,,3*2*3**2 + 11,tu_soan,"y' = 3ax^2 + b, thay x0"
+math_nb_026,dai_so,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 1 của (3x^2 + 4x) dx.,,3,,,,3*1**3/3 + 4*1**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"
+math_nb_027,dai_so,phuong_trinh_bac_hai,NB,numeric,Tìm nghiệm lớn nhất của phương trình x^2 - 9x + 14 = 0.,,7,,,,(9 + sqrt(9**2 - 4*14))/2,tu_soan,"Công thức nghiệm, lấy nghiệm lớn"
+math_nb_028,dai_so,logarit,NB,numeric,Tính giá trị của biểu thức log cơ số 3 của 27.,,3,,,,log(27)/log(3),tu_soan,log_a(a^k) = k
+math_nb_029,dai_so,cap_so_cong,NB,numeric,Cho cấp số cộng có số hạng đầu u1 = 5 và công sai d = 6. Tính số hạng thứ 12.,,71,,,,5 + (12 - 1)*6,tu_soan,u_n = u1 + (n-1)d
+math_nb_030,dai_so,cap_so_nhan,NB,numeric,Cho cấp số nhân có số hạng đầu u1 = 3 và công bội q = 3. Tính số hạng thứ 5.,,243,,,,3*3**(5 - 1),tu_soan,u_n = u1*q^(n-1)
+math_nb_031,dai_so,gia_tri_ham_so,NB,numeric,Cho hàm số f(x) = 2x^2 + 4x - 6. Tính f(2).,,10,,,,2*2**2 + 4*2 - 6,tu_soan,Thay số vào hàm
+math_th_032,dai_so,tich_phan,TH,numeric,Tính tích phân I = ∫ từ 1 đến 3 của (4x + 1) dx.,,18,,,,4*(3**2 - 1**2)/2 + 1*(3 - 1),tu_soan,"Nguyên hàm ax^2/2 + bx, hiệu hai cận"
+math_th_033,dai_so,phuong_trinh_mu,TH,numeric,Giải phương trình 3^(x + 1) = 81.,,3,,,,4 - 1,tu_soan,Đưa về cùng cơ số rồi cân bằng số mũ
+math_th_034,dai_so,to_hop,TH,numeric,Một lớp có 10 học sinh. Có bao nhiêu cách chọn ra 2 học sinh để trực nhật?,,45,,,,factorial(10)/(factorial(2)*factorial(8)),tu_soan,"Tổ hợp chập k của n, không kể thứ tự"
+math_th_035,dai_so,chinh_hop,TH,numeric,Có bao nhiêu cách xếp 2 học sinh vào 2 vị trí khác nhau từ một nhóm 8 học sinh?,,56,,,,factorial(8)/factorial(6),tu_soan,"Chỉnh hợp chập k của n, CÓ kể thứ tự"
+math_th_036,dai_so,so_phuc,TH,numeric,Cho số phức z = (2 + 3i)(4 - 2i). Tìm phần thực của z.,,14,,,,2*4 + 3*2,tu_soan,(a+bi)(c-di) có phần thực ac + bd vì i^2 = -1
+math_th_037,dai_so,so_phuc,TH,numeric,Tính môđun của số phức z = 6 + 4i.,,7.2111,,,,sqrt(6**2 + 4**2),tu_soan,|z| = sqrt(a^2 + b^2)
+math_th_038,dai_so,tiem_can,TH,numeric,Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 5)/(2x - 3).,,2,,,,4/2,tu_soan,Tiệm cận ngang y = a/c khi bậc tử bằng bậc mẫu
+math_th_039,dai_so,xac_suat,TH,numeric,Gieo đồng thời hai con xúc xắc cân đối. Tính xác suất để tổng số chấm bằng 8.,,0.138889,,,,5/36,tu_soan,"Xác suất cổ điển, không gian mẫu 36"
+math_vd_040,dai_so,tiep_tuyen,VD,symbolic,Cho hàm số y = 2x^2 + 2x + 5. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm có hoành độ x = 1.,,,,6*x + 3,,6*(x - 1) + 9,tu_soan,y = y'(x0)(x - x0) + y(x0). Đáp số là BIỂU THỨC
+math_vd_041,dai_so,cuc_tri,VD,numeric,Cho hàm số y = x^3 - 9x^2 + 5. Tìm giá trị cực đại của hàm số.,,5,,,,0**3 - 9*0**2 + 5,tu_soan,y' = 3x^2 - 6ax = 0 tại x=0 và x=2a; x=0 là điểm cực đại
+math_vd_042,dai_so,gtln_gtnn,VD,numeric,Tìm giá trị lớn nhất của hàm số y = x^3 - 3x + 5 trên đoạn [0; 2].,,7,,,,2**3 - 3*2 + 5,tu_soan,So sánh giá trị tại hai đầu mút và các điểm tới hạn
+math_vd_043,hinh_hoc,the_tich_khoi_chop,VD,numeric,Cho khối chóp có đáy là hình vuông cạnh 6 và chiều cao bằng 4. Tính thể tích khối chóp.,,48,,,,1/3*6**2*4,tu_soan,V = (1/3)*S_đáy*h
+math_vd_044,hinh_hoc,the_tich_lang_tru,VD,numeric,"Cho khối lăng trụ đứng có đáy là tam giác vuông với hai cạnh góc vuông bằng 4 và 5, chiều cao lăng trụ bằng 4. Tính thể tích khối lăng trụ.",,40,,,,1/2*4*5*4,tu_soan,"V = S_đáy*h, đáy là tam giác vuông"
+math_vd_045,dai_so,xac_suat,VD,numeric,Một hộp có 5 viên bi đỏ và 3 viên bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất lấy được đúng 2 viên bi đỏ.,,0.535714,,,,10*3/56,tu_soan,"C(do,2)*C(xanh,1)/C(tổng,3). Bài này Router hay nhầm sang môn Lý"
+math_vd_046,dai_so,phuong_trinh_logarit,VD,numeric,Giải phương trình log cơ số 2 của x cộng log cơ số 2 của (x - 3) bằng 4. Tìm nghiệm của phương trình.,,5.772,,,,(3 + sqrt(3**2 + 4*2**4))/2,tu_soan,x(x-3) = 2^4; điều kiện x > 3 nên loại nghiệm âm
+math_vdc_047,dai_so,bat_dang_thuc,VDC,numeric,Tìm giá trị nhỏ nhất của biểu thức f(x) = x + 4/x với x > 0.,,4,,,,2*sqrt(4),tu_soan,"Cauchy: x + k/x >= 2*sqrt(k), dấu bằng khi x = sqrt(k)"
+math_vdc_048,dai_so,xac_suat,VDC,numeric,Một nhóm có 7 nam và 4 nữ. Chọn ngẫu nhiên 3 người. Tính xác suất để trong nhóm được chọn có ít nhất một nữ.,,0.787879,,,,1 - 35/165,tu_soan,Dùng biến cố đối: 1 - P(toàn nam)
+math_nb_049,dai_so,dao_ham,NB,numeric,Tính đạo hàm của hàm số y = 4x^3 + 11x - 2 tại điểm x = 3.,,119,,,,3*4*3**2 + 11,tu_soan,"y' = 3ax^2 + b, thay x0"
+math_nb_050,dai_so,tich_phan,NB,numeric,Tính tích phân I = ∫ từ 0 đến 2 của (3x^2 + 2x) dx.,,12,,,,3*2**3/3 + 2*2**2/2,tu_soan,"Nguyên hàm ax^3/3 + bx^2/2, thay cận"

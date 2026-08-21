@@ -17,7 +17,6 @@ from sse_starlette.sse import EventSourceResponse
 
 from agents import manager, sinh_bai_tuong_tu
 from core import config, db
-from tools import units_tool
 
 router = APIRouter(prefix="/api")
 
@@ -33,7 +32,7 @@ class BaiTuongTuRequest(BaseModel):
     quả mà giao diện đang giữ. Nhờ vậy endpoint này trả về gần như tức thì.
     """
 
-    mon: str = "math"
+    mon: str = "dai_so"
     topic: str = ""
     cau_hoi_goc: str = ""
     muc: str = ""
@@ -49,7 +48,6 @@ async def health() -> dict[str, Any]:
         "sla_seconds": config.SLA_SECONDS,
         "tools": {
             "sympy": True,
-            "units": units_tool.available(),
         },
     }
 

@@ -1,4 +1,9 @@
-"""Bộ phân loại môn học PhoBERT — dùng lúc chạy thật.
+"""Bộ phân loại DẠNG BÀI Toán bằng PhoBERT — dùng lúc chạy thật.
+
+Hệ thống chỉ làm Toán THPT nên mô hình không còn phân loại môn nữa; nó nhận dạng
+bài (đạo hàm, tích phân, thể tích toạ độ...) và `agents/router.py` quy dạng đó về
+phân môn Đại số hay Hình học.
+
 
 Thiết kế theo ba nguyên tắc:
 
@@ -24,7 +29,14 @@ _khoa = threading.Lock()
 _da_nap = False
 _tok: Any = None
 _model: Any = None
-_nhan: list[str] = ["math", "physics", "chemistry"]
+# Chỉ là bản dự phòng khi `labels.json` thiếu. Danh sách THẬT luôn đọc từ file đó
+# lúc nạp mô hình, để nhãn không bao giờ lệch với trọng số đã huấn luyện.
+_nhan: list[str] = [
+    "dao_ham", "tich_phan", "gioi_han", "phuong_trinh", "tiep_tuyen",
+    "gtln", "gtnn", "so_diem_cuc_tri", "tiem_can_ngang", "tiem_can_dung",
+    "khac_dai_so",
+    "toa_do_khoang_cach", "toa_do_the_tich", "toa_do_kc_diem_mp", "khac_hinh_hoc",
+]
 
 
 def available() -> bool:

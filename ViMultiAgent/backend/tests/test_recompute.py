@@ -134,7 +134,7 @@ class TestPlannerGiuSoLieu:
     def test_bat_duoc_so_bi_mat(self):
         from agents.planner import _giu_nguyen_so_lieu
 
-        assert not _giu_nguyen_so_lieu("Cho 5,6 gam Fe và 3 mol O2", "Cho 5,6 gam Fe")
+        assert not _giu_nguyen_so_lieu("Cho hình chóp đáy 5,6 và cao 3", "Cho hình chóp đáy 5,6")
 
     def test_bat_duoc_so_bi_doi_gia_tri(self):
         from agents.planner import _giu_nguyen_so_lieu

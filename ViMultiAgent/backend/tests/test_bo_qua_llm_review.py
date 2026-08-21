@@ -24,7 +24,7 @@ from core.schemas import Plan, Solution, SolutionStep
 
 def _sol(dap_an: str = "0.1", expr: str = "n = 5.6/56", kq: str = "0.1") -> Solution:
     return Solution.model_construct(
-        steps=[SolutionStep(id=1, goal_vi="Tính số mol", expression=expr, result=kq)],
+        steps=[SolutionStep(id=1, goal_vi="Tính đạo hàm", expression=expr, result=kq)],
         final_answer=dap_an,
         confidence=0.8,
     )
@@ -32,10 +32,10 @@ def _sol(dap_an: str = "0.1", expr: str = "n = 5.6/56", kq: str = "0.1") -> Solu
 
 def _plan() -> Plan:
     return Plan(
-        subject="chemistry",
-        topic="so_mol",
-        normalized_question="Tính số mol của 5,6 gam Fe",
-        raw_question="Tính số mol của 5,6 gam Fe",
+        subject="dai_so",
+        topic="dao_ham",
+        normalized_question="Tính đạo hàm của y = x^2 tại x = 0,05",
+        raw_question="Tính đạo hàm của y = x^2 tại x = 0,05",
     )
 
 
@@ -53,7 +53,7 @@ class TestDiTat:
 
         monkeypatch.setattr(verify_agent, "run_structured", _khong_duoc_goi)
 
-        report, span = _chay(_plan(), _sol("0.1"), KetQua(gia_tri=0.1, unit="mol"))
+        report, span = _chay(_plan(), _sol("0.1"), KetQua(gia_tri=0.1, unit=""))
         assert report.verdict == "PASS"
         assert span is None, "đi tắt thì không có span vì không gọi model"
 
@@ -96,7 +96,7 @@ class TestKhongDuocDiTat:
             return None, None
 
         monkeypatch.setattr(verify_agent, "run_structured", _gia)
-        report, _ = _chay(_plan(), _sol("0.1"), KetQua(gia_tri=99.0, unit="mol"))
+        report, _ = _chay(_plan(), _sol("0.1"), KetQua(gia_tri=99.0, unit=""))
         assert goi["n"] == 1
         assert report.verdict == "FAIL"
 
@@ -110,7 +110,7 @@ class TestKhongDuocDiTat:
             return None, None
 
         monkeypatch.setattr(verify_agent, "run_structured", _gia)
-        _chay(_plan(), _sol("0.1"), KetQua(gia_tri=0.1, unit="mol"))
+        _chay(_plan(), _sol("0.1"), KetQua(gia_tri=0.1, unit=""))
         assert goi["n"] == 1
 
 

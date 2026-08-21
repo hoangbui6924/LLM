@@ -1,117 +1,114 @@
 question,label,source
-Một vật dao động điều hoà có phương trình x = 4cos(10t). Tính gia tốc cực đại,physics,seed
-Một vật khối lượng 5 kg chịu tác dụng lực 10 N. Tính gia tốc,physics,template
-"Một vật rơi tự do từ độ cao 20 m. Tính thời gian rơi, lấy g = 10 m/s2",physics,template
-Xác định toạ độ đỉnh của parabol y = x^2 - 4x + 3,math,seed
-Một vật khối lượng 4 kg chịu tác dụng lực 30 N. Tính gia tốc,physics,template
-Một vật khối lượng 4 kg chịu tác dụng lực 10 N. Tính gia tốc,physics,template
-Tính nồng độ phần trăm của dung dịch chứa 20 gam muối trong 180 gam nước,chemistry,seed
-Tính tổng các nghiệm của phương trình x^2 - 7x + 12 = 0,math,seed
-Cho số phức z = 2 + 2i. Tính môđun của z,math,template
-Cho số phức z = 2 + 5i. Tính môđun của z,math,template
-"Một vật rơi tự do từ độ cao 80 m. Tính thời gian rơi, lấy g = 10 m/s2",physics,template
-"Tính khối lượng kết tủa khi cho BaCl2 dư vào 100 ml dung dịch Na2SO4 0,2 M",chemistry,seed
-"Tính thế năng trọng trường của vật 2 kg ở độ cao 10 m, lấy g = 10 m/s2",physics,seed
-Cho số phức z = 3 + 2i. Tính phần thực của z,math,template
-Cho số phức z = 1 + 4i. Tính số phức liên hợp của z,math,template
-Một máy có công suất 500 W hoạt động trong 2 phút. Tính công thực hiện,physics,seed
-"Cho 5,4 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-"Cho 5,4 gam Fe tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Cho 13 gam Fe tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn,chemistry,template
-"Cho 2,4 gam Mg tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Một vật khối lượng 10 kg chịu tác dụng lực 10 N. Tính gia tốc,physics,template
-"Tính khối lượng muối thu được khi cho 4,6 gam Na tác dụng hết với khí Cl2",chemistry,seed
-Giải bất phương trình 2x - 7 > 3,math,seed
-Tính khoảng cách từ điểm M(1; 2) đến đường thẳng 3x + 4y - 5 = 0,math,seed
-Tính đạo hàm của hàm hợp y = (2x + 1)^4,math,seed
-"Cho 5,4 gam Mg tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Tính chu kỳ của sóng có tần số 200 Hz,physics,seed
-"Cho 6,5 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Cho số phức z = 3 + 2i. Tính số phức liên hợp của z,math,template
-"Cho 2,4 gam Zn tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Cân bằng phương trình phản ứng CH4 + O2 tạo CO2 và H2O,chemistry,template
-Cho số phức z = 3 + 5i. Tính phần thực của z,math,template
-Tính điện dung tương đương của hai tụ 4 microF và 6 microF mắc song song,physics,seed
-"Tính pH của dung dịch HCl nồng độ 0,01 M",chemistry,seed
-"Hai vật va chạm mềm, tính vận tốc sau va chạm theo định luật bảo toàn động lượng",physics,seed
-Cho 13 gam Mg tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn,chemistry,template
-Viết công thức cấu tạo của các đồng phân ứng với công thức C4H10,chemistry,seed
-Cho số phức z = 1 + 5i. Tính môđun của z,math,template
-"Một vật rơi tự do từ độ cao 80 m. Tính vận tốc khi chạm đất, lấy g = 10 m/s2",physics,template
-Tính điện năng tiêu thụ của bóng đèn 60 W dùng trong 5 giờ,physics,seed
-Cho số phức z = 2 + 4i. Tính số phức liên hợp của z,math,template
-Cho số phức z = 3 + 4i. Tính phần thực của z,math,template
-Tính tích phân của x^2 từ 0 đến 3,math,seed
-Cho số phức z = 1 + 2i. Tính môđun của z,math,template
-"Cho 5,4 gam Zn tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Cho số phức z = 1 + 2i. Tính số phức liên hợp của z,math,template
-"Cho 6,5 gam Zn tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-"Một vật rơi tự do từ độ cao 45 m. Tính thời gian rơi, lấy g = 10 m/s2",physics,template
-Hai điện trở 6 ôm và 3 ôm mắc song song. Tính điện trở tương đương,physics,seed
-Cho số phức z = 2 + 4i. Tính môđun của z,math,template
-Tính nồng độ mol của ion H+ trong dung dịch có pH bằng 3,chemistry,seed
-Cho số phức z = 3 + 5i. Tính số phức liên hợp của z,math,template
-Một vật khối lượng 5 kg chịu tác dụng lực 50 N. Tính gia tốc,physics,template
-Cho 13 gam Zn tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn,chemistry,template
-Cho số phức z = 3 + 5i. Tính môđun của z,math,template
-Cho số phức z = 2 + 4i. Tính phần thực của z,math,template
-Một vật khối lượng 10 kg chịu tác dụng lực 30 N. Tính gia tốc,physics,template
-Cho số phức z = 3 + 4i. Tính môđun của z,math,template
-Cho số phức z = 1 + 2i. Tính phần thực của z,math,template
-Xác định chất kết tủa khi trộn dung dịch Na2CO3 với dung dịch CaCl2,chemistry,seed
-Cho số phức z = 3 + 4i. Tính số phức liên hợp của z,math,template
-Cho số phức z = 1 + 5i. Tính phần thực của z,math,template
-"Cho 2,4 gam Fe tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Một vật khối lượng 10 kg chịu tác dụng lực 50 N. Tính gia tốc,physics,template
-Cho số phức z = 1 + 4i. Tính phần thực của z,math,template
-"Một vật rơi tự do từ độ cao 45 m. Tính vận tốc khi chạm đất, lấy g = 10 m/s2",physics,template
-Một vật khối lượng 2 kg chịu tác dụng lực 50 N. Tính gia tốc,physics,template
-Tìm phần thực và phần ảo của số phức z = (1 + i)^2,math,seed
-"Một vật rơi tự do từ độ cao 20 m. Tính vận tốc khi chạm đất, lấy g = 10 m/s2",physics,template
-Một vật khối lượng 10 kg chịu tác dụng lực 20 N. Tính gia tốc,physics,template
-Tính thể tích khí CO2 sinh ra khi cho 10 gam CaCO3 tác dụng hết với HCl dư,chemistry,seed
-Một vật khối lượng 4 kg chịu tác dụng lực 20 N. Tính gia tốc,physics,template
-Tìm điểm cực trị của hàm số y = x^3 - 3x^2 + 1,math,seed
-Cho số phức z = 2 + 2i. Tính số phức liên hợp của z,math,template
-"Cho tam giác ABC vuông tại A, AB = 3, AC = 4. Tính độ dài cạnh BC",math,seed
-Cho số phức z = 3 + 2i. Tính môđun của z,math,template
-Xác định chất oxi hoá và chất khử trong phản ứng Fe + CuSO4,chemistry,seed
-"Một vật rơi tự do từ độ cao 125 m. Tính thời gian rơi, lấy g = 10 m/s2",physics,template
-Tính số cách chọn 3 học sinh từ một nhóm 10 học sinh,math,seed
-Cân bằng phương trình phản ứng Al + HCl tạo AlCl3 và H2,chemistry,template
-"Cho cấp số nhân có số hạng đầu bằng 2, công bội bằng 3. Tính tổng 5 số hạng đầu",math,seed
-"Tính suất điện động cảm ứng khi từ thông biến thiên 0,04 Wb trong 0,2 s",physics,seed
-Một vật khối lượng 5 kg chịu tác dụng lực 20 N. Tính gia tốc,physics,template
-"Cho 2,4 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Một vật khối lượng 2 kg chịu tác dụng lực 20 N. Tính gia tốc,physics,template
-Cho số phức z = 2 + 2i. Tính phần thực của z,math,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x - 1 trên đoạn [0; 3],math,seed
-"Một vật rơi tự do từ độ cao 125 m. Tính vận tốc khi chạm đất, lấy g = 10 m/s2",physics,template
-Cho số phức z = 1 + 5i. Tính số phức liên hợp của z,math,template
-Xác định số oxi hoá của lưu huỳnh trong H2SO4,chemistry,seed
-Tính đạo hàm của hàm số y = x^3 - 3x^2 + 2x tại điểm x = 1,math,seed
-Tính khối lượng mol của hợp chất Ca(OH)2,chemistry,seed
-Vật ném ngang từ độ cao 20 m với vận tốc 10 m/s. Tính tầm ném xa,physics,seed
-Một vật khối lượng 5 kg chịu tác dụng lực 30 N. Tính gia tốc,physics,template
-Cho số phức z = 2 + 5i. Tính số phức liên hợp của z,math,template
-Tính diện tích hình phẳng giới hạn bởi đồ thị y = x^2 và trục hoành từ x = 0 đến x = 2,math,seed
-Một vật khối lượng 2 kg chịu tác dụng lực 10 N. Tính gia tốc,physics,template
-Một vật khối lượng 2 kg chịu tác dụng lực 30 N. Tính gia tốc,physics,template
-Tìm nguyên hàm của hàm số f(x) = 2x + cos(x),math,seed
-"Cho 6,5 gam Fe tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Tính thành phần phần trăm khối lượng của oxi trong hợp chất H2O,chemistry,seed
-Cho glucozơ tác dụng với dung dịch AgNO3 trong NH3. Nêu hiện tượng,chemistry,seed
-"Cho 6,5 gam Mg tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,template
-Cho số phức z = 1 + 4i. Tính môđun của z,math,template
-Nhiệt lượng cần cung cấp để đun 2 kg nước từ 20 độ C lên 100 độ C là bao nhiêu,physics,seed
-Cho số phức z = 2 + 5i. Tính phần thực của z,math,template
-Cân bằng phương trình phản ứng Na + H2O tạo NaOH và H2,chemistry,template
-Tìm giá trị nhỏ nhất của biểu thức x^2 + 4x + 7,math,seed
-"Một vật chuyển động biến đổi đều từ nghỉ, sau 5 s đạt 20 m/s. Tính gia tốc",physics,seed
-Cân bằng phương trình phản ứng Fe + O2 tạo Fe3O4,chemistry,template
-Cho 13 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn,chemistry,template
-Xác định nguyên tố có cấu hình electron 1s2 2s2 2p6 3s1,chemistry,seed
-Cho hai vectơ a = (1; 2) và b = (3; -1). Tính tích vô hướng của chúng,math,seed
-Một vật khối lượng 4 kg chịu tác dụng lực 50 N. Tính gia tốc,physics,template
-Tính năng lượng của photon có bước sóng 500 nm,physics,seed
-Tính hiệu suất phản ứng khi thu được 8 gam sản phẩm so với lý thuyết 10 gam,chemistry,seed
+Hàm số y = x^3 - 3x^2 + 2 có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; 3) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,seed
+Tìm giá trị nhỏ nhất của biểu thức x^2 - 6x + 11,gtnn,template
+Tính đạo hàm của hàm số y = tan(x),dao_ham,template
+Cho hai vectơ a = (3; -1) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = cos(3x),dao_ham,template
+Cho hai vectơ a = (3; 2) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hai vectơ a = (1; -1) và b = (4; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tính xác suất được bi đỏ khi gieo một con xúc xắc,khac_dai_so,template
+Tìm nguyên hàm của hàm số f(x) = 2e^(2x),tich_phan,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 3),tiem_can_ngang,seed
+Giải bất phương trình 2x - 7 > 3,phuong_trinh,template
+Tìm giá trị lớn nhất của biểu thức -x^2 + 2x + 8,gtln,template
+Tìm nguyên hàm của hàm số f(x) = cos(x),tich_phan,template
+Tìm giá trị nhỏ nhất của biểu thức x + 25/x với x > 0,gtnn,template
+Tìm giá trị lớn nhất của biểu thức 10 - x^2 + 4x,gtln,template
+Tìm giá trị nhỏ nhất của biểu thức x^2 - 8x + 20,gtnn,template
+Hàm số y = x^4 - 18x^2 có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Hàm số y = 3x^4 - 4x^3 có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Tìm nguyên hàm của hàm số f(x) = e^x + 1,tich_phan,template
+Giải bất phương trình 5 - 2x < 1,phuong_trinh,template
+Tính đạo hàm của hàm số y = ln(3x),dao_ham,template
+Cho hai vectơ a = (1; 2) và b = (4; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Hàm số y = x^3 + x^2 - x có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Tính xác suất được mặt chẵn khi rút ngẫu nhiên một lá bài,khac_dai_so,template
+Tìm giá trị nhỏ nhất của biểu thức x^2 + 10x + 30,gtnn,template
+Hàm số y = x^4 + 2x^2 có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Giải bất phương trình x^2 - 5x + 6 > 0,phuong_trinh,template
+Giải bất phương trình x^2 - 9 <= 0,phuong_trinh,template
+Tìm giá trị lớn nhất của biểu thức -x^2 - 6x + 2,gtln,template
+Hàm số y = 3x^4 - 4x^3 có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Giải bất phương trình 4x - 3 >= 9,phuong_trinh,template
+Tìm giá trị lớn nhất của biểu thức 6 - (x - 2)^2,gtln,template
+Tìm nguyên hàm của hàm số f(x) = sin(2x),tich_phan,template
+Tính khoảng cách từ điểm M(1; 2) đến đường thẳng 3x + 4y - 5 = 0,toa_do_khoang_cach,seed
+Hàm số y = 2x^3 - 6x có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Cho hai vectơ a = (2; -1) và b = (4; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tìm nguyên hàm của hàm số f(x) = 1/(x^2),tich_phan,template
+Tính giới hạn của (x^2 - 1)/(x - 1) khi x tiến tới 1,gioi_han,seed
+Cho dãy số un = 3n + 1. Tính u5,khac_dai_so,seed
+Hàm số y = x^4 - 18x^2 có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Tìm nguyên hàm của hàm số f(x) = 1/x,tich_phan,template
+Tính xác suất được số nguyên tố khi rút ngẫu nhiên một lá bài,khac_dai_so,template
+Cho hai vectơ a = (1; 2) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hình lập phương cạnh 3. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của biểu thức x^2 + 4x + 7,gtnn,template
+Tìm giá trị nhỏ nhất của biểu thức x + 9/x với x > 0,gtnn,template
+Hàm số y = x^3 - 3x^2 + 2 có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Tìm nguyên hàm của hàm số f(x) = 3x^2,tich_phan,template
+Tính xác suất được mặt chẵn khi bốc ngẫu nhiên một viên bi,khac_dai_so,template
+Tìm giá trị nhỏ nhất của biểu thức x^2 + 2x + 5,gtnn,template
+Cho hai vectơ a = (2; -1) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = sin(2x),dao_ham,template
+Cho hai vectơ a = (1; 2) và b = (3; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Giải bất phương trình 3x + 1 <= 10,phuong_trinh,template
+Tính xác suất được số nguyên tố khi gieo một con xúc xắc,khac_dai_so,template
+Hàm số y = 3x^4 - 4x^3 có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Hàm số y = x^3 + x^2 - x có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Tìm nguyên hàm của hàm số f(x) = 5x^4,tich_phan,template
+Tính đạo hàm của hàm số y = x*cos(x),dao_ham,template
+Hàm số y = 2x^3 - 6x có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Hàm số y = x^4 - 18x^2 có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Cho hai vectơ a = (2; 2) và b = (4; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Giải bất phương trình x^2 - 4 < 0,phuong_trinh,template
+Tìm giá trị lớn nhất của biểu thức -2x^2 + 8x,gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^2 + 3x tại điểm có hoành độ x = 1,tiep_tuyen,seed
+Cho hai vectơ a = (1; 2) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hình lập phương cạnh 6. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = sqrt(x + 1),dao_ham,template
+Cho hình lập phương cạnh 7. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Hàm số y = x^3 - 12x có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Cho hai vectơ a = (2; -1) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Hàm số y = x^3 - 12x có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Tính xác suất được mặt chẵn khi gieo một con xúc xắc,khac_dai_so,template
+Tính xác suất được bi đỏ khi bốc ngẫu nhiên một viên bi,khac_dai_so,template
+Tìm phần thực và phần ảo của số phức z = (1 + i)^2,khac_dai_so,seed
+Cho hai vectơ a = (3; -1) và b = (3; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = x^2*ln(x),dao_ham,template
+Tìm nguyên hàm của hàm số f(x) = x^2 + 2x,tich_phan,template
+Hàm số y = x^3 + x^2 - x có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = (3x - 2)^4,dao_ham,template
+Hàm số y = x^3 - 3x^2 + 2 có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Hàm số y = x^3 - 12x có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Tính xác suất được bi đỏ khi rút ngẫu nhiên một lá bài,khac_dai_so,template
+Cho hai vectơ a = (1; -1) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hai vectơ a = (2; 2) và b = (4; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hai vectơ a = (3; 2) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tìm giá trị lớn nhất của biểu thức -x^2 + 4x + 1,gtln,template
+Cho hình lập phương cạnh 5. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Cho hình lập phương cạnh 2. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (x + 2)/(x - 5),tiem_can_dung,seed
+Giải bất phương trình 7x - 2 > 12,phuong_trinh,template
+Cho hai vectơ a = (2; 2) và b = (3; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hai vectơ a = (2; -1) và b = (3; 2). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Cho hai vectơ a = (3; -1) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Hàm số y = x^4 - 5x^2 + 4 có bao nhiêu điểm cực đại,so_diem_cuc_tri,template
+Hàm số y = x^4 - 5x^2 + 4 có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = e^(2x),dao_ham,template
+Hàm số y = x^4 + 2x^2 có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Tính xác suất được số nguyên tố khi bốc ngẫu nhiên một viên bi,khac_dai_so,template
+Cho hình lập phương cạnh 4. Tính thể tích khối lập phương đó,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của biểu thức 2x + 8/x với x > 0,gtnn,template
+Tính đạo hàm của hàm số y = e^x*sin(x),dao_ham,template
+Tìm nguyên hàm của hàm số f(x) = 4x^3 - 2x,tich_phan,template
+Cho hai vectơ a = (1; -1) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = (x + 1)^5,dao_ham,template
+Hàm số y = 2x^3 - 6x có bao nhiêu điểm cực trị,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = ln(x^2 + 1),dao_ham,template
+Giải bất phương trình x^2 + x - 2 > 0,phuong_trinh,template
+Hàm số y = x^4 - 5x^2 + 4 có bao nhiêu điểm cực tiểu,so_diem_cuc_tri,template
+Cho hai vectơ a = (2; 2) và b = (3; -1). Tính tích vô hướng của chúng,khac_hinh_hoc,template
+Giải bất phương trình x^2 - 16 < 0,phuong_trinh,template
+Hàm số y = x^4 + 2x^2 có bao nhiêu điểm cực đại,so_diem_cuc_tri,template

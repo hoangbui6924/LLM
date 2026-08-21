@@ -80,7 +80,7 @@ NEN = "#ffffff"       # nền trắng để dán vào Word
 TEN_DON = "Một tác tử"
 TEN_DA = "Đa tác tử"
 
-TEN_MON = {"math": "Toán", "physics": "Vật lý", "chemistry": "Hoá học"}
+TEN_MON = {"dai_so": "Đại số", "hinh_hoc": "Hình học"}
 TEN_MUC = {"NB": "Nhận biết", "TH": "Thông hiểu", "VD": "Vận dụng", "VDC": "Vận dụng cao"}
 MOC_DE_BAI = 45.0
 
@@ -366,7 +366,7 @@ def hinh_phan_ra(don: list[dict], da: list[dict], ra: Path) -> Path:
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.5, 5.4))
 
     for ax, cot, khoa, ten, tieu_de in (
-        (ax1, "subject", ["math", "physics", "chemistry"], TEN_MON, "Theo môn học"),
+        (ax1, "subject", ["dai_so", "hinh_hoc"], TEN_MON, "Theo phân môn"),
         (ax2, "level", ["NB", "TH", "VD", "VDC"], TEN_MUC, "Theo mức độ nhận thức"),
     ):
         v_don, v_da, dem = _theo_nhom(don, da, cot, khoa)
@@ -504,7 +504,7 @@ def xuat_md(cs, mn, don, da, lech, ten_don, ten_da, hinh, ra: Path) -> Path:
     L.append("## Khoảng cách nở ra ở đâu\n")
     L.append(f"![Phân rã]({hinh[3].name})\n")
     for cot, khoa, ten, tieu in (
-        ("subject", ["math", "physics", "chemistry"], TEN_MON, "Môn"),
+        ("subject", ["dai_so", "hinh_hoc"], TEN_MON, "Phân môn"),
         ("level", ["NB", "TH", "VD", "VDC"], TEN_MUC, "Mức độ"),
     ):
         v_don, v_da, dem = _theo_nhom(don, da, cot, khoa)

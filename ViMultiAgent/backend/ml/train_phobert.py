@@ -1,4 +1,4 @@
-"""Fine-tune PhoBERT làm bộ phân loại môn học.
+"""Fine-tune PhoBERT làm bộ phân loại DẠNG BÀI Toán THPT.
 
 Chạy:  python ml/train_phobert.py
        python ml/train_phobert.py --epochs 5 --batch 16
@@ -10,7 +10,7 @@ biểu diễn ngôn ngữ, còn tầng phân loại và toàn bộ trọng số 
 Vòng lặp huấn luyện viết tay thay vì dùng `Trainer` của transformers — ít dòng
 hơn ở quy mô này, và quan trọng hơn là nhìn thấy rõ từng bước để viết vào báo cáo.
 
-Chạy trên CPU: torch bản CPU đủ nhanh cho 535 câu (vài phút), và tránh hẳn việc
+Chạy trên CPU: torch bản CPU đủ nhanh cho ~600 câu (vài phút), và tránh hẳn việc
 tranh 6 GB VRAM với Ollama đang giữ model qwen3.
 """
 
@@ -31,13 +31,13 @@ if hasattr(sys.stdout, "reconfigure"):
 import torch  # noqa: E402
 from torch.utils.data import DataLoader, Dataset  # noqa: E402
 
+from ml.seed_questions import NHAN  # noqa: E402
 from ml.segment import tach_nhieu  # noqa: E402
 
 MODEL_NEN = "vinai/phobert-base"
 DATA_DIR = Path(__file__).resolve().parent / "data"
 OUT_DIR = Path(__file__).resolve().parent / "phobert_router"
 
-NHAN = ["math", "physics", "chemistry"]
 NHAN2ID = {n: i for i, n in enumerate(NHAN)}
 
 
@@ -86,6 +86,7 @@ def main() -> int:
     ap.add_argument("--epochs", type=int, default=4)
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--lr", type=float, default=2e-5)
+    ap.add_argument("--wd", type=float, default=0.01, help="weight decay, chống học vẹt")
     ap.add_argument("--max-len", type=int, default=96)
     args = ap.parse_args()
 
@@ -120,7 +121,10 @@ def main() -> int:
     dl_val = DataLoader(tap["val"][0], batch_size=args.batch)
     dl_test = DataLoader(tap["test"][0], batch_size=args.batch)
 
-    opt = torch.optim.AdamW(model.parameters(), lr=args.lr)
+    # Weight decay chống học vẹt. ĐO ĐƯỢC khi chưa có: train loss chạm 0,03 ngay
+    # epoch 6 rồi tụt còn 0,0216 ở epoch 12, trong khi val_acc đứng ở 0,51 — mô
+    # hình thuộc lòng 35 khuôn mẫu chứ không học đặc trưng của dạng bài.
+    opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.wd)
     tong_buoc = args.epochs * len(dl_train)
     sched = torch.optim.lr_scheduler.LinearLR(
         opt, start_factor=1.0, end_factor=0.1, total_iters=tong_buoc
@@ -129,6 +133,16 @@ def main() -> int:
     print(f"\nHuấn luyện {args.epochs} epoch, {len(dl_train)} bước mỗi epoch")
     t0 = time.perf_counter()
     lich_su = []
+
+    # Giữ bản có val_acc CAO NHẤT, không phải bản của epoch cuối.
+    #
+    # Vì sao: dữ liệu chỉ có 66 câu viết tay trên 15 nhãn, phần còn lại sinh từ
+    # 35 khuôn. Mô hình chạm đáy loss rất sớm rồi từ đó chỉ thuộc kỹ thêm khuôn.
+    # Lấy epoch cuối là lấy đúng bản học vẹt nhất. Đo được ở lần train 12 epoch:
+    # val_acc lên xuống 0,4602 -> 0,4779 -> 0,4956 -> 0,5133, còn `hard` thì TỤT
+    # từ 0,80 xuống 0,60 so với bản 4 epoch.
+    tot_nhat = {"acc": -1.0, "epoch": 0, "trang_thai": None}
+
     for ep in range(1, args.epochs + 1):
         model.train()
         tong_loss = 0.0
@@ -144,9 +158,30 @@ def main() -> int:
         loss_tb = tong_loss / len(dl_train)
         acc_val, _ = danh_gia(model, dl_val, thiet_bi)
         lich_su.append({"epoch": ep, "loss": loss_tb, "val_acc": acc_val})
-        print(f"  epoch {ep}  loss {loss_tb:.4f}  val_acc {acc_val:.4f}")
+
+        dau = ""
+        if acc_val > tot_nhat["acc"]:
+            tot_nhat = {
+                "acc": acc_val,
+                "epoch": ep,
+                # Chép sang CPU, nếu không thì bản giữ lại vẫn trỏ vào tensor bị
+                # ghi đè ở epoch sau.
+                "trang_thai": {
+                    k: v.detach().cpu().clone() for k, v in model.state_dict().items()
+                },
+            }
+            dau = "  <- tốt nhất"
+        print(f"  epoch {ep}  loss {loss_tb:.4f}  val_acc {acc_val:.4f}{dau}")
 
     thoi_gian = time.perf_counter() - t0
+
+    if tot_nhat["trang_thai"] is not None and tot_nhat["epoch"] != args.epochs:
+        print(
+            f"\nLấy lại epoch {tot_nhat['epoch']} (val_acc {tot_nhat['acc']:.4f}) "
+            f"thay vì epoch cuối {args.epochs}."
+        )
+        model.load_state_dict(tot_nhat["trang_thai"])
+
     acc_test, du_doan = danh_gia(model, dl_test, thiet_bi)
     print(f"\nHuấn luyện xong trong {thoi_gian:.0f} giây")
     print(f"Độ chính xác trên test: {acc_test:.4f}")
@@ -164,8 +199,17 @@ def main() -> int:
     model.save_pretrained(OUT_DIR)
     tok.save_pretrained(OUT_DIR)
     (OUT_DIR / "labels.json").write_text(
-        json.dumps({"labels": NHAN, "history": lich_su, "test_acc": acc_test},
-                   ensure_ascii=False, indent=2),
+        json.dumps(
+            {
+                "labels": NHAN,
+                "history": lich_su,
+                "test_acc": acc_test,
+                "epoch_da_chon": tot_nhat["epoch"],
+                "val_acc_tot_nhat": tot_nhat["acc"],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
     print(f"\nĐã lưu vào {OUT_DIR}")

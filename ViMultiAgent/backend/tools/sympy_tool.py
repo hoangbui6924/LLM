@@ -41,6 +41,66 @@ _ALIASES = {
 }
 
 
+# Ký hiệu tổ hợp - chỉnh hợp của sách giáo khoa Việt Nam. Chỉ nhận khi CẢ HAI
+# tham số là số nguyên: `C(5,2)` là tổ hợp, còn `A(1,2)` trong bài toạ độ thì
+# viết bằng dấu chấm phẩy `A(1;2)` nên không dính. Giới hạn vào số nguyên khiến
+# khả năng nhận nhầm gần như bằng không.
+_TO_HOP = re.compile(r"\bC\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)")
+_CHINH_HOP = re.compile(r"\bA\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)")
+
+
+def dau_phay_thap_phan(s: str) -> str:
+    """Đổi dấu phẩy thập phân kiểu Việt Nam (`0,5`) thành dấu chấm (`0.5`).
+
+    KHÔNG đụng vào dấu phẩy ngăn tham số trong lời gọi hàm.
+
+    Vì sao cần cẩn thận đến vậy — đây là lỗi đã đo được, và nó âm thầm:
+
+        `C(5,2)/C(8,2)`   model viết, ĐÚNG
+        `C(5.2)/C(8.2)`   đổi dấu phẩy vì nó nằm giữa hai chữ số
+        `C*5.2/C*8.2`     SymPy bật nhân ngầm, `C` thành ký hiệu tự do
+        `((C*5.2)/C)*8.2` nhân chia cùng độ ưu tiên, tính trái sang phải
+        `42.64`           chữ `C` triệt tiêu
+
+    SymPy không hề báo lỗi, nó trả về một con số trông rất hợp lý. Trọng tài số
+    học tin ngay và ghi đè lên `0.357143` — vốn là đáp án ĐÚNG của bài xác suất.
+
+    Bản cũ tưởng đã chặn bằng cách chỉ đổi dấu phẩy nằm giữa hai chữ số, nhưng
+    `C(5,2)` rơi đúng vào khuôn đó. Muốn chặn thật thì phải biết dấu phẩy đang
+    nằm trong ngoặc của một lời gọi hàm hay không — tức phải duyệt có trạng thái,
+    biểu thức chính quy không đủ sức.
+    """
+    ra: list[str] = []
+    trong_ham: list[bool] = []  # ngăn xếp: ngoặc hiện tại có phải lời gọi hàm không
+
+    for i, ch in enumerate(s):
+        if ch == "(":
+            j = i - 1
+            while j >= 0 and s[j].isspace():
+                j -= 1
+            # Ngoặc đi ngay sau một CHỮ CÁI mới là lời gọi hàm. Sau chữ số thì đó
+            # là phép nhân ngầm: `2(x+1)`.
+            trong_ham.append(j >= 0 and (s[j].isalpha() or s[j] == "_"))
+            ra.append(ch)
+        elif ch == ")":
+            if trong_ham:
+                trong_ham.pop()
+            ra.append(ch)
+        elif ch == "," and trong_ham and trong_ham[-1]:
+            ra.append(ch)  # dấu phẩy ngăn tham số — giữ nguyên
+        elif (
+            ch == ","
+            and 0 < i < len(s) - 1
+            and s[i - 1].isdigit()
+            and s[i + 1].isdigit()
+        ):
+            ra.append(".")
+        else:
+            ra.append(ch)
+
+    return "".join(ra)
+
+
 def _preprocess(s: str) -> str:
     s = s.strip()
     # bỏ vỏ LaTeX thường gặp
@@ -50,6 +110,11 @@ def _preprocess(s: str) -> str:
     s = re.sub(r"\\(cdot|times)", "*", s)
     s = s.replace("\\", "")
     s = s.replace("{", "(").replace("}", ")")
+    # Dịch ký hiệu tổ hợp - chỉnh hợp TRƯỚC khi SymPy nhìn thấy. Không dịch thì
+    # nhân ngầm xé `C(5,2)` ra và cho kết quả vô nghĩa. Dịch rồi thì trọng tài
+    # kiểm được luôn mọi bài tổ hợp - xác suất, thay vì bỏ qua.
+    s = _TO_HOP.sub(r"binomial(\1,\2)", s)
+    s = _CHINH_HOP.sub(r"(factorial(\1)/factorial((\1)-(\2)))", s)
     for k, v in _ALIASES.items():
         s = re.sub(rf"\b{re.escape(k)}\b", v, s)
     return s

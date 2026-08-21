@@ -42,9 +42,13 @@ DUNG_SAI = 0.01
 _TEX_THAP_PHAN = re.compile(r"\{\s*([.,])\s*\}")
 # Khoảng trắng LaTeX: \, \; \! \  — vô nghĩa về mặt số học.
 _TEX_KHOANG = re.compile(r"\\[,;!:> ]")
-# Dấu phẩy thập phân kiểu Việt Nam: chỉ đổi khi nằm GIỮA hai chữ số, để không phá
-# dấu phẩy ngăn cách tham số hàm.
-_PHAY_THAP_PHAN = re.compile(r"(?<=\d),(?=\d)")
+# Dấu phẩy thập phân: dùng bộ đổi CÓ TRẠNG THÁI của `sympy_tool`, không dùng biểu
+# thức chính quy.
+#
+# Bản cũ ở đây là `(?<=\d),(?=\d)` với chú thích "chỉ đổi khi nằm giữa hai chữ số
+# để không phá dấu phẩy ngăn tham số hàm" — nhưng `C(5,2)` rơi đúng vào khuôn đó,
+# và hậu quả là trọng tài ghi đè 0,357143 (ĐÚNG) thành 42,64. Xem ghi chú đầy đủ
+# ở `sympy_tool.dau_phay_thap_phan`.
 
 
 class SuaChua(BaseModel):
@@ -66,7 +70,7 @@ def _chuan_hoa(s: str) -> str:
     s = s or ""
     s = _TEX_THAP_PHAN.sub(r"\1", s)
     s = _TEX_KHOANG.sub(" ", s)
-    s = _PHAY_THAP_PHAN.sub(".", s)
+    s = sympy_tool.dau_phay_thap_phan(s)
     return s.strip()
 
 
@@ -99,6 +103,37 @@ def _lech_qua_nguong(a: float, b: float) -> bool:
     return abs(a - b) / thang > DUNG_SAI
 
 
+# Tên đứng ngay trước dấu mở ngoặc, tức một lời gọi hàm.
+_LOI_GOI_HAM = re.compile(r"\b([A-Za-z_][A-Za-z0-9_]*)\s*\(")
+
+# Hàm SymPy hiểu được. Ngoài danh sách này thì trọng tài không có căn cứ.
+_HAM_BIET = frozenset(
+    {
+        "sqrt", "log", "ln", "exp", "abs", "Abs", "sin", "cos", "tan", "cot",
+        "asin", "acos", "atan", "sinh", "cosh", "tanh", "floor", "ceiling",
+        "binomial", "factorial", "gcd", "lcm", "Max", "Min", "root", "sign",
+    }
+)
+
+
+def _co_ham_la(bieu_thuc: str) -> bool:
+    """Biểu thức có lời gọi hàm mà SymPy không hiểu hay không.
+
+    Đây là lưới an toàn thứ hai, sau khi `dau_phay_thap_phan` đã hết phá cú pháp.
+
+    Vì sao vẫn cần: nhân ngầm của SymPy biến MỌI tên lạ thành ký hiệu tự do rồi
+    nhân với phần trong ngoặc. Gặp `f(2)` nó cho ra `2*f`, gặp `P(A)/P(B)` nó rút
+    gọn thành `A/B`. Không bao giờ báo lỗi, chỉ lặng lẽ trả về thứ vô nghĩa — và
+    trọng tài thì có quyền GHI ĐÈ đáp án, nên tin nhầm ở đây là hỏng cả bài.
+
+    Thà bỏ qua một bước còn hơn ghi đè bừa: bỏ qua thì đáp án của model giữ
+    nguyên, ghi đè sai thì mất luôn đáp án đúng.
+    """
+    return any(
+        ten not in _HAM_BIET for ten in _LOI_GOI_HAM.findall(bieu_thuc or "")
+    )
+
+
 def enforce(sol: Solution) -> list[SuaChua]:
     """Tính lại từng bước và ghi đè khi model sai. Trả danh sách chỗ đã sửa.
 
@@ -112,7 +147,11 @@ def enforce(sol: Solution) -> list[SuaChua]:
         if not bieu_thuc or not ket_qua:
             continue
 
-        tinh = sympy_tool.evaluate(_ve_phai(bieu_thuc))
+        ve_phai = _ve_phai(bieu_thuc)
+        if _co_ham_la(ve_phai):
+            continue  # ký hiệu SymPy không hiểu => con số ra được là vô nghĩa
+
+        tinh = sympy_tool.evaluate(ve_phai)
         if not tinh.get("ok") or tinh.get("numeric") is None:
             continue  # còn ký hiệu tự do, hoặc parse hỏng => không đủ căn cứ
 

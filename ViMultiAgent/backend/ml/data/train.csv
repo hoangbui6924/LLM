@@ -1,536 +1,874 @@
 question,label,source
-"Cho 0,1 mol axit HCl phản ứng với 0,15 mol NaOH. Chất nào còn dư",chemistry,seed
-Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 5)/(x - 1),math,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 1),math,template
-Hai điện trở 3 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
-Xác định số oxi hoá của nitơ trong K2Cr2O7,chemistry,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
-"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Tính số cách chọn 4 học sinh từ 12 học sinh,math,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 1)/(x - 3),math,template
-"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Hai điện trở 4 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 1),math,template
-Khảo sát sự biến thiên và vẽ đồ thị hàm số y = x^3 - 3x,math,seed
-Một vật dao động điều hoà với biên độ 5 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 6,math,template
-Tính số cách chọn 2 bông hoa từ 12 bông hoa,math,template
-Tính số mol của 4 gam H2SO4,chemistry,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
-Tính tích phân của x từ 0 đến 2,math,template
-Hai điện trở 3 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Giải phương trình lượng giác sin(x) = 1/2 trên khoảng từ 0 đến 2pi,math,seed
-Con lắc lò xo có độ cứng 400 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
-Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
-Tính tích phân của x từ 1 đến 3,math,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 4],math,template
-"Đốt cháy hoàn toàn 2,4 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
-Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
-Hai điện trở 4 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
-"Một vật dao động điều hoà với biên độ 8 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
-Hoà tan 4 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,seed
-Tính số cách chọn 4 học sinh từ 7 học sinh,math,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
-Hoà tan 10 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Vật khối lượng 5 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
-Hai điện trở 3 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 10,math,template
-Cho cấp số cộng có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 8,math,template
-Viết phương trình nhiệt phân KClO3 có xúc tác MnO2,chemistry,seed
-"Tính số mol của 9,8 gam H2SO4",chemistry,seed
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],math,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 8,math,template
-"Cho 5,4 gam Al tác dụng hết với dung dịch HCl. Tính thể tích khí H2 ở điều kiện tiêu chuẩn",chemistry,seed
-Tính xác suất được số nguyên tố khi gieo một con xúc xắc,math,template
-Con lắc lò xo có độ cứng 50 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
-"Tính khối lượng NaOH cần để pha 250 ml dung dịch 0,4 M",chemistry,template
-Cho cấp số nhân có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 6,math,template
-Hoà tan 10 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(x - 1),math,template
-Tính tích phân của x^2 từ 0 đến pi,math,template
-Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
-"Tính trọng lượng của vật 60 kg trên mặt đất, lấy g = 9,8 m/s2",physics,seed
-Hai điện trở 3 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
-Hoà tan 4 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
-Cho 100 ml dung dịch BaCl2 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-Cho cấp số cộng có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 8,math,template
-"Đốt cháy hoàn toàn 8,1 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Tính số cách chọn 3 bông hoa từ 12 bông hoa,math,template
-Một vật dao động điều hoà với biên độ 5 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
-Hai điện trở 3 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Một vật dao động điều hoà với biên độ 5 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
-Cho cấp số cộng có u1 = 3 và công sai d = 4. Tính u10,math,seed
-Tính số mol của 23 gam H2SO4,chemistry,template
-Cho cấp số nhân có số hạng đầu 3 và công bội bằng 4. Tính số hạng thứ 10,math,template
-Tính khối lượng KNO3 cần để pha 500 ml dung dịch 1 M,chemistry,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
-Tính tích phân của x từ 1 đến 2,math,template
-Hoà tan 10 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-"Tính số mol của 9,8 gam CaCO3",chemistry,template
-Hoà tan 10 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 6,math,template
-Hai điện trở 6 ôm và 12 ôm mắc song song. Tính điện trở tương đương,physics,template
-Tính khối lượng NaOH cần để pha 100 ml dung dịch 1 M,chemistry,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 4],math,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
-Cho hỗn hợp Mg và MgO tác dụng với HCl dư. Tính phần trăm khối lượng mỗi chất,chemistry,seed
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 4],math,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
-Cho cấp số cộng có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 8,math,template
-Hoà tan 8 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính số mol của 16 gam CaCO3,chemistry,template
-Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 8,math,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
-Tính số mol của 16 gam NaOH,chemistry,template
-Tính số hoán vị của 5 phần tử phân biệt,math,seed
-Vật khối lượng 3 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 2],math,template
-"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 4],math,template
-Con lắc lò xo có độ cứng 50 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
-"Đốt cháy hoàn toàn 2,4 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
-"Đốt cháy hoàn toàn 8,1 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Cho 200 ml dung dịch AgNO3 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-"Một vật dao động điều hoà với biên độ 5 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
-"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
-Tính xác suất được số nguyên tố khi rút ngẫu nhiên một lá bài,math,template
-"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Tính khối lượng NaCl cần để pha 100 ml dung dịch 0,4 M",chemistry,template
-Cho cấp số cộng có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 10,math,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],math,template
-Tính số cách chọn 4 bông hoa từ 12 bông hoa,math,template
-"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Một dây dẫn dài 0,5 m mang dòng 4 A đặt trong từ trường 0,2 T. Tính lực từ",physics,seed
-"Tính khối lượng KNO3 cần để pha 100 ml dung dịch 0,4 M",chemistry,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
-Hai điện trở 4 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
-Tính số cách chọn 2 bông hoa từ 7 bông hoa,math,template
-Tính số cách chọn 4 bông hoa từ 10 bông hoa,math,template
-"Cho 200 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Cho 200 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(x - 3),math,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 4],math,template
-Vật khối lượng 2 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 8,math,template
-"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-Cho cấp số nhân có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 8,math,template
-Cho cấp số cộng có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 6,math,template
-"Tính khối lượng NaCl cần để pha 500 ml dung dịch 0,4 M",chemistry,template
-Cho 200 ml dung dịch Na2SO4 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-Tính số mol của 4 gam NaOH,chemistry,template
-"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
-Một vật dao động điều hoà với biên độ 5 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
-Tính tích phân của e^x từ 1 đến pi,math,template
-"Cho 250 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 1)/(x - 1),math,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 2],math,template
-Vật khối lượng 5 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
-"Cho 100 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-"Tính số mol của 9,8 gam KMnO4",chemistry,template
-"Một vật dao động điều hoà với biên độ 8 cm và tần số 2,5 Hz. Tính gia tốc cực đại",physics,template
-Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 10,math,template
-Hoà tan 10 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính số cách chọn 2 quyển sách từ 10 quyển sách,math,template
-Cho cấp số cộng có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 6,math,template
-Tính số cách chọn 3 học sinh từ 10 học sinh,math,template
-Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 8,math,template
-"Một vật dao động điều hoà với biên độ 4 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
-Sóng có tần số 50 Hz và bước sóng 4 m. Tính tốc độ truyền sóng,physics,seed
-Cho cấp số nhân có số hạng đầu 5 và công sai bằng 2. Tính số hạng thứ 6,math,template
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 2],math,template
-Hoà tan 8 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 12 V. Tính công suất tiêu thụ,physics,template
-Hai điện trở 4 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,seed
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
-Vật khối lượng 2 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
-"Tính khối lượng KNO3 cần để pha 500 ml dung dịch 0,2 M",chemistry,template
-Tính tích phân của sin(x) từ 1 đến 2,math,template
-Hoà tan 4 gam KOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính tích phân của 2x + 1 từ 0 đến 2,math,template
-"Tính số mol của 9,8 gam NaOH",chemistry,template
-Cho 250 ml dung dịch Na2SO4 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-Con lắc lò xo có độ cứng 400 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
-Tính tích phân của 2x + 1 từ 1 đến pi,math,template
-Tính số mol của 16 gam KMnO4,chemistry,template
-Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 8,math,template
-Viết phương trình phản ứng giữa Na và H2O,chemistry,seed
-Tính tích phân của e^x từ 1 đến 2,math,template
-Tính tích phân của x^2 từ 1 đến 3,math,template
-Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 8,math,template
-Tính khối lượng NaOH cần để pha 500 ml dung dịch 1 M,chemistry,template
-"Tính số mol của 9,8 gam H2SO4",chemistry,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 2],math,template
-Cho cấp số cộng có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 10,math,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
-Tính tích phân của x^2 từ 1 đến 2,math,template
-"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-"Tính khối lượng NaCl cần để pha 250 ml dung dịch 0,2 M",chemistry,template
-"Cho 200 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 4],math,template
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 3],math,template
-Tính số cách chọn 2 học sinh từ 7 học sinh,math,template
-Tính số cách chọn 4 bông hoa từ 7 bông hoa,math,template
-Tính số cách chọn 3 bông hoa từ 10 bông hoa,math,template
-Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
-Hoà tan 8 gam NaCl vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
-Một vật dao động điều hoà với biên độ 5 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
-Tính số cách chọn 3 bông hoa từ 7 bông hoa,math,template
-Hoà tan 8 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Hoà tan 10 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
-"Cho 250 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
-Tính số cách chọn 3 quyển sách từ 10 quyển sách,math,template
-Xác định số oxi hoá của lưu huỳnh trong KMnO4,chemistry,template
-"Cho 250 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính vận tốc cực đại,physics,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 1)/(x - 1),math,template
-Xác định vị trí ảnh qua gương phẳng khi vật cách gương 15 cm,physics,seed
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 4],math,template
-Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 3],math,template
-"Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-"Thấu kính hội tụ có tiêu cự 10 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-Con lắc lò xo có độ cứng 100 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
-Cho 200 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-"Tính khối lượng KNO3 cần để pha 500 ml dung dịch 0,4 M",chemistry,template
-"Đốt cháy hoàn toàn 8,1 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 2],math,template
-"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-Cho cấp số nhân có số hạng đầu 5 và công sai bằng 4. Tính số hạng thứ 6,math,template
-Hai điện trở 4 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
-Tính số cách chọn 2 học sinh từ 10 học sinh,math,template
-"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 6,math,template
-"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-"Đốt cháy hoàn toàn 11,2 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Rút gọn biểu thức logarit cơ số 3 của 27 cộng logarit cơ số 3 của 9,math,seed
-Tính tích phân của x^2 từ 0 đến 3,math,template
-Tìm hệ số của x^3 trong khai triển nhị thức (1 + 2x)^5,math,seed
-Tính khối lượng KNO3 cần để pha 100 ml dung dịch 1 M,chemistry,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 5)/(x - 3),math,template
-Vật khối lượng 2 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
-Xác định số oxi hoá của nitơ trong KMnO4,chemistry,template
-Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
-Tính số cách chọn 4 quyển sách từ 12 quyển sách,math,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
-Con lắc lò xo có độ cứng 400 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
-"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 5)/(x - 1),math,template
-Vật khối lượng 2 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 8,math,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
-Tính tích phân của x từ 0 đến 3,math,template
-Hoà tan 10 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 10,math,template
-Hoà tan 4 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính xác suất được số nguyên tố khi bốc ngẫu nhiên một viên bi,math,template
-"Đốt cháy hoàn toàn 2,4 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-"Tính khối lượng NaCl cần để pha 500 ml dung dịch 0,2 M",chemistry,template
-Tính tích phân của x từ 0 đến pi,math,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
-Cho cấp số nhân có số hạng đầu 5 và công sai bằng 4. Tính số hạng thứ 10,math,template
-Hoà tan 8 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Xác định số oxi hoá của mangan trong K2Cr2O7,chemistry,template
-Cho 100 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 10,math,template
-Vật khối lượng 3 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
-Hai điện trở 6 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Cho cấp số nhân có số hạng đầu 2 và công bội bằng 2. Tính số hạng thứ 10,math,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
-Vật khối lượng 3 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(x - 3),math,template
-Tính số cách chọn 4 học sinh từ 10 học sinh,math,template
-Hoà tan 8 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
-Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-Vật khối lượng 5 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
-"Một vật dao động điều hoà với biên độ 10 cm và tần số 2,5 Hz. Tính vận tốc cực đại",physics,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 2],math,template
-Tìm m để phương trình x^2 - 2mx + m + 2 = 0 có hai nghiệm phân biệt,math,seed
-Hai điện trở 6 ôm và 6 ôm mắc song song. Tính điện trở tương đương,physics,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
-"Đốt cháy hoàn toàn 5,6 gam Fe trong khí O2 thu được Fe3O4. Tính khối lượng sản phẩm",chemistry,seed
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 3],math,template
-Con lắc lò xo có độ cứng 200 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
-"Cho 100 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Cho 100 ml dung dịch AgNO3 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-Tính khối lượng KNO3 cần để pha 250 ml dung dịch 1 M,chemistry,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 6,math,template
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
-Hai điện trở 6 ôm và 8 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 4],math,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 3),math,template
-Cho 200 ml dung dịch AgNO3 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
-"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,seed
-Cho cấp số nhân có số hạng đầu 2 và công bội bằng 4. Tính số hạng thứ 6,math,template
-Cho cấp số cộng có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 6,math,template
-Tính độ tan của muối khi 36 gam tan tối đa trong 100 gam nước ở 20 độ C,chemistry,seed
-"Cho 250 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Tính khối lượng NaOH cần để pha 250 ml dung dịch 0,2 M",chemistry,template
-Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
-Tính tích phân của e^x từ 0 đến 3,math,template
-Tính tích phân của 2x + 1 từ 0 đến pi,math,template
-Tính khối lượng NaCl cần để pha 250 ml dung dịch 1 M,chemistry,template
-Phân biệt hai dung dịch NaCl và Na2CO3 bằng phương pháp hoá học,chemistry,seed
-Tính tích phân của sin(x) từ 0 đến 3,math,template
-"Cho 200 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Tính khối lượng NaOH cần để pha 500 ml dung dịch 0,2 M",chemistry,template
-Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
-"Một vật dao động điều hoà với biên độ 10 cm và tần số 2,5 Hz. Tính chu kỳ dao động",physics,template
-Tính tích phân của 2x + 1 từ 1 đến 2,math,template
-Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 10,math,template
-Vật khối lượng 3 kg chuyển động với vận tốc 4 m/s. Tính động năng,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 3],math,template
-Xác định số oxi hoá của mangan trong HNO3,chemistry,template
-Tính số cách chọn 4 quyển sách từ 7 quyển sách,math,template
-"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính vận tốc cực đại",physics,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 10,math,template
-"Tính lực đẩy Ác-si-mét tác dụng lên vật có thể tích 0,002 m3 chìm trong nước",physics,seed
-Vật khối lượng 5 kg chuyển động với vận tốc 6 m/s. Tính động năng,physics,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
-Xác định số oxi hoá của lưu huỳnh trong H2SO4,chemistry,template
-"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 3],math,template
-"Đốt cháy hoàn toàn 5,6 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 10,math,template
-"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-"Tính khối lượng NaOH cần để pha 100 ml dung dịch 0,2 M",chemistry,template
-Tính độ hụt khối của hạt nhân khi biết khối lượng các nuclôn,physics,seed
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 4],math,template
-Cho 100 ml dung dịch Na2SO4 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
-Hoà tan 10 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Con lắc lò xo có độ cứng 200 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
-Hai điện trở 3 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
-Tính tích phân của 2x + 1 từ 0 đến 3,math,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
-Tính tích phân của x^2 từ 1 đến pi,math,template
-"Tính khối lượng NaCl cần để pha 100 ml dung dịch 0,2 M",chemistry,template
-Tính khối lượng NaCl cần để pha 100 ml dung dịch 1 M,chemistry,template
-"Cho 11,2 gam Fe vào dung dịch CuSO4 dư. Tính khối lượng Cu sinh ra",chemistry,seed
-Hai điện trở 6 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 2],math,template
-Tính số mol của 23 gam CaCO3,chemistry,template
-Tính tích phân của e^x từ 0 đến pi,math,template
-Tính số mol của 23 gam KMnO4,chemistry,template
-Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 16 ngày còn lại bao nhiêu phần trăm,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 2],math,template
-Cho cấp số cộng có số hạng đầu 2 và công bội bằng 3. Tính số hạng thứ 8,math,template
-"Cho 100 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Đốt cháy hoàn toàn 11,2 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Cường độ điện trường tại điểm cách điện tích điểm 2 cm là bao nhiêu,physics,seed
-"Đốt cháy hoàn toàn 5,6 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Cho 200 ml dung dịch AgNO3 1 M tác dụng với NaCl dư. Tính khối lượng kết tủa,chemistry,seed
-Xác định số oxi hoá của nitơ trong H2SO4,chemistry,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
-Vật khối lượng 3 kg chuyển động với vận tốc 4 m/s. Tính động lượng,physics,template
-"Một vật dao động điều hoà với biên độ 3 cm và tần số 2,5 Hz. Tính gia tốc cực đại",physics,template
-Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 4,math,template
-Cho 200 ml dung dịch Na2SO4 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 3],math,template
-Cho cấp số nhân có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 6,math,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [0; 3],math,template
-"Cho 250 ml dung dịch BaCl2 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-Vật khối lượng 5 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
-Vật khối lượng 2 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
-Tính tích phân của x từ 1 đến pi,math,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 5)/(x - 3),math,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 1)/(x - 3),math,template
-Tính xác suất được bi đỏ khi rút ngẫu nhiên một lá bài,math,template
-Xác định số oxi hoá của lưu huỳnh trong K2Cr2O7,chemistry,template
-Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 2],math,template
-"Tính khối lượng NaOH cần để pha 500 ml dung dịch 0,4 M",chemistry,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 12 V. Tính cường độ dòng điện,physics,template
-"Thấu kính phân kỳ có tiêu cự 10 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 24 V. Tính cường độ dòng điện,physics,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
-Tính công của lực 20 N khi vật dịch chuyển 5 m theo phương của lực,physics,seed
-Chất phóng xạ có chu kỳ bán rã 4 ngày. Sau 24 ngày còn lại bao nhiêu phần trăm,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],math,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [0; 2],math,template
-"Cho m gam Zn tác dụng hết với dung dịch H2SO4 loãng thu 2,24 lít H2. Tính m",chemistry,seed
-"Cho 100 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Tính tích phân của e^x từ 0 đến 2,math,template
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 2],math,template
-Giải phương trình bậc hai x^2 - 5x + 6 = 0,math,seed
-Hai điện trở 6 ôm và 8 ôm mắc song song. Tính điện trở tương đương,physics,template
-Đoạn mạch có điện trở 10 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
-Con lắc lò xo có độ cứng 100 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
-Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],math,template
-Tính số mol của 16 gam H2SO4,chemistry,template
-Xác định số oxi hoá của mangan trong H2SO4,chemistry,template
-Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-Cho 250 ml dung dịch AgNO3 1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa,chemistry,template
-"Đốt cháy hoàn toàn 2,4 gam Cu trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 110 V. Tính công suất tiêu thụ,physics,template
-Xác định số oxi hoá của lưu huỳnh trong HNO3,chemistry,template
-Xác định số oxi hoá của mangan trong KMnO4,chemistry,template
-Cho 250 ml dung dịch BaCl2 1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa,chemistry,template
-"Đốt cháy hoàn toàn 11,2 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Hoà tan 4 gam NaOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Hoà tan 10 gam NaCl vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính động lượng của vật 3 kg chuyển động với tốc độ 6 m/s,physics,seed
-Đoạn mạch có điện trở 20 ôm và hiệu điện thế 220 V. Tính cường độ dòng điện,physics,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 110 V. Tính cường độ dòng điện,physics,template
-"Đốt cháy hoàn toàn 8,1 gam Fe trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Cân bằng phương trình phản ứng Al + HCl tạo AlCl3 và H2,chemistry,seed
-"Tính khối lượng KNO3 cần để pha 100 ml dung dịch 0,2 M",chemistry,template
-Tính xác suất được mặt chẵn khi rút ngẫu nhiên một lá bài,math,template
-Con lắc lò xo có độ cứng 50 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
-Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 5,math,template
-Con lắc lò xo có độ cứng 200 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
-Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 6,math,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 6,math,template
-"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-Tính số cách chọn 3 học sinh từ 12 học sinh,math,template
-Tính số mol của 4 gam CaCO3,chemistry,template
-Tính tích phân của 2x + 1 từ 1 đến 3,math,template
-Hai điện trở 4 ôm và 6 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Con lắc lò xo có độ cứng 50 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
-"Tính khối lượng NaCl cần để pha 250 ml dung dịch 0,4 M",chemistry,template
-Tính tích phân của x^2 từ 0 đến 2,math,template
-Tính số cách chọn 2 học sinh từ 12 học sinh,math,template
-Cho cấp số nhân có số hạng đầu 2 và công sai bằng 3. Tính số hạng thứ 6,math,template
-Cho cấp số nhân có số hạng đầu 2 và công bội bằng 3. Tính số hạng thứ 10,math,template
-"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 6,math,template
-Cho cấp số cộng có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 6,math,template
-Đốt cháy hoàn toàn ancol etylic. Viết phương trình phản ứng,chemistry,seed
-Con lắc lò xo có độ cứng 100 N/m và vật nặng 250 g. Tính chu kỳ dao động,physics,template
-Tính số mol của 23 gam NaOH,chemistry,template
-"Tính khối lượng KNO3 cần để pha 250 ml dung dịch 0,2 M",chemistry,template
-Tính số cách chọn 3 quyển sách từ 12 quyển sách,math,template
-Hoà tan 8 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Vật khối lượng 3 kg chuyển động với vận tốc 6 m/s. Tính động lượng,physics,template
-"Cho 200 ml dung dịch AgNO3 0,1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-"Đốt cháy hoàn toàn 11,2 gam Mg trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-Tính số cách chọn 4 quyển sách từ 10 quyển sách,math,template
-Cho số phức z = 3 + 4i. Tính môđun của z,math,seed
-Tính xác suất được bi đỏ khi bốc ngẫu nhiên một viên bi,math,template
-Tính khối lượng NaCl cần để pha 500 ml dung dịch 1 M,chemistry,template
-Tính tích phân của sin(x) từ 1 đến 3,math,template
-"Cho 200 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-"Cho 250 ml dung dịch AgNO3 0,2 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-Tính số cách chọn 3 học sinh từ 7 học sinh,math,template
-"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính chu kỳ dao động,physics,template
-"Tính tần số góc của vật dao động điều hoà có chu kỳ 0,5 s",physics,seed
-Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 36 ngày còn lại bao nhiêu phần trăm,physics,template
-Hai điện trở 4 ôm và 12 ôm mắc nối tiếp. Tính điện trở tương đương,physics,template
-Cho biết loại liên kết hoá học trong phân tử NaCl,chemistry,seed
-Hoà tan 4 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-Đoạn mạch có điện trở 25 ôm và hiệu điện thế 220 V. Tính công suất tiêu thụ,physics,template
-"Đốt cháy hoàn toàn 5,6 gam Al trong khí O2. Tính khối lượng oxit thu được",chemistry,template
-"Thấu kính hội tụ có tiêu cự 20 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Một vật dao động điều hoà với biên độ 8 cm và tần số 1 Hz. Tính vận tốc cực đại,physics,template
-Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
-Vật khối lượng 5 kg chuyển động với vận tốc 10 m/s. Tính động năng,physics,template
-Tính xác suất được mặt chẵn khi bốc ngẫu nhiên một viên bi,math,template
-Cho hình lập phương cạnh 4. Tính thể tích khối lập phương đó,math,seed
-"Thấu kính phân kỳ có tiêu cự 20 cm, vật đặt cách thấu kính 40 cm. Xác định vị trí ảnh",physics,template
-Hoà tan 4 gam NaOH vào nước thành 200 ml dung dịch. Tính nồng độ mol,chemistry,template
-Cho cấp số cộng có số hạng đầu 2 và công bội bằng 2. Tính số hạng thứ 8,math,template
-"Thấu kính phân kỳ có tiêu cự 25 cm, vật đặt cách thấu kính 15 cm. Xác định vị trí ảnh",physics,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
-"Cho 100 ml dung dịch Na2SO4 0,2 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-"Cho 100 ml dung dịch BaCl2 0,1 M tác dụng với dung dịch BaCl2 dư. Tính khối lượng kết tủa",chemistry,template
-Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 5,math,template
-Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(x - 1),math,template
-Tính số cách chọn 2 bông hoa từ 10 bông hoa,math,template
-Hoà tan 4 gam KOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Hoà tan 4 gam KOH vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-"Cho 250 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch Na2SO4 dư. Tính khối lượng kết tủa",chemistry,template
-Tính xác suất được mặt chẵn khi gieo một con xúc xắc,math,template
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 3],math,template
-Tính số mol của 4 gam KMnO4,chemistry,template
-Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 5,math,template
-"Tính khối lượng NaOH cần để pha 100 ml dung dịch 0,4 M",chemistry,template
-Tính tích phân của sin(x) từ 0 đến pi,math,template
-Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 3],math,template
-Tính tích phân của sin(x) từ 0 đến pi,math,seed
-Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(x - 3),math,seed
-Một vật dao động điều hoà với biên độ 5 cm và tần số 1 Hz. Tính chu kỳ dao động,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^2 - 2x trên đoạn [-1; 4],math,template
-Tính số cách chọn 2 quyển sách từ 7 quyển sách,math,template
-"Cho 100 ml dung dịch Na2SO4 0,1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa",chemistry,template
-Tính tích phân của sin(x) từ 0 đến 2,math,template
-Cho 100 ml dung dịch Na2SO4 1 M tác dụng với dung dịch NaCl dư. Tính khối lượng kết tủa,chemistry,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 1 Hz. Tính gia tốc cực đại,physics,template
-Cho cấp số cộng có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 6,math,template
-Một vật dao động điều hoà với biên độ 3 cm và tần số 5 Hz. Tính chu kỳ dao động,physics,template
-Một vật dao động điều hoà với biên độ 10 cm và tần số 2 Hz. Tính gia tốc cực đại,physics,template
-"Thấu kính hội tụ có tiêu cự 25 cm, vật đặt cách thấu kính 30 cm. Xác định vị trí ảnh",physics,template
-Cho cấp số nhân có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 8,math,template
-Chất phóng xạ có chu kỳ bán rã 12 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
-Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 2],math,template
-Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 4,math,template
-Cho cấp số nhân có số hạng đầu 3 và công bội bằng 3. Tính số hạng thứ 10,math,template
-Hoà tan 8 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Tính tích phân của sin(x) từ 1 đến pi,math,template
-Cho cấp số nhân có số hạng đầu 3 và công sai bằng 2. Tính số hạng thứ 8,math,template
-Tìm giá trị nhỏ nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 3],math,template
-Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 4,math,template
-Tính tích phân của e^x từ 1 đến 3,math,template
-Hoà tan 8 gam NaCl vào nước thành 500 ml dung dịch. Tính nồng độ mol,chemistry,template
-"Tính khối lượng KNO3 cần để pha 250 ml dung dịch 0,4 M",chemistry,template
-Tính diện tích mặt cầu bán kính 3,math,seed
-Hoà tan 4 gam NaOH vào nước thành 250 ml dung dịch. Tính nồng độ mol,chemistry,template
-Cho dãy số un = 3n + 1. Tính u5,math,seed
-Một vật dao động điều hoà với biên độ 10 cm và tần số 5 Hz. Tính gia tốc cực đại,physics,template
-Tính số cách chọn 2 quyển sách từ 12 quyển sách,math,template
-Chất phóng xạ có chu kỳ bán rã 8 ngày. Sau 8 ngày còn lại bao nhiêu phần trăm,physics,template
-Vật khối lượng 2 kg chuyển động với vận tốc 10 m/s. Tính động lượng,physics,template
-Tính số cách chọn 3 quyển sách từ 7 quyển sách,math,template
-Tính xác suất được bi đỏ khi gieo một con xúc xắc,math,template
-Cho hỗn hợp Fe và Cu vào dung dịch HCl dư. Kim loại nào tan,chemistry,seed
-Con lắc lò xo có độ cứng 100 N/m và vật nặng 400 g. Tính chu kỳ dao động,physics,template
-Cho cấp số nhân có số hạng đầu 2 và công bội bằng 4. Tính số hạng thứ 8,math,template
-Con lắc lò xo có độ cứng 200 N/m và vật nặng 500 g. Tính chu kỳ dao động,physics,template
-Một vật dao động điều hoà với biên độ 4 cm và tần số 2 Hz. Tính vận tốc cực đại,physics,template
-Con lắc lò xo có độ cứng 400 N/m và vật nặng 100 g. Tính chu kỳ dao động,physics,template
-Đoạn mạch có điện trở 50 ôm và hiệu điện thế 24 V. Tính công suất tiêu thụ,physics,template
-Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(x - 3),math,template
-Tính khối lượng NaOH cần để pha 250 ml dung dịch 1 M,chemistry,template
-Xác định số oxi hoá của nitơ trong HNO3,chemistry,template
+Tính thể tích khối trụ có bán kính đáy 4 và chiều cao 12,toa_do_the_tich,template
+Tính tích phân của x*e^x từ 1 đến 4,tich_phan,template
+Tính chu vi của khối cầu bán kính 4,khac_hinh_hoc,template
+Cho số phức z = 2 + 5i. Tính phần thực của z,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [-1; 5],gtln,template
+Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 3,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [-1; 2],gtnn,template
+Tính thể tích khối chóp có diện tích đáy bằng 24 và chiều cao bằng 5,toa_do_the_tich,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(1; -1; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính thể tích khối trụ có bán kính đáy 3 và chiều cao 12,toa_do_the_tich,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(0; -1; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + -2)/(2x - 4),tiem_can_ngang,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + 1)/(3x - 2),tiem_can_dung,template
+Giải phương trình 3x^2 - 12 = 0,phuong_trinh,template
+Tính tích phân của 1/(x + 1) từ 1 đến 2,tich_phan,template
+Cho số phức z = 1 + 4i. Tính phần thực của z,khac_dai_so,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(1; -1; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Đồ thị hàm số y = (2x^2 + 6)/(4x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-1; 3],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = (2x - 1)/(x + 2) tại điểm có hoành độ x = 2,tiep_tuyen,template
+Tính tích phân của 2x + 1 từ 2 đến 2,tich_phan,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 4x^2 - 12x tại điểm có hoành độ x = -1,tiep_tuyen,template
+"Cho tam giác ABC vuông tại A, AB = 8, AC = 15. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [1; 2],gtln,template
+Cho hàm số y = x^4 - 2x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -1,tiep_tuyen,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 5],gtnn,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm giá trị cực tiểu của hàm số y = 2x^3 - 9x^2 + 12x,so_diem_cuc_tri,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [-1; 4],gtln,template
+Tìm giới hạn lim (x - 1)/(x^2 - 1) khi x dần tới vô cùng,gioi_han,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [1; 4],gtnn,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = -1,dao_ham,template
+Cho số phức z = 2 + 4i. Tính môđun của z,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [0; 5],gtln,template
+Đồ thị hàm số y = (3x + 6)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; 2) đến mặt phẳng 2x - y + 2z - 6 = 0",toa_do_kc_diem_mp,template
+Đồ thị hàm số y = (3x^2 + 1)/(1x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính thể tích khối nón có bán kính đáy 3 và chiều cao 12,toa_do_the_tich,template
+Tìm số điểm cực trị của hàm số y = x^3 - 3x,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 0,dao_ham,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = -1,dao_ham,template
+Tính tích phân của x^3 từ 0 đến 2,tich_phan,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + -2)/(1x - 3),tiem_can_dung,template
+Đồ thị hàm số y = (2x^2 + 1)/(2x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + 5)/(2x - 4),tiem_can_dung,template
+Cho hàm số y = x^2 - 4x + 5. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -2,tiep_tuyen,template
+Đồ thị hàm số y = (2x + 1)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(3; 0; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính thể tích khối nón có bán kính đáy 2 và chiều cao 10,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [1; 3],gtln,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 1; 2) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 1)/(3x - 2),tiem_can_dung,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [1; 4],gtnn,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = -1,dao_ham,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [1; 4],gtln,template
+Tìm điểm cực tiểu của hàm số y = x^3 - 3x,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = x^3 - 3x + 2 tại điểm x = 0,dao_ham,template
+Tìm giới hạn lim (x - 1)/(x^2 - 1) khi x dần tới 0,gioi_han,template
+Tính tích phân của x^3 từ 0 đến 4,tich_phan,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + 5)/(1x - 4),tiem_can_ngang,template
+Đồ thị hàm số y = (2x^2 + -3)/(2x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính thể tích của khối cầu bán kính 4,khac_hinh_hoc,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [-2; 4],gtnn,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + -2)/(1x - 3),tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [-2; 5],gtnn,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(1x - 4),tiem_can_dung,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; 3) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 3],gtln,template
+Tìm giá trị cực đại của hàm số y = 2x^3 - 9x^2 + 12x,so_diem_cuc_tri,template
+Tính diện tích của khối cầu bán kính 5,khac_hinh_hoc,template
+Tính tổng các nghiệm của phương trình x^2 - 7x + 12 = 0,phuong_trinh,seed
+Tính số cách chọn 2 bông hoa từ 12 bông hoa,khac_dai_so,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 3) và B(4; 5; 3)",toa_do_khoang_cach,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; 2) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 3) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+Giải phương trình x^2 - 9 = 0,phuong_trinh,template
+Cho số phức z = 3 + 5i. Tính môđun của z,khac_dai_so,template
+Tìm điểm cực đại của hàm số y = x^4 - 2x^2,so_diem_cuc_tri,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-2; 3],gtnn,template
+Đồ thị hàm số y = (1x + 6)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 5],gtln,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [-2; 5],gtnn,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = (2x - 1)/(x + 2) tại điểm có hoành độ x = -2,tiep_tuyen,template
+Tính tích phân của 3x^2 - 2x từ 2 đến 2,tich_phan,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 48 và chiều cao bằng 3,toa_do_the_tich,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 6x^2 + 9x tại điểm có hoành độ x = 3,tiep_tuyen,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 4,dao_ham,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 3,dao_ham,template
+Cho hàm số y = x^2 - 4x + 5. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+Tính giới hạn của (2x + 1)/(x - 1) khi x tiến tới 2,gioi_han,template
+Tính tích phân của x*e^x từ 0 đến 3,tich_phan,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + -2)/(3x - 4),tiem_can_dung,template
+Tính thể tích của khối cầu bán kính 3,khac_hinh_hoc,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 1; 2) và B(4; 6; 3)",toa_do_khoang_cach,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + -2)/(2x - 2),tiem_can_dung,template
+Cho số phức z = 1 + 4i. Tính số phức liên hợp của z,khac_dai_so,template
+Tìm giá trị cực đại của hàm số y = x^3 - 6x^2 + 9x,so_diem_cuc_tri,template
+Tính tích phân của 1/x từ 1 đến pi,tich_phan,template
+Tìm giới hạn lim (4x - 12)/(x^2 - 9) khi x dần tới vô cùng,gioi_han,template
+Đồ thị hàm số y = (5x^2 + 1)/(1x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [0; 4],gtnn,template
+Tính tích phân của e^x từ 0 đến 4,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [1; 5],gtln,template
+Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = -2,dao_ham,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + 5)/(1x - 1),tiem_can_ngang,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 0,dao_ham,template
+"Cho tam giác ABC vuông tại A, AB = 5, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính giới hạn của (x^3 - 8)/(x - 2) khi x tiến tới 0,gioi_han,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = 0,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-2; 2],gtnn,template
+Tính số cách chọn 4 học sinh từ 7 học sinh,khac_dai_so,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [-2; 5],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; 2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tính số cách chọn 4 bông hoa từ 7 bông hoa,khac_dai_so,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = 3,dao_ham,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(3; 4; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính tích phân của 1/x từ 0 đến 4,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [0; 5],gtnn,template
+Tìm giới hạn lim tan(x)/x khi x dần tới 0,gioi_han,template
+Tính tích phân của x^2 từ 0 đến 2,tich_phan,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 2; 2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 4. Tính số hạng thứ 8,khac_dai_so,template
+Tìm giới hạn lim (sqrt(x) - 2)/(x - 4) khi x dần tới 2,gioi_han,template
+Giải phương trình mũ 2^x = 8,phuong_trinh,template
+Tính thể tích khối nón có bán kính đáy 4 và chiều cao 12,toa_do_the_tich,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; 2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^4 - x^2 tại điểm có hoành độ x = 1,tiep_tuyen,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [1; 3],gtln,template
+Tính tích phân của x*e^x từ 2 đến pi,tich_phan,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 1)/(3x - 4),tiem_can_dung,template
+Đồ thị hàm số y = (2x + -3)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính tích phân của x*e^x từ 1 đến pi,tich_phan,template
+Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 12,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [1; 4],gtnn,template
+Tính giới hạn của (x^2 - 9)/(x - 3) khi x tiến tới 3,gioi_han,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = (x + 1)/(x - 1) tại điểm có hoành độ x = 1,tiep_tuyen,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(0; 0; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính thể tích khối nón có bán kính đáy 4 và chiều cao 10,toa_do_the_tich,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; -1; -2) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tìm giới hạn lim (2x^2 - 8)/(x - 2) khi x dần tới 3,gioi_han,template
+Đồ thị hàm số y = (3x + 1)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 0) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 0) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Tính số cách chọn 3 học sinh từ 10 học sinh,khac_dai_so,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 2; -2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = 2,dao_ham,template
+Tính tích phân của e^x từ 1 đến pi,tich_phan,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = 3,dao_ham,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + 5)/(3x - 4),tiem_can_ngang,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(0; 4; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Xác định toạ độ đỉnh của parabol y = x^2 - 4x + 3,khac_dai_so,seed
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 6,toa_do_the_tich,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [-1; 3],gtnn,template
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 2. Tính số hạng thứ 10,khac_dai_so,template
+Tìm giá trị cực tiểu của hàm số y = x^4 - 6x^2 + 5,so_diem_cuc_tri,template
+Đồ thị hàm số y = (5x + 1)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 3) và B(4; 6; 2)",toa_do_khoang_cach,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [1; 4],gtnn,template
+Tìm giới hạn lim (x^3 + 1)/(x + 1) khi x dần tới 0,gioi_han,template
+Đồ thị hàm số y = (1x + 4)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; 0) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 1; 2) và B(4; 5; 2)",toa_do_khoang_cach,template
+Tính diện tích của khối cầu bán kính 4,khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = -1,dao_ham,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + 7)/(1x - 2),tiem_can_dung,template
+Cho số phức z = 2 + 4i. Tính số phức liên hợp của z,khac_dai_so,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 3) và B(4; 6; 3)",toa_do_khoang_cach,template
+Tìm giá trị cực tiểu của hàm số y = x^3 - 3x,so_diem_cuc_tri,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 5,toa_do_the_tich,template
+Đồ thị hàm số y = (3x^2 + -3)/(2x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Cho số phức z = 2 + 2i. Tính phần thực của z,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 5],gtln,template
+"Cho tam giác ABC vuông tại A, AB = 9, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm số điểm cực trị của hàm số y = x^4 - 4x^2 + 3,so_diem_cuc_tri,template
+Cho cấp số cộng có số hạng đầu 5 và công sai bằng 2. Tính số hạng thứ 8,khac_dai_so,template
+"Cho tam giác ABC vuông tại A, AB = 6, AC = 8. Tính độ dài cạnh BC",khac_hinh_hoc,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 2) và B(4; 5; 2)",toa_do_khoang_cach,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + -2)/(3x - 1),tiem_can_dung,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [-1; 4],gtnn,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = 4,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 1; 2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 5)/(3x - 2),tiem_can_ngang,template
+Tính thể tích khối trụ có bán kính đáy 3 và chiều cao 9,toa_do_the_tich,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 3x + 2 tại điểm có hoành độ x = 0,tiep_tuyen,template
+Tìm điểm cực tiểu của hàm số y = 2x^3 - 3x^2,so_diem_cuc_tri,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 2) và B(3; 6; 2)",toa_do_khoang_cach,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 3],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 2) và B(3; 6; 2)",toa_do_khoang_cach,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 8,khac_dai_so,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^2 + 3x tại điểm có hoành độ x = 3,tiep_tuyen,template
+Tính giới hạn của sin(x)/x khi x tiến tới 0,gioi_han,template
+Tính số cách chọn 3 bông hoa từ 12 bông hoa,khac_dai_so,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 2,dao_ham,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 3x^2 - 5x + 1 tại điểm có hoành độ x = -2,tiep_tuyen,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 4,dao_ham,template
+Giải phương trình chứa căn: căn bậc hai của (x + 3) bằng 2,phuong_trinh,seed
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 5],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [0; 3],gtln,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [1; 5],gtln,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [-2; 3],gtln,template
+Đồ thị hàm số y = (2x^2 + 1)/(2x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [-2; 2],gtnn,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = (2x - 1)/(x + 2) tại điểm có hoành độ x = 1,tiep_tuyen,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 2x tại điểm có hoành độ x = 0,tiep_tuyen,template
+Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 0,dao_ham,template
+Đồ thị hàm số y = (5x + -3)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính giới hạn của (2x + 1)/(x - 1) khi x tiến tới vô cùng,gioi_han,template
+Tìm giới hạn lim (x^2 + 3x)/(2x^2 - x) khi x dần tới 0,gioi_han,template
+Tính giới hạn của (x^3 - 8)/(x - 2) khi x tiến tới vô cùng,gioi_han,template
+Cho hàm số y = x^2 - 6x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tính thể tích khối nón có bán kính đáy 2 và chiều cao 9,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [0; 2],gtnn,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 48 và chiều cao bằng 8,toa_do_the_tich,template
+Giải phương trình 5x + 3 = 18,phuong_trinh,template
+Tính thể tích khối trụ có bán kính đáy 3 và chiều cao 10,toa_do_the_tich,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; -2) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 2x^3 + x tại điểm có hoành độ x = 1,tiep_tuyen,template
+Tính giới hạn của (1 - cos(x))/x^2 khi x tiến tới 1,gioi_han,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 4. Tính số hạng thứ 8,khac_dai_so,template
+Tính tích phân của x từ 2 đến 4,tich_phan,template
+Đồ thị hàm số y = (2x + 6)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Giải phương trình x^2 + x - 6 = 0,phuong_trinh,template
+Giải phương trình mũ 2^(x+1) = 16,phuong_trinh,template
+Cho số phức z = 2 + 2i. Tính môđun của z,khac_dai_so,template
+Đồ thị hàm số y = (3x + 6)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = 1,dao_ham,template
+Tìm giới hạn lim (3x - 6)/(x^2 - 4) khi x dần tới 0,gioi_han,template
+Tính thể tích khối nón có bán kính đáy 3 và chiều cao 9,toa_do_the_tich,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 3; 3) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tính tích phân của x*e^x từ 1 đến 2,tich_phan,template
+Tìm giới hạn lim (x^2 + 3x)/(2x^2 - x) khi x dần tới 3,gioi_han,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = -2,dao_ham,template
+Cho hàm số y = 3x^3 - x^2. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + -2)/(2x - 3),tiem_can_dung,template
+Tìm điểm cực trị của hàm số y = x^3 + 3x^2 - 9x,so_diem_cuc_tri,template
+Cho số phức z = 1 + 5i. Tính phần thực của z,khac_dai_so,template
+Tính giới hạn của (sqrt(x + 1) - 1)/x khi x tiến tới vô cùng,gioi_han,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 2],gtnn,template
+Cho hàm số y = x^2 - 6x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 3,tiep_tuyen,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [-2; 4],gtln,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(3; -1; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Cho hàm số y = x^4 - 2x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Đồ thị hàm số y = (5x + 4)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính giới hạn của (x^2 - 1)/(x - 1) khi x tiến tới 0,gioi_han,template
+Tính tích phân của x*e^x từ 0 đến 4,tich_phan,template
+Cho hàm số y = 3x^3 - x^2. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -1,tiep_tuyen,template
+Tính tích phân của 1/(x + 1) từ 1 đến 3,tich_phan,template
+Tính số cách chọn 4 bông hoa từ 12 bông hoa,khac_dai_so,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^2 + 3x tại điểm có hoành độ x = 4,tiep_tuyen,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 5],gtln,template
+Tìm giá trị cực đại của hàm số y = x^3 + 3x^2 - 9x,so_diem_cuc_tri,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 3; 2) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Đồ thị hàm số y = (1x^2 + 4)/(4x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Đồ thị hàm số y = (2x + 6)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính giới hạn của (x^2 - 4)/(x - 2) khi x tiến tới 0,gioi_han,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 24 và chiều cao bằng 4,toa_do_the_tich,template
+Tính tích phân của x từ 2 đến pi,tich_phan,template
+Cho cấp số cộng có số hạng đầu 5 và công bội bằng 2. Tính số hạng thứ 6,khac_dai_so,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [-1; 2],gtnn,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 12 và chiều cao bằng 5,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 5],gtln,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [0; 2],gtln,template
+Cho số phức z = 1 + 2i. Tính số phức liên hợp của z,khac_dai_so,template
+Tìm điểm cực tiểu của hàm số y = 2x^3 - 9x^2 + 12x,so_diem_cuc_tri,template
+Tính tích phân của x*e^x từ 2 đến 4,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [0; 5],gtnn,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = -1,dao_ham,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 2) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(0; 4; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Giải phương trình mũ log_2(2x) = 5,phuong_trinh,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 2. Tính số hạng thứ 6,khac_dai_so,template
+Tính số cách chọn 3 quyển sách từ 12 quyển sách,khac_dai_so,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 2) và B(4; 5; 3)",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 3) và B(3; 6; 2)",toa_do_khoang_cach,template
+Tính thể tích khối nón có bán kính đáy 4 và chiều cao 6,toa_do_the_tich,template
+Tìm giới hạn lim tan(x)/x khi x dần tới 3,gioi_han,template
+Tính tích phân của e^x từ 1 đến 3,tich_phan,template
+Cho hàm số y = x^3 - 9x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 4],gtnn,template
+Đồ thị hàm số y = (1x^2 + 1)/(1x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-1; 4],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 1; -2) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Giải phương trình 2x - 9 = 5,phuong_trinh,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; 3) đến đường thẳng x - y + 2 = 0",toa_do_khoang_cach,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 3,toa_do_the_tich,template
+Cho hàm số y = x^2 - 4x + 5. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -1,tiep_tuyen,template
+Tính giới hạn của (x^3 - 8)/(x - 2) khi x tiến tới 2,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [-2; 5],gtln,template
+Tìm giới hạn lim (2x^2 - 8)/(x - 2) khi x dần tới 0,gioi_han,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 20 và chiều cao bằng 5,toa_do_the_tich,template
+Tính thể tích khối chóp có diện tích đáy bằng 24 và chiều cao bằng 6,toa_do_the_tich,template
+Tính giới hạn của (1 - cos(x))/x^2 khi x tiến tới âm vô cùng,gioi_han,template
+Cho cấp số cộng có số hạng đầu 3 và công sai bằng 4. Tính số hạng thứ 6,khac_dai_so,template
+Giải phương trình x^2 - 25 = 0,phuong_trinh,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(-2; -1; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; -2) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+Đồ thị hàm số y = (5x + 4)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính thể tích khối nón có bán kính đáy 2 và chiều cao 6,toa_do_the_tich,template
+Tính diện tích của mặt cầu bán kính 5,khac_hinh_hoc,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [-2; 3],gtnn,template
+Cho hàm số y = x^3 - 9x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 3,tiep_tuyen,template
+Đồ thị hàm số y = (5x^2 + 4)/(4x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [1; 2],gtln,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 1; 3) và B(4; 5; 3)",toa_do_khoang_cach,template
+Tính đạo hàm của hàm số y = x^4 - 4x^2 tại điểm x = -2,dao_ham,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 3x^2 - 5x + 1 tại điểm có hoành độ x = 0,tiep_tuyen,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [1; 2],gtnn,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [0; 5],gtnn,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; -2) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; -1; -2) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; 3) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [-1; 4],gtnn,template
+Tính tích phân của sqrt(x) từ 0 đến 2,tich_phan,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(0; 2; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính thể tích khối chóp có diện tích đáy bằng 24 và chiều cao bằng 3,toa_do_the_tich,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 36 và chiều cao bằng 6,toa_do_the_tich,template
+Tìm điểm cực tiểu của hàm số y = x^4 - 6x^2 + 5,so_diem_cuc_tri,template
+Cho số phức z = 2 + 4i. Tính phần thực của z,khac_dai_so,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 1; 3) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [-2; 3],gtnn,template
+Tính tích phân của e^x từ 2 đến 3,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [-2; 5],gtnn,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 6x^2 + 9x tại điểm có hoành độ x = 1,tiep_tuyen,template
+Tính thể tích của hình tròn bán kính 4,khac_hinh_hoc,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 2) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+Đồ thị hàm số y = (3x^2 + 4)/(4x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [1; 2],gtnn,template
+Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 6,toa_do_the_tich,template
+"Cho tam giác ABC vuông tại A, AB = 3, AC = 8. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + 1)/(2x - 2),tiem_can_dung,template
+Tìm điểm cực trị của hàm số y = 2x^3 - 9x^2 + 12x,so_diem_cuc_tri,template
+Tính thể tích của khối cầu bán kính 5,khac_hinh_hoc,template
+Tìm giới hạn lim (x^2 + 3x)/(2x^2 - x) khi x dần tới 2,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 4],gtln,template
+Tính giới hạn của (sqrt(x + 1) - 1)/x khi x tiến tới 1,gioi_han,template
+Tính tích phân của 3x^2 - 2x từ 0 đến pi,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [0; 5],gtnn,template
+Tính giới hạn của (1 - cos(x))/x^2 khi x tiến tới 4,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 4],gtln,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + 7)/(3x - 2),tiem_can_dung,template
+Tìm điểm cực trị của hàm số y = x^4 - 2x^2,so_diem_cuc_tri,template
+Tính tích phân của sin(x) từ 1 đến pi,tich_phan,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + 1)/(3x - 3),tiem_can_ngang,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = 4,dao_ham,template
+Tính thể tích khối chóp có diện tích đáy bằng 24 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm điểm cực đại của hàm số y = x^4 - 4x^2 + 3,so_diem_cuc_tri,template
+Cho hàm số y = x^4 - 2x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 3,tiep_tuyen,template
+Đồ thị hàm số y = (5x^2 + 1)/(4x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 24 và chiều cao bằng 6,toa_do_the_tich,template
+Tính tích phân của 1/(x + 1) từ 1 đến pi,tich_phan,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 2x^2 - 8x + 3 tại điểm có hoành độ x = -2,tiep_tuyen,template
+Tính tích phân của x từ 0 đến pi,tich_phan,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 0,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [-2; 2],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [0; 5],gtln,template
+Tìm điểm cực tiểu của hàm số y = x^4 - 2x^2,so_diem_cuc_tri,template
+Tính tích phân của 3x^2 - 2x từ 1 đến 4,tich_phan,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = -2,dao_ham,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 7)/(2x - 1),tiem_can_dung,template
+Giải phương trình x^2 - 2x - 8 = 0,phuong_trinh,template
+Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 10,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [-2; 2],gtnn,template
+Tìm giới hạn lim (x - 1)/(x^2 - 1) khi x dần tới 3,gioi_han,template
+Tính số cách chọn 4 bông hoa từ 10 bông hoa,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [1; 4],gtln,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 1; 2) và B(3; 5; 3)",toa_do_khoang_cach,template
+Giải phương trình mũ log_5(x) = 2,phuong_trinh,template
+Tính đạo hàm của hàm số y = x^4 - 4x^2 tại điểm x = 1,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [1; 3],gtnn,template
+Tính đạo hàm của hàm số y = x^3 - 6x^2 + 9x tại điểm x = 0,dao_ham,template
+Tính giới hạn của (x^2 - 9)/(x - 3) khi x tiến tới 1,gioi_han,template
+Giải phương trình mũ log_3(x - 1) = 2,phuong_trinh,template
+Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 2,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 2) và B(3; 6; 3)",toa_do_khoang_cach,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = 2,dao_ham,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 6x^2 + 9x tại điểm có hoành độ x = 0,tiep_tuyen,template
+Tính tích phân của x từ 0 đến 4,tich_phan,template
+Tìm giới hạn lim tan(x)/x khi x dần tới 4,gioi_han,template
+Cho hàm số y = x^3 - 9x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -2,tiep_tuyen,template
+Đồ thị hàm số y = (5x + -3)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [-1; 2],gtln,template
+Đồ thị hàm số y = (2x^2 + 1)/(1x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính số cách chọn 4 học sinh từ 12 học sinh,khac_dai_so,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-1; 5],gtnn,template
+Cho số phức z = 3 + 4i. Tính môđun của z,khac_dai_so,template
+Tìm giá trị cực đại của hàm số y = x^3 - 3x,so_diem_cuc_tri,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + 5)/(1x - 3),tiem_can_dung,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [0; 2],gtnn,template
+"Cho tam giác ABC vuông tại A, AB = 8, AC = 8. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính số cách chọn 2 quyển sách từ 10 quyển sách,khac_dai_so,template
+"Cho mặt phẳng (P): 2x + 2y - z + 3 = 0 và điểm M(1; 0; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính số cách chọn 4 quyển sách từ 10 quyển sách,khac_dai_so,template
+Tìm giới hạn lim (x^2 + 3x)/(2x^2 - x) khi x dần tới vô cùng,gioi_han,template
+Tính giới hạn của (x^2 - 4)/(x - 2) khi x tiến tới 4,gioi_han,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 2) và B(3; 6; 2)",toa_do_khoang_cach,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 1,dao_ham,template
+Đồ thị hàm số y = (3x + 4)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính tích phân của 2x + 1 từ 1 đến pi,tich_phan,template
+Đồ thị hàm số y = (2x + 4)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(1; 0; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính tích phân của cos(x) từ 2 đến pi,tich_phan,template
+"Cho tam giác ABC vuông tại A, AB = 3, AC = 15. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [-2; 2],gtln,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 36 và chiều cao bằng 6,toa_do_the_tich,template
+Giải phương trình logarit log_3(x - 1) = 2,phuong_trinh,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [1; 4],gtln,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 48 và chiều cao bằng 6,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 1,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [0; 4],gtnn,template
+Tính tích phân của 3x^2 - 2x từ 0 đến 3,tich_phan,template
+Cho hàm số y = x^2 - 4x + 5. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 2,tiep_tuyen,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [0; 5],gtnn,template
+Tìm điểm cực đại của hàm số y = x^4 - 6x^2 + 5,so_diem_cuc_tri,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + 1)/(1x - 1),tiem_can_ngang,template
+Tính chu vi của khối cầu bán kính 3,khac_hinh_hoc,template
+Tính giới hạn của sin(x)/x khi x tiến tới 3,gioi_han,template
+Đồ thị hàm số y = (5x^2 + 4)/(2x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + 7)/(2x - 2),tiem_can_ngang,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 3) và B(3; 6; 3)",toa_do_khoang_cach,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + 7)/(2x - 3),tiem_can_ngang,template
+Cho hàm số y = x^3 + x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Giải phương trình logarit 3^x = 81,phuong_trinh,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 2x^2 - 8x + 3 tại điểm có hoành độ x = -1,tiep_tuyen,template
+Tính số cách chọn 2 học sinh từ 7 học sinh,khac_dai_so,template
+Đồ thị hàm số y = (5x^2 + -3)/(1x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = 0,dao_ham,template
+Đồ thị hàm số y = (5x + 6)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-2; 4],gtln,template
+Giải phương trình x^2 - 7x + 12 = 0,phuong_trinh,template
+Đồ thị hàm số y = (5x^2 + 1)/(2x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; -2) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 2x^2 - 8x + 3 tại điểm có hoành độ x = 4,tiep_tuyen,template
+Tính thể tích khối nón có bán kính đáy 3 và chiều cao 10,toa_do_the_tich,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 2) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+Tìm giới hạn lim (3x - 6)/(x^2 - 4) khi x dần tới 3,gioi_han,template
+Tính tích phân của e^x từ 2 đến 4,tich_phan,template
+Giải phương trình mũ 4^x = 64,phuong_trinh,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [1; 5],gtnn,template
+Tính tích phân của 1/(x + 1) từ 2 đến 2,tich_phan,template
+Đồ thị hàm số y = (1x + 1)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính tích phân của sqrt(x) từ 2 đến 4,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [0; 4],gtln,template
+Tính thể tích khối nón có bán kính đáy 2 và chiều cao 12,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],gtnn,template
+Cho hàm số y = 2x^2 + 3. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 3,tiep_tuyen,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(3x - 4),tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 2],gtln,template
+Tìm điểm cực trị của hàm số y = x^4 - 6x^2 + 5,so_diem_cuc_tri,template
+Giải phương trình 2x^2 - 3x - 5 = 0,phuong_trinh,template
+Tính tích phân của x^2 từ 0 đến 4,tich_phan,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 48 và chiều cao bằng 3,toa_do_the_tich,template
+Tìm giá trị cực tiểu của hàm số y = 2x^3 - 3x^2,so_diem_cuc_tri,template
+Tính giới hạn của sin(x)/x khi x tiến tới 4,gioi_han,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 48 và chiều cao bằng 5,toa_do_the_tich,template
+Tính tích phân của sqrt(x) từ 1 đến 4,tich_phan,template
+Tính thể tích khối trụ có bán kính đáy 4 và chiều cao 6,toa_do_the_tich,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; -1; 3) đến mặt phẳng 2x - y + 2z - 6 = 0",toa_do_kc_diem_mp,template
+Đồ thị hàm số y = (1x^2 + -3)/(1x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Cho hàm số y = 5x^2 - 4x + 1. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tìm giới hạn lim (4x - 12)/(x^2 - 9) khi x dần tới 3,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [1; 2],gtln,template
+Tính giới hạn của (1 - cos(x))/x^2 khi x tiến tới 0,gioi_han,template
+"Cho mặt phẳng (P): 2x + 2y - z + 3 = 0 và điểm M(0; 2; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Cho hàm số y = x^3 + x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(1; -1; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm giới hạn lim (x^3 + 1)/(x + 1) khi x dần tới 4,gioi_han,template
+Tính chu vi của hình tròn bán kính 2,khac_hinh_hoc,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 2],gtln,template
+Đồ thị hàm số y = (1x^2 + 6)/(1x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính tích phân của x từ 0 đến 2,tich_phan,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 3) đến đường thẳng x - y + 2 = 0",toa_do_khoang_cach,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 1)/(1x - 2),tiem_can_ngang,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + 1)/(3x - 2),tiem_can_dung,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + -2)/(1x - 2),tiem_can_dung,template
+"Cho tam giác ABC vuông tại A, AB = 5, AC = 8. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính tích phân của 2x + 1 từ 2 đến 3,tich_phan,template
+"Cho tam giác ABC vuông tại A, AB = 9, AC = 8. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = 1,dao_ham,template
+Tính chu vi của mặt cầu bán kính 2,khac_hinh_hoc,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 3,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-2; 2],gtln,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 7)/(3x - 2),tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 4],gtln,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [1; 2],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 3x^2 - 5x + 1 tại điểm có hoành độ x = -1,tiep_tuyen,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = -2,dao_ham,template
+Đồ thị hàm số y = (1x^2 + 6)/(2x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 5,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = -2,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 3) và B(4; 6; 2)",toa_do_khoang_cach,template
+Đồ thị hàm số y = (1x + 1)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 1; -2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Cho cấp số nhân có số hạng đầu 3 và công sai bằng 3. Tính số hạng thứ 10,khac_dai_so,template
+Đồ thị hàm số y = (3x^2 + -3)/(4x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Cho hàm số y = x^2 - 4x + 5. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tìm giới hạn lim (sqrt(x) - 2)/(x - 4) khi x dần tới 1,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-1; 4],gtln,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 1; 3) và B(4; 5; 2)",toa_do_khoang_cach,template
+Tìm giá trị cực tiểu của hàm số y = x^3 - 3x^2 + 1,so_diem_cuc_tri,template
+Tính diện tích của mặt cầu bán kính 2,khac_hinh_hoc,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 + 3x^2 - 1 tại điểm có hoành độ x = 4,tiep_tuyen,template
+Tính tích phân của x^3 từ 2 đến pi,tich_phan,template
+Tính thể tích của mặt cầu bán kính 3,khac_hinh_hoc,template
+Tìm điểm cực tiểu của hàm số y = x^4 - 8x^2,so_diem_cuc_tri,template
+Giải phương trình mũ log_2(x) = 4,phuong_trinh,template
+Tìm giới hạn lim tan(x)/x khi x dần tới 2,gioi_han,template
+Tính tích phân của 1/x từ 1 đến 3,tich_phan,template
+Đồ thị hàm số y = (5x^2 + -3)/(4x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [1; 3],gtln,template
+Đồ thị hàm số y = (2x^2 + 6)/(4x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [-1; 2],gtnn,template
+Cho hàm số y = x^4 - 2x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -2,tiep_tuyen,template
+Tính thể tích khối nón có bán kính đáy 5 và chiều cao 12,toa_do_the_tich,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + 5)/(2x - 4),tiem_can_ngang,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 3) và B(4; 5; 3)",toa_do_khoang_cach,template
+Tính thể tích khối chóp có diện tích đáy bằng 48 và chiều cao bằng 4,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [-2; 4],gtnn,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [0; 3],gtnn,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(-2; 0; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = 4,dao_ham,template
+Tìm điểm cực tiểu của hàm số y = x^3 - 6x^2 + 9x,so_diem_cuc_tri,template
+Tìm giới hạn lim (x - 1)/(x^2 - 1) khi x dần tới 4,gioi_han,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 2; 0) đến mặt phẳng 2x - y + 2z - 6 = 0",toa_do_kc_diem_mp,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 3; 3) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = x^4 - 4x^2 tại điểm x = -1,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [1; 5],gtnn,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 0) đến đường thẳng 3x + 4y - 5 = 0",toa_do_khoang_cach,template
+Tính tích phân của sin(x) từ 0 đến 3,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [1; 2],gtnn,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = -2,dao_ham,template
+Tính thể tích khối nón có bán kính đáy 3 và chiều cao 6,toa_do_the_tich,template
+Cho hàm số y = x^4 - 2x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = 1,dao_ham,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-2; 5],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 2x tại điểm có hoành độ x = -1,tiep_tuyen,template
+Đồ thị hàm số y = (2x + -3)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Giải phương trình logarit 5^x = 125,phuong_trinh,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [-1; 2],gtln,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [-2; 2],gtln,template
+Tính giới hạn của (x^2 - 9)/(x - 3) khi x tiến tới 5,gioi_han,template
+Giải phương trình logarit 2^x = 8,phuong_trinh,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 2],gtnn,template
+Tìm điểm cực đại của hàm số y = x^4 - 8x^2,so_diem_cuc_tri,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(0; -1; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(3; 4; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 5)/(1x - 4),tiem_can_ngang,template
+Tính tích phân của 1/(x + 1) từ 0 đến pi,tich_phan,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [-1; 5],gtnn,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(3; 2; -3). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-2; 5],gtln,template
+Cho cấp số nhân có số hạng đầu 5 và công sai bằng 2. Tính số hạng thứ 6,khac_dai_so,template
+Đồ thị hàm số y = (3x^2 + 1)/(4x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; -2) đến đường thẳng x - y + 2 = 0",toa_do_khoang_cach,template
+Cho số phức z = 1 + 2i. Tính phần thực của z,khac_dai_so,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + 7)/(1x - 2),tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [0; 5],gtln,template
+Giải phương trình x^2 + 4x + 4 = 0,phuong_trinh,template
+Tính thể tích của hình tròn bán kính 5,khac_hinh_hoc,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 24 và chiều cao bằng 6,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [-1; 3],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 4x^2 - 12x tại điểm có hoành độ x = 1,tiep_tuyen,template
+Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 2,dao_ham,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 4,toa_do_the_tich,template
+Đồ thị hàm số y = (2x^2 + 4)/(4x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [-2; 3],gtln,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + -2)/(1x - 2),tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [-2; 4],gtln,template
+Tính thể tích của hình tròn bán kính 2,khac_hinh_hoc,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; -2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = 3,dao_ham,template
+Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 9,toa_do_the_tich,template
+Cho số phức z = 2 + 2i. Tính số phức liên hợp của z,khac_dai_so,template
+Tính giới hạn của (sqrt(x + 1) - 1)/x khi x tiến tới 5,gioi_han,template
+Tính đạo hàm của hàm số y = x^3 + 3x^2 - 1 tại điểm x = 0,dao_ham,template
+Tính tích phân của cos(x) từ 0 đến 3,tich_phan,template
+Tính thể tích khối nón có bán kính đáy 4 và chiều cao 9,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [1; 3],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [-2; 3],gtln,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [1; 5],gtnn,template
+Tính đạo hàm của hàm số y = x^4 - x^2 tại điểm x = 3,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(0; 1; 2) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Tìm giá trị nhỏ nhất của hàm số y = x^4 - 2x^2 trên đoạn [0; 3],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 4],gtln,template
+Tính tích phân của 1/x từ 0 đến pi,tich_phan,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 7)/(3x - 4),tiem_can_dung,template
+Giải phương trình logarit log_2(x + 3) = 3,phuong_trinh,template
+Tính tích phân của x*e^x từ 0 đến pi,tich_phan,template
+Đồ thị hàm số y = (5x^2 + 1)/(4x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Giải phương trình mũ 5^x = 125,phuong_trinh,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [0; 3],gtnn,template
+Tính giới hạn của (x^2 - 4)/(x - 2) khi x tiến tới vô cùng,gioi_han,template
+Tìm điểm cực trị của hàm số y = x^3 - 3x^2 + 1,so_diem_cuc_tri,template
+Tính tích phân của 2x + 1 từ 1 đến 4,tich_phan,template
+Tính thể tích khối chóp có diện tích đáy bằng 20 và chiều cao bằng 6,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 3],gtnn,template
+Tính tích phân của x từ 1 đến 2,tich_phan,template
+Tính tích phân của 2x + 1 từ 2 đến pi,tich_phan,template
+Tính thể tích khối hộp chữ nhật có diện tích đáy bằng 48 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [1; 2],gtln,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 1,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 2; -2) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 9,toa_do_the_tich,template
+Tính thể tích của mặt cầu bán kính 2,khac_hinh_hoc,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 1; 3) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + 7)/(2x - 1),tiem_can_ngang,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 2; -2) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tính tích phân của x^3 từ 0 đến pi,tich_phan,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; -2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Tìm giới hạn lim (3x - 6)/(x^2 - 4) khi x dần tới 2,gioi_han,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 2; 2) và B(3; 5; 3)",toa_do_khoang_cach,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (1x + 1)/(2x - 2),tiem_can_dung,template
+Đồ thị hàm số y = (1x + 4)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-2; 3],gtln,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [1; 5],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^4 - x^2 tại điểm có hoành độ x = 2,tiep_tuyen,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 6,toa_do_the_tich,template
+Đồ thị hàm số y = (1x + 1)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Đồ thị hàm số y = (1x + -3)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính tích phân của x^2 từ 1 đến 4,tich_phan,template
+Tìm giới hạn lim (x^3 + 1)/(x + 1) khi x dần tới 1,gioi_han,template
+Tìm điểm cực đại của hàm số y = x^3 - 3x^2 + 1,so_diem_cuc_tri,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-1; 4],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 1; 2) và B(4; 6; 3)",toa_do_khoang_cach,template
+Tính tích phân của x^2 từ 2 đến 2,tich_phan,template
+Tìm giá trị cực tiểu của hàm số y = x^4 - 4x^2 + 3,so_diem_cuc_tri,template
+Tính giới hạn của (x^2 - 16)/(x - 4) khi x tiến tới 4,gioi_han,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 3],gtln,template
+Tính thể tích khối chóp có diện tích đáy bằng 48 và chiều cao bằng 3,toa_do_the_tich,template
+Đồ thị hàm số y = (1x + 1)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 1; 3) và B(3; 6; 3)",toa_do_khoang_cach,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = 1,dao_ham,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 2; 0) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],gtln,template
+Tính giới hạn của (x^2 - 16)/(x - 4) khi x tiến tới 3,gioi_han,template
+Tính tích phân của sin(x) từ 2 đến 4,tich_phan,template
+Tính chu vi của mặt cầu bán kính 4,khac_hinh_hoc,template
+Tính thể tích khối trụ có bán kính đáy 4 và chiều cao 9,toa_do_the_tich,template
+Tính số cách chọn 4 học sinh từ 10 học sinh,khac_dai_so,template
+Cho cấp số cộng có số hạng đầu 2 và công sai bằng 2. Tính số hạng thứ 10,khac_dai_so,template
+Giải phương trình mũ 3^x = 81,phuong_trinh,template
+Cho số phức z = 3 + 4i. Tính phần thực của z,khac_dai_so,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 + 2x trên đoạn [1; 4],gtnn,template
+Tính đạo hàm của hàm số y = x^4 - 4x^2 tại điểm x = 2,dao_ham,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [-1; 3],gtln,template
+Tìm giới hạn lim (sqrt(x) - 2)/(x - 4) khi x dần tới 0,gioi_han,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; 1; -2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Giải phương trình x^2 - 4x + 3 = 0,phuong_trinh,template
+Tính thể tích khối nón có bán kính đáy 5 và chiều cao 10,toa_do_the_tich,template
+Tính thể tích của khối cầu bán kính 2,khac_hinh_hoc,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [0; 5],gtln,template
+Tính thể tích khối trụ có bán kính đáy 4 và chiều cao 10,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = -x^3 + 3x trên đoạn [-2; 2],gtln,template
+Tính tích phân của 1/(x + 1) từ 0 đến 3,tich_phan,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(3; 0; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Giải phương trình logarit log_5(x) = 2,phuong_trinh,template
+"Cho tam giác ABC vuông tại A, AB = 6, AC = 15. Tính độ dài cạnh BC",khac_hinh_hoc,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(-2; 0; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = x^4 - 4x^2 tại điểm x = 0,dao_ham,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = 2,dao_ham,template
+"Cho mặt phẳng (P): 2x + 2y - z + 3 = 0 và điểm M(0; -1; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính giới hạn của (1 - cos(x))/x^2 khi x tiến tới 5,gioi_han,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 7)/(1x - 3),tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [1; 4],gtnn,template
+Tìm giá trị cực đại của hàm số y = 2x^3 - 3x^2,so_diem_cuc_tri,template
+Đồ thị hàm số y = (2x^2 + 1)/(4x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+"Cho tam giác ABC vuông tại A, AB = 3, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + -2)/(1x - 3),tiem_can_dung,template
+Tính số cách chọn 2 học sinh từ 10 học sinh,khac_dai_so,template
+Tính thể tích khối chóp có diện tích đáy bằng 36 và chiều cao bằng 8,toa_do_the_tich,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [-2; 4],gtln,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + -2)/(2x - 4),tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [-2; 2],gtln,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(2x - 3),tiem_can_ngang,template
+Tính tích phân của sin(x) từ 2 đến 2,tich_phan,template
+Cho hàm số y = 3x^3 - x^2. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 2,tiep_tuyen,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + -2)/(3x - 1),tiem_can_dung,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [-2; 5],gtnn,template
+Tính giới hạn của (x^2 - 16)/(x - 4) khi x tiến tới 5,gioi_han,template
+Tính thể tích khối nón có bán kính đáy 5 và chiều cao 9,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 5],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 2) và B(3; 6; 3)",toa_do_khoang_cach,template
+Cho hàm số y = x^3 - 9x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tính tích phân của 1/(x + 1) từ 2 đến 4,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = -2x^2 + 8x - 3 trên đoạn [-2; 3],gtln,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [-2; 2],gtnn,template
+Tính tích phân của sqrt(x) từ 1 đến 3,tich_phan,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 3,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = -2,dao_ham,template
+Cho cấp số nhân có số hạng đầu 3 và công bội bằng 2. Tính số hạng thứ 6,khac_dai_so,template
+Tính tích phân của x^2 từ 1 đến 3,tich_phan,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 2x^3 + x tại điểm có hoành độ x = -2,tiep_tuyen,template
+Tìm giá trị cực đại của hàm số y = x^4 - 6x^2 + 5,so_diem_cuc_tri,template
+Cho hàm số y = 2x^2 + 3. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng -1,tiep_tuyen,template
+Giải phương trình 6x + 5 = 23,phuong_trinh,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = -2,dao_ham,template
+Tính thể tích của hình tròn bán kính 3,khac_hinh_hoc,template
+Tính tích phân của x từ 1 đến 3,tich_phan,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + -2)/(1x - 3),tiem_can_dung,template
+Giải phương trình logarit 2^(x+1) = 16,phuong_trinh,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [1; 2],gtnn,template
+Tính tích phân của x^2 từ 2 đến 3,tich_phan,template
+Đồ thị hàm số y = (3x^2 + 4)/(4x^2 - 4) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+"Cho tam giác ABC vuông tại A, AB = 5, AC = 15. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Cho số phức z = 1 + 2i. Tính môđun của z,khac_dai_so,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 12 và chiều cao bằng 6,toa_do_the_tich,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; -2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 1; 0) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Cho cấp số cộng có số hạng đầu 5 và công sai bằng 2. Tính số hạng thứ 10,khac_dai_so,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^2 + 3x tại điểm có hoành độ x = -1,tiep_tuyen,template
+"Cho mặt phẳng (P): 2x + 2y - z + 3 = 0 và điểm M(3; 0; 5). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [-2; 4],gtnn,template
+Tính thể tích khối lăng trụ có diện tích đáy bằng 48 và chiều cao bằng 4,toa_do_the_tich,template
+Tìm giá trị nhỏ nhất của hàm số y = 2x^2 - 8x + 3 trên đoạn [0; 4],gtnn,template
+"Cho tam giác ABC vuông tại A, AB = 5, AC = 12. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 2],gtnn,template
+Cho hàm số y = x^2 - 6x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+Cho hàm số y = 3x^3 - x^2. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 3) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+"Cho mặt phẳng (P): 2x + 2y - z + 3 = 0 và điểm M(1; -1; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = x^3 - 3x + 2 tại điểm x = 1,dao_ham,template
+Giải phương trình logarit log_2(2x) = 5,phuong_trinh,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; 2) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+"Cho tam giác ABC vuông tại A, AB = 8, AC = 12. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm giới hạn lim tan(x)/x khi x dần tới vô cùng,gioi_han,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; -2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(2; -2) đến đường thẳng 5x - 12y + 1 = 0",toa_do_khoang_cach,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 3,dao_ham,template
+Đồ thị hàm số y = (3x + 1)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; -1; 0) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = 2,dao_ham,template
+"Cho tam giác ABC vuông tại A, AB = 8, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Giải phương trình x^2 - 5x + 6 = 0,phuong_trinh,template
+Cho số phức z = 3 + 2i. Tính số phức liên hợp của z,khac_dai_so,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (5x + -2)/(1x - 3),tiem_can_ngang,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = (x + 1)/(x - 1) tại điểm có hoành độ x = 0,tiep_tuyen,template
+Tính thể tích khối nón có bán kính đáy 5 và chiều cao 6,toa_do_the_tich,template
+Tính tích phân của 2x + 1 từ 0 đến 2,tich_phan,template
+Tính giới hạn của (x^3 - 8)/(x - 2) khi x tiến tới 3,gioi_han,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 1; 3) và B(4; 6; 2)",toa_do_khoang_cach,template
+Đồ thị hàm số y = (2x + 6)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính đạo hàm của hàm số y = 5x^3 - x tại điểm x = -1,dao_ham,template
+Cho số phức z = 2 + 5i. Tính số phức liên hợp của z,khac_dai_so,template
+Cho hàm số y = 2x^2 + 3. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 0,tiep_tuyen,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 5)/(2x - 1),tiem_can_ngang,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(3x - 2),tiem_can_ngang,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [0; 4],gtln,template
+Tính tích phân của x^2 từ 2 đến 4,tich_phan,template
+Tính tích phân của sqrt(x) từ 0 đến 3,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 2],gtln,template
+Giải phương trình 3x - 7 = 2,phuong_trinh,template
+Đồ thị hàm số y = (5x^2 + -3)/(1x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 6,toa_do_the_tich,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + -2)/(2x - 4),tiem_can_ngang,template
+Tìm số điểm cực trị của hàm số y = 2x^3 - 9x^2 + 12x,so_diem_cuc_tri,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 3) đến đường thẳng x - y + 2 = 0",toa_do_khoang_cach,template
+Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 10,toa_do_the_tich,template
+Cho cấp số nhân có số hạng đầu 2 và công bội bằng 3. Tính số hạng thứ 6,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 6x - 5 trên đoạn [-1; 5],gtln,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(-2; -1; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tính tích phân của 2x + 1 từ 0 đến pi,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [0; 4],gtln,template
+Tìm giới hạn lim (4x - 12)/(x^2 - 9) khi x dần tới 0,gioi_han,template
+Tính tích phân của 2x + 1 từ 1 đến 3,tich_phan,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; -1; 3) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(-1; -1; 3) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tính tích phân của x^3 từ 0 đến 3,tich_phan,template
+Tìm giới hạn lim (sqrt(x) - 2)/(x - 4) khi x dần tới 4,gioi_han,template
+Giải phương trình 4x^2 - 1 = 0,phuong_trinh,template
+Đồ thị hàm số y = (5x + -3)/(x^2 - 4) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (1x + 1)/(1x - 3),tiem_can_dung,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = 4x^2 - 12x tại điểm có hoành độ x = 2,tiep_tuyen,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 3) và B(4; 5; 2)",toa_do_khoang_cach,template
+Cho số phức z = 2 + 5i. Tính môđun của z,khac_dai_so,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 3],gtln,template
+Tính diện tích của hình tròn bán kính 4,khac_hinh_hoc,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 1; 3) và B(3; 6; 2)",toa_do_khoang_cach,template
+Cho hàm số y = x^3 + x. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 2,tiep_tuyen,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(0; 3) đến đường thẳng 4x + 3y - 7 = 0",toa_do_khoang_cach,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [1; 2],gtln,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 6x^2 + 9x tại điểm có hoành độ x = 4,tiep_tuyen,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 3x trên đoạn [0; 4],gtnn,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 2; 3) và B(4; 6; 3)",toa_do_khoang_cach,template
+Tìm điểm cực trị của hàm số y = x^4 - 4x^2 + 3,so_diem_cuc_tri,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (4x + 1)/(1x - 1),tiem_can_ngang,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(0; 2; -3). Tính d(M, (P))",toa_do_kc_diem_mp,template
+"Cho mặt phẳng (P): x + y - z + 2 = 0 và điểm M(1; -1; -3). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 6x + 5 trên đoạn [-1; 4],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [1; 3],gtln,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 2],gtnn,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [0; 3],gtnn,template
+Cho số phức z = 3 + 5i. Tính số phức liên hợp của z,khac_dai_so,template
+Tính giới hạn của (3x^2 + x)/(x^2 - 5) khi x tiến tới âm vô cùng,gioi_han,template
+Tính tích phân của x từ 0 đến 3,tich_phan,template
+Đồ thị hàm số y = (2x + -3)/(x^2 - 9) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Giải phương trình mũ log_2(x + 3) = 3,phuong_trinh,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 3; 2) đến mặt phẳng 3x - 4y + 12 = 0",toa_do_kc_diem_mp,template
+Cho cấp số nhân có số hạng đầu 5 và công bội bằng 3. Tính số hạng thứ 10,khac_dai_so,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + -2)/(1x - 2),tiem_can_ngang,template
+Giải phương trình logarit log_2(x) = 4,phuong_trinh,template
+Cho hàm số y = 2x^2 + 3. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 1,tiep_tuyen,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(1; 1; 3) và B(3; 6; 3)",toa_do_khoang_cach,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [1; 4],gtln,template
+Tính giới hạn của (x^2 - 16)/(x - 4) khi x tiến tới 0,gioi_han,template
+Tính thể tích khối trụ có bán kính đáy 3 và chiều cao 6,toa_do_the_tich,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 1; 3) và B(4; 5; 2)",toa_do_khoang_cach,template
+Tìm giá trị lớn nhất của hàm số y = -x^2 + 4x trên đoạn [-1; 2],gtln,template
+Tính tích phân của 1/(x + 1) từ 1 đến 4,tich_phan,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (2x + 1)/(3x - 3),tiem_can_ngang,template
+Tính tích phân của sin(x) từ 1 đến 3,tich_phan,template
+"Cho tam giác ABC vuông tại A, AB = 9, AC = 15. Tính độ dài cạnh BC",khac_hinh_hoc,template
+"Cho mặt phẳng (P): x - 2y + 2z - 4 = 0 và điểm M(0; 2; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+"Cho tam giác ABC vuông tại A, AB = 6, AC = 4. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 + 3x trên đoạn [0; 4],gtnn,template
+Tính tích phân của e^x từ 0 đến pi,tich_phan,template
+Tìm giá trị lớn nhất của hàm số y = x^4 - 2x^2 trên đoạn [0; 2],gtln,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(0; 2; 3) và B(3; 6; 3)",toa_do_khoang_cach,template
+"Cho tam giác ABC vuông tại A, AB = 3, AC = 12. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính số cách chọn 4 quyển sách từ 7 quyển sách,khac_dai_so,template
+"Cho tam giác ABC vuông tại A, AB = 9, AC = 12. Tính độ dài cạnh BC",khac_hinh_hoc,template
+Tính giới hạn của (x^2 - 4)/(x - 2) khi x tiến tới âm vô cùng,gioi_han,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(2x - 4),tiem_can_ngang,template
+Tìm giá trị cực tiểu của hàm số y = x^3 + 3x^2 - 9x,so_diem_cuc_tri,template
+Đồ thị hàm số y = (2x^2 + 6)/(1x^2 - 1) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [0; 2],gtnn,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 1)/(2x - 2),tiem_can_ngang,template
+Tìm giá trị nhỏ nhất của hàm số y = x^2 - 4x trên đoạn [-2; 4],gtnn,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (5x + 5)/(3x - 3),tiem_can_dung,template
+Đồ thị hàm số y = (3x + 4)/(x^2 - 1) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tìm giá trị lớn nhất của hàm số y = x^3 - 3x trên đoạn [0; 5],gtln,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (4x + -2)/(2x - 4),tiem_can_dung,template
+Đồ thị hàm số y = (2x^2 + 4)/(4x^2 - 9) có tiệm cận ngang là đường nào,tiem_can_ngang,template
+Tính tích phân của 2x + 1 từ 0 đến 4,tich_phan,template
+"Trong không gian Oxyz, tính khoảng cách giữa hai điểm A(2; 1; 2) và B(3; 5; 3)",toa_do_khoang_cach,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(1; -1; 0) đến mặt phẳng x + 2y - 2z + 1 = 0",toa_do_kc_diem_mp,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-1; 3],gtnn,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (1x + -2)/(1x - 1),tiem_can_ngang,template
+Cho số phức z = 3 + 2i. Tính môđun của z,khac_dai_so,template
+Tính đạo hàm của hàm số y = 5x^3 - x tại điểm x = 0,dao_ham,template
+Tính đạo hàm của hàm số y = x^3 - 3x + 2 tại điểm x = 2,dao_ham,template
+Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 12,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = 2x^3 + x tại điểm x = 1,dao_ham,template
+Tìm giới hạn lim (3x - 6)/(x^2 - 4) khi x dần tới vô cùng,gioi_han,template
+Tìm tiệm cận ngang của đồ thị hàm số y = (3x + 7)/(2x - 3),tiem_can_ngang,template
+Giải phương trình logarit 4^x = 64,phuong_trinh,template
+Tính đạo hàm của hàm số y = x^2 + 3x tại điểm x = 0,dao_ham,template
+Tính tích phân của 3x^2 - 2x từ 2 đến 4,tich_phan,template
+Cho hàm số y = 5x^2 - 4x + 1. Lập phương trình tiếp tuyến tại điểm M có hoành độ bằng 3,tiep_tuyen,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 6,toa_do_the_tich,template
+Tính đạo hàm của hàm số y = x^3 - 2x tại điểm x = -1,dao_ham,template
+Tính thể tích khối chóp có diện tích đáy bằng 12 và chiều cao bằng 4,toa_do_the_tich,template
+Đồ thị hàm số y = (2x + 4)/(x^2 - 16) có bao nhiêu tiệm cận đứng,tiem_can_dung,template
+Tính đạo hàm của hàm số y = 2x^2 - 8x + 3 tại điểm x = 4,dao_ham,template
+Tính đạo hàm của hàm số y = 3x^2 - 5x + 1 tại điểm x = 3,dao_ham,template
+"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(-1; 3) đến đường thẳng x - y + 2 = 0",toa_do_khoang_cach,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (2x + 5)/(2x - 3),tiem_can_dung,template
+"Trong không gian Oxyz, tính khoảng cách từ điểm A(2; 3; -2) đến mặt phẳng x + y + z - 3 = 0",toa_do_kc_diem_mp,template
+Tìm giới hạn lim (4x - 12)/(x^2 - 9) khi x dần tới 2,gioi_han,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + -2)/(1x - 3),tiem_can_dung,template
+Viết phương trình tiếp tuyến của đồ thị hàm số y = x^3 - 6x^2 + 9x tại điểm có hoành độ x = -2,tiep_tuyen,template
+Tìm giá trị cực tiểu của hàm số y = x^4 - 2x^2,so_diem_cuc_tri,template
+Tính đạo hàm của hàm số y = 4x^2 - 12x tại điểm x = 3,dao_ham,template
+Tìm giá trị nhỏ nhất của hàm số y = x^3 - 6x^2 + 9x trên đoạn [-2; 4],gtnn,template
+Tìm giá trị lớn nhất của hàm số y = x^2 - 2x trên đoạn [-1; 3],gtln,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(-2; 4; 1). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm số điểm cực trị của hàm số y = x^4 - 2x^2,so_diem_cuc_tri,template
+Tính tích phân của x từ 2 đến 3,tich_phan,template
+"Cho tam giác ABC vuông tại A, AB = 6, AC = 12. Tính độ dài cạnh BC",khac_hinh_hoc,template
+"Cho mặt phẳng (P): 6x - 3y + 2z + 7 = 0 và điểm M(1; 4; 2). Tính d(M, (P))",toa_do_kc_diem_mp,template
+Tìm tiệm cận đứng của đồ thị hàm số y = (3x + 5)/(3x - 1),tiem_can_dung,template

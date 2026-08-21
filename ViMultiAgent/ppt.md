@@ -10,9 +10,9 @@ tròn lên khi trình bày — người chấm hỏi lại nguồn là có ngay.
 ## Slide 1 — Trang bìa
 
 **ViMultiAgent**
-Hệ đa tác tử giải bài tập STEM tiếng Việt, chạy hoàn toàn ngoại tuyến
+Hệ đa tác tử giải bài tập Toán THPT tiếng Việt, chạy hoàn toàn ngoại tuyến
 
-- Toán · Vật lý · Hoá học bậc THPT
+- Đại số · Giải tích · Hình học bậc THPT
 - Tên nhóm, thành viên, lớp, giảng viên hướng dẫn
 
 > Một dòng chốt hạ đặt dưới tiêu đề, đọc là nhớ:
@@ -76,7 +76,7 @@ Người dùng
     ├────────────────────────┐
     ▼                        ▼
  Subject Agent        Bộ tính lại độc lập
- (Toán/Lý/Hoá)        (chạy SONG SONG)
+ (Đại số/Hình học)    (chạy SONG SONG)
     ▼                        │
  Trọng tài SymPy             │
     ▼◄───────────────────────┘
@@ -136,8 +136,7 @@ Năm phép kiểm chạy **trước** khi LLM được đọc bất cứ thứ g
 | Có bước giải và đáp số | mọi bài | |
 | Tính lại số học từng bước | mọi bài | SymPy, thế ký hiệu, ngưỡng 1% |
 | Thứ nguyên đáp số | Vật lý | Pint |
-| Bảo toàn nguyên tố | Hoá | giải hệ bằng không gian null của ma trận |
-| Khối lượng mol | Hoá | bảng nguyên tử khối |
+| Đáp số không âm | Hình học | thể tích, diện tích, độ dài, khoảng cách |
 
 Cộng thêm **bộ tính lại độc lập**: SymPy tự giải lại bài (đạo hàm, tích phân, giới
 hạn, phương trình, tiếp tuyến) rồi đối chiếu.

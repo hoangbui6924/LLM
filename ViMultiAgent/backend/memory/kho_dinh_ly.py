@@ -1,11 +1,13 @@
-"""Kho định lý — công thức chương trình THPT, tra cứu tất định.
+"""Kho định lý — công thức Toán chương trình THPT, tra cứu tất định.
+
+Kho chia theo đúng hai phân môn của hệ thống: `dai_so` và `hinh_hoc`.
 
 Vì sao cần
 ----------
 Mô hình 4B chọn hướng giải khá tốt nhưng **nhớ công thức thì không đáng tin**. Đo
-được trên bộ đề: môn Hoá yếu nhất ở cả hai cấu hình (76% và 84%), và người dùng
-thử tay cũng báo đúng triệu chứng — "không nắm vững bảng tuần hoàn nên cân bằng
-sai hoặc khối lượng mol sai".
+được trên bộ đề: bài hình học không gian và bài toạ độ yếu nhất, vì chúng cần
+nhiều công thức phải nhớ chính xác (thể tích khối tròn xoay, khoảng cách từ điểm
+đến mặt phẳng) mà model hay nhớ nhầm hệ số.
 
 Chèn sẵn công thức đúng vào prompt rẻ hơn nhiều so với để model tự nhớ rồi sai,
 rồi Verify bắt, rồi giải lại. Chi phí: vài trăm token prefill, không thêm lượt
@@ -14,7 +16,7 @@ gọi LLM nào.
 Cách tra
 --------
 Chấm điểm theo hai nguồn, cộng lại:
-  * `Plan.topic` khớp   -> 3 điểm  (Planner đã chuẩn hoá sẵn thành slug)
+  * `Plan.topic` khớp   -> 3 điểm  (Router điền bằng nhãn PhoBERT, tất định)
   * từ khoá xuất hiện   -> 1 điểm mỗi từ
 
 Lấy tối đa `SO_MUC_TOI_DA` mục điểm cao nhất. Không có mục nào đạt ngưỡng thì trả
@@ -36,9 +38,9 @@ SO_MUC_TOI_DA = 3
 
 # Dưới ngưỡng này coi như không liên quan.
 #
-# Để 2 thì hụt những bài mà Planner KHÔNG trả về `topic` và đề chỉ chứa đúng một
-# từ khoá đặc trưng — đo được: "Hoà tan 5,4 gam Al vào HCl dư" và "Tìm giá trị nhỏ
-# nhất của biểu thức x + 25/x" đều tra ra rỗng dù có mục khớp.
+# Để 2 thì hụt những bài KHÔNG có `topic` và đề chỉ chứa đúng một từ khoá đặc
+# trưng — đo được: "Tìm giá trị nhỏ nhất của biểu thức x + 25/x" tra ra rỗng dù
+# có mục khớp.
 #
 # Để 1 thì lọt thêm ít nhiễu, nhưng nhiễu bị chặn bởi hai lớp: kết quả sắp theo
 # điểm giảm dần nên mục đúng luôn đứng đầu, và `SO_MUC_TOI_DA` cắt còn 3 mục.
@@ -60,7 +62,7 @@ def _bo_dau(s: str) -> str:
 
 KHO: dict[str, list[tuple[list[str], list[str], str]]] = {
     # =====================================================================
-    "math": [
+    "dai_so": [
         (["dao_ham"], ["đạo hàm", "y'", "f'"],
          "Đạo hàm: (x^n)' = n·x^(n-1); (u·v)' = u'v + uv'; (u/v)' = (u'v - uv')/v²; "
          "(sin x)' = cos x; (cos x)' = -sin x; (e^x)' = e^x; (ln x)' = 1/x."),
@@ -111,7 +113,13 @@ KHO: dict[str, list[tuple[list[str], list[str], str]]] = {
          "Do đó x + k/x ≥ 2√k với x > 0."),
         (["gioi_han"], ["giới hạn", "lim"],
          "Giới hạn dạng √(ax²+bx) - √a·x khi x→+∞: nhân liên hợp, kết quả b/(2√a)."),
-        (["the_tich_khoi_chop", "the_tich_lang_tru", "hinh_hoc_khong_gian"],
+        (["he_phuong_trinh"], ["hệ phương trình"],
+         "Hệ hai ẩn: cộng/trừ hai vế để khử một ẩn, hoặc thế. Luôn thử lại nghiệm vào cả hai phương trình."),
+    ],
+    # =====================================================================
+    "hinh_hoc": [
+        (["toa_do_the_tich", "the_tich_khoi_chop", "the_tich_lang_tru",
+          "hinh_hoc_khong_gian"],
          ["thể tích", "khối chóp", "lăng trụ", "hình nón", "hình trụ", "khối cầu"],
          "Thể tích: chóp V = (1/3)·S_đáy·h; lăng trụ V = S_đáy·h; "
          "nón V = (1/3)πr²h, S_xq = πrl; trụ V = πr²h; cầu V = (4/3)πr³, S = 4πr²."),
@@ -122,146 +130,22 @@ KHO: dict[str, list[tuple[list[str], list[str], str]]] = {
          "Tam giác: Heron S = √(p(p-a)(p-b)(p-c)) với p = (a+b+c)/2; "
          "S = (1/2)ab·sinC; định lý cosin a² = b² + c² - 2bc·cosA; "
          "R = abc/(4S); r = S/p."),
-        (["hinh_hoc_toa_do"], ["oxyz", "mặt phẳng", "khoảng cách từ điểm", "vectơ"],
+        (["toa_do_khoang_cach", "toa_do_kc_diem_mp", "hinh_hoc_toa_do"],
+         ["oxyz", "mặt phẳng", "khoảng cách từ điểm", "vectơ"],
          "Toạ độ: khoảng cách hai điểm = √(Δx² + Δy² + Δz²); "
          "điểm đến mặt phẳng ax+by+cz+d=0: |ax₀+by₀+cz₀+d|/√(a²+b²+c²); "
-         "cos góc hai vectơ = (u·v)/(|u||v|)."),
+         "cos góc hai vectơ = (u·v)/(|u||v|). Tử số LUÔN có giá trị tuyệt đối — "
+         "khoảng cách không bao giờ âm."),
         (["hinh_hoc_toa_do"], ["đường tròn", "oxy"],
          "Đường tròn x² + y² - 2ax - 2by + c = 0 có tâm I(a;b), bán kính R = √(a² + b² - c). "
          "Khoảng cách điểm đến đường thẳng ax+by+c=0: |ax₀+by₀+c|/√(a²+b²)."),
-        (["he_phuong_trinh"], ["hệ phương trình"],
-         "Hệ hai ẩn: cộng/trừ hai vế để khử một ẩn, hoặc thế. Luôn thử lại nghiệm vào cả hai phương trình."),
-    ],
-    # =====================================================================
-    "physics": [
-        (["dao_dong_dieu_hoa", "nang_luong_dao_dong"], ["dao động điều hoà", "biên độ", "li độ"],
-         "Dao động điều hoà: ω = 2πf = 2π/T; v_max = Aω; a_max = Aω²; "
-         "v = ω√(A² - x²); W = (1/2)kA²; W_đ/W_t = (A² - x²)/x². "
-         "ĐỔI cm sang m trước khi tính."),
-        (["con_lac_lo_xo"], ["con lắc lò xo", "độ cứng"],
-         "Con lắc lò xo: ω = √(k/m); T = 2π√(m/k)."),
-        (["con_lac_don"], ["con lắc đơn"],
-         "Con lắc đơn: T = 2π√(l/g)."),
-        (["tong_hop_dao_dong"], ["tổng hợp", "lệch pha"],
-         "Tổng hợp hai dao động cùng phương cùng tần số: "
-         "A² = A₁² + A₂² + 2A₁A₂·cos(Δφ). Vuông pha thì A = √(A₁² + A₂²)."),
-        (["song_co", "song_dung"], ["sóng", "bước sóng", "sóng dừng"],
-         "Sóng: v = λf. Sóng dừng hai đầu cố định: l = n·λ/2 (n là số bụng). "
-         "Một đầu tự do: l = (2n+1)λ/4."),
-        (["dinh_luat_ohm", "dien_tro", "mach_dien_mot_chieu"], ["điện trở", "ohm", "cường độ dòng"],
-         "Ohm: I = U/R. Nối tiếp R = R₁ + R₂. Song song R = R₁R₂/(R₁+R₂). "
-         "Toàn mạch: I = E/(R + r)."),
-        (["mach_rlc"], ["rlc", "tổng trở", "cảm kháng", "dung kháng", "cộng hưởng"],
-         "Mạch RLC nối tiếp: Z = √(R² + (Z_L - Z_C)²); I = U/Z; P = UIcosφ = I²R = U²R/Z². "
-         "Cộng hưởng khi Z_L = Z_C: Z = R, P_max = U²/R."),
-        (["mach_dao_dong"], ["mạch lc", "dao động riêng"],
-         "Mạch dao động LC: f = 1/(2π√(LC)); T = 2π√(LC). Đổi mH, μF, pF về H và F trước khi tính."),
-        (["may_bien_ap"], ["máy biến áp", "sơ cấp", "thứ cấp"],
-         "Máy biến áp lí tưởng: U₂/U₁ = N₂/N₁ = I₁/I₂."),
-        (["giao_thoa_anh_sang"], ["giao thoa", "y-âng", "khoảng vân", "vân sáng"],
-         "Giao thoa Y-âng: khoảng vân i = λD/a; vân sáng bậc k cách vân trung tâm x = k·i. "
-         "ĐỔI đơn vị: mm→m, μm/nm→m."),
-        (["quang_dien", "luong_tu"], ["quang điện", "công thoát", "photon"],
-         "Lượng tử: ε = hc/λ. Quang điện Einstein: ε = A + W_đmax, "
-         "nên W_đmax = ε - A. 1 eV = 1,6·10⁻¹⁹ J."),
-        (["phong_xa", "hat_nhan"], ["phóng xạ", "chu kỳ bán rã", "hạt nhân"],
-         "Phóng xạ: m = m₀·(1/2)^(t/T); phần đã phân rã = m₀[1 - (1/2)^(t/T)]. "
-         "Hạt nhân ký hiệu A_Z X có Z proton và N = A - Z neutron."),
-        (["dong_nang", "the_nang", "co_nang"], ["động năng", "thế năng", "cơ năng"],
-         "W_đ = mv²/2; W_t = mgh; bảo toàn cơ năng: mgh = mv²/2 nên v = √(2gh)."),
-        (["dong_luong"], ["động lượng", "va chạm"],
-         "Động lượng p = mv, bảo toàn trong va chạm. Va chạm mềm: v' = m₁v₁/(m₁ + m₂)."),
-        (["nem_ngang", "nem_xien"], ["ném ngang", "ném xiên", "tầm xa"],
-         "Ném ngang: t = √(2h/g), tầm xa L = v₀t. "
-         "Ném xiên: tầm xa L = v₀²·sin(2α)/g."),
-        (["nhiet_luong", "nhiet_dien"], ["nhiệt lượng", "nhiệt dung riêng"],
-         "Q = mc·Δt. Toả nhiệt trên điện trở (Joule-Lenz): Q = I²Rt."),
-        (["cong_co_hoc", "cong_suat_dien"], ["công", "công suất"],
-         "Công cơ học A = F·s·cosα. Công suất điện P = UI; điện năng A = P·t."),
-        (["chat_khi"], ["khí lí tưởng", "đẳng nhiệt", "đẳng áp"],
-         "Khí lí tưởng: đẳng nhiệt p₁V₁ = p₂V₂; đẳng áp V₁/T₁ = V₂/T₂; "
-         "tổng quát p₁V₁/T₁ = p₂V₂/T₂ với T tính bằng Kelvin."),
-        (["thau_kinh"], ["thấu kính", "tiêu cự", "ảnh"],
-         "Thấu kính: 1/f = 1/d + 1/d', suy ra d' = df/(d - f). Độ phóng đại k = -d'/d."),
-        (["dien_tich"], ["điện tích", "coulomb"],
-         "Coulomb: F = k·|q₁q₂|/r² với k = 9·10⁹ N·m²/C²."),
-        (["tu_truong", "cam_ung_dien_tu"], ["từ trường", "lực từ", "cảm ứng"],
-         "Lực từ F = BIl·sinα. Suất điện động cảm ứng e = N·|ΔΦ/Δt|."),
-        (["ap_suat"], ["áp suất"],
-         "Áp suất chất lỏng p = ρgh."),
-        (["khoi_luong_rieng"], ["khối lượng riêng"],
-         "Khối lượng riêng D = m/V."),
-        (["doi_don_vi"], ["km/h", "đổi đơn vị"],
-         "Đổi đơn vị: 1 km/h = 1/3,6 m/s. Luôn đưa mọi dữ kiện về hệ SI TRƯỚC khi thay số."),
-    ],
-    # =====================================================================
-    "chemistry": [
-        (["so_mol", "the_tich_khi", "khoi_luong_chat"], ["số mol", "đktc", "mol"],
-         "Số mol: n = m/M; n = V/22,4 (khí ở đktc); n = C_M·V (V tính bằng lít). "
-         "Ngược lại m = n·M, V = n·22,4."),
-        (["khoi_luong_mol"], ["khối lượng mol", "nguyên tử khối"],
-         "Nguyên tử khối phổ thông: H=1, C=12, N=14, O=16, Na=23, Mg=24, Al=27, "
-         "S=32, Cl=35,5, K=39, Ca=40, Fe=56, Cu=64, Zn=65, Ag=108, Ba=137. "
-         "Khối lượng mol hợp chất = tổng nguyên tử khối theo chỉ số."),
-        (["nong_do_mol", "pha_loang"], ["nồng độ mol", "pha loãng"],
-         "Nồng độ mol C_M = n/V (V tính bằng lít). Pha loãng: C₁V₁ = C₂V₂ vì số mol "
-         "chất tan không đổi. Trộn hai dung dịch: C = (n₁ + n₂)/(V₁ + V₂)."),
-        (["nong_do_phan_tram"], ["nồng độ phần trăm", "c%"],
-         "C% = m_chất tan/m_dung dịch · 100, với m_dung dịch = m_chất tan + m_dung môi."),
-        (["can_bang_pthh"], ["cân bằng", "phương trình phản ứng"],
-         "Cân bằng phương trình: số nguyên tử MỖI nguyên tố phải bằng nhau ở hai vế. "
-         "Viết và cân bằng TRƯỚC mọi tính toán, rồi mới lập tỉ lệ mol theo hệ số."),
-        (["tinh_theo_pthh"], ["tính theo phương trình"],
-         "Tính theo PTHH: đổi khối lượng sang mol → lập tỉ lệ theo HỆ SỐ phương trình "
-         "→ đổi ngược về khối lượng hoặc thể tích."),
-        (["chat_du"], ["chất dư", "chất hết", "vừa đủ"],
-         "Bài chất dư: chia số mol mỗi chất cho hệ số của nó; tỉ số NHỎ NHẤT là chất hết, "
-         "và mọi tính toán phải theo chất hết đó."),
-        (["hieu_suat"], ["hiệu suất"],
-         "Hiệu suất: m_thực tế = m_lý thuyết · H/100. Tính theo lý thuyết trước rồi mới nhân H."),
-        (["kim_loai_axit", "kim_loai_nuoc"],
-         ["tác dụng axit", "hcl", "h2so4 loãng", "hoà tan", "hòa tan", "kim loại", "khí h2"],
-         "Kim loại + axit loãng → muối + H₂. Kim loại hoá trị n cho n/2 mol H₂ mỗi mol. "
-         "Fe lên hoá trị II với HCl và H₂SO₄ loãng. Cu, Ag đứng SAU H nên KHÔNG phản ứng."),
-        (["axit_bazo", "ph"], ["trung hoà", "ph", "axit", "bazơ"],
-         "Trung hoà: HCl + NaOH → NaCl + H₂O (1:1); H₂SO₄ + 2NaOH (1:2). "
-         "pH = -log[H⁺]; pOH = -log[OH⁻]; pH + pOH = 14. Axit mạnh phân li hoàn toàn."),
-        (["bao_toan_khoi_luong", "bao_toan_nguyen_to"], ["bảo toàn khối lượng"],
-         "Bảo toàn khối lượng: tổng khối lượng chất tham gia = tổng khối lượng sản phẩm. "
-         "Kim loại + O₂ → oxit thì m(O₂) = m(oxit) - m(kim loại)."),
-        (["bao_toan_electron"], ["bảo toàn electron", "oxi hoá", "khử"],
-         "Bảo toàn electron: tổng electron chất khử NHƯỜNG = tổng electron chất oxi hoá NHẬN. "
-         "n(e) = n(kim loại) × hoá trị. Mỗi mol H₂ nhận 2 electron; NO₂ nhận 1; NO nhận 3."),
-        (["dien_phan"], ["điện phân", "faraday", "catot"],
-         "Định luật Faraday: m = A·I·t/(n·F) với F = 96500 C/mol, n là số electron trao đổi "
-         "(Cu²⁺ nhận 2, Ag⁺ nhận 1)."),
-        (["dot_chay_huu_co"], ["đốt cháy", "hiđrocacbon", "ankan", "anken"],
-         "Đốt cháy CxHy: CxHy + (x + y/4)O₂ → xCO₂ + (y/2)H₂O. "
-         "Số C = n(CO₂)/n(chất); số H = 2·n(H₂O)/n(chất). "
-         "Ankan CnH(2n+2), anken CnH2n."),
-        (["tim_cong_thuc_phan_tu", "lap_cong_thuc"], ["công thức phân tử", "xác định công thức"],
-         "Lập công thức: tính số mol mỗi nguyên tố → lấy tỉ lệ tối giản → công thức đơn giản nhất → "
-         "đối chiếu khối lượng mol để ra công thức phân tử."),
-        (["este"], ["este", "xà phòng hoá", "thuỷ phân"],
-         "Este đơn chức + NaOH → muối + ancol, tỉ lệ 1:1. "
-         "M(CH₃COOC₂H₅) = 88; M(CH₃COONa) = 82."),
-        (["muoi_cacbonat", "ket_tua"], ["cacbonat", "caco3", "kết tủa", "co2"],
-         "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ (tỉ lệ mol CaCO₃ : CO₂ = 1:1). "
-         "CO₂ + Ca(OH)₂ dư → CaCO₃↓ + H₂O. M(CaCO₃) = 100, M(CaCl₂) = 111."),
-        (["hon_hop_kim_loai"], ["hỗn hợp", "phần trăm khối lượng"],
-         "Hỗn hợp kim loại + HCl: chỉ kim loại ĐỨNG TRƯỚC H trong dãy hoạt động mới sinh H₂. "
-         "Cu, Ag không phản ứng. Dùng số mol H₂ để suy ngược ra kim loại phản ứng."),
-        (["cacbohidrat", "len_men"], ["glucozơ", "tinh bột", "lên men", "xenlulozơ"],
-         "C₆H₁₂O₆ (M=180) lên men → 2C₂H₅OH (M=46) + 2CO₂. "
-         "Tinh bột (C₆H₁₀O₅)n mắt xích 162, thuỷ phân cho glucozơ 180."),
-        (["amin"], ["amin", "amino axit"],
-         "Amin đơn chức chứa 1 N: đốt cháy 2 mol amin cho 1 mol N₂."),
-        (["so_mol_nguyen_tu"], ["số mol nguyên tử"],
-         "Số mol nguyên tử một nguyên tố = số mol phân tử × chỉ số của nguyên tố đó."),
-        (["phan_ung_the"], ["kim loại mạnh đẩy", "cuso4"],
-         "Kim loại mạnh hơn đẩy kim loại yếu hơn ra khỏi muối: Zn + CuSO₄ → ZnSO₄ + Cu, tỉ lệ 1:1."),
-        (["thanh_phan_khong_khi"], ["không khí"],
-         "Không khí: O₂ chiếm khoảng 20% thể tích, N₂ khoảng 80%."),
+        (["hinh_hoc_khong_gian"], ["góc giữa", "hình chiếu", "vuông góc"],
+         "Góc giữa đường thẳng và mặt phẳng = góc giữa đường thẳng và HÌNH CHIẾU của "
+         "nó trên mặt phẳng đó. Góc giữa hai mặt phẳng lấy theo hai đường vuông góc "
+         "với giao tuyến. Mọi giá trị cosin phải nằm trong [-1; 1]."),
+        (["khac_hinh_hoc"], ["mặt cầu ngoại tiếp", "bán kính mặt cầu"],
+         "Mặt cầu ngoại tiếp: tâm cách đều mọi đỉnh. Với khối hộp chữ nhật kích thước "
+         "a, b, c thì R = √(a² + b² + c²)/2."),
     ],
 }
 

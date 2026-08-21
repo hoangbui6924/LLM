@@ -316,7 +316,7 @@ CPU và mọi số đo thời gian sẽ không khớp báo cáo.
 
 ### 9.4. Giải thử một bài
 
-Trên giao diện, bấm nút **Lý** để điền đề mẫu rồi bấm **Giải bài**. Quan sát:
+Trên giao diện, bấm nút **Hình học** để điền đề mẫu rồi bấm **Giải bài**. Quan sát:
 
 - Năm vai sáng dần: Planner → Router → Subject → Verify → Explain
 - **Đáp án hiện ra trước khi lời giảng chảy xong** — hệ thống phát đáp số ngay khi
@@ -383,9 +383,8 @@ ViMultiAgent/
 │   │   ├── manager.py       điều phối toàn luồng, phát sự kiện SSE
 │   │   ├── planner.py       phân tích đề
 │   │   ├── router.py        chọn môn: PhoBERT → luật → LLM
-│   │   ├── math_agent.py    ─┐
-│   │   ├── physics_agent.py  ├ ba Subject Agent, chung khung subject.py
-│   │   ├── chemistry_agent.py┘
+│   │   ├── dai_so_agent.py   ─┐
+│   │   ├── hinh_hoc_agent.py  ┴ hai Subject Agent, chung khung subject.py
 │   │   ├── verify_agent.py  kiểm chứng, 5 phép kiểm tất định
 │   │   ├── recompute_agent.py  trích cấu trúc cho SymPy tự giải, chạy song song
 │   │   ├── explain_agent.py giảng bài, streaming
