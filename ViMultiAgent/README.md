@@ -131,7 +131,7 @@ Gõ `Ctrl + Enter` trong ô nhập để gửi nhanh.
 ## 6. Chạy kiểm thử và đo đạc
 
 ```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
+cd E:\DeepLearning\LLM\ViMultiAgent\backend
 
 # Kiểm thử các công cụ tất định (không cần Ollama)
 python -m pytest

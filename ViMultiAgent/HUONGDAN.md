@@ -30,11 +30,11 @@ sàng lúc nhận câu hỏi đầu tiên.
 ollama serve
 
 # 2. Backend
-cd E:\DeepLearning\ViMultiAgent\backend
+cd E:\DeepLearning\LLM\ViMultiAgent\backend
 python -m uvicorn main:app --port 8000
 
 # 3. Frontend
-cd E:\DeepLearning\ViMultiAgent\frontend
+cd E:\DeepLearning\LLM\ViMultiAgent\frontend
 npm run dev
 ```
 
@@ -117,8 +117,9 @@ hưởng thật**:
 Ba thông tin đi kèm mỗi đáp số:
 
 **Verdict của Verify** — `PASS` / `FAIL`:
-- `PASS` không có nghĩa là chắc chắn đúng. Đo trên 150 bài, Verify **báo oan
-  18–28%**, và tỉ lệ phát hiện sai của lượt hỏi LLM chỉ 31,2%.
+- `PASS` không có nghĩa là chắc chắn đúng. Đo trên 100 bài khó, Verify phát hiện
+  được **63%** lời giải sai — cao hơn hẳn mốc nền một tác tử (0%, không có tầng
+  kiểm chứng nào) nhưng vẫn để lọt hơn một phần ba.
 - `FAIL` kèm cảnh báo *"Lời giải chưa qua được bước kiểm chứng"* — nên tự đối chiếu.
 
 **Confidence** — độ tự tin, lấy từ Verify nếu có, không thì từ Subject Agent.
@@ -247,8 +248,8 @@ Bộ chấm không so chuỗi: nó **tính** biểu thức bằng SymPy, quy đ�
 ghi khác đơn vị, và rút gọn tượng trưng khi đáp án là biểu thức. `1/2`, `0,5` và
 `50%` được coi là cùng một đáp số.
 
-Thời gian tham khảo trên RTX 3060 Laptop 6 GB: **20 bài ≈ 11 phút**, trọn 150 bài
-≈ 80 phút.
+Thời gian tham khảo trên RTX 3060 Laptop 6 GB: **24 bài ≈ 13 phút**, trọn 100 bài
+của bộ khó ≈ 48 phút.
 
 > **Đừng dùng giao diện trong lúc đo.** Các request tranh cùng một GPU và làm hỏng
 > mọi số đo thời gian.
@@ -260,7 +261,7 @@ python scripts/tien_do.py <đường dẫn log>
 ```
 
 Đọc log của một lượt bench đang chạy và báo đã xong bao nhiêu bài, đúng bao nhiêu,
-còn bao lâu. Dùng khi chạy trọn 150 bài mà không muốn ngồi nhìn.
+còn bao lâu. Dùng khi chạy trọn 100 bài mà không muốn ngồi nhìn.
 
 ### 4.3. `scripts/cuu_log.py` — cứu kết quả từ lượt bench bị dừng
 
@@ -323,8 +324,8 @@ và trộn cả bài sai theo đúng tỉ lệ thật.
 ### 4.9. Sinh lại bộ đề
 
 ```powershell
-python eval/build_de_chuan.py --seed 20260805       # 150 bài, 50 mỗi môn
-python eval/build_de_kho.py --seed 20260806         # 300 bài khó
+python eval/build_de_chuan.py --seed 20260805       # 50 bài + 50 bài giữ riêng
+python eval/build_de_kho.py --seed 20260806         # 100 bài khó
 python eval/kiem_de_chuan.py                        # TỰ KIỂM — chạy trước khi dùng
 ```
 
@@ -340,7 +341,7 @@ có trong bộ khác — đây là cách dựng bộ giữ riêng (held-out) kh�
 python -m pytest
 ```
 
-**222 test**, khoảng 14 giây, **không cần Ollama**. Đây là bộ kiểm các công cụ tất
+**236 test**, khoảng 10 giây, **không cần Ollama**. Đây là bộ kiểm các công cụ tất
 định: SymPy, hoá học, đơn vị, trọng tài số học, kiểm chứng tượng trưng.
 
 ---
@@ -470,9 +471,9 @@ Trình tự này cho thấy đủ cả bốn điểm của đề tài mà không
 | 0–1 | Bấm nút **Hình học**, bấm Giải bài | Năm vai sáng dần — kiến trúc đa tác tử |
 | 1–2 | Chờ đáp án hiện | **Đáp án ra trước khi giảng xong** — cắt 10,6 giây chờ |
 | 2–3 | Cuộn xuống lời giảng đang chảy | Streaming thật, không phải chờ trắng màn hình |
-| 3–4 | Chỉ vào dòng thời gian cuối | Dưới mốc 45 giây, 600/600 lượt đã đo đạt |
+| 3–4 | Chỉ vào dòng thời gian cuối | Dưới mốc 45 giây, 99/100 lượt trên bộ khó đạt |
 | 4–5 | Bấm **Sinh bài** ở thẻ Bài tập tương tự, bấm **Bài khác** | Tức thì — vì không gọi LLM, đáp án bảo đảm đúng |
-| 5–7 | Mở cửa sổ `pytest` | 222 test cho tầng kiểm chứng tất định |
+| 5–7 | Mở cửa sổ `pytest` | 236 test cho tầng kiểm chứng tất định |
 | 7–9 | Mở ảnh chụp `ml/compare.py` | Phần học sâu: PhoBERT tự huấn luyện, 94,7% quyết định định tuyến |
 | 9–10 | Giải một bài hình học | Soát đáp số âm cho thể tích, khoảng cách — công cụ bắt lỗi, không tin trí nhớ model |
 
@@ -493,7 +494,7 @@ Trình tự này cho thấy đủ cả bốn điểm của đề tài mà không
 Trình tự đầy đủ, khoảng **3 giờ máy chạy**.
 
 ```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
+cd E:\DeepLearning\LLM\ViMultiAgent\backend
 
 # 1. Tắt ghi kho lời giải để phép đo đứng yên
 #    (đặt VMA_LUU_LOI_GIAI_MAU=0 trong .env, khởi động lại backend)
@@ -501,10 +502,10 @@ cd E:\DeepLearning\ViMultiAgent\backend
 # 2. Tự kiểm bộ đề trước — bộ đề sai thì mọi số sau đều vô nghĩa
 python eval/kiem_de_chuan.py
 
-# 3. Chỉ số 1 + 3: độ chính xác và ma trận Verify, 150 bài (~80 phút)
+# 3. Chỉ số 1 + 3: độ chính xác và ma trận Verify, 50 bài (~26 phút)
 python scripts/bench.py --de eval/data/de_chuan.csv --out reports/chuan
 
-# 4. Trần năng lực: bộ đề khó 300 bài (~160 phút, chạy qua đêm)
+# 4. Trần năng lực: bộ đề khó 100 bài (~48 phút)
 python scripts/bench.py --de eval/data/de_kho.csv --out reports/kho
 
 # 5. Chỉ số 2: lời giảng cho giáo viên chấm

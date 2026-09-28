@@ -1,0 +1,101 @@
+﻿id,subject,topic,level,question_type,che_do,dung,tong_s,dat_45s,dap_an_he_thong,dap_an_chuan,mcq_he_thong,mcq_chuan,so_buoc,bi_cat,loi,question
+math_nb_k001,dai_so,dao_ham,NB,numeric,tho,1,21.14,1,1208,1208,,,57,0,,Tính đạo hàm của hàm số y = 5x^4 - 9x^2 + 5 tại điểm x = 4.
+math_th_k002,dai_so,tich_phan,TH,numeric,tho,1,15.84,1,27,27,,,31,0,,Tính tích phân I = ∫ từ 0 đến 3 của 3x^2 dx.
+math_th_k003,dai_so,logarit,TH,numeric,tho,1,16.50,1,8,8,,,45,0,,Tính giá trị biểu thức log cơ số 2 của 256.
+math_vd_k004,dai_so,cap_so_nhan,VD,numeric,tho,1,23.66,1,3279,3279,,,57,0,,"Cho cấp số nhân có u1 = 3, công bội q = 3. Tính tổng 7 số hạng đầu tiên."
+math_th_k005,dai_so,to_hop,TH,numeric,tho,1,15.06,1,286,286,,,31,0,,Tính số tổ hợp chập 3 của 13 phần tử.
+math_th_k006,dai_so,so_phuc,TH,numeric,tho,1,18.68,1,13,13,,,35,0,,Cho số phức z = 3 + 2i. Tính môđun của z^2.
+math_vd_k007,dai_so,phuong_trinh_mu,VD,numeric,tho,1,19.61,1,4,4,,,60,0,,Giải phương trình 2^(2x) - 10·2^x + 16 = 0. Tính tổng các nghiệm.
+math_vd_k008,dai_so,diem_uon,VD,numeric,tho,1,16.55,1,1,1,,,39,0,,Cho hàm số y = x^3 - 3x^2 + 4x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k009,dai_so,gtln_gtnn,VD,numeric,tho,0,35.57,1,$2\sqrt{6}$,4.89898,,,77,0,,Tìm giá trị nhỏ nhất của hàm số y = 2x + 3/x với x > 0.
+math_vd_k010,dai_so,xac_suat,VD,numeric,tho,0,18.90,1,$\dfrac{1}{12}$,0.0833333,,,50,0,,Một hộp có 5 bi đỏ và 5 bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất để cả 3 viên đều màu đỏ.
+math_vdc_k011,dai_so,tich_phan_tung_phan,VDC,numeric,tho,0,42.84,1,At 0: (0/,4.57456,,,62,1,,Tính tích phân I = ∫ từ 0 đến 1 của x·e^(3x) dx.
+math_vdc_k012,dai_so,dien_tich_hinh_phang,VDC,numeric,tho,0,43.23,1,\boxed{\dfrac{4}{3} (đvdt)},1.33333,,,72,1,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = x^2 và y = 2x.
+math_vd_k013,dai_so,hoan_vi_vong,VD,numeric,tho,1,20.14,1,6,6,,,39,0,,Có bao nhiêu cách xếp 4 người ngồi quanh một bàn tròn?
+math_th_k014,dai_so,he_phuong_trinh,TH,numeric,tho,1,15.29,1,5,5,,,55,0,,Giải hệ phương trình x + y = 11 và x - y = -1. Tìm giá trị của x.
+math_vdc_k015,dai_so,xac_suat_nhi_thuc,VDC,numeric,tho,1,21.47,1,0.441,0.441,,,56,0,,"Một xạ thủ bắn 3 phát độc lập, xác suất trúng mỗi phát là 0,3. Tính xác suất trúng đúng 1 phát."
+math_vdc_k016,dai_so,gioi_han,VDC,numeric,tho,0,43.21,1,"So the answer should be sqrt(2)/2, which is approximately 0.7071, but",0.707107,,,59,1,,Tính giới hạn của biểu thức sqrt(2x^2 + 2x) - sqrt(2)·x khi x tiến tới dương vô cùng.
+math_vd_k017,dai_so,phuong_trinh_logarit,VD,numeric,tho,1,13.65,1,-3,-3,,,28,0,,Giải phương trình log cơ số 2 của (x + 7) bằng 2. Tìm nghiệm x.
+math_vd_k018,dai_so,tiep_tuyen,VD,symbolic,tho,1,24.73,1,y = 7x - 1,7*x + -1,,,60,0,,Cho hàm số y = x^3 + 4x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 1.
+math_th_k019,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,18.99,1,12,12,,,44,0,,"Cho tam giác có ba cạnh lần lượt là 5, 5 và 6. Tính diện tích tam giác đó."
+math_vd_k020,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,0,43.07,1,"In Vietnamese textbooks, for example, in the 10th grade, when they teach Law of Cosines, they might present the answer in exact form or decimal. Given that the problem gives angle as 60°, which is a nice angle, but the sides are 10 and 6, so the answer is irrational.",8.7178,,,57,1,,"Cho tam giác ABC có AB = 10, AC = 6 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k021,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,32.55,1,11.25,11.25,,,69,0,,"Cho tam giác có hai cạnh 5 và 9, góc xen giữa bằng 150 độ. Tính diện tích tam giác."
+math_vd_k022,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,24.74,1,8.5,8.5,,,39,0,,"Cho tam giác vuông có hai cạnh góc vuông 8 và 15, cạnh huyền 17. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k023,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,31.81,1,3,3,,,79,0,,"Cho tam giác vuông có hai cạnh góc vuông 8 và 15, cạnh huyền 17. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k024,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,43.25,1,144π,452.389,,,71,1,,Tính thể tích khối nón có bán kính đáy 6 và chiều cao 12.
+math_nb_k025,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,43.37,1,100,314.159,,,32,1,,Tính thể tích khối trụ có bán kính đáy 5 và chiều cao 4.
+math_nb_k026,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,40.55,1,36π,113.097,,,36,0,,Tính thể tích khối cầu có bán kính 3.
+math_nb_k027,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,43.35,1,"Therefore, the final answer is 36π (đơn vị²).",113.097,,,77,1,,Tính diện tích mặt cầu có bán kính 3.
+math_th_k028,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,24.72,1,$30\pi$,94.2478,,,40,0,,Tính diện tích xung quanh của hình nón có bán kính đáy 3 và độ dài đường sinh 10.
+math_vd_k029,hinh_hoc,hinh_hoc_khong_gian,VD,numeric,tho,0,42.98,1,Then the distance from O to A is sqrt((2-0)^2 + (2-0)^2,5.2915,,,78,1,,Cho khối chóp tứ giác đều có cạnh đáy bằng 4 và cạnh bên bằng 6. Tính chiều cao của khối chóp.
+math_vdc_k030,hinh_hoc,hinh_hoc_khong_gian,VDC,numeric,tho,0,41.41,1,$12\sqrt{7}$ (m³),31.749,,,83,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 5. Tính thể tích khối chóp.
+math_vdc_k031,hinh_hoc,hinh_hoc_khong_gian,VDC,numeric,tho,1,43.13,1,4. Correct.,4,,,83,1,,Cho hình lập phương ABCD.A'B'C'D' có cạnh bằng 4. Tính khoảng cách giữa hai đường thẳng chéo nhau AC và B'D'.
+math_nb_k032,hinh_hoc,hinh_hoc_toa_do,NB,numeric,tho,1,43.06,1,"But the problem says ""chỉ làm tròn ở đáp số cuối"". If they want a decimal, then it's approximately 9.38. But since the problem is presented in a way that it's a calculation, and the user is a high school teacher, maybe they expect the exact value. Wait, but the user says ""trình bày từng bước rõ ràng bằng tiếng Việt"". So I need to write the steps in Vietnamese.",9.38083,,,42,1,,"Trong không gian Oxyz, cho hai điểm A(3; 0; 1) và B(9; 4; 7). Tính độ dài đoạn thẳng AB."
+math_vd_k033,hinh_hoc,hinh_hoc_toa_do,VD,numeric,tho,0,43.35,1,"But let me check if there's any mistake in the calculation. Wait, in the parametric method, we found that the distance is 1",3.88057,,,48,1,,"Trong không gian Oxyz, tính khoảng cách từ điểm M(1; 4; 0) đến mặt phẳng có phương trình 2x + 2y + 3z + 6 = 0."
+math_th_k034,hinh_hoc,hinh_hoc_toa_do,TH,numeric,tho,0,43.46,1,"Yes, so the answer is (25√13)/26. Let me check units: the problem says ""khoảng cách"" in Oxy plane, so the unit is length, but since it's coordinate plane, the unit is probably the same as the coordinates given (which are in units, but the problem doesn't specify units, so just the numerical value with unit implied as ""đơn vị"" but the problem says ""khoảng cách"" so the answer is a number with unit, but in the problem statement, they might just want the numerical value with unit as """,3.46688,,,65,1,,"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(1; 3) đến đường thẳng 4x + 6y + 3 = 0."
+math_vd_k035,hinh_hoc,hinh_hoc_toa_do,VD,numeric,tho,0,29.62,1,$\sqrt{33}$,5.74456,,,80,0,,"Trong mặt phẳng Oxy, cho đường tròn có phương trình x^2 + y^2 - 6x - 4y + (-20) = 0. Tính bán kính đường tròn."
+math_vdc_k036,hinh_hoc,hinh_hoc_toa_do,VDC,numeric,tho,0,43.28,1,17^2 + 2*1,0.854704,,,63,1,,"Trong không gian Oxyz, cho hai vectơ u = (3; 3; 2) và v = (2; 1; 3). Tính côsin của góc giữa hai vectơ."
+math_nb_k037,dai_so,dao_ham,NB,numeric,tho,1,23.66,1,2,2,,,62,0,,Tính đạo hàm của hàm số y = 5x^4 - 9x^2 + 5 tại điểm x = 1.
+math_th_k038,dai_so,tich_phan,TH,numeric,tho,1,23.24,1,145.8,145.8,,,46,0,,Tính tích phân I = ∫ từ 0 đến 3 của 3x^4 dx.
+math_th_k039,dai_so,logarit,TH,numeric,tho,1,17.28,1,3,3,,,31,0,,Tính giá trị biểu thức log cơ số 7 của 343.
+math_vd_k040,dai_so,cap_so_nhan,VD,numeric,tho,1,20.22,1,1020,1020,,,78,0,,"Cho cấp số nhân có u1 = 4, công bội q = 2. Tính tổng 8 số hạng đầu tiên."
+math_th_k041,dai_so,to_hop,TH,numeric,tho,1,31.69,1,3003,3003,,,85,0,,Tính số tổ hợp chập 5 của 15 phần tử.
+math_th_k042,dai_so,so_phuc,TH,numeric,tho,1,17.81,1,10,10,,,40,0,,Cho số phức z = 3 + i. Tính môđun của z^2.
+math_vd_k043,dai_so,phuong_trinh_mu,VD,numeric,tho,1,28.07,1,4,4,,,89,0,,Giải phương trình 3^(2x) - 30·3^x + 81 = 0. Tính tổng các nghiệm.
+math_vd_k044,dai_so,diem_uon,VD,numeric,tho,1,16.98,1,1,1,,,37,0,,Cho hàm số y = x^3 - 3x^2 + 8x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k045,dai_so,gtln_gtnn,VD,numeric,tho,0,42.99,1,$2\sqrt{10}$,6.32456,,,77,1,,Tìm giá trị nhỏ nhất của hàm số y = 2x + 5/x với x > 0.
+math_vd_k046,dai_so,xac_suat,VD,numeric,tho,0,23.33,1,$\dfrac{1}{11}$,0.0909091,,,49,0,,Một hộp có 6 bi đỏ và 6 bi xanh. Lấy ngẫu nhiên 3 viên. Tính xác suất để cả 3 viên đều màu đỏ.
+math_vdc_k047,dai_so,tich_phan_tung_phan,VDC,numeric,tho,0,43.24,1,"But in the problem statement, there's no specification of decimal places. However, in Vietnamese high school exams, usually, they might expect 4 decimal places.",10.2997,,,74,1,,Tính tích phân I = ∫ từ 0 đến 1 của x·e^(4x) dx.
+math_vdc_k048,dai_so,dien_tich_hinh_phang,VDC,numeric,tho,0,43.55,1,32/3 (đvdt),10.6667,,,46,1,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = x^2 và y = 4x.
+math_vd_k049,dai_so,hoan_vi_vong,VD,numeric,tho,1,14.89,1,24,24,,,32,0,,Có bao nhiêu cách xếp 5 người ngồi quanh một bàn tròn?
+math_th_k050,dai_so,he_phuong_trinh,TH,numeric,tho,1,15.51,1,5,5,,,53,0,,Giải hệ phương trình x + y = 12 và x - y = -2. Tìm giá trị của x.
+math_vdc_k051,dai_so,xac_suat_nhi_thuc,VDC,numeric,tho,1,33.91,1,0.4116,0.4116,,,71,0,,"Một xạ thủ bắn 4 phát độc lập, xác suất trúng mỗi phát là 0,3. Tính xác suất trúng đúng 1 phát."
+math_vdc_k052,dai_so,gioi_han,VDC,numeric,tho,0,43.27,1,"So the answer should be sqrt(3)/3, which is approximately 0.577, but we don't round until the end. Since the problem says not to round in between, but only at the end. However, since it's a limit, and the exact value is sqrt(3)/3, which is irrational, so we present it as sqrt(3)/3.",0.57735,,,77,1,,Tính giới hạn của biểu thức sqrt(3x^2 + 2x) - sqrt(3)·x khi x tiến tới dương vô cùng.
+math_vd_k053,dai_so,phuong_trinh_logarit,VD,numeric,tho,1,13.33,1,4,4,,,41,0,,Giải phương trình log cơ số 3 của (x + 5) bằng 2. Tìm nghiệm x.
+math_vd_k054,dai_so,tiep_tuyen,VD,symbolic,tho,1,35.19,1,y = 30x - 31,30*x + -31,,,75,0,,Cho hàm số y = 2x^3 + 6x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 2.
+math_th_k055,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,15.30,1,24,24,,,36,0,,"Cho tam giác có ba cạnh lần lượt là 6, 8 và 10. Tính diện tích tam giác đó."
+math_vd_k056,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,0,42.99,1,"√43"".",6.55744,,,52,1,,"Cho tam giác ABC có AB = 7, AC = 6 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k057,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,27.62,1,8.75,8.75,,,50,0,,"Cho tam giác có hai cạnh 5 và 7, góc xen giữa bằng 30 độ. Tính diện tích tam giác."
+math_vd_k058,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,17.44,1,2.5,2.5,,,37,0,,"Cho tam giác vuông có hai cạnh góc vuông 3 và 4, cạnh huyền 5. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k059,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,30.71,1,3,3,,,67,0,,"Cho tam giác vuông có hai cạnh góc vuông 9 và 12, cạnh huyền 15. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k060,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,43.12,1,48π,150.796,,,67,1,,Tính thể tích khối nón có bán kính đáy 4 và chiều cao 9.
+math_nb_k061,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,42.99,1,"But since the problem didn't specify the unit, maybe in the context of the problem, the unit is ""đơn vị"" (unit), so the answer is ""40π (đơn vị thể tích)"".",125.664,,,39,1,,Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 10.
+math_nb_k062,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,43.14,1,"But the problem says ""ĐÁP SỐ: <chỉ đáp số kèm đơn vị, không diễn giải>"". So the answer should be written as ""32π/3 m³"" or ""32π/3 (",33.5103,,,36,1,,Tính thể tích khối cầu có bán kính 2.
+math_nb_k063,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,27.03,1,100π,314.159,,,42,0,,Tính diện tích mặt cầu có bán kính 5.
+math_th_k064,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,42.45,1,50π,157.08,,,32,0,,Tính diện tích xung quanh của hình nón có bán kính đáy 5 và độ dài đường sinh 10.
+math_vd_k065,hinh_hoc,hinh_hoc_khong_gian,VD,numeric,tho,0,43.11,1,"Wait, let me think. The problem says ""ĐÁP SỐ: <chỉ đáp số kèm đơn vị, không diễn giải>"". So the answer should be a number with unit. Since the problem didn't specify the unit, but the given numbers are 6 and 7 (probably in the same unit), so the answer is √",5.56776,,,56,1,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 7. Tính chiều cao của khối chóp.
+math_vdc_k066,hinh_hoc,hinh_hoc_khong_gian,VDC,numeric,tho,0,33.34,1,$12\sqrt{31}$,66.8132,,,77,0,,Cho khối chóp tứ giác đều có cạnh đáy bằng 6 và cạnh bên bằng 7. Tính thể tích khối chóp.
+math_vdc_k067,hinh_hoc,hinh_hoc_khong_gian,VDC,numeric,tho,0,43.04,1,"A'(0,0,3), B'(3,0,3), C'(3,3,3",3,,,96,1,,Cho hình lập phương ABCD.A'B'C'D' có cạnh bằng 3. Tính khoảng cách giữa hai đường thẳng chéo nhau AC và B'D'.
+math_nb_k068,hinh_hoc,hinh_hoc_toa_do,NB,numeric,tho,1,17.79,1,14,14,,,52,0,,"Trong không gian Oxyz, cho hai điểm A(1; 4; 3) và B(7; 8; 15). Tính độ dài đoạn thẳng AB."
+math_vd_k069,hinh_hoc,hinh_hoc_toa_do,VD,numeric,tho,0,42.97,1,"Wait, but in the problem statement, it's a high school problem, so maybe they expect the answer in the form of (29√3)/6, but the problem says ""chỉ làm tròn ở đáp số cuối"", so probably they want a decimal number rounded to two decimal places.",8.37158,,,33,1,,"Trong không gian Oxyz, tính khoảng cách từ điểm M(3; 4; 5) đến mặt phẳng có phương trình 2x + 2y + 2z + 5 = 0."
+math_th_k070,hinh_hoc,hinh_hoc_toa_do,TH,numeric,tho,0,41.82,1,$\dfrac{12\sqrt{5}}{5}$,5.36656,,,87,0,,"Trong mặt phẳng Oxy, tính khoảng cách từ điểm M(4; 2) đến đường thẳng 2x + 1y + 2 = 0."
+math_vd_k071,hinh_hoc,hinh_hoc_toa_do,VD,numeric,tho,0,26.22,1,$\sqrt{31}$,5.56776,,,72,0,,"Trong mặt phẳng Oxy, cho đường tròn có phương trình x^2 + y^2 - 4x - 8y + (-11) = 0. Tính bán kính đường tròn."
+math_vdc_k072,hinh_hoc,hinh_hoc_toa_do,VDC,numeric,tho,0,42.98,1,"0.6155, 0.",0.752773,,,49,1,,"Trong không gian Oxyz, cho hai vectơ u = (2; 3; 2) và v = (2; 1; 5). Tính côsin của góc giữa hai vectơ."
+math_nb_k073,dai_so,dao_ham,NB,numeric,tho,0,4.74,1,7x,200,,,8,0,,Tính đạo hàm của hàm số y = 7x^4 - 6x^2 + 5 tại điểm x = 2.
+math_th_k074,dai_so,tich_phan,TH,numeric,tho,1,17.27,1,8,8,,,43,0,,Tính tích phân I = ∫ từ 0 đến 2 của 3x^2 dx.
+math_th_k075,dai_so,logarit,TH,numeric,tho,1,18.59,1,6,6,,,33,0,,Tính giá trị biểu thức log cơ số 7 của 117649.
+math_vd_k076,dai_so,cap_so_nhan,VD,numeric,tho,1,18.41,1,510,510,,,54,0,,"Cho cấp số nhân có u1 = 2, công bội q = 2. Tính tổng 8 số hạng đầu tiên."
+math_th_k077,dai_so,to_hop,TH,numeric,tho,1,34.95,1,462,462,,,73,0,,Tính số tổ hợp chập 5 của 11 phần tử.
+math_th_k078,dai_so,so_phuc,TH,numeric,tho,1,18.56,1,34,34,,,41,0,,Cho số phức z = 5 + 3i. Tính môđun của z^2.
+math_vd_k079,dai_so,phuong_trinh_mu,VD,numeric,tho,1,20.97,1,5,5,,,42,0,,Giải phương trình 2^(2x) - 12·2^x + 32 = 0. Tính tổng các nghiệm.
+math_vd_k080,dai_so,diem_uon,VD,numeric,tho,1,19.65,1,1,1,,,43,0,,Cho hàm số y = 2x^3 - 6x^2 + 8x. Tìm hoành độ điểm uốn của đồ thị hàm số.
+math_vd_k081,dai_so,gtln_gtnn,VD,numeric,tho,0,41.39,1,$4\sqrt{5}$,8.94427,,,60,0,,Tìm giá trị nhỏ nhất của hàm số y = 4x + 5/x với x > 0.
+math_vd_k082,dai_so,xac_suat,VD,numeric,tho,0,21.14,1,$\dfrac{5}{22}$,0.227273,,,67,0,,Một hộp có 6 bi đỏ và 6 bi xanh. Lấy ngẫu nhiên 2 viên. Tính xác suất để cả 2 viên đều màu đỏ.
+math_vdc_k083,dai_so,tich_phan_tung_phan,VDC,numeric,tho,0,42.84,1,\boxed{\dfrac{5e^6 + 1}{9}},224.238,,,101,1,,Tính tích phân I = ∫ từ 0 đến 2 của x·e^(3x) dx.
+math_vdc_k084,dai_so,dien_tich_hinh_phang,VDC,numeric,tho,0,27.57,1,$\dfrac{8}{3}$,2.66667,,,59,0,,Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số y = 2x^2 và y = 4x.
+math_vd_k085,dai_so,hoan_vi_vong,VD,numeric,tho,1,17.48,1,120 cách,120,,,37,0,,Có bao nhiêu cách xếp 6 người ngồi quanh một bàn tròn?
+math_th_k086,dai_so,he_phuong_trinh,TH,numeric,tho,1,13.13,1,3,3,,,46,0,,Giải hệ phương trình x + y = 5 và x - y = 1. Tìm giá trị của x.
+math_vdc_k087,dai_so,xac_suat_nhi_thuc,VDC,numeric,tho,1,37.03,1,0.3456,0.3456,,,75,0,,"Một xạ thủ bắn 4 phát độc lập, xác suất trúng mỗi phát là 0,4. Tính xác suất trúng đúng 2 phát."
+math_vdc_k088,dai_so,gioi_han,VDC,numeric,tho,0,42.57,1,$\dfrac{1}{4}$,0.25,,,103,0,,Tính giới hạn của biểu thức sqrt(4x^2 + 1x) - sqrt(4)·x khi x tiến tới dương vô cùng.
+math_vd_k089,dai_so,phuong_trinh_logarit,VD,numeric,tho,1,11.54,1,-1,-1,,,34,0,,Giải phương trình log cơ số 2 của (x + 5) bằng 2. Tìm nghiệm x.
+math_vd_k090,dai_so,tiep_tuyen,VD,symbolic,tho,1,34.55,1,y = 12x - 3,12*x + -3,,,74,0,,Cho hàm số y = 2x^3 + 6x + 1. Viết phương trình tiếp tuyến của đồ thị tại điểm có hoành độ x = 1.
+math_th_k091,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,14.39,1,6 đơn vị diện tích,6,,,25,0,,"Cho tam giác có ba cạnh lần lượt là 3, 4 và 5. Tính diện tích tam giác đó."
+math_vd_k092,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,0,42.99,1,"60 độ. Tính độ dài cạnh BC.""",7.54983,,,56,1,,"Cho tam giác ABC có AB = 7, AC = 8 và góc A = 60 độ. Tính độ dài cạnh BC."
+math_th_k093,hinh_hoc,hinh_hoc_phang,TH,numeric,tho,1,29.93,1,11.25,11.25,,,53,0,,"Cho tam giác có hai cạnh 5 và 9, góc xen giữa bằng 30 độ. Tính diện tích tam giác."
+math_vd_k094,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,19.39,1,5,5,,,48,0,,"Cho tam giác vuông có hai cạnh góc vuông 6 và 8, cạnh huyền 10. Tính bán kính đường tròn ngoại tiếp tam giác."
+math_vd_k095,hinh_hoc,hinh_hoc_phang,VD,numeric,tho,1,40.82,1,1,1,,,93,0,,"Cho tam giác vuông có hai cạnh góc vuông 3 và 4, cạnh huyền 5. Tính bán kính đường tròn nội tiếp tam giác."
+math_th_k096,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,43.12,1,"But the problem says ""thể tích"", so the answer is 64π (unit: cubic units) or approximately 201.06 (unit: cubic units).",201.062,,,70,1,,Tính thể tích khối nón có bán kính đáy 4 và chiều cao 12.
+math_nb_k097,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,43.08,1,"Wait, but in the problem statement, the user wrote ""bán kính đáy 2 và chiều cao 4"" without units, so the answer is in ""đơn vị thể tích"".",50.2655,,,58,1,,Tính thể tích khối trụ có bán kính đáy 2 và chiều cao 4.
+math_nb_k098,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,1,43.19,1,"But the problem says ""ĐÁP SỐ: <chỉ đáp số kèm đơn vị, không diễn giải>"", so the final answer is ""268.08 đơn vị³"".",268.083,,,67,1,,Tính thể tích khối cầu có bán kính 4.
+math_nb_k099,hinh_hoc,hinh_hoc_khong_gian,NB,numeric,tho,0,43.20,1,"But the problem says ""đáp số: <chỉ đáp số kèm đơn vị, không diễn giải>"". So the unit here is square units, but since it's not specified, maybe just write 324π.",1017.88,,,40,1,,Tính diện tích mặt cầu có bán kính 9.
+math_th_k100,hinh_hoc,hinh_hoc_khong_gian,TH,numeric,tho,0,43.11,1,52π,163.363,,,45,1,,Tính diện tích xung quanh của hình nón có bán kính đáy 4 và độ dài đường sinh 13.

@@ -11,6 +11,23 @@ import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+# Console Windows mặc định dùng bảng mã cp1252, không in nổi tiếng Việt có dấu.
+#
+# ĐO ĐƯỢC — thiếu dòng này thì chương trình KHÔNG KHỞI ĐỘNG NỔI, theo một chuỗi
+# rất khó lần: thanh tiến trình `Loading weights` của transformers in ký tự `█`,
+# cp1252 không mã hoá được nên ném UnicodeEncodeError; `_ham_nong` bắt lỗi đó rồi
+# gọi `_canh_bao_thieu_phobert`, mà hàm cảnh báo lại in tiếng Việt có dấu nên ném
+# lỗi LẦN HAI — lần này không ai bắt, và uvicorn tắt với "Application startup
+# failed".
+#
+# Mọi script trong `scripts/`, `eval/`, `ml/` đều đã có dòng này từ trước; riêng
+# điểm khởi động của server thì chưa, nên lỗi chỉ lộ ra khi chạy uvicorn tay
+# trong PowerShell. `chay.bat` không dính vì nó đặt `chcp 65001` trước.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # Cho phép `from core...`, `from agents...` khi chạy trực tiếp bằng uvicorn.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 

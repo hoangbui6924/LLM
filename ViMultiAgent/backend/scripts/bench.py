@@ -194,6 +194,11 @@ def doc_de(duong_dan: Path) -> list[Bai]:
 # Đuôi đơn vị bám sau con số: "6.72 lit", "0.628 m/s", "50 Ω".
 _DUOI_DON_VI = re.compile(r"\s*[A-Za-zΩ%°][A-Za-zΩ%°/^0-9.]*\s*$")
 
+# Đơn vị đặt trong ngoặc ở cuối: `36π (đơn vị²)`, `20 (cm^3)`, `5 (đvtt)`.
+# Bản cũ chỉ bóc đuôi chữ trần nên gặp ngoặc là bó tay, và đề hình học thì hay
+# ghi đơn vị kiểu này — đúng nhóm bài mà phép đối chứng hai kiến trúc đang đo.
+_DUOI_NGOAC = re.compile(r"\s*\([^()]*\)\s*[.。]?\s*$")
+
 
 # `\frac` LỒNG NHAU: `\frac{15}{\sqrt{308}}` có ngoặc bên trong nên biểu thức
 # chính quy một lớp bó tay. Mẫu này cho phép một mức lồng, và gọi lặp để bóc dần.
@@ -229,6 +234,18 @@ def _chuan_hoa_so(s: str) -> str:
     t = re.sub(r"√\s*([0-9.]+)", r"sqrt(\1)", t)
     t = re.sub(r"√\s*([A-Za-z]\w*)", r"sqrt(\1)", t)
     t = t.replace("×", "*").replace("·", "*").replace("−", "-")
+    # Ký tự π của bảng mã Unicode. `36*pi` chấm được nhưng `36π` thì không —
+    # SymPy đọc `π` thành một ký hiệu tự do rồi cả biểu thức bị bóc lấy mỗi số 36.
+    #
+    # ĐO ĐƯỢC, và nó làm lệch hẳn phép đối chứng hai kiến trúc: mốc nền một tác
+    # tử trả lời bằng văn xuôi nên hay viết `36π`, còn hệ đa tác tử đi qua SymPy
+    # nên gần như luôn ra số thập phân. Chấm như cũ thì mốc nền bị phạt oan ở
+    # đúng nhóm bài hình học có số pi — tức phép so sánh đo nhầm cách VIẾT đáp
+    # số thành năng lực giải toán.
+    #
+    # Thêm dấu nhân tường minh để `36π` không bị đọc thành tên biến `36pi`.
+    t = re.sub(r"(?<=[\d)])\s*π", "*pi", t)
+    t = t.replace("π", "pi")
     t = re.sub(r"(?<=\d),(?=\d)", ".", t)      # dấu phẩy thập phân kiểu Việt Nam
     return t
 
@@ -271,7 +288,14 @@ def _doc_so(s: str) -> float | None:
     if not s or not s.strip():
         return None
     t = _chuan_hoa_so(s)
-    for thu in (t, _DUOI_DON_VI.sub("", t).strip()):
+    # Bóc dần: nguyên văn -> bỏ đơn vị trong ngoặc -> bỏ đuôi chữ trần.
+    khong_ngoac = _DUOI_NGOAC.sub("", t).strip()
+    for thu in (
+        t,
+        khong_ngoac,
+        _DUOI_DON_VI.sub("", t).strip(),
+        _DUOI_DON_VI.sub("", khong_ngoac).strip(),
+    ):
         if not thu:
             continue
         v = _tinh_co_hang_so(thu)

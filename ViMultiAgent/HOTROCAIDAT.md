@@ -38,7 +38,7 @@ máy khác.
 Mở PowerShell, dán nguyên khối này:
 
 ```powershell
-$goc = "E:\DeepLearning\ViMultiAgent"
+$goc = "E:\DeepLearning\LLM\ViMultiAgent"
 $tam = "E:\_goi_tam\ViMultiAgent"
 $dich = "E:\ViMultiAgent_gui.zip"
 
@@ -670,20 +670,20 @@ Chạy xong in ra ở cuối:
   hard       36/45 = 0.8000
 ```
 
-Dữ liệu huấn luyện (810 câu đã gán nhãn) nằm sẵn trong `backend/ml/data/`. **Không
+Dữ liệu huấn luyện (1041 câu đã gán nhãn) nằm sẵn trong `backend/ml/data/`. **Không
 cần** chạy `build_dataset.py`.
 
 > **Bỏ hẳn bước này thì sao?** Hệ thống **vẫn chạy đủ** — Router tự lùi về luật từ khoá.
-> Nhưng đo được trên 150 bài: **94,7% quyết định định tuyến hiện do PhoBERT đảm nhiệm**.
-> Bỏ nó là mất hẳn phần học sâu, và những câu không chứa từ khoá đặc trưng phải hỏi
-> LLM — mỗi lần tốn thêm 2–4 giây.
+> Nhưng bỏ nó là mất hẳn phần học sâu: những câu không chứa từ khoá đặc trưng sẽ
+> phải hỏi LLM, mỗi lần tốn thêm **2–4 giây**. Có PhoBERT thì bước định tuyến chỉ
+> tốn **0,3 giây** trung bình, và trên nhiều bài là **0 giây**.
 
 ## 6.3. Dữ liệu đã có sẵn — không cần làm gì
 
 | Dữ liệu | Nằm ở | Là gì |
 |---|---|---|
-| Ba bộ đề chấm | `backend/eval/data/` | `de_chuan` 150 bài · `de_giu_rieng` 150 bài · `de_kho` 300 bài, đều đã giải tay sẵn đáp án |
-| Dataset PhoBERT | `backend/ml/data/` | 810 câu gán nhãn, chia sẵn train/val/test |
+| Ba bộ đề chấm | `backend/eval/data/` | `de_chuan` 50 bài · `de_giu_rieng` 50 bài · `de_kho` 100 bài — Toán THPT, đều đã giải tay sẵn đáp án |
+| Dataset PhoBERT | `backend/ml/data/` | 1041 câu gán nhãn theo **15 dạng bài Toán**, chia sẵn train/val/test |
 | Kho định lý | `backend/memory/kho_dinh_ly.py` | Công thức chuẩn sách giáo khoa, nằm trong mã nguồn |
 | Kết quả đo cũ | `backend/eval/reports/` | Số liệu của báo cáo, để đối chiếu khi bạn chạy lại |
 

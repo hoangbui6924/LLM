@@ -1697,7 +1697,7 @@ học phương pháp có giá trị vượt ra ngoài phạm vi đề tài này.
 Tổng thời gian máy chạy khoảng **3–4 giờ**.
 
 ```powershell
-cd E:\DeepLearning\ViMultiAgent\backend
+cd E:\DeepLearning\LLM\ViMultiAgent\backend
 
 # 1. Tắt ghi kho lời giải để phép đo đứng yên
 #    (đặt VMA_LUU_LOI_GIAI_MAU=0 trong .env, khởi động lại backend)
